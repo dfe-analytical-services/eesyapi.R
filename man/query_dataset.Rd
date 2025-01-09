@@ -9,8 +9,6 @@ query_dataset(
   indicators = NULL,
   time_periods = NULL,
   geographies = NULL,
-  geographic_levels = NULL,
-  locations = NULL,
   filter_items = NULL,
   json_query = NULL,
   method = "POST",
@@ -33,10 +31,6 @@ of "get-summary", "get-meta", "get-csv", "get-data" or "post-data"}
 
 \item{geographies}{String, vector or data frame containing the geographic levels and
 locations to be queried.}
-
-\item{geographic_levels}{Geographic levels required as a string or vector of strings}
-
-\item{locations}{Location code required as a string or vector of strings}
 
 \item{filter_items}{Filter items required as a string or vector of strings}
 
