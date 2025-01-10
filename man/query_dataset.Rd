@@ -211,7 +211,7 @@ query_dataset(
 query_dataset(
   example_id(),
   method = "GET",
-  geographies = list(geographic_level=c("NAT")),
+  geographies = list(geographic_level = c("NAT")),
   filter_items = example_id("filter_item"),
   indicators = example_id("indicator"),
   page = 1,

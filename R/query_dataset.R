@@ -211,12 +211,41 @@ query_dataset <- function(
         "  - query_dataset(..., method = 'POST')"
       )
     )
+    # Get the geographies input into a standard format
+    geographies <- parse_todf_geographies(geographies)
+    if (any(geographies$geographic_level != geographies$location_level)) {
+      warning(
+        paste(
+          "The GET method only does simple geographic queries,",
+          "for more advanced queries, please use the POST method."
+        )
+      )
+    }
+    if (any(geographies$geographic_level != "")) {
+      geographic_levels <- geographies$geographic_level |>
+        dplyr::unique() |>
+        dplyr::filter(geographic_level != "")
+    } else {
+      geographic_levels <- NULL
+    }
+    geographies <- geographies |>
+      dplyr::mutate(
+        locations = paste0(location_level, "|", location_id_type, "|", location_id)
+      )
+    if (any(geographies$locations != "")) {
+      locations <- geographies$locations |>
+        dplyr::unique() |>
+        dplyr::filter(locations != "")
+    } else {
+      locations <- NULL
+    }
+    # Now run the GET query
     eesyapi::get_dataset(
       dataset_id = dataset_id,
       indicators = indicators,
       time_periods = time_periods,
-      geographic_levels = geographies$geographic_level,
-      locations = geographies$identifier,
+      geographic_levels = geographic_levels,
+      locations = locations,
       filter_items = filter_items,
       dataset_version = dataset_version,
       ees_environment = ees_environment,
