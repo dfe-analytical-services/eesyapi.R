@@ -151,7 +151,7 @@
 #' query_dataset(
 #'   example_id(),
 #'   method = "GET",
-#'   geographies = list(search_level=c("NAT")),
+#'   geographies = list(geographic_level = c("NAT")),
 #'   filter_items = example_id("filter_item"),
 #'   indicators = example_id("indicator"),
 #'   page = 1,
@@ -215,7 +215,7 @@ query_dataset <- function(
       dataset_id = dataset_id,
       indicators = indicators,
       time_periods = time_periods,
-      geographic_levels = geographies$search_level,
+      geographic_levels = geographies$geographic_level,
       locations = geographies$identifier,
       filter_items = filter_items,
       dataset_version = dataset_version,

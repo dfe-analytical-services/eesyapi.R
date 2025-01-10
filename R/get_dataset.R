@@ -13,7 +13,6 @@
 #' @param parse Logical flag to activate parsing of the results. Default: TRUE
 #'
 #' @return Data frame containing query results of an API data set
-#' @export
 #'
 #' @examples
 #' get_dataset(
