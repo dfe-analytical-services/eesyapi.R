@@ -33,8 +33,6 @@ reference:
 - title: Support for handling data sets from the API
   desc: These functions are used by `get_meta()` and included here for completeness.
   contents:
-  - get_dataset
-  - post_dataset
   - parse_api_dataset
   - starts_with("parse_sqid")
 

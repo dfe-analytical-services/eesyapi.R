@@ -18,5 +18,5 @@ Vector of strings containing json location search string
 Create json location search string from geographies
 }
 \examples{
-parse_tojson_location(example_geography_query()) |> cat()
+eesyapi:::parse_tojson_location(example_geography_query()) |> cat()
 }

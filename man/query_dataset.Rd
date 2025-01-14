@@ -95,9 +95,9 @@ A vector will run a query returning \strong{any} rows meeting any of the given
 geographies, i.e. geographies = \code{c("NAT", "REG")} will return all national and regional level
 rows, whilst \code{c("NAT", "REG|code|E120000001")} will return all national level rows and all North
 East rows. Specific locations are required to be supplied in the format
-\code{"LEVEL|identifier_type|identifier"}, where identifier type can be either code or id and the
-corresponding identifier is then the standard ONS code or the sqid given in the meta data
-respectively. Using England as an example, these would be:
+\code{"location_level|location_id_type|location_id"}, where location_id_type can be either code or id
+and the corresponding location_id is then the standard ONS code or the sqid given in the meta
+data respectively. Using England as an example, these would be:
 \itemize{
 \item \code{"NAT|code|E92000001"}
 \item \code{"NAT|id|dP0Zw"}
@@ -110,10 +110,10 @@ more complex queries.
 
 The geography query data frame should contain the following columns:
 \itemize{
-\item return_level: the geographic level to return (e.g. LA in the example above).
-\item search_level: the geographic level of the search location (e.g. REG in the example above).
-\item identifier_type: "code" or "id".
-\item identifier: the code or id (sqid) for the search location (e.g. the code or sqid of the
+\item geographic_level: the geographic level to return (e.g. LA in the example above).
+\item location_level: the geographic level of the search location (e.g. REG in the example above).
+\item location_id_type: "code" or "id".
+\item location_id: the code or id (sqid) for the search location (e.g. the code or sqid of the
 region in the above example).
 }
 

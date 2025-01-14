@@ -19,5 +19,6 @@ String containing json form query based on filter-in constraints
 Create a json query sub-string based on filter-in constraints
 }
 \examples{
-parse_tojson_filter_in(c("NAT", "REG"), filter_type = "geographic_levels")
+eesyapi:::parse_tojson_filter_in(c("NAT", "REG"), filter_type = "geographic_levels")
 }
+\keyword{internal}

@@ -3,7 +3,7 @@ test_that("api_url", {
   test_env <- default_ees_environment()
   expect_equal(
     api_url(),
-    paste0("https://", test_env, ".statistics.api.education.gov.uk/api/v1.0/publications?")
+    paste0("https://", test_env, ".statistics.api.education.gov.uk/v1.0/publications?")
   )
   expect_error(
     api_url(api_version = "1.x")
@@ -25,7 +25,7 @@ test_that("api_url", {
     paste0(
       "https://",
       test_env,
-      ".statistics.api.education.gov.uk/api/v1.0/data-sets/",
+      ".statistics.api.education.gov.uk/v1.0/data-sets/",
       example_id(ees_environment = test_env),
       "/query"
     )
@@ -46,7 +46,7 @@ test_that("api_url", {
     paste0(
       "https://",
       test_env,
-      ".statistics.api.education.gov.uk/api/v1.0/data-sets/",
+      ".statistics.api.education.gov.uk/v1.0/data-sets/",
       example_id(ees_environment = test_env),
       "/query?dataSetVersion=2.1"
     )
@@ -81,7 +81,7 @@ test_that("api_url", {
     paste0(
       "https://",
       test_env,
-      ".statistics.api.education.gov.uk/api/v1.0/data-sets/",
+      ".statistics.api.education.gov.uk/v1.0/data-sets/",
       example_id("dataset", ees_environment = test_env),
       "/csv"
     )

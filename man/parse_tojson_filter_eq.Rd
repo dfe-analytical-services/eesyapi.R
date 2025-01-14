@@ -19,5 +19,6 @@ String containing json form query based on filter-equal-to constraints
 Create a json query sub-string based on filter-equal constraints
 }
 \examples{
-parse_tojson_filter_eq("NAT", filter_type = "geographic_levels") |> cat()
+eesyapi:::parse_tojson_filter_eq("NAT", filter_type = "geographic_levels") |> cat()
 }
+\keyword{internal}

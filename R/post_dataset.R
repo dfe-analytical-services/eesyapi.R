@@ -11,17 +11,18 @@
 #' @param parse Logical flag to activate parsing of the results. Default: TRUE
 #'
 #' @return Data frame containing query results of an API data set
-#' @export
+#'
+#' @keywords internal
 #'
 #' @examples
-#' post_dataset(
+#' eesyapi:::post_dataset(
 #'   example_id(group = "attendance"),
 #'   json_query = example_json_query()
 #' )
 #'
 #' # Run post_dataset() to select rows containing either of two geographic locations and a single
 #' # filter item.
-#' post_dataset(
+#' eesyapi:::post_dataset(
 #'   example_id(group = "attendance"),
 #'   indicators = example_id("indicator", group = "attendance"),
 #'   time_periods = example_id("time_period", group = "attendance"),
@@ -49,6 +50,8 @@ post_dataset <- function(
   if (is.null(indicators) && is.null(json_query)) {
     stop("At least one of either indicators or json_query must not be NULL.")
   }
+  # Get the geographies input into a standard format
+  geographies <- todf_geographies(geographies)
   if (!is.null(json_query)) {
     if (any(!is.null(c(indicators, time_periods, geographies, filter_items)))) {
       warning(
@@ -68,7 +71,7 @@ post_dataset <- function(
       json_body <- json_query
     }
   } else {
-    json_body <- eesyapi::parse_tojson_params(
+    json_body <- parse_tojson_params(
       indicators = indicators,
       time_periods = time_periods,
       geographies = geographies,
@@ -82,7 +85,7 @@ post_dataset <- function(
   if (verbose) {
     json_body |> cat(fill = TRUE)
   }
-  response <- eesyapi::api_url(
+  response <- api_url(
     "post-data",
     dataset_id = dataset_id,
     dataset_version = dataset_version,
@@ -101,7 +104,7 @@ post_dataset <- function(
         jsonlite::fromJSON()
     )
   }
-  eesyapi::http_request_error(response)
+  http_request_error(response)
   # Unless the user specifies a specific page of results to get, loop through all available pages.
   response_json <- response |>
     httr::content("text") |>
@@ -127,7 +130,7 @@ post_dataset <- function(
         )
       }
       for (page in c(2:response_json$paging$totalPages)) {
-        json_body <- eesyapi::parse_tojson_params(
+        json_body <- parse_tojson_params(
           indicators = indicators,
           time_periods = time_periods,
           geographies = geographies,
@@ -136,7 +139,7 @@ post_dataset <- function(
           page_size = page_size,
           verbose = verbose
         )
-        response_page <- eesyapi::api_url(
+        response_page <- api_url(
           "post-data",
           dataset_id = dataset_id,
           dataset_version = dataset_version,
@@ -150,7 +153,7 @@ post_dataset <- function(
           ) |>
           httr::content("text") |>
           jsonlite::fromJSON()
-        response_page |> eesyapi::warning_max_pages()
+        response_page |> warning_max_pages()
         dfresults <- dfresults |>
           dplyr::bind_rows(
             response_page |>
@@ -161,7 +164,7 @@ post_dataset <- function(
   }
   if (parse) {
     dfresults <- dfresults |>
-      eesyapi::parse_api_dataset(
+      parse_api_dataset(
         dataset_id,
         verbose = verbose,
         ees_environment = ees_environment

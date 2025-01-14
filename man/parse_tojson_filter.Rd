@@ -20,7 +20,7 @@ selections
 Create a json query sub-string based on a combination \"in\" and \"and\" constraints
 }
 \examples{
-parse_tojson_filter(
+eesyapi:::parse_tojson_filter(
   list(
     day_number = c("uLQo4", "qf0jG", "aMjLP"),
     reason = c("bBrtT", "ThjPJ", "hsHyW", "m2m9K"),
@@ -29,3 +29,4 @@ parse_tojson_filter(
 ) |>
   cat()
 }
+\keyword{internal}

@@ -61,14 +61,14 @@ EES API. As a minimum, it requires the dataset_id flag and either the indicators
 a json file containing a query to be provided.
 }
 \examples{
-post_dataset(
+eesyapi:::post_dataset(
   example_id(group = "attendance"),
   json_query = example_json_query()
 )
 
 # Run post_dataset() to select rows containing either of two geographic locations and a single
 # filter item.
-post_dataset(
+eesyapi:::post_dataset(
   example_id(group = "attendance"),
   indicators = example_id("indicator", group = "attendance"),
   time_periods = example_id("time_period", group = "attendance"),
@@ -79,3 +79,4 @@ post_dataset(
 )
 
 }
+\keyword{internal}

@@ -44,10 +44,10 @@ single string. The result can be used directly by post_dataset() or the output o
 other API connection software (such as Postman) to POST a query to the EES API.
 }
 \examples{
-parse_tojson_params(example_id("indicator")) |>
+eesyapi:::parse_tojson_params(example_id("indicator")) |>
   cat()
 
-parse_tojson_params(
+eesyapi:::parse_tojson_params(
   example_id("indicator"),
   time_periods = "2024|W23",
   geographies = c("NAT|id|dP0Zw", "REG|id|rg3Nj"),
@@ -59,13 +59,13 @@ parse_tojson_params(
 #   - England national level data
 #   - all LAs in a specified region ("E12000004")
 dfgeographies <- data.frame(
-  return_level = c("NAT", "LA"),
-  search_level = c("NAT", "REG"),
-  identifier_type = c("code", "code"),
-  identifier = c("E92000001", "E12000004")
+  geographic_level = c("NAT", "LA"),
+  location_level = c("NAT", "REG"),
+  location_id_type = c("code", "code"),
+  location_id = c("E92000001", "E12000004")
 )
 
-parse_tojson_params(
+eesyapi:::parse_tojson_params(
   example_id("indicator"),
   time_periods = "2024|W23",
   geographies = dfgeographies,
@@ -83,7 +83,7 @@ filter_list <- list(
   education_phase = c("5UNdi", "crH31")
 )
 
-parse_tojson_params(
+eesyapi:::parse_tojson_params(
   example_id("indicator"),
   time_periods = "2024|W23",
   geographies = "NAT|code|E92000001",
@@ -92,3 +92,4 @@ parse_tojson_params(
   cat()
 
 }
+\keyword{internal}

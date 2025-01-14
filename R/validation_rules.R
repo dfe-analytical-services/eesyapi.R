@@ -120,9 +120,9 @@ validate_ees_id <- function(element_id, level = "publication", verbose = FALSE) 
       # Extract the individual 5 digit location IDs
       df_locations <- locations |>
         as.data.frame() |>
-        dplyr::rename(level = "V1", identifier_type = "V2", identifier = "V3")
+        dplyr::rename(level = "V1", location_id_type = "V2", location_id = "V3")
       location_type <- df_locations |>
-        dplyr::pull("identifier_type") |>
+        dplyr::pull("location_id_type") |>
         unique()
       if (any(!(location_type %in% c("id", "code")))) {
         stop("The middle entry in \"LEVEL|xxxx|1b3d5\" should be one of \"id\" or \"code\"")
@@ -131,8 +131,8 @@ validate_ees_id <- function(element_id, level = "publication", verbose = FALSE) 
       element_id <- df_locations
     }
   } else {
-    element_id <- data.frame(identifier = element_id) |>
-      dplyr::mutate(identifier_type = "id")
+    element_id <- data.frame(location_id = element_id) |>
+      dplyr::mutate(location_id_type = "id")
   }
   example_id_string <- eesyapi::example_id(level, group = "attendance")
   if (any(grepl("location", level))) {
@@ -140,54 +140,54 @@ validate_ees_id <- function(element_id, level = "publication", verbose = FALSE) 
       stringr::str_split("\\|", simplify = TRUE) |>
       as.data.frame() |>
       dplyr::rename(
-        identifier_type = "V2",
-        identifier = "V3"
+        location_id_type = "V2",
+        location_id = "V3"
       )
   } else {
-    example_id_string <- data.frame(identifier = example_id_string) |>
-      dplyr::mutate(identifier_type = "id")
+    example_id_string <- data.frame(location_id = example_id_string) |>
+      dplyr::mutate(location_id_type = "id")
   }
   check_frame <- element_id |>
-    dplyr::left_join(example_id_string, by = "identifier_type")
+    dplyr::left_join(example_id_string, by = "location_id_type")
   error_rows <- check_frame |>
     dplyr::filter(
-      !!rlang::sym("identifier_type") == "id",
-      stringr::str_length(!!rlang::sym("identifier.x")) <
-        stringr::str_length(!!rlang::sym("identifier.y"))
+      !!rlang::sym("location_id_type") == "id",
+      stringr::str_length(!!rlang::sym("location_id.x")) <
+        stringr::str_length(!!rlang::sym("location_id.y"))
     ) |>
     dplyr::bind_rows(
       check_frame |>
         dplyr::filter(
-          !!rlang::sym("identifier_type") == "code",
-          stringr::str_length(!!rlang::sym("identifier.x")) !=
-            stringr::str_length(!!rlang::sym("identifier.y"))
+          !!rlang::sym("location_id_type") == "code",
+          stringr::str_length(!!rlang::sym("location_id.x")) !=
+            stringr::str_length(!!rlang::sym("location_id.y"))
         )
     )
   if (nrow(error_rows) != 0) {
     err_string <- paste0(
       "The ", paste(level, collapse = ","),
       "(s) provided (",
-      paste0(error_rows |> dplyr::pull("identifier.x"), collapse = ", "),
+      paste0(error_rows |> dplyr::pull("location_id.x"), collapse = ", "),
       ") is expected to be a ",
-      paste0(error_rows |> dplyr::pull("identifier.y") |> stringr::str_length(), collapse = ", "),
+      paste0(error_rows |> dplyr::pull("location_id.y") |> stringr::str_length(), collapse = ", "),
       " character string in the format:\n    ",
-      paste0(error_rows |> dplyr::pull("identifier.y"), collapse = ", "),
+      paste0(error_rows |> dplyr::pull("location_id.y"), collapse = ", "),
       "\n  Please double check your ", paste(level, collapse = ","),
       "."
     )
     stop(err_string)
   } else if (
     any(
-      gsub("[0-9a-zA-Z]", "", element_id |> dplyr::pull("identifier")) !=
-        gsub("[0-9a-zA-Z]", "", example_id_string |> dplyr::pull("identifier"))
+      gsub("[0-9a-zA-Z]", "", element_id |> dplyr::pull("location_id")) !=
+        gsub("[0-9a-zA-Z]", "", example_id_string |> dplyr::pull("location_id"))
     )
   ) {
     stop(
       paste(
         "Some elements in",
-        paste(element_id |> dplyr::pull("identifier"), collapse = ", "),
+        paste(element_id |> dplyr::pull("location_id"), collapse = ", "),
         "do not match the expected structure: ",
-        example_id_string |> dplyr::pull("identifier")
+        example_id_string |> dplyr::pull("location_id")
       )
     )
   }

@@ -35,9 +35,9 @@
 #' geographies, i.e. geographies = `c("NAT", "REG")` will return all national and regional level
 #' rows, whilst `c("NAT", "REG|code|E120000001")` will return all national level rows and all North
 #' East rows. Specific locations are required to be supplied in the format
-#' `"LEVEL|identifier_type|identifier"`, where identifier type can be either code or id and the
-#' corresponding identifier is then the standard ONS code or the sqid given in the meta data
-#' respectively. Using England as an example, these would be:
+#' `"location_level|location_id_type|location_id"`, where location_id_type can be either code or id
+#' and the corresponding location_id is then the standard ONS code or the sqid given in the meta
+#' data respectively. Using England as an example, these would be:
 #'   - `"NAT|code|E92000001"`
 #'   - `"NAT|id|dP0Zw"`
 #'
@@ -47,10 +47,10 @@
 #' more complex queries.
 #'
 #' The geography query data frame should contain the following columns:
-#'   - return_level: the geographic level to return (e.g. LA in the example above).
-#'   - search_level: the geographic level of the search location (e.g. REG in the example above).
-#'   - identifier_type: "code" or "id".
-#'   - identifier: the code or id (sqid) for the search location (e.g. the code or sqid of the
+#'   - geographic_level: the geographic level to return (e.g. LA in the example above).
+#'   - location_level: the geographic level of the search location (e.g. REG in the example above).
+#'   - location_id_type: "code" or "id".
+#'   - location_id: the code or id (sqid) for the search location (e.g. the code or sqid of the
 #'   region in the above example).
 #'
 #' Further rows can be added to add other geography searches to include in results.
@@ -183,12 +183,12 @@ query_dataset <- function(
   }
   if (is.null(indicators) && (is.null(json_query) || method == "GET")) {
     warning("No indicators provided, defaulted to using all indicators from meta data")
-    indicators <- eesyapi::get_meta(dataset_id) |>
+    indicators <- get_meta(dataset_id) |>
       magrittr::extract2("indicators") |>
       dplyr::pull("col_id")
   }
   if (method == "POST") {
-    eesyapi::post_dataset(
+    post_dataset(
       dataset_id = dataset_id,
       indicators = indicators,
       time_periods = time_periods,
@@ -212,28 +212,29 @@ query_dataset <- function(
       )
     )
     # Get the geographies input into a standard format
-    geographies <- parse_todf_geographies(geographies)
-    if (any(geographies$geographic_level != geographies$location_level)) {
-      warning(
-        paste(
-          "The GET method only does simple geographic queries,",
-          "for more advanced queries, please use the POST method."
-        )
-      )
-    }
-    print(geographies)
+    geographies <- todf_geographies(geographies)
     if (any(geographies$geographic_level != "")) {
       geographic_levels <- geographies |>
         dplyr::distinct() |>
-        dplyr::filter(geographic_level != "") |>
-        dplyr::pull(geographic_level)
+        dplyr::filter(!!rlang::sym("geographic_level") != "") |>
+        dplyr::pull("geographic_level")
     } else {
       geographic_levels <- NULL
     }
     geographies <- geographies |>
       dplyr::mutate(
-        locations = paste0(location_level, "|", location_id_type, "|", location_id),
-        locations = stringr::str_replace_all(locations, "\\|\\|", "")
+        locations = paste0(
+          !!rlang::sym("location_level"),
+          "|",
+          !!rlang::sym("location_id_type"),
+          "|",
+          !!rlang::sym("location_id")
+        ),
+        locations = stringr::str_replace_all(
+          !!rlang::sym("locations"),
+          "\\|\\|",
+          ""
+        )
       )
     if (any(geographies$locations != "")) {
       locations <- geographies |>
@@ -243,8 +244,14 @@ query_dataset <- function(
     } else {
       locations <- NULL
     }
-    message(paste("geographic_levels: ", paste0(geographic_levels, collapse = ",")))
-    message(paste("locations: ", paste0(locations, collapse = ",")))
+    toggle_message(
+      paste("geographic_levels: ", paste0(geographic_levels, collapse = ",")),
+      verbose = verbose
+    )
+    toggle_message(
+      paste("locations: ", paste0(locations, collapse = ",")),
+      verbose = verbose
+    )
     # Now run the GET query
     get_dataset(
       dataset_id = dataset_id,
