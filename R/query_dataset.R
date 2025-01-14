@@ -28,23 +28,29 @@
 #'
 #' ## geographies
 #'
-#' Geographies can be supplied as a vector or a data frame depending on the complexity of the
-#' desired query.
+#' Geographies can be supplied as a single string, a vector of strings, a list or a data frame
+#' depending on user preference and the complexity of the desired query.
 #'
-#' A vector will run a query returning **any** rows meeting any of the given
-#' geographies, i.e. geographies = `c("NAT", "REG")` will return all national and regional level
-#' rows, whilst `c("NAT", "REG|code|E120000001")` will return all national level rows and all North
-#' East rows. Specific locations are required to be supplied in the format
+#' The user can supply a **single string** containing the desired geographic level (e.g. `"NAT"`,
+#' `"REG"`, `"LA"`) or a specific location (e.g. `"NAT|code|E92000001"`, `"REG|code|E12000001"`)
+#' and the query will search for rows at that single level or location.
+#'
+#' Specific locations are required to be supplied in the format
 #' `"location_level|location_id_type|location_id"`, where location_id_type can be either code or id
 #' and the corresponding location_id is then the standard ONS code or the sqid given in the meta
 #' data respectively. Using England as an example, these would be:
 #'   - `"NAT|code|E92000001"`
 #'   - `"NAT|id|dP0Zw"`
 #'
-#' If you require a more complex selection, for example all LAs in a given region, then a data
-#' frame should be supplied, with a row for each selection. Note however, that this will only work
-#' when using the default `POST` method. The `GET` method is much more limited and can not process
-#' more complex queries.
+#' Using a **vector** will run a query returning **any** rows meeting any of the given geographies,
+#' i.e. geographies = `c("NAT", "REG")` will return all national and regional level rows, whilst
+#' `c("NAT", "REG|code|E120000001")` will return all national level rows and all North
+#' East rows.
+#'
+#' If you require a more complex selection, for example all LAs in a given region, then a **data
+#' frame** should be supplied, with a row for each selection. Note however, that this will works
+#' best when using the default `POST` method. The `GET` method is much more limited and may
+#' struggle to process more complex queries.
 #'
 #' The geography query data frame should contain the following columns:
 #'   - geographic_level: the geographic level to return (e.g. LA in the example above).
@@ -52,10 +58,14 @@
 #'   - location_id_type: "code" or "id".
 #'   - location_id: the code or id (sqid) for the search location (e.g. the code or sqid of the
 #'   region in the above example).
-#'
+
 #' Further rows can be added to add other geography searches to include in results.
 #'
 #' An example of a working geographies data frame can be obtained using `example_geography_query()`.
+#'
+#' A **list** object will also be understood, provided it only contains the named items
+#' `geographic_level` and / or `location`. This are defined similarly to the vector form above:
+#'   - `list(geographic_level=c("REG", "LA"), location = c("REG|code|E12000001")`
 #'
 #' ## filter_items
 #'
@@ -118,7 +128,7 @@
 #'   example_id(group = "attendance"),
 #'   indicators = example_id("indicator", group = "attendance"),
 #'   time_periods = example_id("time_period", group = "attendance"),
-#'   geographies = example_id("location_code", group = "attendance"),
+#'   geographies = c("NAT|code|E92000001", "REG|code|E12000001"),
 #'   filter_items = example_id("filter_item", group = "attendance"),
 #'   page = 1,
 #'   page_size = 32
@@ -130,7 +140,7 @@
 #'   example_id(group = "attendance"),
 #'   indicators = example_id("indicator", group = "attendance"),
 #'   time_periods = example_id("time_period", group = "attendance"),
-#'   geographies = c("NAT"),
+#'   geographies = "NAT",
 #'   filter_items = example_id("filter_items_short", group = "attendance")
 #' )
 #'
@@ -138,12 +148,14 @@
 #' #   - England
 #' #   - Yorkshire and the Humber
 #' #   - All LAs in Yorkshire and the Humber
-#' example_geography_query("nat_yorks_yorkslas")
 #' query_dataset(
 #'   example_id(group = "attendance"),
 #'   indicators = example_id("indicator", group = "attendance"),
 #'   time_periods = example_id("time_period", group = "attendance"),
-#'   geographies = example_geography_query("nat_yorks_yorkslas"),
+#'   geographies = data.frame(
+#'     geographic_level = c("NAT", "REG", "LA"),
+#'     location = c("NAT|code|E92000001", "REG|code|E12000003", "REG|code|E12000003")
+#'   ),
 #'   filter_items = example_id("filter_item", group = "attendance")
 #' )
 #'
@@ -151,7 +163,7 @@
 #' query_dataset(
 #'   example_id(),
 #'   method = "GET",
-#'   geographies = list(geographic_level = c("NAT")),
+#'   geographies = "NAT",
 #'   filter_items = example_id("filter_item"),
 #'   indicators = example_id("indicator"),
 #'   page = 1,
