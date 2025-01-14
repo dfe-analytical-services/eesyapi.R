@@ -10,14 +10,10 @@
 #' @export
 #'
 #' @examples
-#' parse_todf_geographies(c("NAT", "REG")) |>
-#'   cat()
-#' parse_todf_geographies(c("NAT|id|dP0Zw", "REG|id|rg3Nj")) |>
-#'   cat()
-#' parse_todf_geographies(c("NAT|id|dP0Zw", "REG")) |>
-#'   cat()
-#' parse_todf_geographies(c("NAT|id|dP0Zw", "REG")) |>
-#'   cat()
+#' parse_todf_geographies(c("NAT", "REG"))
+#' parse_todf_geographies(c("NAT|id|dP0Zw", "REG|id|rg3Nj"))
+#' parse_todf_geographies(c("NAT|id|dP0Zw", "REG"))
+#' parse_todf_geographies(c("NAT", "REG|id|rg3Nj"))
 parse_todf_geographies <- function(geographies) {
   standard_columns <- c(
     "geographic_level",
@@ -40,7 +36,7 @@ parse_todf_geographies <- function(geographies) {
         ) |>
         dplyr::rename(geographic_level = "V1") |>
         dplyr::distinct()
-    } else {
+    } else if (ncol(geographies) == 3) {
       geographies <- geographies |>
         dplyr::rename(location_level = "V1", location_id_type = "V2", location_id = "V3") |>
         dplyr::mutate(
@@ -51,6 +47,14 @@ parse_todf_geographies <- function(geographies) {
             )
           )|>
         dplyr::distinct()
+    } else {
+      stop(
+        paste(
+          "Geographies should contain either",
+          "geographic_levels in the format \"NAT\", \"REG\", etc or",
+          "locations in the format \"NAT|code|E92000001\", \"NAT|id|dP0Zw\", etc)"
+          )
+      )
     }
   } else if (is.data.frame(geographies)) {
     if (
