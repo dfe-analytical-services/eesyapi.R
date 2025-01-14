@@ -34,13 +34,24 @@ parse_todf_geographies <- function(geographies) {
     if (ncol(geographies) == 1) {
       geographies <- geographies |>
         dplyr::mutate(
-          V2 = "",
-          V3 = ""
-        )
+          location_level = "",
+          location_id_type = "",
+          location_id = ""
+        ) |>
+        dplyr::rename(geographic_level = "V1") |>
+        dplyr::distinct()
+    } else {
+      geographies <- geographies |>
+        dplyr::rename(location_level = "V1", location_id_type = "V2", location_id = "V3") |>
+        dplyr::mutate(
+          geographic_level = location_level,
+          location_level = dplyr::case_when(
+            location_id_type == "" & location_id == "" ~ "",
+            .default = location_level
+            )
+          )|>
+        dplyr::distinct()
     }
-    geographies <- geographies |>
-      dplyr::rename(location_level = "V1", location_id_type = "V2", location_id = "V3") |>
-      dplyr::mutate(geographic_level = !!rlang::sym("location_level"))
   } else if (is.data.frame(geographies)) {
     if (
       all(
@@ -61,7 +72,7 @@ parse_todf_geographies <- function(geographies) {
         dplyr::mutate(
           location_level = "",
           location_id_type = "",
-          location_id = !!rlang::sym("geographic_level")
+          location_id = ""
         )
     } else {
       stop("Invalid geographies data-frame provided - please check the geographies guide.")

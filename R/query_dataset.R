@@ -221,26 +221,32 @@ query_dataset <- function(
         )
       )
     }
+    print(geographies)
     if (any(geographies$geographic_level != "")) {
-      geographic_levels <- geographies$geographic_level |>
-        dplyr::unique() |>
-        dplyr::filter(geographic_level != "")
+      geographic_levels <- geographies |>
+        dplyr::distinct() |>
+        dplyr::filter(geographic_level != "") |>
+        dplyr::pull(geographic_level)
     } else {
       geographic_levels <- NULL
     }
     geographies <- geographies |>
       dplyr::mutate(
-        locations = paste0(location_level, "|", location_id_type, "|", location_id)
+        locations = paste0(location_level, "|", location_id_type, "|", location_id),
+        locations = stringr::str_replace_all(locations, "\\|\\|", "")
       )
     if (any(geographies$locations != "")) {
-      locations <- geographies$locations |>
-        dplyr::unique() |>
-        dplyr::filter(locations != "")
+      locations <- geographies |>
+        dplyr::distinct() |>
+        dplyr::filter(locations != "") |>
+        dplyr::pull("locations")
     } else {
       locations <- NULL
     }
+    message(paste("geographic_levels: ", paste0(geographic_levels, collapse = ",")))
+    message(paste("locations: ", paste0(locations, collapse = ",")))
     # Now run the GET query
-    eesyapi::get_dataset(
+    get_dataset(
       dataset_id = dataset_id,
       indicators = indicators,
       time_periods = time_periods,
