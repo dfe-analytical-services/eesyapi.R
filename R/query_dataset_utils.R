@@ -1,12 +1,13 @@
-#' Parse geographies for data set query
+#' Standardise geography inputs
 #'
 #' @description
-#' Create a json query sub-string based on location constraints
+#' Create a standard data frame containing geographic_level and location for use by
+#' query_dataset().
 #'
-#' @param geographies String, vector or data frame containing the geographic levels and
+#' @param geographies String, vector, list or data frame containing the geographic levels and
 #' locations to be queried.
 #'
-#' @return String containing json form query for geographies
+#' @return data.frame containing standardised geography specification
 #'
 #' @keywords internal
 #'

@@ -2,19 +2,20 @@
 % Please edit documentation in R/query_dataset_utils.R
 \name{todf_geographies}
 \alias{todf_geographies}
-\title{Parse geographies for data set query}
+\title{Standardise geography inputs}
 \usage{
 todf_geographies(geographies)
 }
 \arguments{
-\item{geographies}{String, vector or data frame containing the geographic levels and
+\item{geographies}{String, vector, list or data frame containing the geographic levels and
 locations to be queried.}
 }
 \value{
-String containing json form query for geographies
+data.frame containing standardised geography specification
 }
 \description{
-Create a json query sub-string based on location constraints
+Create a standard data frame containing geographic_level and location for use by
+query_dataset().
 }
 \examples{
 eesyapi:::todf_geographies(c("NAT", "REG"))

@@ -110,9 +110,9 @@ i.e. geographies = \code{c("NAT", "REG")} will return all national and regional 
 East rows.
 
 If you require a more complex selection, for example all LAs in a given region, then a \strong{data
-frame} should be supplied, with a row for each selection. Note however, that this will works best
-when using the default \code{POST} method. The \code{GET} method is much more limited and may struggle to
-process more complex queries.
+frame} should be supplied, with a row for each selection. Note however, that this will works
+best when using the default \code{POST} method. The \code{GET} method is much more limited and may
+struggle to process more complex queries.
 
 The geography query data frame should contain the following columns:
 \itemize{
