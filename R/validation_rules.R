@@ -4,10 +4,11 @@
 #' "prod"
 #'
 #' @return NULL
-#' @export
+#'
+#' @keywords internal
 #'
 #' @examples
-#' validate_ees_environment("prod")
+#' eesyapi:::validate_ees_environment("prod")
 validate_ees_environment <- function(ees_environment) {
   if (!(ees_environment %in% c("dev", "test", "preprod", "prod"))) {
     stop(
@@ -24,10 +25,11 @@ validate_ees_environment <- function(ees_environment) {
 #' @param api_version Variable containing the api_version
 #'
 #' @return NULL
-#' @export
+#'
+#' @keywords internal
 #'
 #' @examples
-#' validate_api_version(1.0)
+#' eesyapi:::validate_api_version(1.0)
 validate_api_version <- function(api_version) {
   if (grepl("[a-z_%+-]", as.character(api_version), ignore.case = TRUE)) {
     stop(
@@ -65,10 +67,11 @@ validate_endpoint <- function(endpoint) {
 #' @inheritParams api_url_query
 #'
 #' @return NULL
-#' @export
+#'
+#' @keywords internal
 #'
 #' @examples
-#' validate_time_periods(c("2023|AY", "2024|AY"))
+#' eesyapi:::validate_time_periods(c("2023|AY", "2024|AY"))
 validate_time_periods <- function(time_periods) {
   time_pipes <- time_periods |>
     stringr::str_replace_all("[a-zA-Z0-9]", "")
@@ -91,10 +94,11 @@ validate_time_periods <- function(time_periods) {
 #' @param verbose Run in verbose mode
 #'
 #' @return NULL
-#' @export
+#'
+#' @keywords internal
 #'
 #' @examples
-#' validate_ees_id(example_id("publication"), level = "publication")
+#' eesyapi:::validate_ees_id(example_id("publication"), level = "publication")
 validate_ees_id <- function(element_id, level = "publication", verbose = FALSE) {
   if (!(level %in% c("publication", "dataset", "location", "filter_item", "indicator"))) {
     stop(
@@ -134,7 +138,7 @@ validate_ees_id <- function(element_id, level = "publication", verbose = FALSE) 
     element_id <- data.frame(location_id = element_id) |>
       dplyr::mutate(location_id_type = "id")
   }
-  example_id_string <- eesyapi::example_id(level, group = "attendance")
+  example_id_string <- example_id(level, group = "attendance")
   if (any(grepl("location", level))) {
     example_id_string <- example_id_string |>
       stringr::str_split("\\|", simplify = TRUE) |>
@@ -198,10 +202,11 @@ validate_ees_id <- function(element_id, level = "publication", verbose = FALSE) 
 #' @param filter_type type of filter being queried: "time_periods", "geographic_levels",
 #'
 #' @return NULL
-#' @export
+#'
+#' @keywords internal
 #'
 #' @examples
-#' validate_ees_filter_type("time_periods")
+#' eesyapi:::validate_ees_filter_type("time_periods")
 validate_ees_filter_type <- function(filter_type) {
   if (!(filter_type %in% c("time_periods", "geographic_levels", "locations", "filter_items"))) {
     stop(
@@ -220,10 +225,11 @@ validate_ees_filter_type <- function(filter_type) {
 #' @param max Maximum valid page_size for EES API
 #'
 #' @return Logic
-#' @export
+#'
+#' @keywords internal
 #'
 #' @examples
-#' validate_page_size(20)
+#' eesyapi:::validate_page_size(20)
 validate_page_size <- function(page_size, min = 1, max = 40) {
   if (!is.null(page_size)) {
     if (is.numeric(page_size)) {

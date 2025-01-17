@@ -20,3 +20,4 @@ Create json location search string from geographies
 \examples{
 eesyapi:::parse_tojson_location(example_geography_query()) |> cat()
 }
+\keyword{internal}

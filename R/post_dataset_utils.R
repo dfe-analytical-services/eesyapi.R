@@ -253,6 +253,8 @@ parse_tojson_filter_eq <- function(items, filter_type = "filter_items") {
 #'
 #' @return String containing json form query for geographies
 #'
+#' @keywords internal
+#'
 #' @examples
 #' eesyapi:::parse_tojson_geographies(c("NAT", "REG")) |>
 #'   cat()
@@ -291,6 +293,8 @@ parse_tojson_geographies <- function(geographies) {
 #' @param include_comma Include a comma before return strings (logical)
 #'
 #' @return Vector of strings containing json location search string
+#'
+#' @keywords internal
 #'
 #' @examples
 #' eesyapi:::parse_tojson_location(example_geography_query()) |> cat()

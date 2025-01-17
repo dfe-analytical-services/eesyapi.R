@@ -10,10 +10,11 @@
 #' @param filter_items Filter items required as a string or vector of strings
 #'
 #' @return String containing data query string to append to GET data query URL
-#' @export
+#'
+#' @keywords internal
 #'
 #' @examples
-#' api_url_query(example_id("indicator"))
+#' eesyapi:::api_url_query(example_id("indicator"))
 api_url_query <- function(
     indicators,
     time_periods = NULL,
@@ -24,37 +25,37 @@ api_url_query <- function(
   if (is.null(indicators)) {
     stop("The keyword indicators must be supplied")
   }
-  eesyapi::validate_ees_id(indicators, level = "indicator")
+  validate_ees_id(indicators, level = "indicator")
   # Create the appropriate query strings for each level provided
   if (!is.null(time_periods)) {
-    query_time_periods <- eesyapi::parse_tourl_filter_in(time_periods, "time_periods")
+    query_time_periods <- parse_tourl_filter_in(time_periods, "time_periods")
   }
   if (!is.null(geographic_levels)) {
-    query_geographic_levels <- eesyapi::parse_tourl_filter_in(
+    query_geographic_levels <- parse_tourl_filter_in(
       geographic_levels,
       filter_type = "geographic_levels"
     )
   }
   if (!is.null(locations)) {
-    eesyapi::validate_ees_id(locations, level = "location")
-    query_locations <- eesyapi::parse_tourl_filter_in(locations, filter_type = "locations")
+    validate_ees_id(locations, level = "location")
+    query_locations <- parse_tourl_filter_in(locations, filter_type = "locations")
   }
   if (!is.null(filter_items)) {
     # Note the idea below was to differentiate the logic between AND / OR based on whether
     # a list of vectors is provided or a single vector. Due to limitations with GET, this
     # set up doesn't make a blind bit of difference to the result, the query just performs
     # an OR combination regardless.
-    eesyapi::validate_ees_id(filter_items, level = "filter_item")
+    validate_ees_id(filter_items, level = "filter_item")
     if (filter_items |> typeof() == "list") {
       query_filter_items <- ""
       for (filter_set in filter_items) {
         query_filter_items <- paste0(
           query_filter_items,
-          eesyapi::parse_tourl_filter_in(filter_set, filter_type = "filter_items")
+          parse_tourl_filter_in(filter_set, filter_type = "filter_items")
         )
       }
     } else {
-      query_filter_items <- eesyapi::parse_tourl_filter_in(
+      query_filter_items <- parse_tourl_filter_in(
         filter_items,
         filter_type = "filter_items"
       )

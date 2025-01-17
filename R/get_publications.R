@@ -13,9 +13,9 @@ get_publications <- function(
     page_size = 40,
     page = NULL,
     verbose = FALSE) {
-  eesyapi::validate_page_size(page_size)
+  validate_page_size(page_size)
   response <- httr::GET(
-    eesyapi::api_url(
+    api_url(
       ees_environment = ees_environment,
       api_version = api_version,
       page_size = page_size,
@@ -30,7 +30,7 @@ get_publications <- function(
     if (response$paging$totalPages > 1) {
       for (page in c(2:response$paging$totalPages)) {
         response_page <- httr::GET(
-          eesyapi::api_url(
+          api_url(
             ees_environment = ees_environment,
             api_version = api_version,
             page_size = page_size,
@@ -45,6 +45,6 @@ get_publications <- function(
       }
     }
   }
-  response |> eesyapi::warning_max_pages()
+  response |> warning_max_pages()
   return(response$results)
 }

@@ -20,5 +20,6 @@ Outputs a URL query string containing timePeriods.in=..., geographicLevels.in=..
 use with querying a data set via GET.
 }
 \examples{
-parse_tourl_filter_in(c("2024|W11", "2024|W12"), filter_type = "time_periods")
+eesyapi:::parse_tourl_filter_in(c("2024|W11", "2024|W12"), filter_type = "time_periods")
 }
+\keyword{internal}

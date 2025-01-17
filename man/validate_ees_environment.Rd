@@ -14,5 +14,6 @@ validate_ees_environment(ees_environment)
 Validate EES environment
 }
 \examples{
-validate_ees_environment("prod")
+eesyapi:::validate_ees_environment("prod")
 }
+\keyword{internal}

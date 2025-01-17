@@ -19,34 +19,8 @@ reference:
   desc: These functions are helpful for deriving urls and handling HTTP responses and are used widely by the API workflow functions.
   contents:
   - starts_with("api_url")
-  - http_request_error
-  - convert_api_filter_type
-  - parse_tourl_filter_in
-  - starts_with("parse_tojson")
-
-- title: Support for handling meta data from the API
-  desc: These functions are used by `get_meta()` and included here for completeness.
-  contents:
-  - get_meta_response
-  - starts_with("parse_meta_")
-
-- title: Support for handling data sets from the API
-  desc: These functions are used by `get_meta()` and included here for completeness.
-  contents:
-  - parse_api_dataset
-  - starts_with("parse_sqid")
 
 - title: Generate example IDs and data
   desc: These functions are used widely to create working example code and tests
   contents:
   - starts_with("example")
-
-- title: Validation functions
-  desc: These functions are used across the package to validate elements being passed as part of an API url or query.
-  contents:
-  - starts_with("validate_")
-
-- title: Warning functions
-  desc: These functions are used across the package to flag potential issues in data retrieval from the API (may switch to these being non-exported functions in the future).
-  contents:
-  - starts_with("warning_")

@@ -15,11 +15,11 @@ get_data_catalogue <- function(
     page = NULL,
     verbose = FALSE) {
   # Validate input parameters
-  eesyapi::validate_ees_id(publication_id)
-  eesyapi::validate_page_size(page_size)
+  validate_ees_id(publication_id)
+  validate_page_size(page_size)
   # Send the GET call to the API
   response <- httr::GET(
-    eesyapi::api_url(
+    api_url(
       endpoint = "get-data-catalogue",
       publication_id = publication_id,
       ees_environment = ees_environment,
@@ -36,7 +36,7 @@ get_data_catalogue <- function(
     if (response$paging$totalPages > 1) {
       for (page in c(2:response$paging$totalPages)) {
         response_page <- httr::GET(
-          eesyapi::api_url(
+          api_url(
             endpoint = "get-data-catalogue",
             publication_id = publication_id,
             ees_environment = ees_environment,
@@ -54,6 +54,6 @@ get_data_catalogue <- function(
     }
   }
   # Check that the query hasn't tried to retrieve results beyond the final page of results
-  response |> eesyapi::warning_max_pages()
+  response |> warning_max_pages()
   return(response$results)
 }

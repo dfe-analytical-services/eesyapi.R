@@ -9,15 +9,16 @@
 #' "locations" or "filter_items"
 #'
 #' @return Query string for use in URL based API queries
-#' @export
+#'
+#' @keywords internal
 #'
 #' @examples
-#' parse_tourl_filter_in(c("2024|W11", "2024|W12"), filter_type = "time_periods")
+#' eesyapi:::parse_tourl_filter_in(c("2024|W11", "2024|W12"), filter_type = "time_periods")
 parse_tourl_filter_in <- function(
     items,
     filter_type) {
-  eesyapi::validate_ees_filter_type(filter_type)
-  type_string <- eesyapi::convert_api_filter_type(filter_type)
+  validate_ees_filter_type(filter_type)
+  type_string <- convert_api_filter_type(filter_type)
   if (!is.null(items)) {
     if (filter_type %in% c("time_period", "locations")) {
       items <- gsub("\\|", "%7C", items)

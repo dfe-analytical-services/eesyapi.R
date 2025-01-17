@@ -67,10 +67,10 @@ preview_dataset <- function(
     }
   }
 
-  eesyapi::validate_ees_id(dataset_id, level = "dataset")
+  validate_ees_id(dataset_id, level = "dataset")
 
   # Generate query ------------------------------------------------------------
-  query_url <- eesyapi::api_url(
+  query_url <- api_url(
     endpoint = "get-csv",
     dataset_id = dataset_id,
     verbose = verbose
@@ -83,7 +83,7 @@ preview_dataset <- function(
     httr2::request() |>
     httr2::req_perform()
 
-  eesyapi::http_request_error(response, verbose = verbose)
+  http_request_error(response, verbose = verbose)
 
   # Read in the CSV -----------------------------------------------------------
   toggle_message("Reading response...", verbose = verbose)

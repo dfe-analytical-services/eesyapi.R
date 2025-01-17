@@ -18,6 +18,7 @@ Data frame containing location item codes matched
 Parse API meta to give the locations
 }
 \examples{
-get_meta_response(example_id())$locations |>
-  parse_meta_location_ids()
+eesyapi:::get_meta_response(example_id())$locations |>
+  eesyapi:::parse_meta_location_ids()
 }
+\keyword{internal}

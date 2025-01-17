@@ -91,7 +91,7 @@ api_url <- function(
 
   # Check that if endpoint requires a data set then dataset_id is not null
   if (endpoint %in% c("get-summary", "get-meta", "get-csv", "get-data", "post-data")) {
-    eesyapi::validate_ees_id(dataset_id, level = "dataset")
+    validate_ees_id(dataset_id, level = "dataset")
     if (is_valid_dataset_info(dataset_id, dataset_version) == FALSE) {
       stop(
         paste(
@@ -124,7 +124,7 @@ api_url <- function(
     url <- paste0(
       endpoint_base_version,
       "publications?",
-      eesyapi::api_url_pages(page_size = page_size, page = page)
+      api_url_pages(page_size = page_size, page = page)
     )
   } else if (endpoint == "get-data-catalogue") {
     url <- paste0(
@@ -132,7 +132,7 @@ api_url <- function(
       "publications/",
       publication_id,
       "/data-sets?",
-      eesyapi::api_url_pages(page_size = page_size, page = page)
+      api_url_pages(page_size = page_size, page = page)
     )
   } else {
     url <- paste0(
@@ -173,7 +173,7 @@ api_url <- function(
       }
       url <- url |>
         paste0(
-          eesyapi::api_url_query(
+          api_url_query(
             indicators = indicators,
             time_periods = time_periods,
             geographic_levels = geographic_levels,
@@ -182,7 +182,7 @@ api_url <- function(
           ),
           ifelse(
             !is.null(page) & !is.null(page_size),
-            paste0("&", eesyapi::api_url_pages(page_size = page_size, page = page)),
+            paste0("&", api_url_pages(page_size = page_size, page = page)),
             ""
           )
         )

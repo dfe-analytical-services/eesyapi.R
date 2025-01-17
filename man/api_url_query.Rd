@@ -30,5 +30,6 @@ String containing data query string to append to GET data query URL
 Generates the query code to append to the base API query URL for use by query_dataset_get().
 }
 \examples{
-api_url_query(example_id("indicator"))
+eesyapi:::api_url_query(example_id("indicator"))
 }
+\keyword{internal}

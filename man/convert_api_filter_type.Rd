@@ -19,8 +19,9 @@ filters to what is used by analysts within data files. The function just convert
 from the file versions to the API versions.
 }
 \examples{
-convert_api_filter_type("filter_items")
-convert_api_filter_type("geographic_levels")
-convert_api_filter_type("locations")
-convert_api_filter_type("filter_items")
+eesyapi:::convert_api_filter_type("filter_items")
+eesyapi:::convert_api_filter_type("geographic_levels")
+eesyapi:::convert_api_filter_type("locations")
+eesyapi:::convert_api_filter_type("filter_items")
 }
+\keyword{internal}

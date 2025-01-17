@@ -26,3 +26,4 @@ eesyapi:::parse_tojson_geographies(c("NAT|id|dP0Zw", "REG")) |>
 eesyapi:::parse_tojson_geographies(c("NAT|id|dP0Zw", "REG")) |>
   cat()
 }
+\keyword{internal}

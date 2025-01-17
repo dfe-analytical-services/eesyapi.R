@@ -45,10 +45,11 @@ get_meta <- function(
 #' @param parse Parse result into structured list
 #'
 #' @return Results of query to API meta data endpoint
-#' @export
+#'
+#' @keywords internal
 #'
 #' @examples
-#' get_meta_response(example_id())
+#' eesyapi:::get_meta_response(example_id())
 get_meta_response <- function(
     dataset_id,
     dataset_version = NULL,
@@ -66,7 +67,7 @@ get_meta_response <- function(
   # Use eesyapi_url to retrieve the relevant api url - note that this will perform
   # validation checks on dataset_id, dataset_version and api_version, so haven't
   # added any explicit validation of those to the current function.
-  meta_url <- eesyapi::api_url(
+  meta_url <- api_url(
     endpoint = "get-meta",
     dataset_id = dataset_id,
     dataset_version = dataset_version,
@@ -75,7 +76,7 @@ get_meta_response <- function(
   )
 
   response <- httr::GET(meta_url)
-  eesyapi::http_request_error(response)
+  http_request_error(response)
   if (parse) {
     result <- response |>
       httr::content("text") |>
@@ -92,11 +93,12 @@ get_meta_response <- function(
 #' @param api_meta_time_periods Time periods information provided by the API output
 #'
 #' @return Data frame containing location item codes matched
-#' @export
+#'
+#' @keywords internal
 #'
 #' @examples
-#' get_meta_response(example_id())$timePeriods |>
-#'   parse_meta_time_periods()
+#' eesyapi:::get_meta_response(example_id())$timePeriods |>
+#'   eesyapi:::parse_meta_time_periods()
 parse_meta_time_periods <- function(api_meta_time_periods,
                                     verbose = FALSE) {
   if (!("code" %in% names(api_meta_time_periods))) {
@@ -117,11 +119,12 @@ parse_meta_time_periods <- function(api_meta_time_periods,
 #' @param api_meta_locations Locations information provided by the API output
 #'
 #' @return Data frame containing location item codes matched
-#' @export
+#'
+#' @keywords internal
 #'
 #' @examples
-#' get_meta_response(example_id())$locations |>
-#'   parse_meta_location_ids()
+#' eesyapi:::get_meta_response(example_id())$locations |>
+#'   eesyapi:::parse_meta_location_ids()
 parse_meta_location_ids <- function(api_meta_locations,
                                     verbose = FALSE) {
   nlevels <- nrow(api_meta_locations$level)
@@ -158,11 +161,12 @@ parse_meta_location_ids <- function(api_meta_locations,
 #' @param api_meta_filters Filter information provided by the API output
 #'
 #' @return data frame containing column names and labels
-#' @export
+#'
+#' @keywords internal
 #'
 #' @examples
-#' get_meta_response(example_id())$filters |>
-#'   parse_meta_filter_columns()
+#' eesyapi:::get_meta_response(example_id())$filters |>
+#'   eesyapi:::parse_meta_filter_columns()
 parse_meta_filter_columns <- function(api_meta_filters,
                                       verbose = FALSE) {
   data.frame(
@@ -178,11 +182,12 @@ parse_meta_filter_columns <- function(api_meta_filters,
 #' @param api_meta_filters Filter information provided by the API output
 #'
 #' @return Data frame containing filter item codes matched to filter item labels and col_name
-#' @export
+#'
+#' @keywords internal
 #'
 #' @examples
-#' get_meta_response(example_id())$filters |>
-#'   parse_meta_filter_item_ids()
+#' eesyapi:::get_meta_response(example_id())$filters |>
+#'   eesyapi:::parse_meta_filter_item_ids()
 parse_meta_filter_item_ids <- function(api_meta_filters,
                                        verbose = FALSE) {
   nfilters <- length(api_meta_filters$id)

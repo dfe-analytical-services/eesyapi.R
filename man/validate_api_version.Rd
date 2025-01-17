@@ -13,5 +13,6 @@ validate_api_version(api_version)
 Validate API version
 }
 \examples{
-validate_api_version(1.0)
+eesyapi:::validate_api_version(1.0)
 }
+\keyword{internal}

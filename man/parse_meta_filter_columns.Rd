@@ -18,6 +18,7 @@ data frame containing column names and labels
 Parse API meta to give the filter columns
 }
 \examples{
-get_meta_response(example_id())$filters |>
-  parse_meta_filter_columns()
+eesyapi:::get_meta_response(example_id())$filters |>
+  eesyapi:::parse_meta_filter_columns()
 }
+\keyword{internal}

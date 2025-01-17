@@ -23,5 +23,6 @@ into the data creators' column names based on the meta data stored on the API fo
 \examples{
 example_data_raw(group = "attendance") |>
   magrittr::use_series("values") |>
-  parse_sqids_indicators(get_meta(example_id(group = "attendance")))
+  eesyapi:::parse_sqids_indicators(get_meta(example_id(group = "attendance")))
 }
+\keyword{internal}

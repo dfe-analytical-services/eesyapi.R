@@ -13,5 +13,6 @@ validate_time_periods(time_periods)
 Validate time periods
 }
 \examples{
-validate_time_periods(c("2023|AY", "2024|AY"))
+eesyapi:::validate_time_periods(c("2023|AY", "2024|AY"))
 }
+\keyword{internal}
