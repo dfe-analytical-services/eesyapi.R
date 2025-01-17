@@ -155,7 +155,7 @@
 #'   time_periods = example_id("time_period", group = "attendance"),
 #'   geographies = data.frame(
 #'     geographic_level = c("NAT", "REG", "LA"),
-#'     location = c("NAT|code|E92000001", "REG|code|E12000003", "REG|code|E12000003")
+#'     locations = c("NAT|code|E92000001", "REG|code|E12000003", "REG|code|E12000003")
 #'   ),
 #'   filter_items = example_id("filter_item", group = "attendance")
 #' )

@@ -18,16 +18,16 @@
 #' eesyapi:::todf_geographies(
 #'   list(
 #'     geographic_level = c("REG", "LA"),
-#'     location = c("REG|code|E12000001")
+#'     locations = c("REG|code|E12000001")
 #'   )
 #' )
 #' eesyapi:::todf_geographies(
-#'   data.frame(location = c("REG|code|E12000001", "REG|code|E12000001"))
+#'   data.frame(locations = c("REG|code|E12000001", "REG|code|E12000001"))
 #' )
 #' eesyapi:::todf_geographies(
 #'   data.frame(
 #'     geographic_level = c("REG", "LA"),
-#'     location = c("REG|code|E12000001", "REG|code|E12000001")
+#'     locations = c("REG|code|E12000001", "REG|code|E12000001")
 #'   )
 #' )
 #' eesyapi:::todf_geographies(
@@ -37,10 +37,10 @@ todf_geographies <- function(geographies) {
   if (is.null(geographies)) {
     return(NULL)
   } else if (is.data.frame(geographies)) {
-    if ("location" %in% names(geographies)) {
+    if ("locations" %in% names(geographies)) {
       geographies <- geographies |>
         tidyr::separate_wider_delim(
-          "location",
+          "locations",
           "|",
           names = c("location_level", "location_id_type", "location_id")
         )
@@ -70,7 +70,7 @@ todf_geographies <- function(geographies) {
       stop("Invalid geographies data-frame provided - please check the geographies guide.")
     }
   } else if (is.list(geographies)) {
-    if (any(!(names(geographies) %in% c("geographic_level", "location")))) {
+    if (any(!(names(geographies) %in% c("geographic_level", "locations")))) {
       stop(
         paste(
           "Input geographies list should contain only \"geographic_level\" and / or ",
@@ -78,8 +78,9 @@ todf_geographies <- function(geographies) {
         )
       )
     }
-    if ("location" %in% names(geographies)) {
-      locations <- geographies$location |>
+    if ("locations" %in% names(geographies)) {
+      locations <- geographies|>
+        magrittr::extract2("locations") |>
         stringr::str_split("\\|", simplify = TRUE) |>
         as.data.frame() |>
         dplyr::rename(location_level = "V1", location_id_type = "V2", location_id = "V3") |>
