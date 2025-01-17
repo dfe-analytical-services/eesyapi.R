@@ -48,7 +48,7 @@
 #' East rows.
 #'
 #' If you require a more complex selection, for example all LAs in a given region, then a **data
-#' frame** should be supplied, with a row for each selection. Note however, that this will works
+#' frame** should be supplied, with a row for each selection. Note however, that this will work
 #' best when using the default `POST` method. The `GET` method is much more limited and may
 #' struggle to process more complex queries.
 #'
@@ -135,13 +135,14 @@
 #' )
 #'
 #' # Run query_dataset() using set parameters giving a combination of filter options
-#' example_id("filter_items_short", group = "attendance")
+#' example_filter_list_input <- example_id("filter_items_short", group = "attendance")
+#' print(example_filter_list_input)
 #' query_dataset(
 #'   example_id(group = "attendance"),
 #'   indicators = example_id("indicator", group = "attendance"),
 #'   time_periods = example_id("time_period", group = "attendance"),
 #'   geographies = "NAT",
-#'   filter_items = example_id("filter_items_short", group = "attendance")
+#'   filter_items = example_filter_list_input
 #' )
 #'
 #' # Run a query with a more complex geography selection. Return data for all of:
