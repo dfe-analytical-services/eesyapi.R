@@ -24,16 +24,16 @@ eesyapi:::todf_geographies(c("NAT|code|E92000001", "REG"))
 eesyapi:::todf_geographies(
   list(
     geographic_level = c("REG", "LA"),
-    location = c("REG|code|E12000001")
+    locations = c("REG|code|E12000001")
   )
 )
 eesyapi:::todf_geographies(
-  data.frame(location = c("REG|code|E12000001", "REG|code|E12000001"))
+  data.frame(locations = c("REG|code|E12000001", "REG|code|E12000001"))
 )
 eesyapi:::todf_geographies(
   data.frame(
     geographic_level = c("REG", "LA"),
-    location = c("REG|code|E12000001", "REG|code|E12000001")
+    locations = c("REG|code|E12000001", "REG|code|E12000001")
   )
 )
 eesyapi:::todf_geographies(

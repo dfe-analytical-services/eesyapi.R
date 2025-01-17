@@ -110,7 +110,7 @@ i.e. geographies = \code{c("NAT", "REG")} will return all national and regional 
 East rows.
 
 If you require a more complex selection, for example all LAs in a given region, then a \strong{data
-frame} should be supplied, with a row for each selection. Note however, that this will works
+frame} should be supplied, with a row for each selection. Note however, that this will work
 best when using the default \code{POST} method. The \code{GET} method is much more limited and may
 struggle to process more complex queries.
 
@@ -129,7 +129,7 @@ An example of a working geographies data frame can be obtained using \code{examp
 A \strong{list} object will also be understood, provided it only contains the named items
 \code{geographic_level} and / or \code{location}. This are defined similarly to the vector form above:
 \itemize{
-\item \verb{list(geographic_level=c("REG", "LA"), location = c("REG|code|E12000001")}
+\item \verb{list(geographic_level=c("REG", "LA"), locations = c("REG|code|E12000001")}
 }
 }
 
@@ -196,13 +196,14 @@ query_dataset(
 )
 
 # Run query_dataset() using set parameters giving a combination of filter options
-example_id("filter_items_short", group = "attendance")
+example_filter_list_input <- example_id("filter_items_short", group = "attendance")
+print(example_filter_list_input)
 query_dataset(
   example_id(group = "attendance"),
   indicators = example_id("indicator", group = "attendance"),
   time_periods = example_id("time_period", group = "attendance"),
   geographies = "NAT",
-  filter_items = example_id("filter_items_short", group = "attendance")
+  filter_items = example_filter_list_input
 )
 
 # Run a query with a more complex geography selection. Return data for all of:
@@ -215,7 +216,7 @@ query_dataset(
   time_periods = example_id("time_period", group = "attendance"),
   geographies = data.frame(
     geographic_level = c("NAT", "REG", "LA"),
-    location = c("NAT|code|E92000001", "REG|code|E12000003", "REG|code|E12000003")
+    locations = c("NAT|code|E92000001", "REG|code|E12000003", "REG|code|E12000003")
   ),
   filter_items = example_id("filter_item", group = "attendance")
 )

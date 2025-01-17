@@ -65,7 +65,7 @@
 #'
 #' A **list** object will also be understood, provided it only contains the named items
 #' `geographic_level` and / or `location`. This are defined similarly to the vector form above:
-#'   - `list(geographic_level=c("REG", "LA"), location = c("REG|code|E12000001")`
+#'   - `list(geographic_level=c("REG", "LA"), locations = c("REG|code|E12000001")`
 #'
 #' ## filter_items
 #'
