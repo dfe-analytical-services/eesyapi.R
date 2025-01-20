@@ -12,13 +12,14 @@
 #' @param debug Run POST query in debug mode. Logical, default = FALSE
 #'
 #' @return String containing json query body for use with http POST request
-#' @export
+#'
+#' @keywords internal
 #'
 #' @examples
-#' parse_tojson_params(example_id("indicator")) |>
+#' eesyapi:::parse_tojson_params(example_id("indicator")) |>
 #'   cat()
 #'
-#' parse_tojson_params(
+#' eesyapi:::parse_tojson_params(
 #'   example_id("indicator"),
 #'   time_periods = "2024|W23",
 #'   geographies = c("NAT|id|dP0Zw", "REG|id|rg3Nj"),
@@ -30,13 +31,13 @@
 #' #   - England national level data
 #' #   - all LAs in a specified region ("E12000004")
 #' dfgeographies <- data.frame(
-#'   return_level = c("NAT", "LA"),
-#'   search_level = c("NAT", "REG"),
-#'   identifier_type = c("code", "code"),
-#'   identifier = c("E92000001", "E12000004")
+#'   geographic_level = c("NAT", "LA"),
+#'   location_level = c("NAT", "REG"),
+#'   location_id_type = c("code", "code"),
+#'   location_id = c("E92000001", "E12000004")
 #' )
 #'
-#' parse_tojson_params(
+#' eesyapi:::parse_tojson_params(
 #'   example_id("indicator"),
 #'   time_periods = "2024|W23",
 #'   geographies = dfgeographies,
@@ -54,7 +55,7 @@
 #'   education_phase = c("5UNdi", "crH31")
 #' )
 #'
-#' parse_tojson_params(
+#' eesyapi:::parse_tojson_params(
 #'   example_id("indicator"),
 #'   time_periods = "2024|W23",
 #'   geographies = "NAT|code|E92000001",
@@ -89,9 +90,9 @@ parse_tojson_params <- function(
       paste0(
         "\"criteria\": {\n  \"and\": [\n",
         paste(
-          eesyapi::parse_tojson_time_periods(time_periods),
-          eesyapi::parse_tojson_geographies(geographies),
-          eesyapi::parse_tojson_filter(filter_items, filter_type = "filter_items"),
+          parse_tojson_time_periods(time_periods),
+          parse_tojson_geographies(geographies),
+          parse_tojson_filter(filter_items, filter_type = "filter_items"),
           sep = ",\n"
         ) |>
           stringr::str_replace_all(",\\n,\\n,\\n|,\\n,\\n", ",\\\n") |>
@@ -118,12 +119,13 @@ parse_tojson_params <- function(
 #' @inheritParams api_url
 #'
 #' @return String containing json form query for time periods
-#' @export
+#'
+#' @keywords internal
 #'
 #' @examples
-#' parse_tojson_time_periods(c("2023|W25", "2024|W12"))
+#' eesyapi:::parse_tojson_time_periods(c("2023|W25", "2024|W12"))
 parse_tojson_time_periods <- function(time_periods) {
-  eesyapi::validate_time_periods(time_periods)
+  validate_time_periods(time_periods)
   if (!is.null(time_periods)) {
     df_time_periods <- time_periods |>
       stringr::str_split("\\|", simplify = TRUE) |>
@@ -154,10 +156,11 @@ parse_tojson_time_periods <- function(time_periods) {
 #' @inheritParams parse_tourl_filter_in
 #' @return String containing json form query with \"and\"-combination of different filter
 #' selections
-#' @export
+#'
+#' @keywords internal
 #'
 #' @examples
-#' parse_tojson_filter(
+#' eesyapi:::parse_tojson_filter(
 #'   list(
 #'     day_number = c("uLQo4", "qf0jG", "aMjLP"),
 #'     reason = c("bBrtT", "ThjPJ", "hsHyW", "m2m9K"),
@@ -166,7 +169,7 @@ parse_tojson_time_periods <- function(time_periods) {
 #' ) |>
 #'   cat()
 parse_tojson_filter <- function(items, filter_type = "filter_items") {
-  eesyapi::validate_ees_filter_type(filter_type)
+  validate_ees_filter_type(filter_type)
   if (is.list(items)) {
     # If items is a list, then process it as a combination separate "in" queries
     paste0(
@@ -190,14 +193,15 @@ parse_tojson_filter <- function(items, filter_type = "filter_items") {
 #' @inheritParams parse_tourl_filter_in
 #'
 #' @return String containing json form query based on filter-in constraints
-#' @export
+#'
+#' @keywords internal
 #'
 #' @examples
-#' parse_tojson_filter_in(c("NAT", "REG"), filter_type = "geographic_levels")
+#' eesyapi:::parse_tojson_filter_in(c("NAT", "REG"), filter_type = "geographic_levels")
 parse_tojson_filter_in <- function(items, filter_type = "filter_items") {
-  eesyapi::validate_ees_filter_type(filter_type)
+  validate_ees_filter_type(filter_type)
   if (!is.null(items)) {
-    api_filter_type <- eesyapi::convert_api_filter_type(filter_type)
+    api_filter_type <- convert_api_filter_type(filter_type)
     paste0(
       "    {\n      \"",
       api_filter_type,
@@ -218,14 +222,15 @@ parse_tojson_filter_in <- function(items, filter_type = "filter_items") {
 #' @inheritParams parse_tourl_filter_in
 #'
 #' @return String containing json form query based on filter-equal-to constraints
-#' @export
+#'
+#' @keywords internal
 #'
 #' @examples
-#' parse_tojson_filter_eq("NAT", filter_type = "geographic_levels") |> cat()
+#' eesyapi:::parse_tojson_filter_eq("NAT", filter_type = "geographic_levels") |> cat()
 parse_tojson_filter_eq <- function(items, filter_type = "filter_items") {
-  eesyapi::validate_ees_filter_type(filter_type)
+  validate_ees_filter_type(filter_type)
   if (!is.null(items)) {
-    api_filter_type <- eesyapi::convert_api_filter_type(filter_type)
+    api_filter_type <- convert_api_filter_type(filter_type)
     paste0(
       "        {\n          \"",
       api_filter_type,
@@ -247,66 +252,39 @@ parse_tojson_filter_eq <- function(items, filter_type = "filter_items") {
 #' locations to be queried.
 #'
 #' @return String containing json form query for geographies
-#' @export
+#'
+#' @keywords internal
 #'
 #' @examples
-#' parse_tojson_geographies(c("NAT", "REG")) |>
+#' eesyapi:::parse_tojson_geographies(c("NAT", "REG")) |>
 #'   cat()
-#' parse_tojson_geographies(c("NAT|id|dP0Zw", "REG|id|rg3Nj")) |>
+#' eesyapi:::parse_tojson_geographies(c("NAT|id|dP0Zw", "REG|id|rg3Nj")) |>
 #'   cat()
-#' parse_tojson_geographies(c("NAT|id|dP0Zw", "REG")) |>
+#' eesyapi:::parse_tojson_geographies(c("NAT|id|dP0Zw", "REG")) |>
 #'   cat()
-#' parse_tojson_geographies(c("NAT|id|dP0Zw", "REG")) |>
+#' eesyapi:::parse_tojson_geographies(c("NAT|id|dP0Zw", "REG")) |>
 #'   cat()
 parse_tojson_geographies <- function(geographies) {
   if (is.null(geographies)) {
     return(NULL)
-  } else if (is.vector(geographies) || is.character(geographies)) {
-    geographies <- geographies |>
-      stringr::str_split("\\|", simplify = TRUE) |>
-      as.data.frame()
-    if (ncol(geographies) == 1) {
-      geographies <- geographies |>
-        dplyr::mutate(
-          V2 = "",
-          V3 = ""
-        )
-    }
-    geographies <- geographies |>
-      dplyr::rename(search_level = "V1", identifier_type = "V2", identifier = "V3") |>
-      dplyr::mutate(return_level = !!rlang::sym("search_level"))
-  } else if (is.data.frame(geographies)) {
-    if (
-      !all(
-        c(
-          "return_level",
-          "search_level",
-          "identifier_type",
-          "identifier"
-        ) %in%
-          colnames(geographies)
-      )
-    ) {
-      stop("The column \"search_level\" is required in the geographies data frame.")
-    }
   } else {
-    stop("The geographies parameter should be given as either a data frame, vector or string.")
-  }
-  paste0(
-    "    {\n      \"or\": [\n",
+    geographies <- todf_geographies(geographies)
     paste0(
-      "        {\n          \"and\": [\n",
-      parse_tojson_filter_eq(
-        geographies |>
-          dplyr::pull("return_level"),
-        filter_type = "geographic_levels"
+      "    {\n      \"or\": [\n",
+      paste0(
+        "        {\n          \"and\": [\n",
+        parse_tojson_filter_eq(
+          geographies |>
+            dplyr::pull("geographic_level"),
+          filter_type = "geographic_levels"
+        ),
+        parse_tojson_location(geographies, include_comma = TRUE),
+        "\n  ]\n  }",
+        collapse = ",\n"
       ),
-      parse_tojson_location(geographies, include_comma = TRUE),
-      "\n  ]\n  }",
-      collapse = ",\n"
-    ),
-    "\n    ]\n  }"
-  )
+      "\n    ]\n  }"
+    )
+  }
 }
 
 #' Create json location search string from geographies
@@ -315,25 +293,26 @@ parse_tojson_geographies <- function(geographies) {
 #' @param include_comma Include a comma before return strings (logical)
 #'
 #' @return Vector of strings containing json location search string
-#' @export
+#'
+#' @keywords internal
 #'
 #' @examples
-#' parse_tojson_location(example_geography_query()) |> cat()
+#' eesyapi:::parse_tojson_location(example_geography_query()) |> cat()
 parse_tojson_location <- function(geographies, include_comma = FALSE) {
   comma_string <- ifelse(include_comma, ",", "")
   location_json <- geographies |>
     dplyr::mutate(
       location_json = dplyr::if_else(
-        !!rlang::sym("identifier_type") != "",
+        !!rlang::sym("location_id_type") != "",
         paste0(
           comma_string,
           "\n    {\n      \"locations\": {\n        \"in\": [\n",
           "          {\n            \"level\": \"",
-          !!rlang::sym("search_level"),
+          !!rlang::sym("location_level"),
           "\",\n            \"",
-          !!rlang::sym("identifier_type"),
+          !!rlang::sym("location_id_type"),
           "\": \"",
-          !!rlang::sym("identifier"),
+          !!rlang::sym("location_id"),
           "\"\n          }\n        ]\n      }\n    }"
         ),
         ""
@@ -352,13 +331,14 @@ parse_tojson_location <- function(geographies, include_comma = FALSE) {
 #' @param indicators String or vector of strings containing indicator ids
 #'
 #' @return A json query string to select a set of indicators
-#' @export
+#'
+#' @keywords internal
 #'
 #' @examples
-#' parse_tojson_indicators(example_id("indicator")) |>
+#' eesyapi:::parse_tojson_indicators(example_id("indicator")) |>
 #'   cat()
 parse_tojson_indicators <- function(indicators) {
-  eesyapi::validate_ees_id(indicators, level = "indicator")
+  validate_ees_id(indicators, level = "indicator")
   paste0(
     "\n\"indicators\": [\n  \"",
     paste0(

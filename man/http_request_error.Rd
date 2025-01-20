@@ -19,5 +19,6 @@ Translation of the response code
 Translate a http error code into an error message.
 }
 \examples{
-http_request_error(list(status = 200))
+eesyapi:::http_request_error(list(status = 200))
 }
+\keyword{internal}

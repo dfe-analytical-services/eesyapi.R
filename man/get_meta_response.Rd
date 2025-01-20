@@ -34,5 +34,6 @@ Results of query to API meta data endpoint
 Get the metadata information for a data set available from the EES API.
 }
 \examples{
-get_meta_response(example_id())
+eesyapi:::get_meta_response(example_id())
 }
+\keyword{internal}

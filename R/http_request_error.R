@@ -9,10 +9,11 @@
 #'
 #'
 #' @return Translation of the response code
-#' @export
+#'
+#' @keywords internal
 #'
 #' @examples
-#' http_request_error(list(status = 200))
+#' eesyapi:::http_request_error(list(status = 200))
 http_request_error <- function(
     response,
     verbose = FALSE) {

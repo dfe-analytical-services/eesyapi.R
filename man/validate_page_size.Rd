@@ -20,5 +20,6 @@ Logic
 Validate page size
 }
 \examples{
-validate_page_size(20)
+eesyapi:::validate_page_size(20)
 }
+\keyword{internal}

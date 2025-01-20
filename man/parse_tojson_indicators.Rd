@@ -16,6 +16,7 @@ A json query string to select a set of indicators
 Create a json query sub-string based on indicator-in constraints
 }
 \examples{
-parse_tojson_indicators(example_id("indicator")) |>
+eesyapi:::parse_tojson_indicators(example_id("indicator")) |>
   cat()
 }
+\keyword{internal}

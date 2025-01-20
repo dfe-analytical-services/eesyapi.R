@@ -15,11 +15,12 @@
 #' @param page Page number to return
 #'
 #' @return String containing pages query
-#' @export
+#'
+#' @keywords internal
 #'
 #' @examples
-#' api_url_pages()
-#' api_url_pages(page_size = 20, page = 2)
+#' eesyapi:::api_url_pages()
+#' eesyapi:::api_url_pages(page_size = 20, page = 2)
 api_url_pages <- function(page_size = 40, page = NULL) {
   paste0(
     ifelse(

@@ -13,8 +13,9 @@ warning_max_pages(api_result)
 Overshot maximum pages in results
 }
 \examples{
-response_page <- httr::GET(eesyapi::api_url(page_size = 10, page = 1)) |>
+response_page <- httr::GET(api_url(page_size = 10, page = 1)) |>
   httr::content("text") |>
   jsonlite::fromJSON() |>
-  warning_max_pages()
+  eesyapi:::warning_max_pages()
 }
+\keyword{internal}

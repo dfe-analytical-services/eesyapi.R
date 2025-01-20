@@ -17,5 +17,6 @@ validate_ees_id(element_id, level = "publication", verbose = FALSE)
 Validate element IDs
 }
 \examples{
-validate_ees_id(example_id("publication"), level = "publication")
+eesyapi:::validate_ees_id(example_id("publication"), level = "publication")
 }
+\keyword{internal}

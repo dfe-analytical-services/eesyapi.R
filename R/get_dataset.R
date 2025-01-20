@@ -13,10 +13,11 @@
 #' @param parse Logical flag to activate parsing of the results. Default: TRUE
 #'
 #' @return Data frame containing query results of an API data set
-#' @export
+#'
+#' @keywords internal
 #'
 #' @examples
-#' get_dataset(
+#' eesyapi:::get_dataset(
 #'   example_id(),
 #'   geographic_levels = c("NAT"),
 #'   filter_items = example_id("filter_item"),
@@ -36,7 +37,7 @@ get_dataset <- function(
     page_size = 10000,
     parse = TRUE,
     verbose = FALSE) {
-  api_call <- eesyapi::api_url(
+  api_call <- api_url(
     "get-data",
     dataset_id = dataset_id,
     indicators = indicators,
@@ -53,7 +54,7 @@ get_dataset <- function(
   )
   response <- api_call |>
     httr::GET()
-  eesyapi::http_request_error(response)
+  http_request_error(response)
   # Unless the user specifies a specific page of results to get, loop through all available pages.
   response_json <- response |>
     httr::content("text") |>
@@ -77,7 +78,7 @@ get_dataset <- function(
         verbose = response_json$paging$totalPages * page_size > 100000
       )
       for (page in c(2:response_json$paging$totalPages)) {
-        response_page <- eesyapi::api_url(
+        response_page <- api_url(
           "get-data",
           dataset_id = dataset_id,
           indicators = indicators,
@@ -95,7 +96,7 @@ get_dataset <- function(
           httr::GET() |>
           httr::content("text") |>
           jsonlite::fromJSON()
-        response_page |> eesyapi::warning_max_pages()
+        response_page |> warning_max_pages()
         toggle_message(
           paste0("Retrieved page ", page, " of ", response_json$paging$totalPages),
           verbose = verbose
@@ -110,7 +111,7 @@ get_dataset <- function(
   }
   if (parse) {
     dfresults <- dfresults |>
-      eesyapi::parse_api_dataset(
+      parse_api_dataset(
         dataset_id,
         verbose = verbose,
         ees_environment = ees_environment

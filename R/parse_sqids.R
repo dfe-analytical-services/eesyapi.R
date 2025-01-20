@@ -9,12 +9,13 @@
 #' @param locations A set of location columns as taken from a data set downloaded from the API
 #'
 #' @return Data frame of parsed geography information
-#' @export
+#'
+#' @keywords internal
 #'
 #' @examples
 #' example_data_raw() |>
 #'   magrittr::use_series("locations") |>
-#'   parse_sqids_locations(get_meta(example_id(group = "attendance")))
+#'   eesyapi:::parse_sqids_locations(get_meta(example_id(group = "attendance")))
 parse_sqids_locations <- function(locations, meta, verbose = FALSE) {
   lookup <- meta |>
     magrittr::use_series("locations") |>
@@ -54,12 +55,13 @@ parse_sqids_locations <- function(locations, meta, verbose = FALSE) {
 #' @param verbose Run in verbose mode with debugging messages
 #'
 #' @return Data frame
-#' @export
+#'
+#' @keywords internal
 #'
 #' @examples
 #' example_data_raw() |>
 #'   magrittr::use_series("filters") |>
-#'   parse_sqids_filters(get_meta(example_id(group = "attendance")))
+#'   eesyapi:::parse_sqids_filters(get_meta(example_id(group = "attendance")))
 parse_sqids_filters <- function(filters, meta, verbose = FALSE) {
   filter_ids <- meta |>
     magrittr::use_series("filter_columns") |>
@@ -101,12 +103,13 @@ parse_sqids_filters <- function(filters, meta, verbose = FALSE) {
 #' @param indicators A set of indicator columns as taken from a data set downloaded from the API
 #'
 #' @return Data frame
-#' @export
+#'
+#' @keywords internal
 #'
 #' @examples
 #' example_data_raw(group = "attendance") |>
 #'   magrittr::use_series("values") |>
-#'   parse_sqids_indicators(get_meta(example_id(group = "attendance")))
+#'   eesyapi:::parse_sqids_indicators(get_meta(example_id(group = "attendance")))
 parse_sqids_indicators <- function(indicators, meta, verbose = FALSE) {
   indicator_ids <- meta |>
     magrittr::use_series("indicators") |>

@@ -174,7 +174,7 @@ example_id <- function(
 example_data_raw <- function(
     group = "attendance",
     size = 32) {
-  eesyapi::api_url(
+  api_url(
     "get-data",
     dataset_id = example_id(group = group),
     indicators = example_id("indicator", group = group),
@@ -196,10 +196,12 @@ example_data_raw <- function(
 #' @examples
 #' example_json_query() |> cat()
 example_json_query <- function() {
-  eesyapi::parse_tojson_params(
+  parse_tojson_params(
     indicators = example_id("indicator", group = "attendance"),
     time_periods = example_id("time_period", group = "attendance"),
-    geographies = example_id("location_codes", group = "attendance"),
+    geographies = todf_geographies(
+      example_id("location_codes", group = "attendance")
+    ),
     filter_items = example_id("filter_items_short", group = "attendance")
   )
 }
@@ -218,16 +220,16 @@ example_geography_query <- function(level = "nat_yorks") {
   example_geography_queries <- list(
     nat_yorks =
       data.frame(
-        return_level = c("NAT", "REG"),
-        search_level = c("NAT", "REG"),
-        identifier_type = c("code", "code"),
-        identifier = c("E92000001", "E12000003")
+        geographic_level = c("NAT", "REG"),
+        location_level = c("NAT", "REG"),
+        location_id_type = c("code", "code"),
+        location_id = c("E92000001", "E12000003")
       ),
     nat_yorks_yorkslas = data.frame(
-      return_level = c("NAT", "REG", "LA"),
-      search_level = c("NAT", "REG", "REG"),
-      identifier_type = c("code", "code", "code"),
-      identifier = c("E92000001", "E12000003", "E12000003")
+      geographic_level = c("NAT", "REG", "LA"),
+      location_level = c("NAT", "REG", "REG"),
+      location_id_type = c("code", "code", "code"),
+      location_id = c("E92000001", "E12000003", "E12000003")
     )
   )
   example_geography_queries |>

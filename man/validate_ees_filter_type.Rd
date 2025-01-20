@@ -13,5 +13,6 @@ validate_ees_filter_type(filter_type)
 Validate filter type
 }
 \examples{
-validate_ees_filter_type("time_periods")
+eesyapi:::validate_ees_filter_type("time_periods")
 }
+\keyword{internal}

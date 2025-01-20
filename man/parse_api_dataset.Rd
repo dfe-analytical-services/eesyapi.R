@@ -42,5 +42,6 @@ parse_api_dataset()
 }
 \examples{
 example_data_raw(group = "attendance") |>
-  parse_api_dataset(example_id(group = "attendance"))
+  eesyapi:::parse_api_dataset(example_id(group = "attendance"))
 }
+\keyword{internal}

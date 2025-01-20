@@ -16,5 +16,6 @@ String containing json form query for time periods
 Create a json query sub-string based on time periods constraints
 }
 \examples{
-parse_tojson_time_periods(c("2023|W25", "2024|W12"))
+eesyapi:::parse_tojson_time_periods(c("2023|W25", "2024|W12"))
 }
+\keyword{internal}

@@ -9,8 +9,6 @@ query_dataset(
   indicators = NULL,
   time_periods = NULL,
   geographies = NULL,
-  geographic_levels = NULL,
-  locations = NULL,
   filter_items = NULL,
   json_query = NULL,
   method = "POST",
@@ -33,10 +31,6 @@ of "get-summary", "get-meta", "get-csv", "get-data" or "post-data"}
 
 \item{geographies}{String, vector or data frame containing the geographic levels and
 locations to be queried.}
-
-\item{geographic_levels}{Geographic levels required as a string or vector of strings}
-
-\item{locations}{Location code required as a string or vector of strings}
 
 \item{filter_items}{Filter items required as a string or vector of strings}
 
@@ -94,38 +88,49 @@ For example, selecting the 2023 and 2024 academic years would require:
 
 \subsection{geographies}{
 
-Geographies can be supplied as a vector or a data frame depending on the complexity of the
-desired query.
+Geographies can be supplied as a single string, a vector of strings, a list or a data frame
+depending on user preference and the complexity of the desired query.
 
-A vector will run a query returning \strong{any} rows meeting any of the given
-geographies, i.e. geographies = \code{c("NAT", "REG")} will return all national and regional level
-rows, whilst \code{c("NAT", "REG|code|E120000001")} will return all national level rows and all North
-East rows. Specific locations are required to be supplied in the format
-\code{"LEVEL|identifier_type|identifier"}, where identifier type can be either code or id and the
-corresponding identifier is then the standard ONS code or the sqid given in the meta data
-respectively. Using England as an example, these would be:
+The user can supply a \strong{single string} containing the desired geographic level (e.g. \code{"NAT"},
+\code{"REG"}, \code{"LA"}) or a specific location (e.g. \code{"NAT|code|E92000001"}, \code{"REG|code|E12000001"})
+and the query will search for rows at that single level or location.
+
+Specific locations are required to be supplied in the format
+\code{"location_level|location_id_type|location_id"}, where location_id_type can be either code or id
+and the corresponding location_id is then the standard ONS code or the sqid given in the meta
+data respectively. Using England as an example, these would be:
 \itemize{
 \item \code{"NAT|code|E92000001"}
 \item \code{"NAT|id|dP0Zw"}
 }
 
-If you require a more complex selection, for example all LAs in a given region, then a data
-frame should be supplied, with a row for each selection. Note however, that this will only work
-when using the default \code{POST} method. The \code{GET} method is much more limited and can not process
-more complex queries.
+Using a \strong{vector} will run a query returning \strong{any} rows meeting any of the given geographies,
+i.e. geographies = \code{c("NAT", "REG")} will return all national and regional level rows, whilst
+\code{c("NAT", "REG|code|E120000001")} will return all national level rows and all North
+East rows.
+
+If you require a more complex selection, for example all LAs in a given region, then a \strong{data
+frame} should be supplied, with a row for each selection. Note however, that this will work
+best when using the default \code{POST} method. The \code{GET} method is much more limited and may
+struggle to process more complex queries.
 
 The geography query data frame should contain the following columns:
 \itemize{
-\item return_level: the geographic level to return (e.g. LA in the example above).
-\item search_level: the geographic level of the search location (e.g. REG in the example above).
-\item identifier_type: "code" or "id".
-\item identifier: the code or id (sqid) for the search location (e.g. the code or sqid of the
+\item geographic_level: the geographic level to return (e.g. LA in the example above).
+\item location_level: the geographic level of the search location (e.g. REG in the example above).
+\item location_id_type: "code" or "id".
+\item location_id: the code or id (sqid) for the search location (e.g. the code or sqid of the
 region in the above example).
+Further rows can be added to add other geography searches to include in results.
 }
 
-Further rows can be added to add other geography searches to include in results.
-
 An example of a working geographies data frame can be obtained using \code{example_geography_query()}.
+
+A \strong{list} object will also be understood, provided it only contains the named items
+\code{geographic_level} and / or \code{location}. This are defined similarly to the vector form above:
+\itemize{
+\item \verb{list(geographic_level=c("REG", "LA"), locations = c("REG|code|E12000001")}
+}
 }
 
 \subsection{filter_items}{
@@ -184,32 +189,35 @@ query_dataset(
   example_id(group = "attendance"),
   indicators = example_id("indicator", group = "attendance"),
   time_periods = example_id("time_period", group = "attendance"),
-  geographies = example_id("location_code", group = "attendance"),
+  geographies = c("NAT|code|E92000001", "REG|code|E12000001"),
   filter_items = example_id("filter_item", group = "attendance"),
   page = 1,
   page_size = 32
 )
 
 # Run query_dataset() using set parameters giving a combination of filter options
-example_id("filter_items_short", group = "attendance")
+example_filter_list_input <- example_id("filter_items_short", group = "attendance")
+print(example_filter_list_input)
 query_dataset(
   example_id(group = "attendance"),
   indicators = example_id("indicator", group = "attendance"),
   time_periods = example_id("time_period", group = "attendance"),
-  geographies = c("NAT"),
-  filter_items = example_id("filter_items_short", group = "attendance")
+  geographies = "NAT",
+  filter_items = example_filter_list_input
 )
 
 # Run a query with a more complex geography selection. Return data for all of:
 #   - England
 #   - Yorkshire and the Humber
 #   - All LAs in Yorkshire and the Humber
-example_geography_query("nat_yorks_yorkslas")
 query_dataset(
   example_id(group = "attendance"),
   indicators = example_id("indicator", group = "attendance"),
   time_periods = example_id("time_period", group = "attendance"),
-  geographies = example_geography_query("nat_yorks_yorkslas"),
+  geographies = data.frame(
+    geographic_level = c("NAT", "REG", "LA"),
+    locations = c("NAT|code|E92000001", "REG|code|E12000003", "REG|code|E12000003")
+  ),
   filter_items = example_id("filter_item", group = "attendance")
 )
 
@@ -217,7 +225,7 @@ query_dataset(
 query_dataset(
   example_id(),
   method = "GET",
-  geographic_levels = c("NAT"),
+  geographies = "NAT",
   filter_items = example_id("filter_item"),
   indicators = example_id("indicator"),
   page = 1,

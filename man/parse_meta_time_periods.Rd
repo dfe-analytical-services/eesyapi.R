@@ -18,6 +18,7 @@ Data frame containing location item codes matched
 Parse API meta to give the time periods
 }
 \examples{
-get_meta_response(example_id())$timePeriods |>
-  parse_meta_time_periods()
+eesyapi:::get_meta_response(example_id())$timePeriods |>
+  eesyapi:::parse_meta_time_periods()
 }
+\keyword{internal}

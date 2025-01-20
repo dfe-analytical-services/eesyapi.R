@@ -4,10 +4,11 @@
 #' "prod"
 #'
 #' @return NULL
-#' @export
+#'
+#' @keywords internal
 #'
 #' @examples
-#' validate_ees_environment("prod")
+#' eesyapi:::validate_ees_environment("prod")
 validate_ees_environment <- function(ees_environment) {
   if (!(ees_environment %in% c("dev", "test", "preprod", "prod"))) {
     stop(
@@ -24,10 +25,11 @@ validate_ees_environment <- function(ees_environment) {
 #' @param api_version Variable containing the api_version
 #'
 #' @return NULL
-#' @export
+#'
+#' @keywords internal
 #'
 #' @examples
-#' validate_api_version(1.0)
+#' eesyapi:::validate_api_version(1.0)
 validate_api_version <- function(api_version) {
   if (grepl("[a-z_%+-]", as.character(api_version), ignore.case = TRUE)) {
     stop(
@@ -65,10 +67,11 @@ validate_endpoint <- function(endpoint) {
 #' @inheritParams api_url_query
 #'
 #' @return NULL
-#' @export
+#'
+#' @keywords internal
 #'
 #' @examples
-#' validate_time_periods(c("2023|AY", "2024|AY"))
+#' eesyapi:::validate_time_periods(c("2023|AY", "2024|AY"))
 validate_time_periods <- function(time_periods) {
   time_pipes <- time_periods |>
     stringr::str_replace_all("[a-zA-Z0-9]", "")
@@ -91,10 +94,11 @@ validate_time_periods <- function(time_periods) {
 #' @param verbose Run in verbose mode
 #'
 #' @return NULL
-#' @export
+#'
+#' @keywords internal
 #'
 #' @examples
-#' validate_ees_id(example_id("publication"), level = "publication")
+#' eesyapi:::validate_ees_id(example_id("publication"), level = "publication")
 validate_ees_id <- function(element_id, level = "publication", verbose = FALSE) {
   if (!(level %in% c("publication", "dataset", "location", "filter_item", "indicator"))) {
     stop(
@@ -120,9 +124,9 @@ validate_ees_id <- function(element_id, level = "publication", verbose = FALSE) 
       # Extract the individual 5 digit location IDs
       df_locations <- locations |>
         as.data.frame() |>
-        dplyr::rename(level = "V1", identifier_type = "V2", identifier = "V3")
+        dplyr::rename(level = "V1", location_id_type = "V2", location_id = "V3")
       location_type <- df_locations |>
-        dplyr::pull("identifier_type") |>
+        dplyr::pull("location_id_type") |>
         unique()
       if (any(!(location_type %in% c("id", "code")))) {
         stop("The middle entry in \"LEVEL|xxxx|1b3d5\" should be one of \"id\" or \"code\"")
@@ -131,63 +135,63 @@ validate_ees_id <- function(element_id, level = "publication", verbose = FALSE) 
       element_id <- df_locations
     }
   } else {
-    element_id <- data.frame(identifier = element_id) |>
-      dplyr::mutate(identifier_type = "id")
+    element_id <- data.frame(location_id = element_id) |>
+      dplyr::mutate(location_id_type = "id")
   }
-  example_id_string <- eesyapi::example_id(level, group = "attendance")
+  example_id_string <- example_id(level, group = "attendance")
   if (any(grepl("location", level))) {
     example_id_string <- example_id_string |>
       stringr::str_split("\\|", simplify = TRUE) |>
       as.data.frame() |>
       dplyr::rename(
-        identifier_type = "V2",
-        identifier = "V3"
+        location_id_type = "V2",
+        location_id = "V3"
       )
   } else {
-    example_id_string <- data.frame(identifier = example_id_string) |>
-      dplyr::mutate(identifier_type = "id")
+    example_id_string <- data.frame(location_id = example_id_string) |>
+      dplyr::mutate(location_id_type = "id")
   }
   check_frame <- element_id |>
-    dplyr::left_join(example_id_string, by = "identifier_type")
+    dplyr::left_join(example_id_string, by = "location_id_type")
   error_rows <- check_frame |>
     dplyr::filter(
-      !!rlang::sym("identifier_type") == "id",
-      stringr::str_length(!!rlang::sym("identifier.x")) <
-        stringr::str_length(!!rlang::sym("identifier.y"))
+      !!rlang::sym("location_id_type") == "id",
+      stringr::str_length(!!rlang::sym("location_id.x")) <
+        stringr::str_length(!!rlang::sym("location_id.y"))
     ) |>
     dplyr::bind_rows(
       check_frame |>
         dplyr::filter(
-          !!rlang::sym("identifier_type") == "code",
-          stringr::str_length(!!rlang::sym("identifier.x")) !=
-            stringr::str_length(!!rlang::sym("identifier.y"))
+          !!rlang::sym("location_id_type") == "code",
+          stringr::str_length(!!rlang::sym("location_id.x")) !=
+            stringr::str_length(!!rlang::sym("location_id.y"))
         )
     )
   if (nrow(error_rows) != 0) {
     err_string <- paste0(
       "The ", paste(level, collapse = ","),
       "(s) provided (",
-      paste0(error_rows |> dplyr::pull("identifier.x"), collapse = ", "),
+      paste0(error_rows |> dplyr::pull("location_id.x"), collapse = ", "),
       ") is expected to be a ",
-      paste0(error_rows |> dplyr::pull("identifier.y") |> stringr::str_length(), collapse = ", "),
+      paste0(error_rows |> dplyr::pull("location_id.y") |> stringr::str_length(), collapse = ", "),
       " character string in the format:\n    ",
-      paste0(error_rows |> dplyr::pull("identifier.y"), collapse = ", "),
+      paste0(error_rows |> dplyr::pull("location_id.y"), collapse = ", "),
       "\n  Please double check your ", paste(level, collapse = ","),
       "."
     )
     stop(err_string)
   } else if (
     any(
-      gsub("[0-9a-zA-Z]", "", element_id |> dplyr::pull("identifier")) !=
-        gsub("[0-9a-zA-Z]", "", example_id_string |> dplyr::pull("identifier"))
+      gsub("[0-9a-zA-Z]", "", element_id |> dplyr::pull("location_id")) !=
+        gsub("[0-9a-zA-Z]", "", example_id_string |> dplyr::pull("location_id"))
     )
   ) {
     stop(
       paste(
         "Some elements in",
-        paste(element_id |> dplyr::pull("identifier"), collapse = ", "),
+        paste(element_id |> dplyr::pull("location_id"), collapse = ", "),
         "do not match the expected structure: ",
-        example_id_string |> dplyr::pull("identifier")
+        example_id_string |> dplyr::pull("location_id")
       )
     )
   }
@@ -198,10 +202,11 @@ validate_ees_id <- function(element_id, level = "publication", verbose = FALSE) 
 #' @param filter_type type of filter being queried: "time_periods", "geographic_levels",
 #'
 #' @return NULL
-#' @export
+#'
+#' @keywords internal
 #'
 #' @examples
-#' validate_ees_filter_type("time_periods")
+#' eesyapi:::validate_ees_filter_type("time_periods")
 validate_ees_filter_type <- function(filter_type) {
   if (!(filter_type %in% c("time_periods", "geographic_levels", "locations", "filter_items"))) {
     stop(
@@ -220,10 +225,11 @@ validate_ees_filter_type <- function(filter_type) {
 #' @param max Maximum valid page_size for EES API
 #'
 #' @return Logic
-#' @export
+#'
+#' @keywords internal
 #'
 #' @examples
-#' validate_page_size(20)
+#' eesyapi:::validate_page_size(20)
 validate_page_size <- function(page_size, min = 1, max = 40) {
   if (!is.null(page_size)) {
     if (is.numeric(page_size)) {

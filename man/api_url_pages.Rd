@@ -28,6 +28,7 @@ automatically generate API request URLs, but is exported as part of the package 
 who wish to generate their own URLs.
 }
 \examples{
-api_url_pages()
-api_url_pages(page_size = 20, page = 2)
+eesyapi:::api_url_pages()
+eesyapi:::api_url_pages(page_size = 20, page = 2)
 }
+\keyword{internal}

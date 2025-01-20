@@ -1,3 +1,5 @@
+# eesyapi (development version)
+
 # eesyapi 0.4.0
 
 * Optimisation to parsing of JSON responses in `query_dataset()`

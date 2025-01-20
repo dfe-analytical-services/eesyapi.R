@@ -61,10 +61,11 @@ So if you give GET a set of filter items to search on, it can only return all ro
 any of those items.
 }
 \examples{
-get_dataset(
+eesyapi:::get_dataset(
   example_id(),
   geographic_levels = c("NAT"),
   filter_items = example_id("filter_item"),
   indicators = example_id("indicator")
 )
 }
+\keyword{internal}

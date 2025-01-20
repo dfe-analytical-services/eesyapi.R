@@ -24,5 +24,6 @@ stored on the API for the data set.
 \examples{
 example_data_raw() |>
   magrittr::use_series("filters") |>
-  parse_sqids_filters(get_meta(example_id(group = "attendance")))
+  eesyapi:::parse_sqids_filters(get_meta(example_id(group = "attendance")))
 }
+\keyword{internal}
