@@ -48,19 +48,20 @@ http_request_error <- function(
         magrittr::extract2("errors")
       if (!is.null(api_error)) {
         error_message <- api_error |>
-          dplyr::pull("message")
+          dplyr::pull("message") |>
+          unique()
         error_detail <- api_error |>
           dplyr::pull("detail")
         toggle_message(api_error |> dplyr::pull("message"), verbose = verbose)
         status_response_text <- paste0(
           error_message,
-          "\n     ",
           ifelse(
             "items" %in% names(error_detail),
-            error_detail |>
+            paste0("\n     Error items: ",error_detail |>
               dplyr::pull("items") |>
               unlist() |>
-              paste0(collapse = ", "),
+              paste0(collapse = ", ")
+              ),
             ""
           ),
           ifelse(

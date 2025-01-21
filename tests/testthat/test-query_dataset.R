@@ -100,6 +100,17 @@ test_that("Geography query returns expected geographies", {
   )
 })
 
+test_that("Non-standard geographic level", {
+  expect_error(
+    query_dataset(example_id(), geographies = "Nat", indicators = example_id("indicator")),
+    paste0(
+      "\nHTTP connection error: 400\nMust be one of the allowed values.",
+      "\n     Provided values: Nat\n     Allowed values: ",
+      "EDA, INST, LA, LAD, LEP, LSIP, MAT, MCA, NAT, OA, PA, PCON, PROV, REG, RSC, SCH, SPON, WARD"
+    )
+  )
+})
+
 test_that("Test filter-combinations POST dataset query", {
   query_result <- query_dataset(
     example_id(group = "attendance"),
@@ -146,7 +157,7 @@ test_that("Test filter-combinations POST dataset query", {
 test_that("Indicators not found in data set", {
   expect_error(
     query_dataset(example_id(), indicators = c("uywet", "uywed")),
-    "\nHTTP connection error: 400\nOne or more indicators could not be found.\n     uywet, uywed"
+    "\nHTTP connection error: 400\nOne or more indicators could not be found.\n     Error items: uywet, uywed"
   )
 })
 
