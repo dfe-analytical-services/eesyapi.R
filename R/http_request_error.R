@@ -47,14 +47,45 @@ http_request_error <- function(
         jsonlite::fromJSON() |>
         magrittr::extract2("errors")
       if (!is.null(api_error)) {
+        error_message <- api_error |>
+          dplyr::pull("message") |>
+          unique()
+        error_detail <- api_error |>
+          dplyr::pull("detail")
+        toggle_message(api_error |> dplyr::pull("message"), verbose = verbose)
         status_response_text <- paste0(
-          api_error |>
-            dplyr::pull("message"),
-          "\n     ",
-          api_error |>
-            dplyr::pull("detail") |>
-            unlist() |>
-            paste0(collapse = ", ")
+          error_message,
+          ifelse(
+            "items" %in% names(error_detail),
+            paste0("\n     Error items: ",error_detail |>
+              dplyr::pull("items") |>
+              unlist() |>
+              paste0(collapse = ", ")
+              ),
+            ""
+          ),
+          ifelse(
+            "value" %in% names(error_detail),
+            paste0(
+              "\n     Provided values: ",
+              error_detail |>
+                dplyr::pull("value") |>
+                unlist() |>
+                paste0(collapse = ", ")
+            ),
+            ""
+          ),
+          ifelse(
+            "allowed" %in% names(error_detail),
+            paste0(
+              "\n     Allowed values: ",
+              error_detail |>
+                dplyr::pull("allowed") |>
+                unlist() |>
+                paste0(collapse = ", ")
+            ),
+            ""
+          )
         )
       }
     }

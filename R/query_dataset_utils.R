@@ -79,7 +79,7 @@ todf_geographies <- function(geographies) {
       )
     }
     if ("locations" %in% names(geographies)) {
-      locations <- geographies|>
+      locations <- geographies |>
         magrittr::extract2("locations") |>
         stringr::str_split("\\|", simplify = TRUE) |>
         as.data.frame() |>

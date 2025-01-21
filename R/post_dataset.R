@@ -104,7 +104,7 @@ post_dataset <- function(
         jsonlite::fromJSON()
     )
   }
-  http_request_error(response)
+  http_request_error(response, verbose = verbose)
   # Unless the user specifies a specific page of results to get, loop through all available pages.
   response_json <- response |>
     httr::content("text") |>
