@@ -17,3 +17,19 @@ test_that("Retrieve data set list for publication", {
     readRDS("testdata/example_publication_datasets.rds")
   )
 })
+
+test_that("Search works as expected", {
+  expect_equal(
+    get_publications(search = "API") |>
+      dplyr::filter(!grepl("API", title)) |>
+      nrow(),
+    0
+  )
+})
+
+test_that("Search throws an error if the search term is less than 3 characters", {
+  expect_error(
+    get_publications(search = "AP"),
+    "Search string must be 3 characters or longer."
+  )
+})

@@ -57,11 +57,13 @@ http_request_error <- function(
           error_message,
           ifelse(
             "items" %in% names(error_detail),
-            paste0("\n     Error items: ",error_detail |>
-              dplyr::pull("items") |>
-              unlist() |>
-              paste0(collapse = ", ")
-              ),
+            paste0(
+              "\n     Error items: ",
+              error_detail |>
+                dplyr::pull("items") |>
+                unlist() |>
+                paste0(collapse = ", ")
+            ),
             ""
           ),
           ifelse(

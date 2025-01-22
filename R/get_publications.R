@@ -10,6 +10,7 @@
 get_publications <- function(
     ees_environment = NULL,
     api_version = NULL,
+    search = NULL,
     page_size = 40,
     page = NULL,
     verbose = FALSE) {
@@ -18,6 +19,7 @@ get_publications <- function(
     api_url(
       ees_environment = ees_environment,
       api_version = api_version,
+      search = search,
       page_size = page_size,
       page = page,
       verbose = verbose
@@ -25,6 +27,11 @@ get_publications <- function(
   ) |>
     httr::content("text") |>
     jsonlite::fromJSON()
+  if (!is.null(search)) {
+    if (stringr::str_length(search) < 3) {
+      stop("Search string must be 3 characters or longer.")
+    }
+  }
   # Unless the user specifies a specific page of results to get, loop through all available pages.
   if (is.null(page)) {
     if (response$paging$totalPages > 1) {
@@ -33,6 +40,7 @@ get_publications <- function(
           api_url(
             ees_environment = ees_environment,
             api_version = api_version,
+            search = search,
             page_size = page_size,
             page = page,
             verbose = verbose

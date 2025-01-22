@@ -157,7 +157,10 @@ test_that("Test filter-combinations POST dataset query", {
 test_that("Indicators not found in data set", {
   expect_error(
     query_dataset(example_id(), indicators = c("uywet", "uywed")),
-    "\nHTTP connection error: 400\nOne or more indicators could not be found.\n     Error items: uywet, uywed"
+    paste0(
+      "\nHTTP connection error: 400\nOne or more indicators could not be found.",
+      "\n     Error items: uywet, uywed"
+    )
   )
 })
 
