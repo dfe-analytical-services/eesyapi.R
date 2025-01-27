@@ -53,6 +53,8 @@ get_publications <- function(
       }
     }
   }
-  response |> warning_max_pages()
+  response |>
+    warning_max_pages() |>
+    warning_no_rows()
   return(response$results)
 }
