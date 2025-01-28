@@ -2,7 +2,7 @@
 #'
 #' @param api_result Output from an API get query
 #'
-#' @return NULL
+#' @return Original input (api_result) unchanged
 #'
 #' @keywords internal
 #'
@@ -23,4 +23,5 @@ warning_max_pages <- function(api_result) {
       )
     )
   }
+  return(api_result)
 }

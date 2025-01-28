@@ -6,6 +6,7 @@
 \usage{
 api_url(
   endpoint = "get-publications",
+  search = NULL,
   publication_id = NULL,
   dataset_id = NULL,
   indicators = NULL,
@@ -24,6 +25,9 @@ api_url(
 \arguments{
 \item{endpoint}{Name of endpoint, can be "get-publications", "get-data-catalogue",
 "get-summary", "get-meta", "get-csv", "get-data" or "post-data"}
+
+\item{search}{String for filtering the publication list for publication titles and summaries
+containing the search string provided (strings separated by spaces are combined with OR logic).}
 
 \item{publication_id}{ID of the publication to be connected to. This is required if the
 endpoint is "get-data-catalogue"}

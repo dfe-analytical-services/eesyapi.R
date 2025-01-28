@@ -9,6 +9,9 @@ warning_max_pages(api_result)
 \arguments{
 \item{api_result}{Output from an API get query}
 }
+\value{
+Original input (api_result) unchanged
+}
 \description{
 Overshot maximum pages in results
 }
