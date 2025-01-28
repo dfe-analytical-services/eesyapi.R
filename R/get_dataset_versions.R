@@ -2,12 +2,12 @@
 #'
 #' @inheritParams api_url
 #'
-#' @return Data frame listing all available versions of the dataset
+#' @return Data frame listing all available versions of the given data set
 #' @export
 #'
 #' @examples
 #' get_dataset_versions(dataset_id = example_id(group="attendance"))
-get_data_versions <- function(
+get_dataset_versions <- function(
     dataset_id,
     ees_environment = NULL,
     api_version = NULL,
@@ -18,7 +18,7 @@ get_data_versions <- function(
   response <- httr::GET(
     api_url(
       dataset_id = dataset_id,
-      endpoint = "get-data-versions",
+      endpoint = "get-dataset-versions",
       ees_environment = ees_environment,
       api_version = api_version,
       page_size = page_size,
@@ -35,7 +35,7 @@ get_data_versions <- function(
         response_page <- httr::GET(
           api_url(
             dataset_id = dataset_id,
-            endpoint = "get-data-versions",
+            endpoint = "get-dataset-versions",
             ees_environment = ees_environment,
             api_version = api_version,
             page_size = page_size,
