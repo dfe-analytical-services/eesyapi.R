@@ -46,7 +46,7 @@ validate_endpoint <- function(endpoint) {
   if (
     !(endpoint %in% c(
       "get-publications", "get-data-catalogue",
-      "get-summary", "get-meta",
+      "get-data-versions", "get-summary", "get-meta",
       "get-csv", "get-data", "post-data"
     )
     )

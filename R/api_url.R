@@ -13,11 +13,11 @@
 #' }
 #'
 #' @param endpoint Name of endpoint, can be "get-publications", "get-data-catalogue",
-#' "get-summary", "get-meta", "get-csv", "get-data" or "post-data"
+#' "get-data-versions", "get-summary", "get-meta", "get-csv", "get-data" or "post-data"
 #' @param publication_id ID of the publication to be connected to. This is required if the
 #' endpoint is "get-data-catalogue"
 #' @param dataset_id ID of data set to be connected to. This is required if the endpoint is one
-#' of "get-summary", "get-meta", "get-csv", "get-data" or "post-data"
+#' of "get-data-versions", "get-summary", "get-meta", "get-csv", "get-data" or "post-data"
 #' @inheritParams api_url_query
 #' @param dataset_version Version of data set to be connected to
 #' @param page_size Number of results to return in a single query
@@ -139,12 +139,17 @@ api_url <- function(
       endpoint_base_version,
       "data-sets/",
       ifelse(
-        endpoint %in% c("get-summary", "get-meta", "get-data", "post-data"),
+        endpoint %in% c("get-summary", "get-data-versions", "get-meta", "get-data", "post-data"),
         dataset_id,
         ""
       )
     )
-    if (endpoint != "get-summary") {
+    if (endpoint == "get-data-versions") {
+      url <- paste0(
+        url,
+        "/versions"
+      )
+    } else if (endpoint != "get-summary") {
       url <- paste0(
         url,
         ifelse(
