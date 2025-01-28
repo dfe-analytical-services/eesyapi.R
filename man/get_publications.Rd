@@ -18,8 +18,8 @@ get_publications(
 
 \item{api_version}{EES API version}
 
-\item{search}{String for filtering the publication list for publication titles containing the
-search string}
+\item{search}{String for filtering the publication list for publication titles and summaries
+containing the search string provided (strings separated by spaces are combined with OR logic).}
 
 \item{page_size}{Number of results to return in a single query}
 

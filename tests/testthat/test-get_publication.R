@@ -18,19 +18,36 @@ test_that("Retrieve data set list for publication", {
   )
 })
 
-test_that("Search works as expected", {
+test_that("Search doesn't return anything it shouldn't", {
   expect_equal(
-    get_publications(search = "API") |>
-      dplyr::filter(!grepl("API", title)) |>
+    get_publications(search = "attendance") |>
+      dplyr::filter(
+        !grepl("attendance", title, ignore.case = TRUE),
+        !grepl("attendance", summary, ignore.case = TRUE)
+      ) |>
       nrow(),
     0
+  )
+})
+
+
+test_that("Search doesn't return anything it shouldn't", {
+  result <- get_publications(search = "attendance")
+  expect_equal(
+    result |>
+      dplyr::mutate(title_summary = paste(title, summary)) |>
+      dplyr::filter(
+        grepl("attendance", title_summary, ignore.case = TRUE)
+      ) |>
+      nrow(),
+    nrow(result)
   )
 })
 
 test_that("Search throws an error if the search term is less than 3 characters", {
   expect_error(
     get_publications(search = "AP")
-    )
+  )
 })
 
 test_that("Search throws an error if the search term is less than 3 characters", {
@@ -38,4 +55,3 @@ test_that("Search throws an error if the search term is less than 3 characters",
     get_publications(search = "api d")
   )
 })
-

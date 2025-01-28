@@ -28,14 +28,14 @@ get_publications <- function(
     if (all(search_substr_lengths < 3)) {
       stop(
         "Individual search string(s) must be 3 characters or longer: \"",
-        paste0(search_substr[search_substr_lengths<3], collapse = "\", \""),
+        paste0(search_substr[search_substr_lengths < 3], collapse = "\", \""),
         "\"."
       )
-    } else if(any(search_substr_lengths < 3)){
+    } else if (any(search_substr_lengths < 3)) {
       warning(
-          "The API search will ignore any search strings less than 3 chars in length: \"",
-          paste0(search_substr[search_substr_lengths<3], collapse = "\", \""),
-          "\"."
+        "The API search will ignore any search strings less than 3 chars in length: \"",
+        paste0(search_substr[search_substr_lengths < 3], collapse = "\", \""),
+        "\"."
       )
     }
   }
