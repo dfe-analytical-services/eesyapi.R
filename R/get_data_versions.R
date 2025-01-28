@@ -1,4 +1,4 @@
-#' Get publications
+#' Get data set versions
 #'
 #' @inheritParams api_url
 #'
@@ -6,7 +6,7 @@
 #' @export
 #'
 #' @examples
-#' get_publications()
+#' get_dataset_versions(dataset_id = example_id(group="attendance"))
 get_data_versions <- function(
     dataset_id,
     ees_environment = NULL,

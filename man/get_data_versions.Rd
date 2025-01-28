@@ -2,7 +2,7 @@
 % Please edit documentation in R/get_data_versions.R
 \name{get_data_versions}
 \alias{get_data_versions}
-\title{Get publications}
+\title{Get data set versions}
 \usage{
 get_data_versions(
   dataset_id,
@@ -31,8 +31,8 @@ of "get-data-versions", "get-summary", "get-meta", "get-csv", "get-data" or "pos
 Data frame listing all available versions of the dataset
 }
 \description{
-Get publications
+Get data set versions
 }
 \examples{
-get_publications()
+get_dataset_versions(dataset_id = example_id(group="attendance"))
 }
