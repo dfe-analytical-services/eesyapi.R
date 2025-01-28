@@ -48,7 +48,7 @@ test_that("Search throws an error if all search terms are less than 3 characters
   )
 })
 
-test_that("Search throws an error if any search term is less than 3 characters", {
+test_that("Search throws a warning if any search term is less than 3 characters", {
   expect_warning(
     get_publications(search = "api d")
   )
