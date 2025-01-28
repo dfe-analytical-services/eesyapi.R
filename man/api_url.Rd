@@ -26,7 +26,8 @@ api_url(
 \item{endpoint}{Name of endpoint, can be "get-publications", "get-data-catalogue",
 "get-summary", "get-meta", "get-csv", "get-data" or "post-data"}
 
-\item{search}{String for filtering publication list}
+\item{search}{String for filtering the publication list for publication titles containing the
+search string}
 
 \item{publication_id}{ID of the publication to be connected to. This is required if the
 endpoint is "get-data-catalogue"}

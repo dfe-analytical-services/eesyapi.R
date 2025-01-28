@@ -14,7 +14,8 @@
 #'
 #' @param endpoint Name of endpoint, can be "get-publications", "get-data-catalogue",
 #' "get-summary", "get-meta", "get-csv", "get-data" or "post-data"
-#' @param search String for filtering publication list
+#' @param search String for filtering the publication list for publication titles containing the
+#' search string
 #' @param publication_id ID of the publication to be connected to. This is required if the
 #' endpoint is "get-data-catalogue"
 #' @param dataset_id ID of data set to be connected to. This is required if the endpoint is one

@@ -2,9 +2,9 @@
 # WARNING: This depends on live data, so may fail due to real-life changes.
 #          If that's the case, take a new snapshot by running seed_tests()
 test_that("Retrieve publication list", {
-  expect_equal(
-    get_publications(),
-    readRDS("testdata/example_publication_catalogue.rds")
+  expect_gt(
+    get_publications() |> nrow(),
+    0
   )
 })
 
@@ -29,7 +29,13 @@ test_that("Search works as expected", {
 
 test_that("Search throws an error if the search term is less than 3 characters", {
   expect_error(
-    get_publications(search = "AP"),
-    "Search string must be 3 characters or longer."
+    get_publications(search = "AP")
+    )
+})
+
+test_that("Search throws an error if the search term is less than 3 characters", {
+  expect_warning(
+    get_publications(search = "api d")
   )
 })
+

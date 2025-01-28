@@ -18,7 +18,8 @@ get_publications(
 
 \item{api_version}{EES API version}
 
-\item{search}{String for filtering publication list}
+\item{search}{String for filtering the publication list for publication titles containing the
+search string}
 
 \item{page_size}{Number of results to return in a single query}
 
@@ -34,4 +35,5 @@ Get publications
 }
 \examples{
 get_publications()
+get_publications(search = "attendance")
 }
