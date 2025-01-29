@@ -6,6 +6,7 @@
 \usage{
 get_dataset_versions(
   dataset_id,
+  detail = "light",
   ees_environment = NULL,
   api_version = NULL,
   page_size = 40,
@@ -15,7 +16,10 @@ get_dataset_versions(
 }
 \arguments{
 \item{dataset_id}{ID of data set to be connected to. This is required if the endpoint is one
-of "get-data-versions", "get-summary", "get-meta", "get-csv", "get-data" or "post-data"}
+of "get-dataset-versions", "get-summary", "get-meta", "get-csv", "get-data" or "post-data"}
+
+\item{detail}{Level of detail to return. Given as a character string, it should be one of:
+"light" (default) or "full".}
 
 \item{ees_environment}{EES ees_environment to connect to: "dev", "test", "preprod" or "prod"}
 
