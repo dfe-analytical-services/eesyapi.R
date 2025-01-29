@@ -19,7 +19,27 @@ get_dataset_versions(
 of "get-dataset-versions", "get-summary", "get-meta", "get-csv", "get-data" or "post-data"}
 
 \item{detail}{Level of detail to return. Given as a character string, it should be one of:
-"light" (default) or "full".}
+"light" (default) or "full".
+Using "light" gives the following:
+\itemize{
+\item version - version number
+\item type - version type (major or minor)
+\item total_rows - total number of rows in the listed version
+\item date_released - release date of the version
+\item version_title - name of the version release
+\item time_period_start - first available time period in the data
+\item time_period_start - latest available time period in the data
+}
+
+Using "full" adds the following in addition to the above:
+\itemize{
+\item version_id - unique ID code for the data set version
+\item status - publication status of the data set version
+\item geographic_levels - geographic levels provided
+\item filters - names of filters in the data set version
+\item indicators - names of indicators in the data set version
+\item notes - any additional information
+}}
 
 \item{ees_environment}{EES ees_environment to connect to: "dev", "test", "preprod" or "prod"}
 
@@ -32,11 +52,13 @@ of "get-dataset-versions", "get-summary", "get-meta", "get-csv", "get-data" or "
 \item{verbose}{Run with additional contextual messaging. Logical, default = FALSE}
 }
 \value{
+A data frame with X columns:
+
 Data frame listing all available versions of the given data set
 }
 \description{
 Get data set versions
 }
 \examples{
-get_dataset_versions(dataset_id = example_id(group="attendance"))
+get_dataset_versions(dataset_id = example_id(group = "attendance"))
 }
