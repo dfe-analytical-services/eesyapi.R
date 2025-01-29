@@ -7,6 +7,7 @@
 get_publications(
   ees_environment = NULL,
   api_version = NULL,
+  search = NULL,
   page_size = 40,
   page = NULL,
   verbose = FALSE
@@ -16,6 +17,9 @@ get_publications(
 \item{ees_environment}{EES ees_environment to connect to: "dev", "test", "preprod" or "prod"}
 
 \item{api_version}{EES API version}
+
+\item{search}{String for filtering the publication list for publication titles and summaries
+containing the search string provided (strings separated by spaces are combined with OR logic).}
 
 \item{page_size}{Number of results to return in a single query}
 
@@ -31,4 +35,5 @@ Get publications
 }
 \examples{
 get_publications()
+get_publications(search = "attendance")
 }

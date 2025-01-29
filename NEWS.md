@@ -1,5 +1,10 @@
 # eesyapi (development version)
 
+* Added `search` parameter to `get_publications()` to allow filtering on publication title text.
+* Cleaned up behaviour of `query_dataset()` to only use geographies as a parameter, rather than 
+geographies, locations and geographic_levels.
+* Moved all background functions to be internal.
+
 # eesyapi 0.4.0
 
 * Optimisation to parsing of JSON responses in `query_dataset()`

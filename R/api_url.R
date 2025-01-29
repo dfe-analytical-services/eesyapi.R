@@ -14,6 +14,9 @@
 #'
 #' @param endpoint Name of endpoint, can be "get-publications", "get-data-catalogue",
 #' "get-dataset-versions", "get-summary", "get-meta", "get-csv", "get-data" or "post-data"
+#' "get-summary", "get-meta", "get-csv", "get-data" or "post-data"
+#' @param search String for filtering the publication list for publication titles and summaries
+#' containing the search string provided (strings separated by spaces are combined with OR logic).
 #' @param publication_id ID of the publication to be connected to. This is required if the
 #' endpoint is "get-data-catalogue"
 #' @param dataset_id ID of data set to be connected to. This is required if the endpoint is one
@@ -50,6 +53,7 @@
 #' )
 api_url <- function(
     endpoint = "get-publications",
+    search = NULL,
     publication_id = NULL,
     dataset_id = NULL,
     indicators = NULL,
@@ -124,7 +128,12 @@ api_url <- function(
     url <- paste0(
       endpoint_base_version,
       "publications?",
-      api_url_pages(page_size = page_size, page = page)
+      api_url_pages(page_size = page_size, page = page),
+      ifelse(
+        !is.null(search),
+        paste0("&search=", search),
+        ""
+      )
     )
   } else if (endpoint == "get-data-catalogue") {
     url <- paste0(
