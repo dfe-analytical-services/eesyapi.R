@@ -54,3 +54,9 @@ test_that("Filter type validation", {
     validate_ees_filter_type("filter_item")
   )
 })
+
+test_that("Data set id validation", {
+  expect_error(
+    validate_ees_id("sdf", level = "dataset")
+  )
+})

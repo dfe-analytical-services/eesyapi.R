@@ -94,7 +94,11 @@ api_url <- function(
   }
 
   # Check that if endpoint requires a data set then dataset_id is not null
-  if (endpoint %in% c("get-summary", "get-meta", "get-csv", "get-data", "post-data")) {
+  if (endpoint %in% c(
+    "get-summary", "get-dataset-versions", "get-meta",
+    "get-csv", "get-data", "post-data"
+  )
+  ) {
     validate_ees_id(dataset_id, level = "dataset")
     if (is_valid_dataset_info(dataset_id, dataset_version) == FALSE) {
       stop(

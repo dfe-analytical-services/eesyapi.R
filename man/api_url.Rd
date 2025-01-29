@@ -24,7 +24,8 @@ api_url(
 }
 \arguments{
 \item{endpoint}{Name of endpoint, can be "get-publications", "get-data-catalogue",
-"get-dataset-versions", "get-summary", "get-meta", "get-csv", "get-data" or "post-data"}
+"get-dataset-versions", "get-summary", "get-meta", "get-csv", "get-data" or "post-data"
+"get-summary", "get-meta", "get-csv", "get-data" or "post-data"}
 
 \item{search}{String for filtering the publication list for publication titles and summaries
 containing the search string provided (strings separated by spaces are combined with OR logic).}
