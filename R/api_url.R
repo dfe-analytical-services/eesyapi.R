@@ -13,13 +13,14 @@
 #' }
 #'
 #' @param endpoint Name of endpoint, can be "get-publications", "get-data-catalogue",
+#' "get-dataset-versions", "get-summary", "get-meta", "get-csv", "get-data" or "post-data"
 #' "get-summary", "get-meta", "get-csv", "get-data" or "post-data"
 #' @param search String for filtering the publication list for publication titles and summaries
 #' containing the search string provided (strings separated by spaces are combined with OR logic).
 #' @param publication_id ID of the publication to be connected to. This is required if the
 #' endpoint is "get-data-catalogue"
 #' @param dataset_id ID of data set to be connected to. This is required if the endpoint is one
-#' of "get-summary", "get-meta", "get-csv", "get-data" or "post-data"
+#' of "get-dataset-versions", "get-summary", "get-meta", "get-csv", "get-data" or "post-data"
 #' @inheritParams api_url_query
 #' @param dataset_version Version of data set to be connected to
 #' @param page_size Number of results to return in a single query
@@ -93,7 +94,11 @@ api_url <- function(
   }
 
   # Check that if endpoint requires a data set then dataset_id is not null
-  if (endpoint %in% c("get-summary", "get-meta", "get-csv", "get-data", "post-data")) {
+  if (endpoint %in% c(
+    "get-summary", "get-dataset-versions", "get-meta",
+    "get-csv", "get-data", "post-data"
+  )
+  ) {
     validate_ees_id(dataset_id, level = "dataset")
     if (is_valid_dataset_info(dataset_id, dataset_version) == FALSE) {
       stop(
@@ -147,12 +152,17 @@ api_url <- function(
       endpoint_base_version,
       "data-sets/",
       ifelse(
-        endpoint %in% c("get-summary", "get-meta", "get-data", "post-data"),
+        endpoint %in% c("get-summary", "get-dataset-versions", "get-meta", "get-data", "post-data"),
         dataset_id,
         ""
       )
     )
-    if (endpoint != "get-summary") {
+    if (endpoint == "get-dataset-versions") {
+      url <- paste0(
+        url,
+        "/versions"
+      )
+    } else if (endpoint != "get-summary") {
       url <- paste0(
         url,
         ifelse(

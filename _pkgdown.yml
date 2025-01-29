@@ -11,6 +11,7 @@ reference:
   contents:
   - get_publications
   - get_data_catalogue
+  - get_dataset_versions
   - get_meta
   - preview_dataset
   - query_dataset

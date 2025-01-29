@@ -46,7 +46,7 @@ validate_endpoint <- function(endpoint) {
   if (
     !(endpoint %in% c(
       "get-publications", "get-data-catalogue",
-      "get-summary", "get-meta",
+      "get-dataset-versions", "get-summary", "get-meta",
       "get-csv", "get-data", "post-data"
     )
     )
@@ -174,9 +174,9 @@ validate_ees_id <- function(element_id, level = "publication", verbose = FALSE) 
       paste0(error_rows |> dplyr::pull("location_id.x"), collapse = ", "),
       ") is expected to be a ",
       paste0(error_rows |> dplyr::pull("location_id.y") |> stringr::str_length(), collapse = ", "),
-      " character string in the format:\n    ",
+      " character string in the format:\n",
       paste0(error_rows |> dplyr::pull("location_id.y"), collapse = ", "),
-      "\n  Please double check your ", paste(level, collapse = ","),
+      "\nPlease double check your ", paste(level, collapse = ","),
       "."
     )
     stop(err_string)

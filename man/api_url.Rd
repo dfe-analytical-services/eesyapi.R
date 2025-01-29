@@ -24,6 +24,7 @@ api_url(
 }
 \arguments{
 \item{endpoint}{Name of endpoint, can be "get-publications", "get-data-catalogue",
+"get-dataset-versions", "get-summary", "get-meta", "get-csv", "get-data" or "post-data"
 "get-summary", "get-meta", "get-csv", "get-data" or "post-data"}
 
 \item{search}{String for filtering the publication list for publication titles and summaries
@@ -33,7 +34,7 @@ containing the search string provided (strings separated by spaces are combined 
 endpoint is "get-data-catalogue"}
 
 \item{dataset_id}{ID of data set to be connected to. This is required if the endpoint is one
-of "get-summary", "get-meta", "get-csv", "get-data" or "post-data"}
+of "get-dataset-versions", "get-summary", "get-meta", "get-csv", "get-data" or "post-data"}
 
 \item{indicators}{Indicators required as a string or vector of strings (required)}
 
