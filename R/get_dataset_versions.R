@@ -8,8 +8,8 @@
 #'   \item version - version number
 #'   \item type - version type (major or minor)
 #'   \item total_rows - total number of rows in the listed version
-#'   \item date_released - release date of the version
-#'   \item version_title - name of the version release
+#'   \item release_date - release date of the data set version
+#'   \item release_name - name of the release in which the data set version was published
 #'   \item time_period_start - first available time period in the data
 #'   \item time_period_start - latest available time period in the data
 #' }
@@ -86,8 +86,8 @@ get_dataset_versions <- function(
   response |> warning_max_pages()
   results <- response$results |>
     dplyr::select("version", "type", total_rows = "totalResults") |>
-    cbind(date_released = as.Date(response$results$published)) |>
-    cbind(version_title = response$results$release$title) |>
+    cbind(release_date = as.Date(response$results$published)) |>
+    cbind(release_name = response$results$release$title) |>
     cbind(time_period_start = response$results$timePeriod$start) |>
     cbind(time_period_end = response$results$timePeriod$end)
   if (detail == "full") {

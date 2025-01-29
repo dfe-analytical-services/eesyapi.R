@@ -25,8 +25,8 @@ Using "light" gives the following:
 \item version - version number
 \item type - version type (major or minor)
 \item total_rows - total number of rows in the listed version
-\item date_released - release date of the version
-\item version_title - name of the version release
+\item release_date - release date of the data set version
+\item release_name - name of the release in which the data set version was published
 \item time_period_start - first available time period in the data
 \item time_period_start - latest available time period in the data
 }

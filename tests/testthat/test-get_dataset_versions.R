@@ -18,7 +18,7 @@ test_that("get-data-versions light returns expected columns", {
     get_dataset_versions(example_id(group = "attendance")) |>
       names(),
     c(
-      "version", "type", "total_rows", "date_released", "version_title",
+      "version", "type", "total_rows", "release_date", "release_name",
       "time_period_start", "time_period_end"
     )
   )
