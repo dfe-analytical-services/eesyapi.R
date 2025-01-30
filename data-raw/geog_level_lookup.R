@@ -2,7 +2,6 @@
 # Look-up of equivalent human to API geography_level names
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-# create a vector of ble time and geography column names
 geog_level_lookup <- data.frame(
   api_friendly = c(
     "EDA", "INST", "LA", "LAD",
