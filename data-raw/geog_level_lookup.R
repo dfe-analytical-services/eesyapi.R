@@ -13,12 +13,12 @@ geog_level_lookup <- data.frame(
     "REG", "RSC", "SCH", "SPON", "WARD"
   ),
   human_friendly = c(
-    "EDA", "Institution", "Local authority", "Local authority district",
-    "LEP", "LSIP",
-    "MAT", "MCA",
-    "National", "OA",
-    "PA", "PCON", "PROV",
-    "Regional", "RSC", "School", "SPON", "Ward"
+    "English devolved area", "Institution", "Local authority", "Local authority district",
+    "Local enterprise partnership", "Local skills improvement plan area",
+    "Multi-academy trust", "MCA",
+    "National", "Opportunity area",
+    "Planning area", "Parliamentary constituency", "Provider",
+    "Regional", "Regional school commissioner region", "School", "Sponsor", "Ward"
   )
 )
 # write it out to the data folder
