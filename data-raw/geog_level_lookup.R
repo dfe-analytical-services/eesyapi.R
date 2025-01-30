@@ -11,7 +11,7 @@ geog_level_lookup <- data.frame(
     "NAT", "OA",
     "PA", "PCON", "PROV",
     "REG", "RSC", "SCH", "SPON", "WARD"
-    ),
+  ),
   human_friendly = c(
     "EDA", "Institution", "Local authority", "Local authority district",
     "LEP", "LSIP",

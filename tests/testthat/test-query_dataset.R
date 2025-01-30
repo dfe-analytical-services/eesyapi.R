@@ -78,10 +78,44 @@ test_that("Time period query errors on badly formatted time period", {
   )
 })
 
+test_that("Geography query works with NAT", {
+  expect_equal(
+    query_dataset(
+      example_id(group = "attendance"),
+      indicators = example_id("indicator", group = "attendance"),
+      time_periods = eesyapi::example_id("time_period", group = "attendance"),
+      geographies = "NAT",
+      filter_items = eesyapi::example_id("filter_item", group = "attendance")
+    ) |>
+      dplyr::select("geographic_level") |>
+      dplyr::distinct(),
+    data.frame(
+      geographic_level = c("NAT")
+    )
+  )
+})
+
+test_that("Geography query works with National", {
+  expect_equal(
+    query_dataset(
+      example_id(group = "attendance"),
+      indicators = example_id("indicator", group = "attendance"),
+      time_periods = eesyapi::example_id("time_period", group = "attendance"),
+      geographies = "National",
+      filter_items = eesyapi::example_id("filter_item", group = "attendance")
+    ) |>
+      dplyr::select("geographic_level") |>
+      dplyr::distinct(),
+    data.frame(
+      geographic_level = c("NAT")
+    )
+  )
+})
+
 
 test_that("Geography query returns expected geographies", {
   expect_equal(
-    post_dataset(
+    query_dataset(
       example_id(group = "attendance"),
       indicators = example_id("indicator", group = "attendance"),
       time_periods = eesyapi::example_id("time_period", group = "attendance"),
