@@ -146,6 +146,29 @@ todf_geographies <- function(geographies) {
   } else {
     stop("The geographies parameter should be given as either a data frame, vector or string.")
   }
-  geographies <- geographies |> dplyr::distinct()
+  if (any(eesyapi::geog_level_lookup$human_friendly %in% geographies$geographic_level)) {
+    geographies <- geographies |>
+      dplyr::left_join(eesyapi::geog_level_lookup, by = c("geographic_level" = "human_friendly")) |>
+      dplyr::mutate(
+        geographic_level = dplyr::case_when(
+          !is.na(api_friendly) ~ api_friendly,
+          .default = !!rlang::sym("geographic_level")
+        )
+      ) |>
+      dplyr::select(-"api_friendly")
+  }
+  if (any(eesyapi::geog_level_lookup$human_friendly %in% geographies$location_level)) {
+    geographies <- geographies |>
+      dplyr::left_join(eesyapi::geog_level_lookup, by = c("location_level" = "human_friendly")) |>
+      dplyr::mutate(
+        location_level = dplyr::case_when(
+          !is.na(api_friendly) ~ api_friendly,
+          .default = !!rlang::sym("location_level")
+        )
+      ) |>
+      dplyr::select(-"api_friendly")
+  }
+  geographies <- geographies |>
+    dplyr::distinct()
   return(geographies)
 }
