@@ -21,7 +21,8 @@ reference:
   contents:
   - starts_with("api_url")
 
-- title: Generate example IDs and data
+- title: Generate example IDs and reference data
   desc: These functions are used widely to create working example code and tests
   contents:
   - starts_with("example")
+  - geog_level_lookup
