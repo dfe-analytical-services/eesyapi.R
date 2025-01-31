@@ -15,6 +15,7 @@
 <url><loc>https://dfe-analytical-services.github.io/eesyapi/reference/api_url_query.html</loc></url>
 <url><loc>https://dfe-analytical-services.github.io/eesyapi/reference/check_integer.html</loc></url>
 <url><loc>https://dfe-analytical-services.github.io/eesyapi/reference/convert_api_filter_type.html</loc></url>
+<url><loc>https://dfe-analytical-services.github.io/eesyapi/reference/create_geog_level_lookup.html</loc></url>
 <url><loc>https://dfe-analytical-services.github.io/eesyapi/reference/default_api_version.html</loc></url>
 <url><loc>https://dfe-analytical-services.github.io/eesyapi/reference/default_ees_environment.html</loc></url>
 <url><loc>https://dfe-analytical-services.github.io/eesyapi/reference/eesyapi-package.html</loc></url>
@@ -22,6 +23,7 @@
 <url><loc>https://dfe-analytical-services.github.io/eesyapi/reference/example_geography_query.html</loc></url>
 <url><loc>https://dfe-analytical-services.github.io/eesyapi/reference/example_id.html</loc></url>
 <url><loc>https://dfe-analytical-services.github.io/eesyapi/reference/example_json_query.html</loc></url>
+<url><loc>https://dfe-analytical-services.github.io/eesyapi/reference/geog_level_lookup.html</loc></url>
 <url><loc>https://dfe-analytical-services.github.io/eesyapi/reference/get_data_catalogue.html</loc></url>
 <url><loc>https://dfe-analytical-services.github.io/eesyapi/reference/get_dataset.html</loc></url>
 <url><loc>https://dfe-analytical-services.github.io/eesyapi/reference/get_dataset_versions.html</loc></url>
