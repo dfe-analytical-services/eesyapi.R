@@ -6,7 +6,9 @@ test_that("parsing geographic levels", {
 
   expect_warning(
     parse_geographic_level_codes(c("NAT", "REG", "LA", "NA")),
-    "The following geographic_levels were returned by your query, but are not a part of the standard data set: NA"
+    paste0(
+      "The following geographic_levels were returned by your query, ",
+      "but are not a part of the standard data set: NA"
+    )
   )
-
-  })
+})

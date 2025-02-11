@@ -20,6 +20,6 @@ output. This function converts those to more hum-readable versions.
 }
 \examples{
 c("NAT", "NAT", "REG", "LA", "LAD") |>
-  parse_geographic_level_codes()
+  eesyapi:::parse_geographic_level_codes()
 }
 \keyword{internal}

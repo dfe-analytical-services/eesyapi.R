@@ -2,7 +2,7 @@
 #'
 #' @keywords internal
 default_api_version <- function() {
-  return("1.0")
+  return("1")
 }
 
 #' Set current default EES environment

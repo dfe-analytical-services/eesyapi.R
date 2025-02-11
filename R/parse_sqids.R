@@ -13,34 +13,36 @@
 #'
 #' @examples
 #' c("NAT", "NAT", "REG", "LA", "LAD") |>
-#'   parse_geographic_level_codes()
+#'   eesyapi:::parse_geographic_level_codes()
 parse_geographic_level_codes <- function(geographic_levels, verbose = FALSE) {
-  if(any(c(is.list(geographic_levels), is.data.frame(geographic_levels)))){
+  if (any(c(is.list(geographic_levels), is.data.frame(geographic_levels)))) {
     stop(
       "geographic_levels should be a vector, but has been provided as a ",
-         typeof(geographic_levels)
-      )
+      typeof(geographic_levels)
+    )
   }
-  if (!all(unique(geographic_levels) %in% geog_level_lookup$api_friendly)) {
+  api_glevels <- eesyapi::geog_level_lookup |>
+    magrittr::extract("api_friendly")
+  if (!all(unique(geographic_levels) %in% api_glevels)) {
     warning(
       "The following geographic_levels were returned by your query, ",
       "but are not a part of the standard data set: ",
-      paste0(setdiff(geographic_levels, geog_level_lookup$api_friendly), collapse = ",")
+      paste0(setdiff(geographic_levels, api_glevels), collapse = ",")
     )
   }
   data.frame(api_friendly = geographic_levels) |>
     dplyr::left_join(
-      geog_level_lookup |>
+      eesyapi::geog_level_lookup |>
         dplyr::rename(geographic_level = "human_friendly"),
-      by = dplyr::join_by(api_friendly)
+      by = dplyr::join_by("api_friendly")
     ) |>
     dplyr::mutate(
       geographic_level = dplyr::case_when(
-        is.na(geographic_level) ~ api_friendly,
-        .default = geographic_level
+        is.na(geographic_level) ~ !!rlang::sym("api_friendly"),
+        .default = !!rlang::sym("geographic_level")
       )
     ) |>
-    dplyr::select(geographic_level)
+    dplyr::select("geographic_level")
 }
 
 #' Parse location sqids
