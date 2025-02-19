@@ -46,7 +46,8 @@ parse_api_dataset <- function(
   )
   dplyr::bind_cols(
     api_data_result$timePeriod,
-    data.frame(geographic_level = api_data_result$geographicLevel),
+    api_data_result$geographicLevel |>
+      parse_geographic_level_codes(),
     api_data_result$locations |>
       parse_sqids_locations(meta),
     api_data_result$filters |>

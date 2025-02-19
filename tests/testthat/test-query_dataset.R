@@ -90,7 +90,7 @@ test_that("Geography query works with NAT", {
       dplyr::select("geographic_level") |>
       dplyr::distinct(),
     data.frame(
-      geographic_level = c("NAT")
+      geographic_level = c("National")
     )
   )
 })
@@ -107,7 +107,7 @@ test_that("Geography query works with National", {
       dplyr::select("geographic_level") |>
       dplyr::distinct(),
     data.frame(
-      geographic_level = c("NAT")
+      geographic_level = c("National")
     )
   )
 })
@@ -126,7 +126,7 @@ test_that("Geography query returns expected geographies", {
       dplyr::distinct() |>
       dplyr::arrange(geographic_level),
     data.frame(
-      geographic_level = c("LA", "REG"),
+      geographic_level = c("Local authority", "Regional"),
       nat_code = rep("E92000001", 2),
       reg_code = rep("E12000003", 2),
       la_code = c("E06000014", NA)
