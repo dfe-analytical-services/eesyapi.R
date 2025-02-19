@@ -22,7 +22,7 @@ parse_geographic_level_codes <- function(geographic_levels, verbose = FALSE) {
     )
   }
   api_glevels <- eesyapi::geog_level_lookup |>
-    magrittr::extract("api_friendly")
+    magrittr::extract2("api_friendly")
   if (!all(unique(geographic_levels) %in% api_glevels)) {
     warning(
       "The following geographic_levels were returned by your query, ",
