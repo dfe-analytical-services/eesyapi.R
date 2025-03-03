@@ -10,7 +10,9 @@ test_that("api_url", {
   }
   expect_equal(
     api_url(),
-    paste0(expected_base, "v1/publications?")
+    paste0(expected_base, "v",
+      default_api_version(),
+      "/publications?")
   )
   expect_error(
     api_url(api_version = "1.x")
@@ -31,7 +33,9 @@ test_that("api_url", {
     ),
     paste0(
       expected_base,
-      "v1/data-sets/",
+      "v",
+      default_api_version(),
+      "/data-sets/",
       example_id(ees_environment = test_env),
       "/query"
     )
@@ -51,7 +55,9 @@ test_that("api_url", {
     ),
     paste0(
       expected_base,
-      "v1/data-sets/",
+      "v",
+      default_api_version(),
+      "/data-sets/",
       example_id(ees_environment = test_env),
       "/query?dataSetVersion=2.1"
     )
@@ -85,7 +91,9 @@ test_that("api_url", {
     api_url("get-csv", dataset_id = example_id("dataset")),
     paste0(
       expected_base,
-      "v1/data-sets/",
+      "v",
+      default_api_version(),
+      "/data-sets/",
       example_id("dataset", ees_environment = test_env),
       "/csv"
     )

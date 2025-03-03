@@ -81,7 +81,7 @@ seed_post_dataset <- function() {
 # Refresh the data sets list from the standard example publication
 seed_get_meta <- function() {
   saveRDS(
-    eesyapi::get_meta_response(eesyapi::example_id()),
+    get_meta_response(eesyapi::example_id()),
     file = "tests/testthat/testdata/example_meta_unparsed.rds"
   )
   saveRDS(
