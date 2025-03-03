@@ -136,14 +136,14 @@ locations to be queried.</p></dd>
 <span class="r-in"><span>  json_query <span class="op">=</span> <span class="fu"><a href="example_json_query.html">example_json_query</a></span><span class="op">(</span><span class="op">)</span></span></span>
 <span class="r-in"><span><span class="op">)</span></span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>   code period geographic_level nat_name  nat_code   reg_name  reg_code</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 1  W23   2024              REG  England E92000001 North East E12000001</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 2  W23   2024              REG  England E92000001 North East E12000001</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 3  W23   2024              REG  England E92000001 North West E12000002</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 4  W23   2024              REG  England E92000001 North West E12000002</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 5  W23   2024              REG  England E92000001 North East E12000001</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 6  W23   2024              REG  England E92000001 North East E12000001</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 7  W23   2024              REG  England E92000001 North West E12000002</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 8  W23   2024              REG  England E92000001 North West E12000002</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 1  W23   2024         Regional  England E92000001 North East E12000001</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 2  W23   2024         Regional  England E92000001 North East E12000001</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 3  W23   2024         Regional  England E92000001 North West E12000002</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 4  W23   2024         Regional  England E92000001 North West E12000002</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 5  W23   2024         Regional  England E92000001 North East E12000001</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 6  W23   2024         Regional  England E92000001 North East E12000001</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 7  W23   2024         Regional  England E92000001 North West E12000002</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 8  W23   2024         Regional  England E92000001 North West E12000002</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>   attendance_status attendance_type day_number education_phase</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 1           Absence      Authorised      Total       Secondary</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 2           Absence    Unauthorised      Total       Secondary</span>
@@ -175,30 +175,30 @@ locations to be queried.</p></dd>
 <span class="r-in"><span>  page_size <span class="op">=</span> <span class="fl">32</span></span></span>
 <span class="r-in"><span><span class="op">)</span></span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>    code period geographic_level nat_name  nat_code attendance_status</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 1   W23   2024              NAT  England E92000001           Absence</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 2   W23   2024              NAT  England E92000001           Absence</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 3   W23   2024              NAT  England E92000001           Absence</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 4   W23   2024              NAT  England E92000001           Absence</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 5   W23   2024              NAT  England E92000001           Absence</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 6   W23   2024              NAT  England E92000001           Absence</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 7   W23   2024              NAT  England E92000001           Absence</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 8   W23   2024              NAT  England E92000001           Absence</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 9   W23   2024              NAT  England E92000001           Absence</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 10  W23   2024              NAT  England E92000001           Absence</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 11  W23   2024              NAT  England E92000001           Absence</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 12  W23   2024              NAT  England E92000001           Absence</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 13  W23   2024              NAT  England E92000001           Absence</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 14  W23   2024              NAT  England E92000001           Absence</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 15  W23   2024              NAT  England E92000001           Absence</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 16  W23   2024              NAT  England E92000001           Absence</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 17  W23   2024              NAT  England E92000001           Absence</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 18  W23   2024              NAT  England E92000001           Absence</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 19  W23   2024              NAT  England E92000001           Absence</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 20  W23   2024              NAT  England E92000001           Absence</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 21  W23   2024              NAT  England E92000001           Absence</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 22  W23   2024              NAT  England E92000001           Absence</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 23  W23   2024              NAT  England E92000001           Absence</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 24  W23   2024              NAT  England E92000001           Absence</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 1   W23   2024         National  England E92000001           Absence</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 2   W23   2024         National  England E92000001           Absence</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 3   W23   2024         National  England E92000001           Absence</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 4   W23   2024         National  England E92000001           Absence</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 5   W23   2024         National  England E92000001           Absence</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 6   W23   2024         National  England E92000001           Absence</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 7   W23   2024         National  England E92000001           Absence</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 8   W23   2024         National  England E92000001           Absence</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 9   W23   2024         National  England E92000001           Absence</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 10  W23   2024         National  England E92000001           Absence</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 11  W23   2024         National  England E92000001           Absence</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 12  W23   2024         National  England E92000001           Absence</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 13  W23   2024         National  England E92000001           Absence</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 14  W23   2024         National  England E92000001           Absence</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 15  W23   2024         National  England E92000001           Absence</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 16  W23   2024         National  England E92000001           Absence</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 17  W23   2024         National  England E92000001           Absence</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 18  W23   2024         National  England E92000001           Absence</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 19  W23   2024         National  England E92000001           Absence</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 20  W23   2024         National  England E92000001           Absence</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 21  W23   2024         National  England E92000001           Absence</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 22  W23   2024         National  England E92000001           Absence</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 23  W23   2024         National  England E92000001           Absence</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 24  W23   2024         National  England E92000001           Absence</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>    attendance_type day_number education_phase      attendance_reason</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 1     Unauthorised          1         Special G unauthorised holiday</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 2     Unauthorised          1         Primary G unauthorised holiday</span>

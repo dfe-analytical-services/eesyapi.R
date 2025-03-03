@@ -444,14 +444,14 @@ locations to be queried.</p></dd>
 <span class="r-in"><span>  json_query <span class="op">=</span> <span class="fu"><a href="example_json_query.html">example_json_query</a></span><span class="op">(</span><span class="op">)</span></span></span>
 <span class="r-in"><span><span class="op">)</span></span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>   code period geographic_level nat_name  nat_code   reg_name  reg_code</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 1  W23   2024              REG  England E92000001 North East E12000001</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 2  W23   2024              REG  England E92000001 North East E12000001</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 3  W23   2024              REG  England E92000001 North West E12000002</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 4  W23   2024              REG  England E92000001 North West E12000002</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 5  W23   2024              REG  England E92000001 North East E12000001</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 6  W23   2024              REG  England E92000001 North East E12000001</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 7  W23   2024              REG  England E92000001 North West E12000002</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 8  W23   2024              REG  England E92000001 North West E12000002</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 1  W23   2024         Regional  England E92000001 North East E12000001</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 2  W23   2024         Regional  England E92000001 North East E12000001</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 3  W23   2024         Regional  England E92000001 North West E12000002</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 4  W23   2024         Regional  England E92000001 North West E12000002</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 5  W23   2024         Regional  England E92000001 North East E12000001</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 6  W23   2024         Regional  England E92000001 North East E12000001</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 7  W23   2024         Regional  England E92000001 North West E12000002</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 8  W23   2024         Regional  England E92000001 North West E12000002</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>   attendance_status attendance_type day_number education_phase</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 1           Absence      Authorised      Total       Secondary</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 2           Absence    Unauthorised      Total       Secondary</span>
@@ -486,38 +486,38 @@ locations to be queried.</p></dd>
 <span class="r-in"><span>  page_size <span class="op">=</span> <span class="fl">32</span></span></span>
 <span class="r-in"><span><span class="op">)</span></span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>    code period geographic_level nat_name  nat_code   reg_name  reg_code</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 1   W23   2024              REG  England E92000001 North East E12000001</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 2   W23   2024              REG  England E92000001 North East E12000001</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 3   W23   2024              REG  England E92000001 North East E12000001</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 4   W23   2024              NAT  England E92000001       &lt;NA&gt;      &lt;NA&gt;</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 5   W23   2024              NAT  England E92000001       &lt;NA&gt;      &lt;NA&gt;</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 6   W23   2024              NAT  England E92000001       &lt;NA&gt;      &lt;NA&gt;</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 7   W23   2024              REG  England E92000001 North East E12000001</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 8   W23   2024              REG  England E92000001 North East E12000001</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 9   W23   2024              REG  England E92000001 North East E12000001</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 10  W23   2024              NAT  England E92000001       &lt;NA&gt;      &lt;NA&gt;</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 11  W23   2024              NAT  England E92000001       &lt;NA&gt;      &lt;NA&gt;</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 12  W23   2024              NAT  England E92000001       &lt;NA&gt;      &lt;NA&gt;</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 13  W23   2024              REG  England E92000001 North East E12000001</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 14  W23   2024              REG  England E92000001 North East E12000001</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 15  W23   2024              REG  England E92000001 North East E12000001</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 16  W23   2024              NAT  England E92000001       &lt;NA&gt;      &lt;NA&gt;</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 17  W23   2024              NAT  England E92000001       &lt;NA&gt;      &lt;NA&gt;</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 18  W23   2024              NAT  England E92000001       &lt;NA&gt;      &lt;NA&gt;</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 19  W23   2024              REG  England E92000001 North East E12000001</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 20  W23   2024              REG  England E92000001 North East E12000001</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 21  W23   2024              REG  England E92000001 North East E12000001</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 22  W23   2024              NAT  England E92000001       &lt;NA&gt;      &lt;NA&gt;</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 23  W23   2024              NAT  England E92000001       &lt;NA&gt;      &lt;NA&gt;</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 24  W23   2024              NAT  England E92000001       &lt;NA&gt;      &lt;NA&gt;</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 25  W23   2024              REG  England E92000001 North East E12000001</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 26  W23   2024              REG  England E92000001 North East E12000001</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 27  W23   2024              REG  England E92000001 North East E12000001</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 28  W23   2024              NAT  England E92000001       &lt;NA&gt;      &lt;NA&gt;</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 29  W23   2024              NAT  England E92000001       &lt;NA&gt;      &lt;NA&gt;</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 30  W23   2024              NAT  England E92000001       &lt;NA&gt;      &lt;NA&gt;</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 31  W23   2024              REG  England E92000001 North East E12000001</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 32  W23   2024              REG  England E92000001 North East E12000001</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 1   W23   2024         Regional  England E92000001 North East E12000001</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 2   W23   2024         Regional  England E92000001 North East E12000001</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 3   W23   2024         Regional  England E92000001 North East E12000001</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 4   W23   2024         National  England E92000001       &lt;NA&gt;      &lt;NA&gt;</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 5   W23   2024         National  England E92000001       &lt;NA&gt;      &lt;NA&gt;</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 6   W23   2024         National  England E92000001       &lt;NA&gt;      &lt;NA&gt;</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 7   W23   2024         Regional  England E92000001 North East E12000001</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 8   W23   2024         Regional  England E92000001 North East E12000001</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 9   W23   2024         Regional  England E92000001 North East E12000001</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 10  W23   2024         National  England E92000001       &lt;NA&gt;      &lt;NA&gt;</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 11  W23   2024         National  England E92000001       &lt;NA&gt;      &lt;NA&gt;</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 12  W23   2024         National  England E92000001       &lt;NA&gt;      &lt;NA&gt;</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 13  W23   2024         Regional  England E92000001 North East E12000001</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 14  W23   2024         Regional  England E92000001 North East E12000001</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 15  W23   2024         Regional  England E92000001 North East E12000001</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 16  W23   2024         National  England E92000001       &lt;NA&gt;      &lt;NA&gt;</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 17  W23   2024         National  England E92000001       &lt;NA&gt;      &lt;NA&gt;</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 18  W23   2024         National  England E92000001       &lt;NA&gt;      &lt;NA&gt;</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 19  W23   2024         Regional  England E92000001 North East E12000001</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 20  W23   2024         Regional  England E92000001 North East E12000001</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 21  W23   2024         Regional  England E92000001 North East E12000001</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 22  W23   2024         National  England E92000001       &lt;NA&gt;      &lt;NA&gt;</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 23  W23   2024         National  England E92000001       &lt;NA&gt;      &lt;NA&gt;</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 24  W23   2024         National  England E92000001       &lt;NA&gt;      &lt;NA&gt;</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 25  W23   2024         Regional  England E92000001 North East E12000001</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 26  W23   2024         Regional  England E92000001 North East E12000001</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 27  W23   2024         Regional  England E92000001 North East E12000001</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 28  W23   2024         National  England E92000001       &lt;NA&gt;      &lt;NA&gt;</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 29  W23   2024         National  England E92000001       &lt;NA&gt;      &lt;NA&gt;</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 30  W23   2024         National  England E92000001       &lt;NA&gt;      &lt;NA&gt;</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 31  W23   2024         Regional  England E92000001 North East E12000001</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 32  W23   2024         Regional  England E92000001 North East E12000001</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>    attendance_status attendance_type day_number education_phase</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 1            Absence    Unauthorised          1       Secondary</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 2            Absence    Unauthorised          1         Primary</span>
@@ -611,10 +611,10 @@ locations to be queried.</p></dd>
 <span class="r-in"><span>  filter_items <span class="op">=</span> <span class="va">example_filter_list_input</span></span></span>
 <span class="r-in"><span><span class="op">)</span></span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>   code period geographic_level nat_name  nat_code attendance_status</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 1  W23   2024              NAT  England E92000001           Absence</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 2  W23   2024              NAT  England E92000001           Absence</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 3  W23   2024              NAT  England E92000001           Absence</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 4  W23   2024              NAT  England E92000001           Absence</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 1  W23   2024         National  England E92000001           Absence</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 2  W23   2024         National  England E92000001           Absence</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 3  W23   2024         National  England E92000001           Absence</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 4  W23   2024         National  England E92000001           Absence</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>   attendance_type day_number education_phase attendance_reason session_count</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 1      Authorised      Total       Secondary             Total       1093633</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 2    Unauthorised      Total       Secondary             Total        956076</span>
@@ -636,324 +636,324 @@ locations to be queried.</p></dd>
 <span class="r-in"><span>  filter_items <span class="op">=</span> <span class="fu"><a href="example_id.html">example_id</a></span><span class="op">(</span><span class="st">"filter_item"</span>, group <span class="op">=</span> <span class="st">"attendance"</span><span class="op">)</span></span></span>
 <span class="r-in"><span><span class="op">)</span></span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>     code period geographic_level                     la_name   la_code</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 1    W23   2024               LA                    Kirklees E08000034</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 2    W23   2024               LA                       Leeds E08000035</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 3    W23   2024               LA                        York E06000014</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 4    W23   2024               LA             North Yorkshire E06000065</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 5    W23   2024               LA                   Doncaster E08000017</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 6    W23   2024               LA          North Lincolnshire E06000013</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 7    W23   2024               LA     North East Lincolnshire E06000012</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 8    W23   2024               LA                  Calderdale E08000033</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 9    W23   2024               LA    East Riding of Yorkshire E06000011</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 10   W23   2024               LA     North East Lincolnshire E06000012</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 11   W23   2024               LA                    Kirklees E08000034</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 12   W23   2024               LA                   Doncaster E08000017</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 13   W23   2024               LA    East Riding of Yorkshire E06000011</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 14   W23   2024               LA                    Barnsley E08000016</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 15   W23   2024               LA                   Rotherham E08000018</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 16   W23   2024               LA                  Calderdale E08000033</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 17   W23   2024               LA                    Bradford E08000032</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 18   W23   2024               LA                    Bradford E08000032</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 19   W23   2024               LA                   Rotherham E08000018</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 20   W23   2024               LA                    Barnsley E08000016</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 21   W23   2024               LA Kingston upon Hull, City of E06000010</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 22   W23   2024               LA                   Doncaster E08000017</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 23   W23   2024               LA          North Lincolnshire E06000013</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 24   W23   2024               LA             North Yorkshire E06000065</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 25   W23   2024               LA                       Leeds E08000035</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 26   W23   2024               LA                   Rotherham E08000018</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 27   W23   2024               LA                   Wakefield E08000036</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 28   W23   2024               LA          North Lincolnshire E06000013</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 29   W23   2024               LA Kingston upon Hull, City of E06000010</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 30   W23   2024               LA                        York E06000014</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 31   W23   2024               LA                        York E06000014</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 32   W23   2024               LA                   Wakefield E08000036</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 33   W23   2024               LA                   Sheffield E08000019</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 34   W23   2024               LA                    Bradford E08000032</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 35   W23   2024               LA    East Riding of Yorkshire E06000011</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 36   W23   2024               LA                       Leeds E08000035</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 37   W23   2024               LA                    Barnsley E08000016</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 38   W23   2024               LA             North Yorkshire E06000065</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 39   W23   2024               LA                   Wakefield E08000036</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 40   W23   2024               LA                  Calderdale E08000033</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 41   W23   2024               LA                   Sheffield E08000019</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 42   W23   2024               LA Kingston upon Hull, City of E06000010</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 43   W23   2024               LA     North East Lincolnshire E06000012</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 44   W23   2024               LA                   Sheffield E08000019</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 45   W23   2024               LA                    Kirklees E08000034</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 46   W23   2024              REG                        &lt;NA&gt;      &lt;NA&gt;</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 47   W23   2024              REG                        &lt;NA&gt;      &lt;NA&gt;</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 48   W23   2024              REG                        &lt;NA&gt;      &lt;NA&gt;</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 49   W23   2024              NAT                        &lt;NA&gt;      &lt;NA&gt;</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 50   W23   2024              NAT                        &lt;NA&gt;      &lt;NA&gt;</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 51   W23   2024              NAT                        &lt;NA&gt;      &lt;NA&gt;</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 52   W23   2024               LA                   Rotherham E08000018</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 53   W23   2024               LA                   Rotherham E08000018</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 54   W23   2024               LA                    Barnsley E08000016</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 55   W23   2024               LA                        York E06000014</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 56   W23   2024               LA Kingston upon Hull, City of E06000010</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 57   W23   2024               LA                    Kirklees E08000034</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 58   W23   2024               LA             North Yorkshire E06000065</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 59   W23   2024               LA                        York E06000014</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 60   W23   2024               LA                   Wakefield E08000036</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 61   W23   2024               LA    East Riding of Yorkshire E06000011</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 62   W23   2024               LA                    Kirklees E08000034</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 63   W23   2024               LA             North Yorkshire E06000065</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 64   W23   2024               LA                   Sheffield E08000019</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 65   W23   2024               LA                  Calderdale E08000033</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 66   W23   2024               LA                        York E06000014</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 67   W23   2024               LA     North East Lincolnshire E06000012</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 68   W23   2024               LA                    Bradford E08000032</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 69   W23   2024               LA    East Riding of Yorkshire E06000011</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 70   W23   2024               LA    East Riding of Yorkshire E06000011</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 71   W23   2024               LA                    Barnsley E08000016</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 72   W23   2024               LA     North East Lincolnshire E06000012</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 73   W23   2024               LA                   Doncaster E08000017</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 74   W23   2024               LA Kingston upon Hull, City of E06000010</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 75   W23   2024               LA                    Kirklees E08000034</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 76   W23   2024               LA          North Lincolnshire E06000013</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 77   W23   2024               LA                   Sheffield E08000019</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 78   W23   2024               LA     North East Lincolnshire E06000012</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 79   W23   2024               LA                   Doncaster E08000017</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 80   W23   2024               LA                   Sheffield E08000019</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 81   W23   2024               LA                       Leeds E08000035</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 82   W23   2024               LA                   Doncaster E08000017</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 83   W23   2024               LA          North Lincolnshire E06000013</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 84   W23   2024               LA                    Barnsley E08000016</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 85   W23   2024               LA                    Bradford E08000032</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 86   W23   2024               LA                   Wakefield E08000036</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 87   W23   2024               LA             North Yorkshire E06000065</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 88   W23   2024               LA          North Lincolnshire E06000013</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 89   W23   2024               LA                       Leeds E08000035</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 90   W23   2024               LA                       Leeds E08000035</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 91   W23   2024               LA Kingston upon Hull, City of E06000010</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 92   W23   2024               LA                   Wakefield E08000036</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 93   W23   2024               LA                  Calderdale E08000033</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 94   W23   2024               LA                   Rotherham E08000018</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 95   W23   2024               LA                    Bradford E08000032</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 96   W23   2024               LA                  Calderdale E08000033</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 97   W23   2024               LA Kingston upon Hull, City of E06000010</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 98   W23   2024              REG                        &lt;NA&gt;      &lt;NA&gt;</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 99   W23   2024              REG                        &lt;NA&gt;      &lt;NA&gt;</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 100  W23   2024              REG                        &lt;NA&gt;      &lt;NA&gt;</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 101  W23   2024              NAT                        &lt;NA&gt;      &lt;NA&gt;</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 102  W23   2024              NAT                        &lt;NA&gt;      &lt;NA&gt;</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 103  W23   2024              NAT                        &lt;NA&gt;      &lt;NA&gt;</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 104  W23   2024               LA                        York E06000014</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 105  W23   2024               LA                   Sheffield E08000019</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 106  W23   2024               LA                    Barnsley E08000016</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 107  W23   2024               LA     North East Lincolnshire E06000012</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 108  W23   2024               LA          North Lincolnshire E06000013</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 109  W23   2024               LA                    Kirklees E08000034</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 110  W23   2024               LA Kingston upon Hull, City of E06000010</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 111  W23   2024               LA    East Riding of Yorkshire E06000011</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 112  W23   2024               LA     North East Lincolnshire E06000012</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 113  W23   2024               LA     North East Lincolnshire E06000012</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 114  W23   2024               LA                   Wakefield E08000036</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 115  W23   2024               LA                    Bradford E08000032</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 116  W23   2024               LA Kingston upon Hull, City of E06000010</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 117  W23   2024               LA                   Rotherham E08000018</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 118  W23   2024               LA                    Bradford E08000032</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 119  W23   2024               LA                       Leeds E08000035</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 120  W23   2024               LA                       Leeds E08000035</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 121  W23   2024               LA                        York E06000014</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 122  W23   2024               LA                        York E06000014</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 123  W23   2024               LA                    Barnsley E08000016</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 124  W23   2024               LA                  Calderdale E08000033</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 125  W23   2024               LA                   Wakefield E08000036</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 126  W23   2024               LA    East Riding of Yorkshire E06000011</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 127  W23   2024               LA    East Riding of Yorkshire E06000011</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 128  W23   2024               LA                    Bradford E08000032</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 129  W23   2024               LA          North Lincolnshire E06000013</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 130  W23   2024               LA                   Sheffield E08000019</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 131  W23   2024               LA                    Kirklees E08000034</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 132  W23   2024               LA                  Calderdale E08000033</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 133  W23   2024               LA                   Rotherham E08000018</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 134  W23   2024               LA                   Doncaster E08000017</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 135  W23   2024               LA          North Lincolnshire E06000013</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 136  W23   2024               LA             North Yorkshire E06000065</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 137  W23   2024               LA                       Leeds E08000035</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 138  W23   2024               LA                   Doncaster E08000017</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 139  W23   2024               LA                   Sheffield E08000019</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 140  W23   2024               LA                   Rotherham E08000018</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 141  W23   2024               LA                  Calderdale E08000033</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 142  W23   2024               LA                   Wakefield E08000036</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 143  W23   2024               LA                   Doncaster E08000017</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 144  W23   2024               LA             North Yorkshire E06000065</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 145  W23   2024               LA             North Yorkshire E06000065</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 146  W23   2024               LA                    Kirklees E08000034</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 147  W23   2024               LA                    Barnsley E08000016</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 148  W23   2024              REG                        &lt;NA&gt;      &lt;NA&gt;</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 149  W23   2024              REG                        &lt;NA&gt;      &lt;NA&gt;</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 150  W23   2024               LA          North Lincolnshire E06000013</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 151  W23   2024               LA                   Doncaster E08000017</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 152  W23   2024              REG                        &lt;NA&gt;      &lt;NA&gt;</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 153  W23   2024              NAT                        &lt;NA&gt;      &lt;NA&gt;</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 154  W23   2024              NAT                        &lt;NA&gt;      &lt;NA&gt;</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 155  W23   2024              NAT                        &lt;NA&gt;      &lt;NA&gt;</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 156  W23   2024               LA                    Bradford E08000032</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 157  W23   2024               LA     North East Lincolnshire E06000012</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 158  W23   2024               LA Kingston upon Hull, City of E06000010</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 159  W23   2024               LA                   Rotherham E08000018</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 160  W23   2024               LA                    Bradford E08000032</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 161  W23   2024               LA                    Barnsley E08000016</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 162  W23   2024               LA                    Kirklees E08000034</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 163  W23   2024               LA     North East Lincolnshire E06000012</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 164  W23   2024               LA                    Barnsley E08000016</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 165  W23   2024               LA                   Sheffield E08000019</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 166  W23   2024               LA          North Lincolnshire E06000013</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 167  W23   2024               LA                    Kirklees E08000034</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 168  W23   2024               LA             North Yorkshire E06000065</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 169  W23   2024               LA Kingston upon Hull, City of E06000010</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 170  W23   2024               LA             North Yorkshire E06000065</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 171  W23   2024               LA                       Leeds E08000035</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 172  W23   2024               LA    East Riding of Yorkshire E06000011</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 173  W23   2024               LA                  Calderdale E08000033</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 174  W23   2024               LA                   Wakefield E08000036</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 175  W23   2024               LA                   Rotherham E08000018</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 176  W23   2024               LA                        York E06000014</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 177  W23   2024               LA                   Doncaster E08000017</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 178  W23   2024               LA    East Riding of Yorkshire E06000011</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 179  W23   2024               LA                   Wakefield E08000036</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 180  W23   2024               LA                        York E06000014</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 181  W23   2024               LA                   Sheffield E08000019</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 182  W23   2024               LA                    Kirklees E08000034</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 183  W23   2024               LA                   Wakefield E08000036</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 184  W23   2024               LA                  Calderdale E08000033</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 185  W23   2024               LA             North Yorkshire E06000065</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 186  W23   2024               LA                    Barnsley E08000016</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 187  W23   2024               LA                   Sheffield E08000019</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 188  W23   2024               LA     North East Lincolnshire E06000012</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 189  W23   2024               LA                    Bradford E08000032</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 190  W23   2024               LA                       Leeds E08000035</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 191  W23   2024               LA                        York E06000014</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 192  W23   2024               LA                   Doncaster E08000017</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 193  W23   2024               LA                       Leeds E08000035</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 194  W23   2024               LA                   Rotherham E08000018</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 195  W23   2024               LA          North Lincolnshire E06000013</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 196  W23   2024               LA Kingston upon Hull, City of E06000010</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 197  W23   2024               LA    East Riding of Yorkshire E06000011</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 198  W23   2024               LA                  Calderdale E08000033</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 199  W23   2024              REG                        &lt;NA&gt;      &lt;NA&gt;</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 200  W23   2024              REG                        &lt;NA&gt;      &lt;NA&gt;</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 201  W23   2024              REG                        &lt;NA&gt;      &lt;NA&gt;</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 202  W23   2024               LA                    Bradford E08000032</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 203  W23   2024               LA                   Sheffield E08000019</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 204  W23   2024               LA                        York E06000014</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 205  W23   2024               LA     North East Lincolnshire E06000012</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 206  W23   2024               LA                  Calderdale E08000033</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 207  W23   2024               LA             North Yorkshire E06000065</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 208  W23   2024               LA                    Barnsley E08000016</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 209  W23   2024              NAT                        &lt;NA&gt;      &lt;NA&gt;</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 210  W23   2024              NAT                        &lt;NA&gt;      &lt;NA&gt;</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 211  W23   2024              NAT                        &lt;NA&gt;      &lt;NA&gt;</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 212  W23   2024               LA Kingston upon Hull, City of E06000010</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 213  W23   2024               LA                   Wakefield E08000036</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 214  W23   2024               LA                       Leeds E08000035</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 215  W23   2024               LA             North Yorkshire E06000065</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 216  W23   2024               LA                  Calderdale E08000033</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 217  W23   2024               LA          North Lincolnshire E06000013</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 218  W23   2024               LA                   Wakefield E08000036</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 219  W23   2024               LA                    Bradford E08000032</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 220  W23   2024               LA     North East Lincolnshire E06000012</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 221  W23   2024               LA                   Sheffield E08000019</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 222  W23   2024               LA                   Doncaster E08000017</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 223  W23   2024               LA                        York E06000014</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 224  W23   2024               LA                   Rotherham E08000018</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 225  W23   2024               LA                    Bradford E08000032</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 226  W23   2024               LA    East Riding of Yorkshire E06000011</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 227  W23   2024               LA                    Barnsley E08000016</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 228  W23   2024               LA    East Riding of Yorkshire E06000011</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 229  W23   2024               LA     North East Lincolnshire E06000012</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 230  W23   2024               LA                   Rotherham E08000018</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 231  W23   2024               LA          North Lincolnshire E06000013</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 232  W23   2024               LA                   Wakefield E08000036</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 233  W23   2024               LA                   Rotherham E08000018</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 234  W23   2024               LA                  Calderdale E08000033</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 235  W23   2024               LA    East Riding of Yorkshire E06000011</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 236  W23   2024               LA                   Doncaster E08000017</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 237  W23   2024               LA                    Barnsley E08000016</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 238  W23   2024               LA          North Lincolnshire E06000013</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 239  W23   2024               LA                    Kirklees E08000034</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 240  W23   2024               LA                   Doncaster E08000017</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 241  W23   2024               LA                        York E06000014</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 242  W23   2024               LA                    Kirklees E08000034</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 243  W23   2024               LA Kingston upon Hull, City of E06000010</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 244  W23   2024               LA                       Leeds E08000035</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 245  W23   2024               LA                   Sheffield E08000019</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 246  W23   2024               LA                       Leeds E08000035</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 247  W23   2024               LA Kingston upon Hull, City of E06000010</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 248  W23   2024               LA             North Yorkshire E06000065</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 249  W23   2024               LA                    Kirklees E08000034</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 250  W23   2024              REG                        &lt;NA&gt;      &lt;NA&gt;</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 251  W23   2024              REG                        &lt;NA&gt;      &lt;NA&gt;</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 252  W23   2024              REG                        &lt;NA&gt;      &lt;NA&gt;</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 253  W23   2024              NAT                        &lt;NA&gt;      &lt;NA&gt;</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 254  W23   2024              NAT                        &lt;NA&gt;      &lt;NA&gt;</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 255  W23   2024              NAT                        &lt;NA&gt;      &lt;NA&gt;</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 256  W23   2024               LA                    Kirklees E08000034</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 257  W23   2024               LA                       Leeds E08000035</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 258  W23   2024               LA                        York E06000014</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 259  W23   2024               LA             North Yorkshire E06000065</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 260  W23   2024               LA                   Doncaster E08000017</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 261  W23   2024               LA          North Lincolnshire E06000013</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 262  W23   2024               LA     North East Lincolnshire E06000012</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 263  W23   2024               LA                  Calderdale E08000033</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 264  W23   2024               LA    East Riding of Yorkshire E06000011</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 265  W23   2024               LA     North East Lincolnshire E06000012</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 266  W23   2024               LA                    Kirklees E08000034</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 267  W23   2024               LA                   Doncaster E08000017</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 268  W23   2024               LA    East Riding of Yorkshire E06000011</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 269  W23   2024               LA                    Barnsley E08000016</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 270  W23   2024               LA                   Rotherham E08000018</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 271  W23   2024               LA                  Calderdale E08000033</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 272  W23   2024               LA                    Bradford E08000032</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 273  W23   2024               LA                    Bradford E08000032</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 274  W23   2024               LA                   Rotherham E08000018</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 275  W23   2024               LA                    Barnsley E08000016</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 276  W23   2024               LA Kingston upon Hull, City of E06000010</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 277  W23   2024               LA                   Doncaster E08000017</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 278  W23   2024               LA          North Lincolnshire E06000013</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 279  W23   2024               LA             North Yorkshire E06000065</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 280  W23   2024               LA                       Leeds E08000035</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 281  W23   2024               LA                   Rotherham E08000018</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 282  W23   2024               LA                   Wakefield E08000036</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 283  W23   2024               LA          North Lincolnshire E06000013</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 284  W23   2024               LA Kingston upon Hull, City of E06000010</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 285  W23   2024               LA                        York E06000014</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 286  W23   2024               LA                        York E06000014</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 287  W23   2024               LA                   Wakefield E08000036</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 288  W23   2024               LA                   Sheffield E08000019</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 289  W23   2024               LA                    Bradford E08000032</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 290  W23   2024               LA    East Riding of Yorkshire E06000011</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 291  W23   2024               LA                       Leeds E08000035</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 292  W23   2024               LA                    Barnsley E08000016</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 293  W23   2024               LA             North Yorkshire E06000065</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 294  W23   2024               LA                   Wakefield E08000036</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 295  W23   2024               LA                  Calderdale E08000033</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 296  W23   2024               LA                   Sheffield E08000019</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 297  W23   2024               LA Kingston upon Hull, City of E06000010</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 298  W23   2024               LA     North East Lincolnshire E06000012</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 299  W23   2024               LA                   Sheffield E08000019</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 300  W23   2024               LA                    Kirklees E08000034</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 301  W23   2024              REG                        &lt;NA&gt;      &lt;NA&gt;</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 302  W23   2024              REG                        &lt;NA&gt;      &lt;NA&gt;</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 303  W23   2024              REG                        &lt;NA&gt;      &lt;NA&gt;</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 304  W23   2024              REG                        &lt;NA&gt;      &lt;NA&gt;</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 305  W23   2024              REG                        &lt;NA&gt;      &lt;NA&gt;</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 306  W23   2024              REG                        &lt;NA&gt;      &lt;NA&gt;</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 307  W23   2024              REG                        &lt;NA&gt;      &lt;NA&gt;</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 308  W23   2024              REG                        &lt;NA&gt;      &lt;NA&gt;</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 309  W23   2024              NAT                        &lt;NA&gt;      &lt;NA&gt;</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 310  W23   2024              NAT                        &lt;NA&gt;      &lt;NA&gt;</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 311  W23   2024              NAT                        &lt;NA&gt;      &lt;NA&gt;</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 312  W23   2024              NAT                        &lt;NA&gt;      &lt;NA&gt;</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 313  W23   2024              NAT                        &lt;NA&gt;      &lt;NA&gt;</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 314  W23   2024              NAT                        &lt;NA&gt;      &lt;NA&gt;</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 315  W23   2024              NAT                        &lt;NA&gt;      &lt;NA&gt;</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 316  W23   2024              REG                        &lt;NA&gt;      &lt;NA&gt;</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 317  W23   2024              NAT                        &lt;NA&gt;      &lt;NA&gt;</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 318  W23   2024              NAT                        &lt;NA&gt;      &lt;NA&gt;</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 1    W23   2024  Local authority                    Kirklees E08000034</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 2    W23   2024  Local authority                       Leeds E08000035</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 3    W23   2024  Local authority                        York E06000014</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 4    W23   2024  Local authority             North Yorkshire E06000065</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 5    W23   2024  Local authority                   Doncaster E08000017</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 6    W23   2024  Local authority          North Lincolnshire E06000013</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 7    W23   2024  Local authority     North East Lincolnshire E06000012</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 8    W23   2024  Local authority                  Calderdale E08000033</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 9    W23   2024  Local authority    East Riding of Yorkshire E06000011</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 10   W23   2024  Local authority     North East Lincolnshire E06000012</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 11   W23   2024  Local authority                    Kirklees E08000034</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 12   W23   2024  Local authority                   Doncaster E08000017</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 13   W23   2024  Local authority    East Riding of Yorkshire E06000011</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 14   W23   2024  Local authority                    Barnsley E08000016</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 15   W23   2024  Local authority                   Rotherham E08000018</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 16   W23   2024  Local authority                  Calderdale E08000033</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 17   W23   2024  Local authority                    Bradford E08000032</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 18   W23   2024  Local authority                    Bradford E08000032</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 19   W23   2024  Local authority                   Rotherham E08000018</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 20   W23   2024  Local authority                    Barnsley E08000016</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 21   W23   2024  Local authority Kingston upon Hull, City of E06000010</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 22   W23   2024  Local authority                   Doncaster E08000017</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 23   W23   2024  Local authority          North Lincolnshire E06000013</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 24   W23   2024  Local authority             North Yorkshire E06000065</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 25   W23   2024  Local authority                       Leeds E08000035</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 26   W23   2024  Local authority                   Rotherham E08000018</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 27   W23   2024  Local authority                   Wakefield E08000036</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 28   W23   2024  Local authority          North Lincolnshire E06000013</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 29   W23   2024  Local authority Kingston upon Hull, City of E06000010</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 30   W23   2024  Local authority                        York E06000014</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 31   W23   2024  Local authority                        York E06000014</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 32   W23   2024  Local authority                   Wakefield E08000036</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 33   W23   2024  Local authority                   Sheffield E08000019</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 34   W23   2024  Local authority                    Bradford E08000032</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 35   W23   2024  Local authority    East Riding of Yorkshire E06000011</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 36   W23   2024  Local authority                       Leeds E08000035</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 37   W23   2024  Local authority                    Barnsley E08000016</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 38   W23   2024  Local authority             North Yorkshire E06000065</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 39   W23   2024  Local authority                   Wakefield E08000036</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 40   W23   2024  Local authority                  Calderdale E08000033</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 41   W23   2024  Local authority                   Sheffield E08000019</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 42   W23   2024  Local authority Kingston upon Hull, City of E06000010</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 43   W23   2024  Local authority     North East Lincolnshire E06000012</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 44   W23   2024  Local authority                   Sheffield E08000019</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 45   W23   2024  Local authority                    Kirklees E08000034</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 46   W23   2024         Regional                        &lt;NA&gt;      &lt;NA&gt;</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 47   W23   2024         Regional                        &lt;NA&gt;      &lt;NA&gt;</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 48   W23   2024         Regional                        &lt;NA&gt;      &lt;NA&gt;</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 49   W23   2024         National                        &lt;NA&gt;      &lt;NA&gt;</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 50   W23   2024         National                        &lt;NA&gt;      &lt;NA&gt;</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 51   W23   2024         National                        &lt;NA&gt;      &lt;NA&gt;</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 52   W23   2024  Local authority                   Rotherham E08000018</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 53   W23   2024  Local authority                   Rotherham E08000018</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 54   W23   2024  Local authority                    Barnsley E08000016</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 55   W23   2024  Local authority                        York E06000014</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 56   W23   2024  Local authority Kingston upon Hull, City of E06000010</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 57   W23   2024  Local authority                    Kirklees E08000034</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 58   W23   2024  Local authority             North Yorkshire E06000065</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 59   W23   2024  Local authority                        York E06000014</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 60   W23   2024  Local authority                   Wakefield E08000036</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 61   W23   2024  Local authority    East Riding of Yorkshire E06000011</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 62   W23   2024  Local authority                    Kirklees E08000034</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 63   W23   2024  Local authority             North Yorkshire E06000065</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 64   W23   2024  Local authority                   Sheffield E08000019</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 65   W23   2024  Local authority                  Calderdale E08000033</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 66   W23   2024  Local authority                        York E06000014</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 67   W23   2024  Local authority     North East Lincolnshire E06000012</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 68   W23   2024  Local authority                    Bradford E08000032</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 69   W23   2024  Local authority    East Riding of Yorkshire E06000011</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 70   W23   2024  Local authority    East Riding of Yorkshire E06000011</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 71   W23   2024  Local authority                    Barnsley E08000016</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 72   W23   2024  Local authority     North East Lincolnshire E06000012</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 73   W23   2024  Local authority                   Doncaster E08000017</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 74   W23   2024  Local authority Kingston upon Hull, City of E06000010</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 75   W23   2024  Local authority                    Kirklees E08000034</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 76   W23   2024  Local authority          North Lincolnshire E06000013</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 77   W23   2024  Local authority                   Sheffield E08000019</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 78   W23   2024  Local authority     North East Lincolnshire E06000012</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 79   W23   2024  Local authority                   Doncaster E08000017</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 80   W23   2024  Local authority                   Sheffield E08000019</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 81   W23   2024  Local authority                       Leeds E08000035</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 82   W23   2024  Local authority                   Doncaster E08000017</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 83   W23   2024  Local authority          North Lincolnshire E06000013</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 84   W23   2024  Local authority                    Barnsley E08000016</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 85   W23   2024  Local authority                    Bradford E08000032</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 86   W23   2024  Local authority                   Wakefield E08000036</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 87   W23   2024  Local authority             North Yorkshire E06000065</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 88   W23   2024  Local authority          North Lincolnshire E06000013</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 89   W23   2024  Local authority                       Leeds E08000035</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 90   W23   2024  Local authority                       Leeds E08000035</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 91   W23   2024  Local authority Kingston upon Hull, City of E06000010</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 92   W23   2024  Local authority                   Wakefield E08000036</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 93   W23   2024  Local authority                  Calderdale E08000033</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 94   W23   2024  Local authority                   Rotherham E08000018</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 95   W23   2024  Local authority                    Bradford E08000032</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 96   W23   2024  Local authority                  Calderdale E08000033</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 97   W23   2024  Local authority Kingston upon Hull, City of E06000010</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 98   W23   2024         Regional                        &lt;NA&gt;      &lt;NA&gt;</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 99   W23   2024         Regional                        &lt;NA&gt;      &lt;NA&gt;</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 100  W23   2024         Regional                        &lt;NA&gt;      &lt;NA&gt;</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 101  W23   2024         National                        &lt;NA&gt;      &lt;NA&gt;</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 102  W23   2024         National                        &lt;NA&gt;      &lt;NA&gt;</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 103  W23   2024         National                        &lt;NA&gt;      &lt;NA&gt;</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 104  W23   2024  Local authority                        York E06000014</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 105  W23   2024  Local authority                   Sheffield E08000019</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 106  W23   2024  Local authority                    Barnsley E08000016</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 107  W23   2024  Local authority     North East Lincolnshire E06000012</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 108  W23   2024  Local authority          North Lincolnshire E06000013</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 109  W23   2024  Local authority                    Kirklees E08000034</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 110  W23   2024  Local authority Kingston upon Hull, City of E06000010</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 111  W23   2024  Local authority    East Riding of Yorkshire E06000011</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 112  W23   2024  Local authority     North East Lincolnshire E06000012</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 113  W23   2024  Local authority     North East Lincolnshire E06000012</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 114  W23   2024  Local authority                   Wakefield E08000036</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 115  W23   2024  Local authority                    Bradford E08000032</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 116  W23   2024  Local authority Kingston upon Hull, City of E06000010</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 117  W23   2024  Local authority                   Rotherham E08000018</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 118  W23   2024  Local authority                    Bradford E08000032</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 119  W23   2024  Local authority                       Leeds E08000035</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 120  W23   2024  Local authority                       Leeds E08000035</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 121  W23   2024  Local authority                        York E06000014</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 122  W23   2024  Local authority                        York E06000014</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 123  W23   2024  Local authority                    Barnsley E08000016</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 124  W23   2024  Local authority                  Calderdale E08000033</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 125  W23   2024  Local authority                   Wakefield E08000036</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 126  W23   2024  Local authority    East Riding of Yorkshire E06000011</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 127  W23   2024  Local authority    East Riding of Yorkshire E06000011</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 128  W23   2024  Local authority                    Bradford E08000032</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 129  W23   2024  Local authority          North Lincolnshire E06000013</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 130  W23   2024  Local authority                   Sheffield E08000019</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 131  W23   2024  Local authority                    Kirklees E08000034</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 132  W23   2024  Local authority                  Calderdale E08000033</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 133  W23   2024  Local authority                   Rotherham E08000018</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 134  W23   2024  Local authority                   Doncaster E08000017</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 135  W23   2024  Local authority          North Lincolnshire E06000013</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 136  W23   2024  Local authority             North Yorkshire E06000065</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 137  W23   2024  Local authority                       Leeds E08000035</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 138  W23   2024  Local authority                   Doncaster E08000017</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 139  W23   2024  Local authority                   Sheffield E08000019</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 140  W23   2024  Local authority                   Rotherham E08000018</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 141  W23   2024  Local authority                  Calderdale E08000033</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 142  W23   2024  Local authority                   Wakefield E08000036</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 143  W23   2024  Local authority                   Doncaster E08000017</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 144  W23   2024  Local authority             North Yorkshire E06000065</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 145  W23   2024  Local authority             North Yorkshire E06000065</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 146  W23   2024  Local authority                    Kirklees E08000034</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 147  W23   2024  Local authority                    Barnsley E08000016</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 148  W23   2024         Regional                        &lt;NA&gt;      &lt;NA&gt;</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 149  W23   2024         Regional                        &lt;NA&gt;      &lt;NA&gt;</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 150  W23   2024  Local authority          North Lincolnshire E06000013</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 151  W23   2024  Local authority                   Doncaster E08000017</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 152  W23   2024         Regional                        &lt;NA&gt;      &lt;NA&gt;</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 153  W23   2024         National                        &lt;NA&gt;      &lt;NA&gt;</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 154  W23   2024         National                        &lt;NA&gt;      &lt;NA&gt;</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 155  W23   2024         National                        &lt;NA&gt;      &lt;NA&gt;</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 156  W23   2024  Local authority                    Bradford E08000032</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 157  W23   2024  Local authority     North East Lincolnshire E06000012</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 158  W23   2024  Local authority Kingston upon Hull, City of E06000010</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 159  W23   2024  Local authority                   Rotherham E08000018</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 160  W23   2024  Local authority                    Bradford E08000032</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 161  W23   2024  Local authority                    Barnsley E08000016</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 162  W23   2024  Local authority                    Kirklees E08000034</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 163  W23   2024  Local authority     North East Lincolnshire E06000012</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 164  W23   2024  Local authority                    Barnsley E08000016</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 165  W23   2024  Local authority                   Sheffield E08000019</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 166  W23   2024  Local authority          North Lincolnshire E06000013</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 167  W23   2024  Local authority                    Kirklees E08000034</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 168  W23   2024  Local authority             North Yorkshire E06000065</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 169  W23   2024  Local authority Kingston upon Hull, City of E06000010</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 170  W23   2024  Local authority             North Yorkshire E06000065</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 171  W23   2024  Local authority                       Leeds E08000035</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 172  W23   2024  Local authority    East Riding of Yorkshire E06000011</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 173  W23   2024  Local authority                  Calderdale E08000033</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 174  W23   2024  Local authority                   Wakefield E08000036</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 175  W23   2024  Local authority                   Rotherham E08000018</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 176  W23   2024  Local authority                        York E06000014</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 177  W23   2024  Local authority                   Doncaster E08000017</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 178  W23   2024  Local authority    East Riding of Yorkshire E06000011</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 179  W23   2024  Local authority                   Wakefield E08000036</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 180  W23   2024  Local authority                        York E06000014</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 181  W23   2024  Local authority                   Sheffield E08000019</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 182  W23   2024  Local authority                    Kirklees E08000034</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 183  W23   2024  Local authority                   Wakefield E08000036</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 184  W23   2024  Local authority                  Calderdale E08000033</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 185  W23   2024  Local authority             North Yorkshire E06000065</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 186  W23   2024  Local authority                    Barnsley E08000016</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 187  W23   2024  Local authority                   Sheffield E08000019</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 188  W23   2024  Local authority     North East Lincolnshire E06000012</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 189  W23   2024  Local authority                    Bradford E08000032</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 190  W23   2024  Local authority                       Leeds E08000035</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 191  W23   2024  Local authority                        York E06000014</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 192  W23   2024  Local authority                   Doncaster E08000017</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 193  W23   2024  Local authority                       Leeds E08000035</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 194  W23   2024  Local authority                   Rotherham E08000018</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 195  W23   2024  Local authority          North Lincolnshire E06000013</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 196  W23   2024  Local authority Kingston upon Hull, City of E06000010</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 197  W23   2024  Local authority    East Riding of Yorkshire E06000011</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 198  W23   2024  Local authority                  Calderdale E08000033</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 199  W23   2024         Regional                        &lt;NA&gt;      &lt;NA&gt;</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 200  W23   2024         Regional                        &lt;NA&gt;      &lt;NA&gt;</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 201  W23   2024         Regional                        &lt;NA&gt;      &lt;NA&gt;</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 202  W23   2024  Local authority                    Bradford E08000032</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 203  W23   2024  Local authority                   Sheffield E08000019</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 204  W23   2024  Local authority                        York E06000014</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 205  W23   2024  Local authority     North East Lincolnshire E06000012</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 206  W23   2024  Local authority                  Calderdale E08000033</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 207  W23   2024  Local authority             North Yorkshire E06000065</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 208  W23   2024  Local authority                    Barnsley E08000016</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 209  W23   2024         National                        &lt;NA&gt;      &lt;NA&gt;</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 210  W23   2024         National                        &lt;NA&gt;      &lt;NA&gt;</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 211  W23   2024         National                        &lt;NA&gt;      &lt;NA&gt;</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 212  W23   2024  Local authority Kingston upon Hull, City of E06000010</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 213  W23   2024  Local authority                   Wakefield E08000036</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 214  W23   2024  Local authority                       Leeds E08000035</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 215  W23   2024  Local authority             North Yorkshire E06000065</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 216  W23   2024  Local authority                  Calderdale E08000033</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 217  W23   2024  Local authority          North Lincolnshire E06000013</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 218  W23   2024  Local authority                   Wakefield E08000036</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 219  W23   2024  Local authority                    Bradford E08000032</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 220  W23   2024  Local authority     North East Lincolnshire E06000012</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 221  W23   2024  Local authority                   Sheffield E08000019</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 222  W23   2024  Local authority                   Doncaster E08000017</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 223  W23   2024  Local authority                        York E06000014</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 224  W23   2024  Local authority                   Rotherham E08000018</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 225  W23   2024  Local authority                    Bradford E08000032</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 226  W23   2024  Local authority    East Riding of Yorkshire E06000011</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 227  W23   2024  Local authority                    Barnsley E08000016</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 228  W23   2024  Local authority    East Riding of Yorkshire E06000011</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 229  W23   2024  Local authority     North East Lincolnshire E06000012</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 230  W23   2024  Local authority                   Rotherham E08000018</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 231  W23   2024  Local authority          North Lincolnshire E06000013</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 232  W23   2024  Local authority                   Wakefield E08000036</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 233  W23   2024  Local authority                   Rotherham E08000018</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 234  W23   2024  Local authority                  Calderdale E08000033</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 235  W23   2024  Local authority    East Riding of Yorkshire E06000011</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 236  W23   2024  Local authority                   Doncaster E08000017</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 237  W23   2024  Local authority                    Barnsley E08000016</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 238  W23   2024  Local authority          North Lincolnshire E06000013</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 239  W23   2024  Local authority                    Kirklees E08000034</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 240  W23   2024  Local authority                   Doncaster E08000017</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 241  W23   2024  Local authority                        York E06000014</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 242  W23   2024  Local authority                    Kirklees E08000034</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 243  W23   2024  Local authority Kingston upon Hull, City of E06000010</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 244  W23   2024  Local authority                       Leeds E08000035</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 245  W23   2024  Local authority                   Sheffield E08000019</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 246  W23   2024  Local authority                       Leeds E08000035</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 247  W23   2024  Local authority Kingston upon Hull, City of E06000010</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 248  W23   2024  Local authority             North Yorkshire E06000065</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 249  W23   2024  Local authority                    Kirklees E08000034</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 250  W23   2024         Regional                        &lt;NA&gt;      &lt;NA&gt;</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 251  W23   2024         Regional                        &lt;NA&gt;      &lt;NA&gt;</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 252  W23   2024         Regional                        &lt;NA&gt;      &lt;NA&gt;</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 253  W23   2024         National                        &lt;NA&gt;      &lt;NA&gt;</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 254  W23   2024         National                        &lt;NA&gt;      &lt;NA&gt;</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 255  W23   2024         National                        &lt;NA&gt;      &lt;NA&gt;</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 256  W23   2024  Local authority                    Kirklees E08000034</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 257  W23   2024  Local authority                       Leeds E08000035</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 258  W23   2024  Local authority                        York E06000014</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 259  W23   2024  Local authority             North Yorkshire E06000065</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 260  W23   2024  Local authority                   Doncaster E08000017</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 261  W23   2024  Local authority          North Lincolnshire E06000013</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 262  W23   2024  Local authority     North East Lincolnshire E06000012</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 263  W23   2024  Local authority                  Calderdale E08000033</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 264  W23   2024  Local authority    East Riding of Yorkshire E06000011</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 265  W23   2024  Local authority     North East Lincolnshire E06000012</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 266  W23   2024  Local authority                    Kirklees E08000034</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 267  W23   2024  Local authority                   Doncaster E08000017</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 268  W23   2024  Local authority    East Riding of Yorkshire E06000011</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 269  W23   2024  Local authority                    Barnsley E08000016</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 270  W23   2024  Local authority                   Rotherham E08000018</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 271  W23   2024  Local authority                  Calderdale E08000033</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 272  W23   2024  Local authority                    Bradford E08000032</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 273  W23   2024  Local authority                    Bradford E08000032</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 274  W23   2024  Local authority                   Rotherham E08000018</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 275  W23   2024  Local authority                    Barnsley E08000016</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 276  W23   2024  Local authority Kingston upon Hull, City of E06000010</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 277  W23   2024  Local authority                   Doncaster E08000017</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 278  W23   2024  Local authority          North Lincolnshire E06000013</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 279  W23   2024  Local authority             North Yorkshire E06000065</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 280  W23   2024  Local authority                       Leeds E08000035</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 281  W23   2024  Local authority                   Rotherham E08000018</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 282  W23   2024  Local authority                   Wakefield E08000036</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 283  W23   2024  Local authority          North Lincolnshire E06000013</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 284  W23   2024  Local authority Kingston upon Hull, City of E06000010</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 285  W23   2024  Local authority                        York E06000014</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 286  W23   2024  Local authority                        York E06000014</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 287  W23   2024  Local authority                   Wakefield E08000036</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 288  W23   2024  Local authority                   Sheffield E08000019</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 289  W23   2024  Local authority                    Bradford E08000032</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 290  W23   2024  Local authority    East Riding of Yorkshire E06000011</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 291  W23   2024  Local authority                       Leeds E08000035</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 292  W23   2024  Local authority                    Barnsley E08000016</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 293  W23   2024  Local authority             North Yorkshire E06000065</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 294  W23   2024  Local authority                   Wakefield E08000036</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 295  W23   2024  Local authority                  Calderdale E08000033</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 296  W23   2024  Local authority                   Sheffield E08000019</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 297  W23   2024  Local authority Kingston upon Hull, City of E06000010</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 298  W23   2024  Local authority     North East Lincolnshire E06000012</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 299  W23   2024  Local authority                   Sheffield E08000019</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 300  W23   2024  Local authority                    Kirklees E08000034</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 301  W23   2024         Regional                        &lt;NA&gt;      &lt;NA&gt;</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 302  W23   2024         Regional                        &lt;NA&gt;      &lt;NA&gt;</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 303  W23   2024         Regional                        &lt;NA&gt;      &lt;NA&gt;</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 304  W23   2024         Regional                        &lt;NA&gt;      &lt;NA&gt;</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 305  W23   2024         Regional                        &lt;NA&gt;      &lt;NA&gt;</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 306  W23   2024         Regional                        &lt;NA&gt;      &lt;NA&gt;</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 307  W23   2024         Regional                        &lt;NA&gt;      &lt;NA&gt;</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 308  W23   2024         Regional                        &lt;NA&gt;      &lt;NA&gt;</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 309  W23   2024         National                        &lt;NA&gt;      &lt;NA&gt;</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 310  W23   2024         National                        &lt;NA&gt;      &lt;NA&gt;</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 311  W23   2024         National                        &lt;NA&gt;      &lt;NA&gt;</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 312  W23   2024         National                        &lt;NA&gt;      &lt;NA&gt;</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 313  W23   2024         National                        &lt;NA&gt;      &lt;NA&gt;</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 314  W23   2024         National                        &lt;NA&gt;      &lt;NA&gt;</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 315  W23   2024         National                        &lt;NA&gt;      &lt;NA&gt;</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 316  W23   2024         Regional                        &lt;NA&gt;      &lt;NA&gt;</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 317  W23   2024         National                        &lt;NA&gt;      &lt;NA&gt;</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 318  W23   2024         National                        &lt;NA&gt;      &lt;NA&gt;</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>     la_oldCode nat_name  nat_code                 reg_name  reg_code</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 1          382  England E92000001 Yorkshire and The Humber E12000003</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 2          383  England E92000001 Yorkshire and The Humber E12000003</span>
@@ -1925,10 +1925,10 @@ locations to be queried.</p></dd>
 <span class="r-wrn co"><span class="r-pr">#&gt;</span> <span class="warning">Warning: </span>Using GET to query a data set offers limited functionality, we recommend using POST alongside a JSON structured query instead:</span>
 <span class="r-wrn co"><span class="r-pr">#&gt;</span>    - query_dataset(..., method = 'POST')</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>   code    period geographic_level nat_name  nat_code   establishment_type</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 1   AY 2024/2025              NAT  England E92000001 State-funded primary</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 2   AY 2023/2024              NAT  England E92000001 State-funded primary</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 3   AY 2022/2023              NAT  England E92000001 State-funded primary</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 4   AY 2021/2022              NAT  England E92000001 State-funded primary</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 1   AY 2024/2025         National  England E92000001 State-funded primary</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 2   AY 2023/2024         National  England E92000001 State-funded primary</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 3   AY 2022/2023         National  England E92000001 State-funded primary</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 4   AY 2021/2022         National  England E92000001 State-funded primary</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>   count_absent_sessions</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 1              27819920</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 2              27819920</span>
