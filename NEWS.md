@@ -1,5 +1,6 @@
 # eesyapi (development version)
 
+* Updated API base URLs for each environment to planned live ones.
 * Added `search` parameter to `get_publications()` to allow filtering on publication title text.
 * Cleaned up behaviour of `query_dataset()` to only use geographies as a parameter, rather than 
 geographies, locations and geographic_levels.
