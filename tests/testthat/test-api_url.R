@@ -1,7 +1,7 @@
 test_that("api_url", {
   # Set the default environment for the tests
   test_env <- default_ees_environment()
-  if(test_env %in% c("test", "dev")){
+  if(test_env %in% c("test", "dev", "preprod")){
     expected_base <- paste0("https://pp-api.education.gov.uk/statistics-",test_env,"/")
 
   } else {
