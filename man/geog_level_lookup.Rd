@@ -10,7 +10,7 @@
 A data frame with 18 rows and 2 columns:
 \describe{
 \item{api_friendly}{API geographic level shorthands}
-\item{human_friendly}{Narural language geographic levels}
+\item{human_friendly}{Natural language geographic levels}
 }
 }
 }
