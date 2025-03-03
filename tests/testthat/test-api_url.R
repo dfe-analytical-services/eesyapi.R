@@ -1,15 +1,18 @@
 test_that("api_url", {
   # Set the default environment for the tests
   test_env <- default_ees_environment()
+  if(test_env %in% c("test", "dev", "preprod")){
+    expected_base <- paste0("https://pp-api.education.gov.uk/statistics-",test_env,"/")
+
+  } else {
+    expected_base <- "https://api.education.gov.uk/statistics/"
+
+  }
   expect_equal(
     api_url(),
-    paste0(
-      "https://",
-      test_env,
-      ".statistics.api.education.gov.uk/v",
+    paste0(expected_base, "v",
       default_api_version(),
-      "/publications?"
-    )
+      "/publications?")
   )
   expect_error(
     api_url(api_version = "1.x")
@@ -29,9 +32,10 @@ test_that("api_url", {
       dataset_id = example_id()
     ),
     paste0(
-      "https://",
-      test_env,
-      ".statistics.api.education.gov.uk/v", default_api_version(), "/data-sets/",
+      expected_base,
+      "v",
+      default_api_version(),
+      "/data-sets/",
       example_id(ees_environment = test_env),
       "/query"
     )
@@ -50,9 +54,10 @@ test_that("api_url", {
       dataset_version = 2.1
     ),
     paste0(
-      "https://",
-      test_env,
-      ".statistics.api.education.gov.uk/v", default_api_version(), "/data-sets/",
+      expected_base,
+      "v",
+      default_api_version(),
+      "/data-sets/",
       example_id(ees_environment = test_env),
       "/query?dataSetVersion=2.1"
     )
@@ -85,9 +90,10 @@ test_that("api_url", {
   expect_equal(
     api_url("get-csv", dataset_id = example_id("dataset")),
     paste0(
-      "https://",
-      test_env,
-      ".statistics.api.education.gov.uk/v", default_api_version(), "/data-sets/",
+      expected_base,
+      "v",
+      default_api_version(),
+      "/data-sets/",
       example_id("dataset", ees_environment = test_env),
       "/csv"
     )

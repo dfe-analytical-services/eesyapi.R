@@ -1,9 +1,20 @@
 # Check the get_publication_catalogue() function returns the expected data
-test_that("Retrieve publication list", {
+test_that("Retrieve publication list on each environment", {
   expect_gt(
-    get_publications() |> nrow(),
+    get_publications(ees_environment = "test") |> nrow(),
     0
   )
+  expect_gt(
+    get_publications(ees_environment = "dev") |> nrow(),
+    0
+  )
+  expect_gt(
+    get_publications(ees_environment = "preprod") |> nrow(),
+    0
+  )
+  expect_warning(
+    get_publications(ees_environment = "prod")
+  ) # Expect warning on this one until 6th March, because there aren't any rows.
 })
 
 # Check the get_publication_datasets() function returns the expected data

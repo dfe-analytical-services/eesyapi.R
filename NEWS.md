@@ -1,6 +1,7 @@
 # eesyapi (development version)
 
 * Updated output data parsing to convert geographic_levels to human friendly text
+* Updated API base URLs for each environment to planned live ones.
 * Added `search` parameter to `get_publications()` to allow filtering on publication title text.
 * Cleaned up behaviour of `query_dataset()` to only use geographies as a parameter, rather than 
 geographies, locations and geographic_levels.
