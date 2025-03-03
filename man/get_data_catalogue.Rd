@@ -17,7 +17,7 @@ get_data_catalogue(
 \item{publication_id}{ID of the publication to be connected to. This is required if the
 endpoint is "get-data-catalogue"}
 
-\item{ees_environment}{EES ees_environment to connect to: "dev", "test", "preprod" or "prod"}
+\item{ees_environment}{EES ees_environment to connect to: "dev", "test" or "prod"}
 
 \item{api_version}{EES API version}
 

@@ -8,9 +8,9 @@ test_that("Retrieve publication list on each environment", {
     get_publications(ees_environment = "dev") |> nrow(),
     0
   )
-  expect_no_error(
+  expect_warning(
     get_publications(ees_environment = "prod")
-  )
+  ) # Expect warning on this one until 6th March, because there aren't any rows.
 })
 
 # Check the get_publication_datasets() function returns the expected data

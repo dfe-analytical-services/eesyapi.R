@@ -26,7 +26,7 @@
 #' @param page_size Number of results to return in a single query
 #' @param page Page number of query results to return
 #' @param api_version EES API version
-#' @param ees_environment EES ees_environment to connect to: "dev", "test", "preprod" or "prod"
+#' @param ees_environment EES ees_environment to connect to: "dev", "test" or "prod"
 #' @param verbose Run with additional contextual messaging. Logical, default = FALSE
 #' @return A string containing the URL for connecting to the EES API
 #' @export
@@ -119,7 +119,6 @@ api_url <- function(
   endpoint_base <- list(
     dev = "https://pp-api.education.gov.uk/statistics-dev/",
     test = "https://pp-api.education.gov.uk/statistics-test/",
-    preprod = "https://pp-api.education.gov.uk/statistics/",
     prod = "https://api.education.gov.uk/statistics/"
   )
 
