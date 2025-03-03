@@ -156,17 +156,17 @@ of "get-dataset-versions", "get-summary", "get-meta", "get-csv", "get-data" or "
     <div class="section level2">
     <h2 id="ref-examples">Examples<a class="anchor" aria-label="anchor" href="#ref-examples"></a></h2>
     <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="fu">api_url</span><span class="op">(</span><span class="op">)</span></span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "https://test.statistics.api.education.gov.uk/v1.0/publications?"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "https://pp-api.education.gov.uk/statistics-test/v1/publications?"</span>
 <span class="r-in"><span><span class="fu">api_url</span><span class="op">(</span><span class="st">"get-publications"</span><span class="op">)</span></span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "https://test.statistics.api.education.gov.uk/v1.0/publications?"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "https://pp-api.education.gov.uk/statistics-test/v1/publications?"</span>
 <span class="r-in"><span><span class="fu">api_url</span><span class="op">(</span><span class="st">"get-data-catalogue"</span>, publication_id <span class="op">=</span> <span class="fu">eesyapi</span><span class="fu">::</span><span class="fu"><a href="example_id.html">example_id</a></span><span class="op">(</span><span class="st">"publication"</span><span class="op">)</span><span class="op">)</span></span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "https://test.statistics.api.education.gov.uk/v1.0/publications/25d0e40b-643a-4f73-3ae5-08dcf1c4d57f/data-sets?"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "https://pp-api.education.gov.uk/statistics-test/v1/publications/25d0e40b-643a-4f73-3ae5-08dcf1c4d57f/data-sets?"</span>
 <span class="r-in"><span><span class="fu">api_url</span><span class="op">(</span><span class="st">"get-summary"</span>, dataset_id <span class="op">=</span> <span class="fu">eesyapi</span><span class="fu">::</span><span class="fu"><a href="example_id.html">example_id</a></span><span class="op">(</span><span class="st">"dataset"</span><span class="op">)</span><span class="op">)</span></span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "https://test.statistics.api.education.gov.uk/v1.0/data-sets/e1ae9201-2fff-d376-8fa3-bd3c3660d4c8"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "https://pp-api.education.gov.uk/statistics-test/v1/data-sets/e1ae9201-2fff-d376-8fa3-bd3c3660d4c8"</span>
 <span class="r-in"><span><span class="fu">api_url</span><span class="op">(</span><span class="st">"get-meta"</span>, dataset_id <span class="op">=</span> <span class="fu">eesyapi</span><span class="fu">::</span><span class="fu"><a href="example_id.html">example_id</a></span><span class="op">(</span><span class="st">"dataset"</span><span class="op">)</span><span class="op">)</span></span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "https://test.statistics.api.education.gov.uk/v1.0/data-sets/e1ae9201-2fff-d376-8fa3-bd3c3660d4c8/meta"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "https://pp-api.education.gov.uk/statistics-test/v1/data-sets/e1ae9201-2fff-d376-8fa3-bd3c3660d4c8/meta"</span>
 <span class="r-in"><span><span class="fu">api_url</span><span class="op">(</span><span class="st">"get-csv"</span>, dataset_id <span class="op">=</span> <span class="fu">eesyapi</span><span class="fu">::</span><span class="fu"><a href="example_id.html">example_id</a></span><span class="op">(</span><span class="st">"dataset"</span><span class="op">)</span><span class="op">)</span></span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "https://test.statistics.api.education.gov.uk/v1.0/data-sets/e1ae9201-2fff-d376-8fa3-bd3c3660d4c8/csv"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "https://pp-api.education.gov.uk/statistics-test/v1/data-sets/e1ae9201-2fff-d376-8fa3-bd3c3660d4c8/csv"</span>
 <span class="r-in"><span><span class="fu">api_url</span><span class="op">(</span></span></span>
 <span class="r-in"><span>  <span class="st">"get-data"</span>,</span></span>
 <span class="r-in"><span>  dataset_id <span class="op">=</span> <span class="fu">eesyapi</span><span class="fu">::</span><span class="fu"><a href="example_id.html">example_id</a></span><span class="op">(</span><span class="st">"dataset"</span><span class="op">)</span>,</span></span>
@@ -175,13 +175,13 @@ of "get-dataset-versions", "get-summary", "get-meta", "get-csv", "get-data" or "
 <span class="r-in"><span>  geographic_levels <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"NAT"</span><span class="op">)</span>,</span></span>
 <span class="r-in"><span>  filter_items <span class="op">=</span> <span class="fu"><a href="example_id.html">example_id</a></span><span class="op">(</span><span class="st">"filter_item"</span><span class="op">)</span></span></span>
 <span class="r-in"><span><span class="op">)</span></span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "https://test.statistics.api.education.gov.uk/v1.0/data-sets/e1ae9201-2fff-d376-8fa3-bd3c3660d4c8/query?timePeriods.in=2024|W12%2C2024|W13&amp;geographicLevels.in=NAT&amp;filters.in=VN5XE&amp;indicators=dPe0Z"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "https://pp-api.education.gov.uk/statistics-test/v1/data-sets/e1ae9201-2fff-d376-8fa3-bd3c3660d4c8/query?timePeriods.in=2024|W12%2C2024|W13&amp;geographicLevels.in=NAT&amp;filters.in=VN5XE&amp;indicators=dPe0Z"</span>
 <span class="r-in"><span><span class="fu">api_url</span><span class="op">(</span></span></span>
 <span class="r-in"><span>  <span class="st">"post-data"</span>,</span></span>
 <span class="r-in"><span>  dataset_id <span class="op">=</span> <span class="fu">eesyapi</span><span class="fu">::</span><span class="fu"><a href="example_id.html">example_id</a></span><span class="op">(</span><span class="st">"dataset"</span><span class="op">)</span>,</span></span>
 <span class="r-in"><span>  indicators <span class="op">=</span> <span class="fu"><a href="example_id.html">example_id</a></span><span class="op">(</span><span class="st">"indicator"</span><span class="op">)</span></span></span>
 <span class="r-in"><span><span class="op">)</span></span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "https://test.statistics.api.education.gov.uk/v1.0/data-sets/e1ae9201-2fff-d376-8fa3-bd3c3660d4c8/query"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "https://pp-api.education.gov.uk/statistics-test/v1/data-sets/e1ae9201-2fff-d376-8fa3-bd3c3660d4c8/query"</span>
 </code></pre></div>
     </div>
   </main><aside class="col-md-3"><nav id="toc" aria-label="Table of contents"><h2>On this page</h2>
