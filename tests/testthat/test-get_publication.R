@@ -1,8 +1,15 @@
 # Check the get_publication_catalogue() function returns the expected data
-test_that("Retrieve publication list", {
+test_that("Retrieve publication list on each environment", {
   expect_gt(
-    get_publications() |> nrow(),
+    get_publications(ees_environment = "test") |> nrow(),
     0
+  )
+  expect_gt(
+    get_publications(ees_environment = "dev") |> nrow(),
+    0
+  )
+  expect_no_error(
+    get_publications(ees_environment = "prod")
   )
 })
 
