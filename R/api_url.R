@@ -117,10 +117,10 @@ api_url <- function(
   # End of validation
 
   endpoint_base <- list(
-    dev = "https://dev.statistics.api.education.gov.uk/",
-    test = "https://test.statistics.api.education.gov.uk/",
-    preprod = "https://pre-production.statistics.api.education.gov.uk/",
-    prod = "https://statistics.api.education.gov.uk/"
+    dev = "https://pp-api.education.gov.uk/statistics-dev/",
+    test = "https://pp-api.education.gov.uk/statistics-test/",
+    preprod = "https://pp-api.education.gov.uk/statistics/",
+    prod = "https://api.education.gov.uk/statistics/"
   )
 
   endpoint_base_version <- paste0(
