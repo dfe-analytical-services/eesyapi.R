@@ -8,6 +8,10 @@ test_that("Retrieve publication list on each environment", {
     get_publications(ees_environment = "dev") |> nrow(),
     0
   )
+  expect_gt(
+    get_publications(ees_environment = "preprod") |> nrow(),
+    0
+  )
   expect_warning(
     get_publications(ees_environment = "prod")
   ) # Expect warning on this one until 6th March, because there aren't any rows.

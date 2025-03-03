@@ -36,7 +36,7 @@ of "get-dataset-versions", "get-summary", "get-meta", "get-csv", "get-data" or "
 
 \item{dataset_version}{Version of data set to be connected to}
 
-\item{ees_environment}{EES ees_environment to connect to: "dev", "test" or "prod"}
+\item{ees_environment}{EES ees_environment to connect to: "dev", "test", "preprod" or "prod"}
 
 \item{api_version}{EES API version}
 

@@ -14,7 +14,7 @@ get_publications(
 )
 }
 \arguments{
-\item{ees_environment}{EES ees_environment to connect to: "dev", "test" or "prod"}
+\item{ees_environment}{EES ees_environment to connect to: "dev", "test", "preprod" or "prod"}
 
 \item{api_version}{EES API version}
 
