@@ -33,6 +33,13 @@ parse_api_dataset <- function(
   if ("results" %in% names(api_data_result)) {
     api_data_result <- api_data_result$results
   }
+  if (length(api_data_result) == 0) {
+    if (!verbose) {
+      stop("No rows were returned for your query. Set verbose = TRUE to see detailed API response.")
+    } else {
+      stop("No rows were returned for your query.")
+    }
+  }
   if (verbose) {
     print(names(api_data_result))
     print(names(api_data_result$locations))
