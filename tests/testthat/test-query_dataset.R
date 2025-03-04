@@ -56,12 +56,12 @@ test_that("Time period query returns expected time periods", {
       geographies = eesyapi::example_id("location_ids", group = "attendance"),
       filter_items = eesyapi::example_id("filter_item", group = "attendance")
     ) |>
-      dplyr::select("code", "period") |>
+      dplyr::select("time_period", "time_identifier") |>
       dplyr::distinct() |>
-      dplyr::arrange(code, period),
+      dplyr::arrange(time_period, time_identifier),
     data.frame(
-      code = c("W24", "W25"),
-      period = c("2024", "2024")
+      time_period = c("2024", "2024"),
+      time_identifier = c("Week 24", "Week 25")
     )
   )
 })

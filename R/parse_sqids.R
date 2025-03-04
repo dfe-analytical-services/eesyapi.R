@@ -1,3 +1,62 @@
+#' Parse API time codes
+#'
+#' @description
+#' The API returns some abbreviated versions of time periods in it's base
+#' output. This function converts those to more human-readable versions.
+#'
+#' @param time_periods data frame of API returned time periods and indicators
+#' @inheritParams parse_sqids_filters
+#'
+#' @returns Data frame of expanded time codes
+#'
+#' @keywords internal
+#'
+#' @examples
+#' data.frame(
+#'   code = c("W1", "W12", "Academic year"),
+#'   period = c("2024", "2025", "202425")
+#' ) |>
+#'   eesyapi:::parse_time_codes()
+parse_time_codes <- function(time_periods, verbose = FALSE) {
+  if (!is.data.frame(time_periods)) {
+    stop(
+      "time_periods should be a data frame, but has been provided as a ",
+      typeof(time_periods)
+    )
+  }
+  unique_identifiers <- time_periods |>
+    dplyr::pull("code") |>
+    unique()
+  time_periods_out <- time_periods |>
+    dplyr::select(
+      time_period = "period",
+      time_identifier = "code"
+    )
+  if (any(grepl("W([0-9]{1-2})", unique_identifiers))) {
+    time_periods_out <- time_periods_out |>
+      dplyr::mutate(
+        time_identifier = stringr::str_replace(
+          !!rlang::sym("time_identifier"), "W([0-9]+)", "Week \\1"
+        )
+      )
+  }
+  if (any(grepl("([ACF])Y", unique_identifiers))) {
+    time_periods_out <- time_periods_out |>
+      dplyr::mutate(
+        time_identifier = dplyr::case_when(
+          time_identifier == "AY" ~ "Academic year",
+          time_identifier == "FY" ~ "Financial year",
+          time_identifier == "CY" ~ "Calendar year",
+          .default = !!rlang::sym("time_identifier")
+        ),
+        time_period = stringr::str_replace(
+          !!rlang::sym("time_period"), "([0-9]+)/20([0-9]+)", "\\1/\\2"
+        )
+      )
+  }
+  return(time_periods_out)
+}
+
 #' Parse API geographic_levels
 #'
 #' @description

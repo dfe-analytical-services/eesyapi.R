@@ -45,7 +45,8 @@ parse_api_dataset <- function(
     api_version = api_version
   )
   dplyr::bind_cols(
-    api_data_result$timePeriod,
+    api_data_result$timePeriod |>
+      parse_time_codes(),
     api_data_result$geographicLevel |>
       parse_geographic_level_codes(),
     api_data_result$locations |>

@@ -1,18 +1,18 @@
 test_that("api_url", {
   # Set the default environment for the tests
   test_env <- default_ees_environment()
-  if(test_env %in% c("test", "dev", "preprod")){
-    expected_base <- paste0("https://pp-api.education.gov.uk/statistics-",test_env,"/")
-
+  if (test_env %in% c("test", "dev", "preprod")) {
+    expected_base <- paste0("https://pp-api.education.gov.uk/statistics-", test_env, "/")
   } else {
     expected_base <- "https://api.education.gov.uk/statistics/"
-
   }
   expect_equal(
     api_url(),
-    paste0(expected_base, "v",
+    paste0(
+      expected_base, "v",
       default_api_version(),
-      "/publications?")
+      "/publications?"
+    )
   )
   expect_error(
     api_url(api_version = "1.x")
