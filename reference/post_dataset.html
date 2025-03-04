@@ -135,24 +135,24 @@ locations to be queried.</p></dd>
 <span class="r-in"><span>  <span class="fu"><a href="example_id.html">example_id</a></span><span class="op">(</span>group <span class="op">=</span> <span class="st">"attendance"</span><span class="op">)</span>,</span></span>
 <span class="r-in"><span>  json_query <span class="op">=</span> <span class="fu"><a href="example_json_query.html">example_json_query</a></span><span class="op">(</span><span class="op">)</span></span></span>
 <span class="r-in"><span><span class="op">)</span></span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   code period geographic_level nat_name  nat_code   reg_name  reg_code</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 1  W23   2024         Regional  England E92000001 North East E12000001</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 2  W23   2024         Regional  England E92000001 North East E12000001</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 3  W23   2024         Regional  England E92000001 North West E12000002</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 4  W23   2024         Regional  England E92000001 North West E12000002</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 5  W23   2024         Regional  England E92000001 North East E12000001</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 6  W23   2024         Regional  England E92000001 North East E12000001</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 7  W23   2024         Regional  England E92000001 North West E12000002</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 8  W23   2024         Regional  England E92000001 North West E12000002</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   attendance_status attendance_type day_number education_phase</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 1           Absence      Authorised      Total       Secondary</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 2           Absence    Unauthorised      Total       Secondary</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 3           Absence      Authorised      Total       Secondary</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 4           Absence    Unauthorised      Total       Secondary</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 5           Absence      Authorised      Total           Total</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 6           Absence    Unauthorised      Total           Total</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 7           Absence      Authorised      Total           Total</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 8           Absence    Unauthorised      Total           Total</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   time_period time_identifier geographic_level nat_name  nat_code   reg_name</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 1        2024         Week 23         Regional  England E92000001 North East</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 2        2024         Week 23         Regional  England E92000001 North East</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 3        2024         Week 23         Regional  England E92000001 North West</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 4        2024         Week 23         Regional  England E92000001 North West</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 5        2024         Week 23         Regional  England E92000001 North East</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 6        2024         Week 23         Regional  England E92000001 North East</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 7        2024         Week 23         Regional  England E92000001 North West</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 8        2024         Week 23         Regional  England E92000001 North West</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>    reg_code attendance_status attendance_type day_number education_phase</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 1 E12000001           Absence      Authorised      Total       Secondary</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 2 E12000001           Absence    Unauthorised      Total       Secondary</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 3 E12000002           Absence      Authorised      Total       Secondary</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 4 E12000002           Absence    Unauthorised      Total       Secondary</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 5 E12000001           Absence      Authorised      Total           Total</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 6 E12000001           Absence    Unauthorised      Total           Total</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 7 E12000002           Absence      Authorised      Total           Total</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 8 E12000002           Absence    Unauthorised      Total           Total</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>   attendance_reason session_count</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 1             Total         53326</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 2             Total         64441</span>
@@ -174,81 +174,81 @@ locations to be queried.</p></dd>
 <span class="r-in"><span>  page <span class="op">=</span> <span class="fl">1</span>,</span></span>
 <span class="r-in"><span>  page_size <span class="op">=</span> <span class="fl">32</span></span></span>
 <span class="r-in"><span><span class="op">)</span></span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>    code period geographic_level nat_name  nat_code attendance_status</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 1   W23   2024         National  England E92000001           Absence</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 2   W23   2024         National  England E92000001           Absence</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 3   W23   2024         National  England E92000001           Absence</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 4   W23   2024         National  England E92000001           Absence</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 5   W23   2024         National  England E92000001           Absence</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 6   W23   2024         National  England E92000001           Absence</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 7   W23   2024         National  England E92000001           Absence</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 8   W23   2024         National  England E92000001           Absence</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 9   W23   2024         National  England E92000001           Absence</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 10  W23   2024         National  England E92000001           Absence</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 11  W23   2024         National  England E92000001           Absence</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 12  W23   2024         National  England E92000001           Absence</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 13  W23   2024         National  England E92000001           Absence</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 14  W23   2024         National  England E92000001           Absence</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 15  W23   2024         National  England E92000001           Absence</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 16  W23   2024         National  England E92000001           Absence</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 17  W23   2024         National  England E92000001           Absence</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 18  W23   2024         National  England E92000001           Absence</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 19  W23   2024         National  England E92000001           Absence</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 20  W23   2024         National  England E92000001           Absence</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 21  W23   2024         National  England E92000001           Absence</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 22  W23   2024         National  England E92000001           Absence</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 23  W23   2024         National  England E92000001           Absence</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 24  W23   2024         National  England E92000001           Absence</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>    attendance_type day_number education_phase      attendance_reason</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 1     Unauthorised          1         Special G unauthorised holiday</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 2     Unauthorised          1         Primary G unauthorised holiday</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 3     Unauthorised          1       Secondary G unauthorised holiday</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 4     Unauthorised          2         Special G unauthorised holiday</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 5     Unauthorised          2         Primary G unauthorised holiday</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 6     Unauthorised          2       Secondary G unauthorised holiday</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 7     Unauthorised          3       Secondary G unauthorised holiday</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 8     Unauthorised          3         Special G unauthorised holiday</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 9     Unauthorised          3         Primary G unauthorised holiday</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 10    Unauthorised          4       Secondary G unauthorised holiday</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 11    Unauthorised          4         Primary G unauthorised holiday</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 12    Unauthorised          4         Special G unauthorised holiday</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 13    Unauthorised          5       Secondary G unauthorised holiday</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 14    Unauthorised          5         Special G unauthorised holiday</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 15    Unauthorised          5         Primary G unauthorised holiday</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 16    Unauthorised      Total         Special G unauthorised holiday</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 17    Unauthorised      Total         Primary G unauthorised holiday</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 18    Unauthorised      Total       Secondary G unauthorised holiday</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 19    Unauthorised          2           Total G unauthorised holiday</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 20    Unauthorised          3           Total G unauthorised holiday</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 21    Unauthorised          4           Total G unauthorised holiday</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 22    Unauthorised          5           Total G unauthorised holiday</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 23    Unauthorised      Total           Total G unauthorised holiday</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 24    Unauthorised          1           Total G unauthorised holiday</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>    session_count</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 1           1574</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 2          84811</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 3          44458</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 4           1443</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 5          98308</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 6          37788</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 7          33274</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 8           1372</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 9          86219</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 10         29610</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 11         75852</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 12          1345</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 13         29339</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 14          1410</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 15         77983</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 16          7144</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 17        423173</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 18        174469</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 19        137539</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 20        120865</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 21        106807</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 22        108732</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 23        604786</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 24        130843</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>    time_period time_identifier geographic_level nat_name  nat_code</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 1         2024         Week 23         National  England E92000001</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 2         2024         Week 23         National  England E92000001</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 3         2024         Week 23         National  England E92000001</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 4         2024         Week 23         National  England E92000001</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 5         2024         Week 23         National  England E92000001</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 6         2024         Week 23         National  England E92000001</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 7         2024         Week 23         National  England E92000001</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 8         2024         Week 23         National  England E92000001</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 9         2024         Week 23         National  England E92000001</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 10        2024         Week 23         National  England E92000001</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 11        2024         Week 23         National  England E92000001</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 12        2024         Week 23         National  England E92000001</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 13        2024         Week 23         National  England E92000001</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 14        2024         Week 23         National  England E92000001</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 15        2024         Week 23         National  England E92000001</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 16        2024         Week 23         National  England E92000001</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 17        2024         Week 23         National  England E92000001</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 18        2024         Week 23         National  England E92000001</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 19        2024         Week 23         National  England E92000001</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 20        2024         Week 23         National  England E92000001</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 21        2024         Week 23         National  England E92000001</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 22        2024         Week 23         National  England E92000001</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 23        2024         Week 23         National  England E92000001</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 24        2024         Week 23         National  England E92000001</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>    attendance_status attendance_type day_number education_phase</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 1            Absence    Unauthorised          1         Special</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 2            Absence    Unauthorised          1         Primary</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 3            Absence    Unauthorised          1       Secondary</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 4            Absence    Unauthorised          2         Special</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 5            Absence    Unauthorised          2         Primary</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 6            Absence    Unauthorised          2       Secondary</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 7            Absence    Unauthorised          3       Secondary</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 8            Absence    Unauthorised          3         Special</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 9            Absence    Unauthorised          3         Primary</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 10           Absence    Unauthorised          4       Secondary</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 11           Absence    Unauthorised          4         Primary</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 12           Absence    Unauthorised          4         Special</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 13           Absence    Unauthorised          5       Secondary</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 14           Absence    Unauthorised          5         Special</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 15           Absence    Unauthorised          5         Primary</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 16           Absence    Unauthorised      Total         Special</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 17           Absence    Unauthorised      Total         Primary</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 18           Absence    Unauthorised      Total       Secondary</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 19           Absence    Unauthorised          2           Total</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 20           Absence    Unauthorised          3           Total</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 21           Absence    Unauthorised          4           Total</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 22           Absence    Unauthorised          5           Total</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 23           Absence    Unauthorised      Total           Total</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 24           Absence    Unauthorised          1           Total</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>         attendance_reason session_count</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 1  G unauthorised holiday          1574</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 2  G unauthorised holiday         84811</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 3  G unauthorised holiday         44458</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 4  G unauthorised holiday          1443</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 5  G unauthorised holiday         98308</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 6  G unauthorised holiday         37788</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 7  G unauthorised holiday         33274</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 8  G unauthorised holiday          1372</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 9  G unauthorised holiday         86219</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 10 G unauthorised holiday         29610</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 11 G unauthorised holiday         75852</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 12 G unauthorised holiday          1345</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 13 G unauthorised holiday         29339</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 14 G unauthorised holiday          1410</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 15 G unauthorised holiday         77983</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 16 G unauthorised holiday          7144</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 17 G unauthorised holiday        423173</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 18 G unauthorised holiday        174469</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 19 G unauthorised holiday        137539</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 20 G unauthorised holiday        120865</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 21 G unauthorised holiday        106807</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 22 G unauthorised holiday        108732</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 23 G unauthorised holiday        604786</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 24 G unauthorised holiday        130843</span>
 <span class="r-in"><span></span></span>
 </code></pre></div>
     </div>
