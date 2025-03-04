@@ -1,13 +1,11 @@
 test_that("api_url", {
-  # Set the default environment for the tests
-  test_env <- default_ees_environment()
   if (test_env %in% c("test", "dev", "preprod")) {
     expected_base <- paste0("https://pp-api.education.gov.uk/statistics-", test_env, "/")
   } else {
     expected_base <- "https://api.education.gov.uk/statistics/"
   }
   expect_equal(
-    api_url(),
+    api_url(ees_environment = test_env),
     paste0(
       expected_base, "v",
       default_api_version(),
@@ -29,6 +27,7 @@ test_that("api_url", {
   expect_equal(
     api_url(
       endpoint = "post-data",
+      ees_environment = test_env,
       dataset_id = example_id()
     ),
     paste0(
@@ -50,6 +49,7 @@ test_that("api_url", {
   expect_equal(
     api_url(
       endpoint = "post-data",
+      ees_environment = test_env,
       dataset_id = example_id(),
       dataset_version = 2.1
     ),
@@ -88,7 +88,10 @@ test_that("api_url", {
   )
 
   expect_equal(
-    api_url("get-csv", dataset_id = example_id("dataset")),
+    api_url("get-csv",
+      ees_environment = test_env,
+      dataset_id = example_id("dataset")
+    ),
     paste0(
       expected_base,
       "v",

@@ -1,4 +1,4 @@
-# eesyapi (development version)
+# eesyapi 0.5.0
 
 * Updated output data parsing to convert geographic_levels to human friendly text
 * Updated API base URLs for each environment to planned live ones.
@@ -6,6 +6,7 @@
 * Cleaned up behaviour of `query_dataset()` to only use geographies as a parameter, rather than 
 geographies, locations and geographic_levels.
 * Moved all background functions to be internal.
+* Added a specific error message that warns if no rows are returned from a valid query.
 
 # eesyapi 0.4.0
 

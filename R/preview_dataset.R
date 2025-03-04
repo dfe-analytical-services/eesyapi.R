@@ -24,6 +24,7 @@
 #' @param dataset_id ID of data set
 #' @param dataset_version Version number of data set
 #' @param api_version EES API version
+#' @param ees_environment EES ees_environment to connect to: "dev", "test", "preprod" or "prod"
 #' @param n_max maximum number of rows to preview, 10 by default, Inf will get
 #'  all available rows
 #' @param verbose Run with additional contextual messaging, logical,
@@ -45,6 +46,7 @@ preview_dataset <- function(
     dataset_id,
     dataset_version = NULL,
     api_version = NULL,
+    ees_environment = default_ees_environment(),
     n_max = 10,
     verbose = FALSE) {
   # Validation ----------------------------------------------------------------
@@ -72,6 +74,7 @@ preview_dataset <- function(
   # Generate query ------------------------------------------------------------
   query_url <- api_url(
     endpoint = "get-csv",
+    ees_environment = ees_environment,
     dataset_id = dataset_id,
     verbose = verbose
   )

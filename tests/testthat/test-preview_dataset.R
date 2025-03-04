@@ -1,6 +1,11 @@
 test_that("Returns a data frame and has no errors", {
-  expect_true(class(preview_dataset(example_id("dataset"))) == "data.frame")
-  expect_no_error(preview_dataset(example_id("dataset")))
+  expect_true(
+    preview_dataset(example_id("dataset"), ees_environment = test_env) |>
+      class() == "data.frame"
+  )
+  expect_no_error(
+    preview_dataset(example_id("dataset"), ees_environment = test_env)
+  )
 })
 
 test_that("Incorrect inputs cause errors", {
@@ -39,17 +44,28 @@ test_that("Incorrect inputs cause errors", {
 
 test_that("only previews a specified number of rows", {
   expect_equal(
-    preview_dataset(example_id("dataset")) |> nrow(),
+    preview_dataset(
+      example_id("dataset"),
+      ees_environment = test_env
+    ) |> nrow(),
     10
   )
 
   expect_equal(
-    preview_dataset(example_id("dataset"), n_max = 0) |> nrow(),
+    preview_dataset(
+      example_id("dataset"),
+      ees_environment = test_env,
+      n_max = 0
+    ) |> nrow(),
     0
   )
 
   expect_equal(
-    preview_dataset(example_id("dataset", group = "attendance"), n_max = 42) |> nrow(),
+    preview_dataset(
+      example_id("dataset", group = "attendance"),
+      ees_environment = test_env,
+      n_max = 42
+    ) |> nrow(),
     42
   )
 })
@@ -61,7 +77,16 @@ test_that("returns all rows", {
   # The test data this was pointing to now only seems to be 12 rows long... Checking if this is
   # what it's supposed to be right now.
   expect_equal(
-    preview_dataset(example_id("dataset"), n_max = Inf) |> nrow(),
-    query_dataset(example_id("dataset"), indicators = example_id("indicator")) |> nrow()
+    preview_dataset(
+      example_id("dataset"),
+      n_max = Inf, ees_environment = test_env
+    ) |> nrow(),
+    query_dataset(
+      example_id("dataset"),
+      ees_environment = test_env,
+      indicators = example_id("indicator")
+    ) |> nrow()
   )
 })
+
+# TODO: Give nicer warning than a 404 when the dataset doesn't exist

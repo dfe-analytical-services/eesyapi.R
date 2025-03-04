@@ -196,7 +196,13 @@ query_dataset <- function(
   }
   if (is.null(indicators) && (is.null(json_query) || method == "GET")) {
     warning("No indicators provided, defaulted to using all indicators from meta data")
-    indicators <- get_meta(dataset_id) |>
+    indicators <- get_meta(
+      dataset_id,
+      dataset_version = dataset_version,
+      ees_environment = ees_environment,
+      api_version = api_version,
+      verbose = verbose
+    ) |>
       magrittr::extract2("indicators") |>
       dplyr::pull("col_id")
   }

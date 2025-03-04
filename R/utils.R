@@ -9,6 +9,13 @@ default_api_version <- function() {
 #'
 #' @keywords internal
 default_ees_environment <- function() {
+  return("prod")
+}
+
+#' Set current default testing environment
+#'
+#' @keywords internal
+test_ees_environment <- function() {
   return("test")
 }
 
