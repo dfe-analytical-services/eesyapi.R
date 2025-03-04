@@ -8,6 +8,7 @@ preview_dataset(
   dataset_id,
   dataset_version = NULL,
   api_version = NULL,
+  ees_environment = default_ees_environment(),
   n_max = 10,
   verbose = FALSE
 )
@@ -18,6 +19,8 @@ preview_dataset(
 \item{dataset_version}{Version number of data set}
 
 \item{api_version}{EES API version}
+
+\item{ees_environment}{EES ees_environment to connect to: "dev", "test", "preprod" or "prod"}
 
 \item{n_max}{maximum number of rows to preview, 10 by default, Inf will get
 all available rows}
