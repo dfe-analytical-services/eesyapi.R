@@ -9,6 +9,7 @@ test_that("Get nice error when no rows are returned", {
   expect_error(
     query_dataset(
       example_id(group = "attendance"),
+      ees_environment = test_env,
       indicators = example_id("indicator", group = "attendance"),
       time_periods = eesyapi::example_id("time_period", group = "attendance"),
       geographies = c("SCH"),

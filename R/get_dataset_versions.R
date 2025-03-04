@@ -22,7 +22,7 @@
 #'   \item filters - names of filters in the data set version
 #'   \item indicators - names of indicators in the data set version
 #'   \item notes - any additional information
-#'   }
+#' }
 #'
 #' @return A data frame with X columns:
 #'
