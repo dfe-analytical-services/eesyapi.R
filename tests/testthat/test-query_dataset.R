@@ -237,3 +237,16 @@ test_that("Query data set runs on test!", {
     12
   )
 })
+
+test_that("Get nice message when no rows are returned", {
+  expect_message(
+    query_dataset(
+      example_id(group = "attendance"),
+      indicators = example_id("indicator", group = "attendance"),
+      time_periods = eesyapi::example_id("time_period", group = "attendance"),
+      geographies = c("SCH"),
+      filter_items = eesyapi::example_id("filter_item", group = "attendance")
+    ),
+    "No rows were returned for your query."
+  )
+})
