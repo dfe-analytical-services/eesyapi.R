@@ -40,6 +40,20 @@ parse_time_codes <- function(time_periods, verbose = FALSE) {
         )
       )
   }
+  if (any(grepl("([ACF])Y", unique_identifiers))) {
+    time_periods_out <- time_periods_out |>
+      dplyr::mutate(
+        time_identifier = dplyr::case_when(
+          time_identifier == "AY" ~ "Academic year",
+          time_identifier == "FY" ~ "Financial year",
+          time_identifier == "CY" ~ "Calendar year",
+          .default = !!rlang::sym("time_identifier")
+        ),
+        time_period = stringr::str_replace(
+          !!rlang::sym("time_period"), "([0-9]+)/20([0-9]+)", "\\1/\\2"
+        )
+      )
+  }
   return(time_periods_out)
 }
 
