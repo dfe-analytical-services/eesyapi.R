@@ -6,7 +6,7 @@ test_that("Get publications returns warning when no rows returned", {
 })
 
 test_that("Get nice error when no rows are returned", {
-  expect_error(
+  expect_warning(
     query_dataset(
       example_id(group = "attendance", ees_environment = test_env),
       ees_environment = test_env,

@@ -6,7 +6,7 @@
 * Cleaned up behaviour of `query_dataset()` to only use geographies as a parameter, rather than 
 geographies, locations and geographic_levels.
 * Moved all background functions to be internal.
-* Added a specific error message that warns if no rows are returned from a valid query.
+* Added a specific warning message that warns if no rows are returned from a valid query.
 
 # eesyapi 0.4.0
 
