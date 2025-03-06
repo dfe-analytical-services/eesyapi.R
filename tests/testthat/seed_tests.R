@@ -37,7 +37,7 @@ seed_get_publications <- function() {
 seed_get_data_catalogue <- function() {
   saveRDS(
     eesyapi::get_data_catalogue(
-      eesyapi::example_id("publication"),
+      eesyapi::example_id("publication", ees_environment = "test"),
       ees_environment = test_ees_environment()
     ),
     file = "tests/testthat/testdata/example_publication_datasets.rds"
@@ -49,6 +49,7 @@ seed_query_dataset <- function() {
   result <- eesyapi::query_dataset(
     eesyapi::example_id(
       group = "attendance",
+      ees_environment = "test"
     ),
     ees_environment = test_ees_environment(),
     json_query = "tests/testthat/testdata/test_query.json"
@@ -59,7 +60,7 @@ seed_query_dataset <- function() {
   )
   message("Updating example json-from-string data set")
   result <- eesyapi::query_dataset(
-    eesyapi::example_id(group = "attendance"),
+    eesyapi::example_id(group = "attendance", ees_environment = "test"),
     ees_environment = test_ees_environment(),
     json_query = eesyapi::example_json_query()
   )
@@ -72,12 +73,24 @@ seed_query_dataset <- function() {
 seed_post_dataset <- function() {
   message("Updating example data set from filter_items param selection")
   result <- eesyapi::query_dataset(
-    eesyapi::example_id(group = "attendance"),
+    eesyapi::example_id(group = "attendance", ees_environment = "test"),
     ees_environment = test_ees_environment(),
-    indicators = eesyapi::example_id("indicator", group = "attendance"),
-    time_periods = eesyapi::example_id("time_period", group = "attendance"),
-    geographies = eesyapi::example_id("location_ids", group = "attendance"),
-    filter_items = eesyapi::example_id("filter_items_long", group = "attendance")
+    indicators = eesyapi::example_id(
+      "indicator",
+      group = "attendance", ees_environment = "test"
+    ),
+    time_periods = eesyapi::example_id(
+      "time_period",
+      group = "attendance", ees_environment = "test"
+    ),
+    geographies = eesyapi::example_id(
+      "location_ids",
+      group = "attendance", ees_environment = "test"
+    ),
+    filter_items = eesyapi::example_id(
+      "filter_items_long",
+      group = "attendance", ees_environment = "test"
+    )
   )
   message("  * Number records = ", nrow(result))
   result |>
@@ -90,14 +103,14 @@ seed_post_dataset <- function() {
 seed_get_meta <- function() {
   saveRDS(
     get_meta_response(
-      eesyapi::example_id(),
+      eesyapi::example_id(ees_environment = "test"),
       ees_environment = test_ees_environment()
     ),
     file = "tests/testthat/testdata/example_meta_unparsed.rds"
   )
   saveRDS(
     eesyapi::get_meta(
-      eesyapi::example_id(),
+      eesyapi::example_id(ees_environment = "test"),
       ees_environment = test_ees_environment()
     ),
     file = "tests/testthat/testdata/example_meta_parsed.rds"
