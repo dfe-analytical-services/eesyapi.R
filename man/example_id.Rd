@@ -4,7 +4,7 @@
 \alias{example_id}
 \title{Example ID}
 \usage{
-example_id(level = "dataset", ees_environment = "test", group = "absence")
+example_id(level = "dataset", ees_environment = "prod", group = "absence")
 }
 \arguments{
 \item{level}{Level of ID example to return. A range are available, although not every example
@@ -22,7 +22,7 @@ example short / long filter query list.
 \item "indicator": Return example indicator ID
 }}
 
-\item{ees_environment}{Environment to return a working example for: "dev" or "test"}
+\item{ees_environment}{Environment to return a working example for: "dev", "test" or "prod"}
 
 \item{group}{Choose the publication group of examples to use. Options are:
 \itemize{
