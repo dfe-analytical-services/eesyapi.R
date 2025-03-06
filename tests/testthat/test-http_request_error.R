@@ -7,7 +7,7 @@ test_that("Successful connection message", {
 
 test_that("Bad URL / query message", {
   expect_error(
-    api_url("get-meta", dataset_id = example_id("publication")) |>
+    api_url("get-meta", dataset_id = example_id("publication", ees_environment = test_env)) |>
       httr::GET() |>
       http_request_error(),
     paste0(

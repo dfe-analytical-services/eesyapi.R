@@ -1,25 +1,38 @@
 test_that("Invalid method selected", {
   expect_error(
-    query_dataset(example_id(), indicators = example_id("indicator"), method = "QUERY")
+    query_dataset(
+      example_id(ees_environment = test_env),
+      indicators = example_id("indicator", ees_environment = test_env),
+      ees_environment = test_env,
+      method = "QUERY"
+    )
   )
 })
 
 test_that("Invalid dataset_id", {
   expect_error(
-    query_dataset("kjdhf873kdjf", indicators = example_id("indicator"))
+    query_dataset(
+      "kjdhf873kdjf",
+      indicators = example_id("indicator"),
+      ees_environment = test_env
+    )
   )
 })
 
 test_that("No indicator supplied", {
   expect_warning(
-    query_dataset(example_id()),
+    query_dataset(
+      example_id(ees_environment = test_env),
+      ees_environment = test_env
+    ),
     "No indicators provided, defaulted to using all indicators from meta data"
   )
 })
 
 test_that("Run query from file", {
   query_result <- query_dataset(
-    example_id(group = "attendance"),
+    example_id(group = "attendance", ees_environment = test_env),
+    ees_environment = test_env,
     json_query = "testdata/test_query.json"
   )
   query_result <- query_result |>
@@ -34,8 +47,9 @@ test_that("Run query from file", {
 
 test_that("Run query from string", {
   query_result <- query_dataset(
-    example_id(group = "attendance"),
-    json_query = example_json_query()
+    example_id(group = "attendance", ees_environment = test_env),
+    ees_environment = test_env,
+    json_query = example_json_query(ees_environment = test_env)
   )
   query_result <- query_result |>
     dplyr::arrange(dplyr::across(colnames(query_result)))
@@ -50,11 +64,28 @@ test_that("Run query from string", {
 test_that("Time period query returns expected time periods", {
   expect_equal(
     post_dataset(
-      example_id(group = "attendance"),
-      indicators = example_id("indicator", group = "attendance"),
-      time_periods = eesyapi::example_id("time_periods", group = "attendance"),
-      geographies = eesyapi::example_id("location_ids", group = "attendance"),
-      filter_items = eesyapi::example_id("filter_item", group = "attendance")
+      example_id(group = "attendance", ees_environment = test_env),
+      indicators = example_id(
+        "indicator",
+        group = "attendance",
+        ees_environment = test_env
+      ),
+      time_periods = eesyapi::example_id(
+        "time_periods",
+        group = "attendance",
+        ees_environment = test_env
+      ),
+      geographies = eesyapi::example_id(
+        "location_ids",
+        group = "attendance",
+        ees_environment = test_env
+      ),
+      filter_items = eesyapi::example_id(
+        "filter_item",
+        group = "attendance",
+        ees_environment = test_env
+      ),
+      ees_environment = test_env
     ) |>
       dplyr::select("time_period", "time_identifier") |>
       dplyr::distinct() |>
@@ -69,11 +100,22 @@ test_that("Time period query returns expected time periods", {
 test_that("Time period query errors on badly formatted time period", {
   expect_error(
     post_dataset(
-      example_id(group = "attendance"),
-      indicators = example_id("indicator", group = "attendance"),
+      example_id(group = "attendance", ees_environment = test_env),
+      indicators = example_id(
+        "indicator",
+        group = "attendance",
+        ees_environment = test_env
+      ),
       time_periods = c("2024W21", "2024|W23"),
-      geographies = eesyapi::example_id("location_ids", group = "attendance"),
-      filter_items = eesyapi::example_id("filter_item", group = "attendance")
+      geographies = eesyapi::example_id(
+        "location_ids",
+        group = "attendance", ees_environment = test_env
+      ),
+      filter_items = eesyapi::example_id(
+        "filter_item",
+        group = "attendance", ees_environment = test_env
+      ),
+      ees_environment = test_env
     )
   )
 })
@@ -81,11 +123,21 @@ test_that("Time period query errors on badly formatted time period", {
 test_that("Geography query works with NAT", {
   expect_equal(
     query_dataset(
-      example_id(group = "attendance"),
-      indicators = example_id("indicator", group = "attendance"),
-      time_periods = eesyapi::example_id("time_period", group = "attendance"),
+      example_id(group = "attendance", ees_environment = test_env),
+      indicators = example_id(
+        "indicator",
+        group = "attendance", ees_environment = test_env
+      ),
+      time_periods = eesyapi::example_id(
+        "time_period",
+        group = "attendance", ees_environment = test_env
+      ),
       geographies = "NAT",
-      filter_items = eesyapi::example_id("filter_item", group = "attendance")
+      filter_items = eesyapi::example_id(
+        "filter_item",
+        group = "attendance", ees_environment = test_env
+      ),
+      ees_environment = test_env
     ) |>
       dplyr::select("geographic_level") |>
       dplyr::distinct(),
@@ -98,11 +150,21 @@ test_that("Geography query works with NAT", {
 test_that("Geography query works with National", {
   expect_equal(
     query_dataset(
-      example_id(group = "attendance"),
-      indicators = example_id("indicator", group = "attendance"),
-      time_periods = eesyapi::example_id("time_period", group = "attendance"),
+      example_id(group = "attendance", ees_environment = test_env),
+      indicators = example_id(
+        "indicator",
+        group = "attendance", ees_environment = test_env
+      ),
+      time_periods = eesyapi::example_id(
+        "time_period",
+        group = "attendance", ees_environment = test_env
+      ),
       geographies = "National",
-      filter_items = eesyapi::example_id("filter_item", group = "attendance")
+      filter_items = eesyapi::example_id(
+        "filter_item",
+        group = "attendance", ees_environment = test_env
+      ),
+      ees_environment = test_env
     ) |>
       dplyr::select("geographic_level") |>
       dplyr::distinct(),
@@ -116,11 +178,24 @@ test_that("Geography query works with National", {
 test_that("Geography query returns expected geographies", {
   expect_equal(
     query_dataset(
-      example_id(group = "attendance"),
-      indicators = example_id("indicator", group = "attendance"),
-      time_periods = eesyapi::example_id("time_period", group = "attendance"),
-      geographies = eesyapi::example_id("location_ids", group = "attendance"),
-      filter_items = eesyapi::example_id("filter_item", group = "attendance")
+      example_id(group = "attendance", ees_environment = test_env),
+      indicators = example_id(
+        "indicator",
+        group = "attendance", ees_environment = test_env
+      ),
+      time_periods = eesyapi::example_id(
+        "time_period",
+        group = "attendance", ees_environment = test_env
+      ),
+      geographies = eesyapi::example_id(
+        "location_ids",
+        group = "attendance", ees_environment = test_env
+      ),
+      filter_items = eesyapi::example_id(
+        "filter_item",
+        group = "attendance", ees_environment = test_env
+      ),
+      ees_environment = test_env
     ) |>
       dplyr::select("geographic_level", "nat_code", "reg_code", "la_code") |>
       dplyr::distinct() |>
@@ -136,7 +211,12 @@ test_that("Geography query returns expected geographies", {
 
 test_that("Non-standard geographic level", {
   expect_error(
-    query_dataset(example_id(), geographies = "Nat", indicators = example_id("indicator")),
+    query_dataset(
+      example_id(ees_environment = test_env),
+      geographies = "Nat",
+      indicators = example_id("indicator", ees_environment = test_env),
+      ees_environment = test_env
+    ),
     paste0(
       "\nHTTP connection error: 400\nMust be one of the allowed values.",
       "\n     Provided values: Nat\n     Allowed values: ",
@@ -147,11 +227,24 @@ test_that("Non-standard geographic level", {
 
 test_that("Test filter-combinations POST dataset query", {
   query_result <- query_dataset(
-    example_id(group = "attendance"),
-    indicators = example_id("indicator", group = "attendance"),
-    time_periods = eesyapi::example_id("time_period", group = "attendance"),
-    geographies = eesyapi::example_id("location_ids", group = "attendance"),
-    filter_items = eesyapi::example_id("filter_items_long", group = "attendance")
+    example_id(group = "attendance", ees_environment = test_env),
+    indicators = example_id(
+      "indicator",
+      group = "attendance", ees_environment = test_env
+    ),
+    time_periods = eesyapi::example_id(
+      "time_period",
+      group = "attendance", ees_environment = test_env
+    ),
+    geographies = eesyapi::example_id(
+      "location_ids",
+      group = "attendance", ees_environment = test_env
+    ),
+    filter_items = eesyapi::example_id(
+      "filter_items_long",
+      group = "attendance", ees_environment = test_env
+    ),
+    ees_environment = test_env
   )
   query_result <- query_result |>
     dplyr::arrange(dplyr::across(colnames(query_result)))
@@ -162,11 +255,24 @@ test_that("Test filter-combinations POST dataset query", {
       dplyr::arrange(dplyr::across(colnames(query_result)))
   )
   query_result <- query_dataset(
-    example_id(group = "attendance"),
-    indicators = example_id("indicator", group = "attendance"),
-    time_periods = eesyapi::example_id("time_period", group = "attendance"),
-    geographies = eesyapi::example_id("location_ids", group = "attendance"),
-    filter_items = eesyapi::example_id("filter_items_short", group = "attendance")
+    example_id(group = "attendance", ees_environment = test_env),
+    indicators = eesyapi::example_id(
+      "indicator",
+      group = "attendance", ees_environment = test_env
+    ),
+    time_periods = eesyapi::example_id(
+      "time_period",
+      group = "attendance", ees_environment = test_env
+    ),
+    geographies = eesyapi::example_id(
+      "location_ids",
+      group = "attendance", ees_environment = test_env
+    ),
+    filter_items = eesyapi::example_id(
+      "filter_items_short",
+      group = "attendance", ees_environment = test_env
+    ),
+    ees_environment = test_env
   ) |>
     dplyr::select(
       "attendance_status",
@@ -190,7 +296,11 @@ test_that("Test filter-combinations POST dataset query", {
 
 test_that("Indicators not found in data set", {
   expect_error(
-    query_dataset(example_id(), indicators = c("uywet", "uywed")),
+    query_dataset(
+      example_id(ees_environment = test_env),
+      indicators = c("uywet", "uywed"),
+      ees_environment = test_env
+    ),
     paste0(
       "\nHTTP connection error: 400\nOne or more indicators could not be found.",
       "\n     Error items: uywet, uywed"

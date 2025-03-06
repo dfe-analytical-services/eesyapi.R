@@ -15,7 +15,7 @@
 #'   - "filter_item" / "filter_items_short" / "filter_items_long": Return example filter ID or
 #'     example short / long filter query list.
 #'   - "indicator": Return example indicator ID
-#' @param ees_environment Environment to return a working example for: "dev" or "test"
+#' @param ees_environment Environment to return a working example for: "dev", "test" or "prod"
 #' @param group Choose the publication group of examples to use. Options are:
 #'   - "attendance": Large example data set, careful what you ask for
 #'   - "public-api-testing": Smaller example data set
@@ -35,7 +35,7 @@
 #' example_id("indicator", group = "attendance")
 example_id <- function(
     level = "dataset",
-    ees_environment = "test",
+    ees_environment = "prod",
     group = "absence") {
   example_id_list <- list(
     attendance = list(
@@ -93,6 +93,32 @@ example_id <- function(
         ),
         indicator = "tj0Em",
         indicators = c("tj0Em", "fzaYF")
+      ),
+      prod = list(
+        publication = "9676af6b-d563-41f4-d071-08da8f468680",
+        dataset = "63629501-d3ca-c471-9780-ec4cb6fdf172",
+        time_period = "2025|W3",
+        time_periods = c("2025|W3", "2025|W4"),
+        location_id = "LA|id|it6Xr",
+        location_ids = c("LA|id|it6Xr", "REG|id|ACyGK"),
+        location_code = "NAT|code|E92000001",
+        location_codes = c("REG|code|E12000001", "REG|code|E12000002"),
+        filter = "z4FQE",
+        filter_item = "y2daB",
+        filter_items_long = list(
+          attendance_status = c("e4wuS", "TmQPJ"),
+          attendance_type = c("P9Aeb", "VPw5X", "uUIo4", "ls5cB"),
+          education_phase = c("rbyNj", "GBMgr"),
+          time_frame = c("RL5ka"),
+          reason = c("S0OVx")
+        ),
+        filter_items_short = list(
+          attendance_type = c("P9Aeb", "VPw5X"),
+          education_phase = c("rbyNj", "GBMgr"),
+          time_frame = c("5ezdi")
+        ),
+        indicator = "X9fKb",
+        indicators = c("X9fKb", "cg31S")
       )
     ),
     absence = list(
@@ -116,14 +142,28 @@ example_id <- function(
         filter_items = c("VN5XE", "PEebW"),
         indicator = "dPe0Z",
         indicators = c("OBXCL", "7YFXo")
+      ),
+      prod = list(
+        publication = "9676af6b-d563-41f4-d071-08da8f468680",
+        dataset = "55629501-e98b-0c75-adba-f95a0cfbb5e9",
+        location_id = "LA|id|it6Xr",
+        location_code = "NAT|code|E92000001",
+        filter = "BT7J3",
+        filter_item = "oUXmX",
+        indicator = "uxo41",
+        indicators = c("uxo41") # only one in this file
       )
     )
   )
   if (!(group %in% names(example_id_list))) {
     stop(paste0("Chosen group (", group, ") not found in examples list."))
   }
-  if (!(ees_environment %in% c("dev", "test"))) {
-    stop(paste0("Chosen ees_environment (", ees_environment, ") should be one of: dev or test."))
+  if (!(ees_environment %in% c("dev", "test", "prod"))) {
+    stop(paste0(
+      "Chosen ees_environment (",
+      ees_environment,
+      ") should be one of: dev, test or prod."
+    ))
   }
 
   group_examples <- example_id_list |>
@@ -190,19 +230,33 @@ example_data_raw <- function(
 #' @description
 #' Create an example json query string for use in examples and tests
 #'
+#' @param ees_environment EES environment to connect to: "test", or "prod"
+#'
 #' @return String containing an example json query
 #' @export
 #'
 #' @examples
 #' example_json_query() |> cat()
-example_json_query <- function() {
+example_json_query <- function(ees_environment = "prod") {
   parse_tojson_params(
-    indicators = example_id("indicator", group = "attendance"),
-    time_periods = example_id("time_period", group = "attendance"),
-    geographies = todf_geographies(
-      example_id("location_codes", group = "attendance")
+    indicators = example_id(
+      "indicator",
+      group = "attendance", ees_environment = ees_environment
     ),
-    filter_items = example_id("filter_items_short", group = "attendance")
+    time_periods = example_id(
+      "time_period",
+      group = "attendance", ees_environment = ees_environment
+    ),
+    geographies = todf_geographies(
+      example_id(
+        "location_codes",
+        group = "attendance", ees_environment = ees_environment
+      )
+    ),
+    filter_items = example_id(
+      "filter_items_short",
+      group = "attendance", ees_environment = ees_environment
+    )
   )
 }
 

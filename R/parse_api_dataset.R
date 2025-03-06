@@ -33,6 +33,21 @@ parse_api_dataset <- function(
   if ("results" %in% names(api_data_result)) {
     api_data_result <- api_data_result$results
   }
+  if (length(api_data_result) == 0) {
+    # TODO: It would be nice to have the original API warning messages to pass directly here
+    if (!verbose) {
+      warning(
+        call. = FALSE, # Function is internal only so we don't want to show the call
+        "No rows were returned for your query. Set verbose = TRUE to see detailed API response."
+      )
+    } else {
+      warning(
+        call. = FALSE, # Function is internal only so we don't want to show the call
+        "No rows were returned for your query."
+      )
+    }
+    return(invisible(NULL)) # Preventing any further parsing as we would get errors
+  }
   if (verbose) {
     print(names(api_data_result))
     print(names(api_data_result$locations))

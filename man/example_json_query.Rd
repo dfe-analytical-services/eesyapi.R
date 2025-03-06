@@ -4,7 +4,10 @@
 \alias{example_json_query}
 \title{Create an example json query string}
 \usage{
-example_json_query()
+example_json_query(ees_environment = "prod")
+}
+\arguments{
+\item{ees_environment}{EES environment to connect to: "test", or "prod"}
 }
 \value{
 String containing an example json query

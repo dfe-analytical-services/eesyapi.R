@@ -18,7 +18,6 @@ test_that("Non-logical parse flag given", {
   )
 })
 
-
 # This next test uses an existing test data set ID from EES admin. So this test could
 # fail if either the code is broken, the data set gets taken down or the testing
 # site is down. I guess this isn't totally within the usual principles of
@@ -26,7 +25,11 @@ test_that("Non-logical parse flag given", {
 # of the above collectively.
 test_that("Meta query runs successfully", {
   expect_equal(
-    get_meta_response(example_id(), parse = FALSE)$status,
+    get_meta_response(
+      example_id(ees_environment = test_env),
+      ees_environment = test_env,
+      parse = FALSE
+    )$status,
     200
   )
 })
