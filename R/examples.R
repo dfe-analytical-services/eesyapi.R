@@ -107,17 +107,15 @@ example_id <- function(
         filter_item = "y2daB",
         filter_items_long = list(
           attendance_status = c("e4wuS", "TmQPJ"),
-          attendance_type = c("AIaGK", "VPw5X", "uUIo4", "ls5cB"),
+          attendance_type = c("P9Aeb", "VPw5X", "uUIo4", "ls5cB"),
           education_phase = c("rbyNj", "GBMgr"),
           time_frame = c("RL5ka"),
           reason = c("S0OVx")
         ),
         filter_items_short = list(
-          attendance_status = c("e4wuS"),
-          attendance_type = c("AIaGK", "VPw5X"),
+          attendance_type = c("P9Aeb", "VPw5X"),
           education_phase = c("rbyNj", "GBMgr"),
-          time_frame = c("RL5ka"),
-          reason = c("S0OVx")
+          time_frame = c("5ezdi")
         ),
         indicator = "X9fKb",
         indicators = c("X9fKb", "cg31S")
