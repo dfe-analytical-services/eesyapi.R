@@ -7,7 +7,7 @@
 
     <a class="navbar-brand me-2" href="../index.html">eesyapi</a>
 
-    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.4.0.9000</small>
+    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.5.0</small>
 
 
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -85,34 +85,38 @@ endpoint is "get-data-catalogue"</p></dd>
     <div class="section level2">
     <h2 id="ref-examples">Examples<a class="anchor" aria-label="anchor" href="#ref-examples"></a></h2>
     <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="fu">get_data_catalogue</span><span class="op">(</span><span class="fu"><a href="example_id.html">example_id</a></span><span class="op">(</span><span class="st">"publication"</span><span class="op">)</span><span class="op">)</span></span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>                                     id                           title</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 1 3bb59201-0d1e-1e74-a745-8f65fe5895cf A level and equivalents results</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 2 e1ae9201-2fff-d376-8fa3-bd3c3660d4c8                   Pupil absence</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 3 57b69201-033a-2c77-a19f-abcce2b11341       Pupil attendance sessions</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>     summary    status latestVersion.version          latestVersion.published</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 1           Published                   2.0 2024-11-07T09:26:52.283236+00:00</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 2 Test file Published                   1.1 2024-11-07T09:26:52.283236+00:00</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 3           Published                   2.0 2024-11-07T09:26:52.283236+00:00</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>                                     id                              title</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 1 63629501-d3ca-c471-9780-ec4cb6fdf172 Reasons for absence and attendance</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 2 55629501-e98b-0c75-adba-f95a0cfbb5e9      Persistent absence in schools</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 3 55629501-1945-0174-956c-594f21c90404 Numbers of schools submitting data</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>                                                           summary    status</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 1                        Reasons for pupil attendance and absence Published</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 2                                     Persistent absence measures Published</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 3 The number of schools returning data as used in the publication Published</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   latestVersion.version          latestVersion.published</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 1                   1.0 2025-03-06T09:30:21.920643+00:00</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 2                   1.0 2025-03-06T09:30:21.824832+00:00</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 3                   1.0 2025-03-06T09:30:20.749879+00:00</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>   latestVersion.totalResults                     latestVersion.id</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 1                      16328 398c694e-22bb-4886-bc2b-234de253d1fe</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 2                         16 69e24d2c-298e-4885-ab55-37463c798643</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 3                    3723444 f76dc9d2-3988-4df7-b5d9-3989f9fd1d7c</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 1                    2750478 bbaf0ca9-9e63-44ce-aafd-33836afb4c26</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 2                        494 94477a58-6301-47b3-bf02-3c572df7d31a</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 3                      59793 f3dafa07-a653-44e6-a7f2-42a86df10364</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>   latestVersion.timePeriods.start latestVersion.timePeriods.end</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 1                         2021/22                       2022/23</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 2                         2021/22                       2024/25</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 3                    2023 Week 37                  2024 Week 26</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 1                    2024 Week 37                   2025 Week 8</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 2                     2025 Week 8                   2025 Week 8</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 3                    2024 Week 37                   2025 Week 8</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>        latestVersion.geographicLevels</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 1                              School</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 2                            National</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 1 Local authority, National, Regional</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 2 Local authority, National, Regional</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 3 Local authority, National, Regional</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>                                                         latestVersion.filters</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 1                                           Establishment type group, Measure</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 2                                                              Type of school</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 3 Attendance status, Attendance type, Day number, Establishment phase, Reason</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>                                                                                                                                                                                                                                                                                                                                                                                                                           latestVersion.indicators</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 1 AAB or higher - Percentage, AAB or higher - Total students, Best three A levels - Grade, Best three A levels - Points, Best three A levels - Total students, Number of students retained, Number of students retained (2nd year), Points per entry, Points per entry (grade), Retained, Retained (2nd year), Retained and assessed, Total students, Total triggered students, Value added, Value added LCI, Value added UCI, Vocational students</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 2                                                                                                                                                                                                                                                                                                                                                      Number of overall absence sessions, Number of pupil enrolments, Number of sessions possible</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 3                                                                                                                                                                                                                                                                                                                                                                                                   Session count, Session percent, Session scaled</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>                                                                latestVersion.filters</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 1 Attendance reason, Attendance status, Attendance type, Education phase, Time frame</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 2                                                                    Education phase</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 3                                                        Education phase, Time frame</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>                                                               latestVersion.indicators</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 1 Number of sessions, Number of sessions (scaled), Percent of sessions, Reference date</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 2                                                           Persistent absence percent</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 3                Number of schools submitting, Reference date, Total number of schools</span>
 </code></pre></div>
     </div>
   </main><aside class="col-md-3"><nav id="toc" aria-label="Table of contents"><h2>On this page</h2>

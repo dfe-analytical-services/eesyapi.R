@@ -11,7 +11,7 @@ for the data set."><meta property="og:image" content="https://dfe-analytical-ser
 
     <a class="navbar-brand me-2" href="../index.html">eesyapi</a>
 
-    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.4.0.9000</small>
+    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.5.0</small>
 
 
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -73,39 +73,39 @@ for the data set.</p>
     <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="fu"><a href="example_data_raw.html">example_data_raw</a></span><span class="op">(</span><span class="op">)</span> <span class="op">|&gt;</span></span></span>
 <span class="r-in"><span>  <span class="fu">magrittr</span><span class="fu">::</span><span class="fu"><a href="https://magrittr.tidyverse.org/reference/aliases.html" class="external-link">use_series</a></span><span class="op">(</span><span class="st">"locations"</span><span class="op">)</span> <span class="op">|&gt;</span></span></span>
 <span class="r-in"><span>  <span class="fu">eesyapi</span><span class="fu">:::</span><span class="fu">parse_sqids_locations</span><span class="op">(</span><span class="fu"><a href="get_meta.html">get_meta</a></span><span class="op">(</span><span class="fu"><a href="example_id.html">example_id</a></span><span class="op">(</span>group <span class="op">=</span> <span class="st">"attendance"</span><span class="op">)</span><span class="op">)</span><span class="op">)</span></span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>     la_name   la_code la_oldCode nat_name  nat_code reg_name  reg_code</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 1  Havering E09000016        311  England E92000001   London E12000007</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 2  Havering E09000016        311  England E92000001   London E12000007</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 3  Havering E09000016        311  England E92000001   London E12000007</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 4  Havering E09000016        311  England E92000001   London E12000007</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 5  Havering E09000016        311  England E92000001   London E12000007</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 6  Havering E09000016        311  England E92000001   London E12000007</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 7  Havering E09000016        311  England E92000001   London E12000007</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 8  Havering E09000016        311  England E92000001   London E12000007</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 9  Havering E09000016        311  England E92000001   London E12000007</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 10 Havering E09000016        311  England E92000001   London E12000007</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 11 Havering E09000016        311  England E92000001   London E12000007</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 12 Havering E09000016        311  England E92000001   London E12000007</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 13 Havering E09000016        311  England E92000001   London E12000007</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 14 Havering E09000016        311  England E92000001   London E12000007</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 15 Havering E09000016        311  England E92000001   London E12000007</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 16 Havering E09000016        311  England E92000001   London E12000007</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 17 Havering E09000016        311  England E92000001   London E12000007</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 18 Havering E09000016        311  England E92000001   London E12000007</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 19 Havering E09000016        311  England E92000001   London E12000007</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 20 Havering E09000016        311  England E92000001   London E12000007</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 21 Havering E09000016        311  England E92000001   London E12000007</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 22 Havering E09000016        311  England E92000001   London E12000007</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 23 Havering E09000016        311  England E92000001   London E12000007</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 24 Havering E09000016        311  England E92000001   London E12000007</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 25 Havering E09000016        311  England E92000001   London E12000007</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 26 Havering E09000016        311  England E92000001   London E12000007</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 27 Havering E09000016        311  England E92000001   London E12000007</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 28 Havering E09000016        311  England E92000001   London E12000007</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 29 Havering E09000016        311  England E92000001   London E12000007</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 30 Havering E09000016        311  England E92000001   London E12000007</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 31 Havering E09000016        311  England E92000001   London E12000007</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 32 Havering E09000016        311  England E92000001   London E12000007</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>       la_name   la_code la_oldCode nat_name  nat_code   reg_name  reg_code</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 1  Hartlepool E06000001        805  England E92000001 North East E12000001</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 2  Hartlepool E06000001        805  England E92000001 North East E12000001</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 3  Hartlepool E06000001        805  England E92000001 North East E12000001</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 4  Hartlepool E06000001        805  England E92000001 North East E12000001</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 5  Hartlepool E06000001        805  England E92000001 North East E12000001</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 6  Hartlepool E06000001        805  England E92000001 North East E12000001</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 7  Hartlepool E06000001        805  England E92000001 North East E12000001</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 8  Hartlepool E06000001        805  England E92000001 North East E12000001</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 9  Hartlepool E06000001        805  England E92000001 North East E12000001</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 10 Hartlepool E06000001        805  England E92000001 North East E12000001</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 11 Hartlepool E06000001        805  England E92000001 North East E12000001</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 12 Hartlepool E06000001        805  England E92000001 North East E12000001</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 13 Hartlepool E06000001        805  England E92000001 North East E12000001</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 14 Hartlepool E06000001        805  England E92000001 North East E12000001</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 15 Hartlepool E06000001        805  England E92000001 North East E12000001</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 16 Hartlepool E06000001        805  England E92000001 North East E12000001</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 17 Hartlepool E06000001        805  England E92000001 North East E12000001</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 18 Hartlepool E06000001        805  England E92000001 North East E12000001</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 19 Hartlepool E06000001        805  England E92000001 North East E12000001</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 20 Hartlepool E06000001        805  England E92000001 North East E12000001</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 21 Hartlepool E06000001        805  England E92000001 North East E12000001</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 22 Hartlepool E06000001        805  England E92000001 North East E12000001</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 23 Hartlepool E06000001        805  England E92000001 North East E12000001</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 24 Hartlepool E06000001        805  England E92000001 North East E12000001</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 25 Hartlepool E06000001        805  England E92000001 North East E12000001</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 26 Hartlepool E06000001        805  England E92000001 North East E12000001</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 27 Hartlepool E06000001        805  England E92000001 North East E12000001</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 28 Hartlepool E06000001        805  England E92000001 North East E12000001</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 29 Hartlepool E06000001        805  England E92000001 North East E12000001</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 30 Hartlepool E06000001        805  England E92000001 North East E12000001</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 31 Hartlepool E06000001        805  England E92000001 North East E12000001</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 32 Hartlepool E06000001        805  England E92000001 North East E12000001</span>
 </code></pre></div>
     </div>
   </main><aside class="col-md-3"><nav id="toc" aria-label="Table of contents"><h2>On this page</h2>

@@ -21,7 +21,7 @@ parse_api_dataset()"><meta property="og:image" content="https://dfe-analytical-s
 
     <a class="navbar-brand me-2" href="../index.html">eesyapi</a>
 
-    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.4.0.9000</small>
+    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.5.0</small>
 
 
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -107,138 +107,138 @@ of "get-dataset-versions", "get-summary", "get-meta", "get-csv", "get-data" or "
     <h2 id="ref-examples">Examples<a class="anchor" aria-label="anchor" href="#ref-examples"></a></h2>
     <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="fu"><a href="example_data_raw.html">example_data_raw</a></span><span class="op">(</span>group <span class="op">=</span> <span class="st">"attendance"</span><span class="op">)</span> <span class="op">|&gt;</span></span></span>
 <span class="r-in"><span>  <span class="fu">eesyapi</span><span class="fu">:::</span><span class="fu">parse_api_dataset</span><span class="op">(</span><span class="fu"><a href="example_id.html">example_id</a></span><span class="op">(</span>group <span class="op">=</span> <span class="st">"attendance"</span><span class="op">)</span><span class="op">)</span></span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>    time_period time_identifier geographic_level  la_name   la_code la_oldCode</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 1         2024         Week 26  Local authority Havering E09000016        311</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 2         2024         Week 26  Local authority Havering E09000016        311</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 3         2024         Week 26  Local authority Havering E09000016        311</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 4         2024         Week 26  Local authority Havering E09000016        311</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 5         2024         Week 26  Local authority Havering E09000016        311</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 6         2024         Week 26  Local authority Havering E09000016        311</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 7         2024         Week 26  Local authority Havering E09000016        311</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 8         2024         Week 26  Local authority Havering E09000016        311</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 9         2024         Week 26  Local authority Havering E09000016        311</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 10        2024         Week 26  Local authority Havering E09000016        311</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 11        2024         Week 26  Local authority Havering E09000016        311</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 12        2024         Week 26  Local authority Havering E09000016        311</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 13        2024         Week 26  Local authority Havering E09000016        311</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 14        2024         Week 26  Local authority Havering E09000016        311</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 15        2024         Week 26  Local authority Havering E09000016        311</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 16        2024         Week 26  Local authority Havering E09000016        311</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 17        2024         Week 26  Local authority Havering E09000016        311</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 18        2024         Week 26  Local authority Havering E09000016        311</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 19        2024         Week 26  Local authority Havering E09000016        311</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 20        2024         Week 26  Local authority Havering E09000016        311</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 21        2024         Week 26  Local authority Havering E09000016        311</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 22        2024         Week 26  Local authority Havering E09000016        311</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 23        2024         Week 26  Local authority Havering E09000016        311</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 24        2024         Week 26  Local authority Havering E09000016        311</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 25        2024         Week 26  Local authority Havering E09000016        311</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 26        2024         Week 26  Local authority Havering E09000016        311</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 27        2024         Week 26  Local authority Havering E09000016        311</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 28        2024         Week 26  Local authority Havering E09000016        311</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 29        2024         Week 26  Local authority Havering E09000016        311</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 30        2024         Week 26  Local authority Havering E09000016        311</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 31        2024         Week 26  Local authority Havering E09000016        311</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 32        2024         Week 26  Local authority Havering E09000016        311</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>    nat_name  nat_code reg_name  reg_code attendance_status</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 1   England E92000001   London E12000007        Attendance</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 2   England E92000001   London E12000007        Attendance</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 3   England E92000001   London E12000007        Attendance</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 4   England E92000001   London E12000007           Absence</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 5   England E92000001   London E12000007           Absence</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 6   England E92000001   London E12000007           Absence</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 7   England E92000001   London E12000007     Late sessions</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 8   England E92000001   London E12000007 Possible sessions</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 9   England E92000001   London E12000007        Attendance</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 10  England E92000001   London E12000007        Attendance</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 11  England E92000001   London E12000007        Attendance</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 12  England E92000001   London E12000007        Attendance</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 13  England E92000001   London E12000007           Absence</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 14  England E92000001   London E12000007           Absence</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 15  England E92000001   London E12000007           Absence</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 16  England E92000001   London E12000007           Absence</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 17  England E92000001   London E12000007           Absence</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 18  England E92000001   London E12000007           Absence</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 19  England E92000001   London E12000007           Absence</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 20  England E92000001   London E12000007           Absence</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 21  England E92000001   London E12000007        Attendance</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 22  England E92000001   London E12000007        Attendance</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 23  England E92000001   London E12000007        Attendance</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 24  England E92000001   London E12000007        Attendance</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 25  England E92000001   London E12000007        Attendance</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 26  England E92000001   London E12000007           Absence</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 27  England E92000001   London E12000007           Absence</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 28  England E92000001   London E12000007           Absence</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 29  England E92000001   London E12000007    Not determined</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 30  England E92000001   London E12000007    Not determined</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 31  England E92000001   London E12000007    Not determined</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 32  England E92000001   London E12000007    Not determined</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>                  attendance_type day_number education_phase</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 1                        Present          1         Primary</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 2  Approved educational activity          1         Primary</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 3                 Not determined          1         Primary</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 4                 Not determined          1         Primary</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 5                     Authorised          1         Primary</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 6                   Unauthorised          1         Primary</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 7                 Not determined          1         Primary</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 8                 Not determined          1         Primary</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 9                        Present          1         Primary</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 10                       Present          1         Primary</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 11                       Present          1         Primary</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 12                       Present          1         Primary</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 13                    Authorised          1         Primary</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 14                    Authorised          1         Primary</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 15                    Authorised          1         Primary</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 16                    Authorised          1         Primary</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 17                    Authorised          1         Primary</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 18                    Authorised          1         Primary</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 19                    Authorised          1         Primary</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 20                    Authorised          1         Primary</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 21 Approved educational activity          1         Primary</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 22 Approved educational activity          1         Primary</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 23 Approved educational activity          1         Primary</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 24 Approved educational activity          1         Primary</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 25 Approved educational activity          1         Primary</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 26                  Unauthorised          1         Primary</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 27                  Unauthorised          1         Primary</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 28                  Unauthorised          1         Primary</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 29                Not determined          1         Primary</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 30                Not determined          1         Primary</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 31                Not determined          1         Primary</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 32                Not determined          1         Primary</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>                             attendance_reason session_count</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 1                                       Total         32342</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 2                                       Total           605</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 3                                       Total         32947</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 4                                       Total          1955</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 5                                       Total          1455</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 6                                       Total           500</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 7                                       Total           404</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 8                                       Total         34902</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 9                                  Present am         15783</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 10                                 Present pm         16180</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 11                                    Present         31963</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 12     L present late before registers closed           379</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 13                       I authorised illness          1153</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 14                M authorised medical dental            84</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 15          R authorised religious observance             4</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 16                   S authorised study leave             0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 17                   T authorised grt absence            14</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 18                       H authorised holiday            30</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 19                      E authorised excluded             3</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 20                         C authorised other           167</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 21                       B education off site           120</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 22                        D dual registration             0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 23               P approved sporting activity            16</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 24                   V educational visit trip           383</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 25                          W work experience             0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 26                     G unauthorised holiday           241</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 27 U unauthorised late after registers closed            25</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 28                       O other unauthorised           192</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 29                            N no reason yet            42</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 30               Not attending planned closed             0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 31           Y not attending enforced closure             2</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 32                Z not attending not on roll           124</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>    time_period time_identifier geographic_level    la_name   la_code la_oldCode</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 1         2025          Week 8  Local authority Hartlepool E06000001        805</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 2         2025          Week 8  Local authority Hartlepool E06000001        805</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 3         2025          Week 8  Local authority Hartlepool E06000001        805</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 4         2025          Week 8  Local authority Hartlepool E06000001        805</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 5         2025          Week 8  Local authority Hartlepool E06000001        805</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 6         2025          Week 8  Local authority Hartlepool E06000001        805</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 7         2025          Week 8  Local authority Hartlepool E06000001        805</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 8         2025          Week 8  Local authority Hartlepool E06000001        805</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 9         2025          Week 8  Local authority Hartlepool E06000001        805</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 10        2025          Week 8  Local authority Hartlepool E06000001        805</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 11        2025          Week 8  Local authority Hartlepool E06000001        805</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 12        2025          Week 8  Local authority Hartlepool E06000001        805</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 13        2025          Week 8  Local authority Hartlepool E06000001        805</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 14        2025          Week 8  Local authority Hartlepool E06000001        805</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 15        2025          Week 8  Local authority Hartlepool E06000001        805</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 16        2025          Week 8  Local authority Hartlepool E06000001        805</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 17        2025          Week 8  Local authority Hartlepool E06000001        805</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 18        2025          Week 8  Local authority Hartlepool E06000001        805</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 19        2025          Week 8  Local authority Hartlepool E06000001        805</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 20        2025          Week 8  Local authority Hartlepool E06000001        805</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 21        2025          Week 8  Local authority Hartlepool E06000001        805</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 22        2025          Week 8  Local authority Hartlepool E06000001        805</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 23        2025          Week 8  Local authority Hartlepool E06000001        805</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 24        2025          Week 8  Local authority Hartlepool E06000001        805</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 25        2025          Week 8  Local authority Hartlepool E06000001        805</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 26        2025          Week 8  Local authority Hartlepool E06000001        805</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 27        2025          Week 8  Local authority Hartlepool E06000001        805</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 28        2025          Week 8  Local authority Hartlepool E06000001        805</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 29        2025          Week 8  Local authority Hartlepool E06000001        805</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 30        2025          Week 8  Local authority Hartlepool E06000001        805</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 31        2025          Week 8  Local authority Hartlepool E06000001        805</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 32        2025          Week 8  Local authority Hartlepool E06000001        805</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>    nat_name  nat_code   reg_name  reg_code</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 1   England E92000001 North East E12000001</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 2   England E92000001 North East E12000001</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 3   England E92000001 North East E12000001</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 4   England E92000001 North East E12000001</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 5   England E92000001 North East E12000001</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 6   England E92000001 North East E12000001</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 7   England E92000001 North East E12000001</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 8   England E92000001 North East E12000001</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 9   England E92000001 North East E12000001</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 10  England E92000001 North East E12000001</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 11  England E92000001 North East E12000001</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 12  England E92000001 North East E12000001</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 13  England E92000001 North East E12000001</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 14  England E92000001 North East E12000001</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 15  England E92000001 North East E12000001</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 16  England E92000001 North East E12000001</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 17  England E92000001 North East E12000001</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 18  England E92000001 North East E12000001</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 19  England E92000001 North East E12000001</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 20  England E92000001 North East E12000001</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 21  England E92000001 North East E12000001</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 22  England E92000001 North East E12000001</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 23  England E92000001 North East E12000001</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 24  England E92000001 North East E12000001</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 25  England E92000001 North East E12000001</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 26  England E92000001 North East E12000001</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 27  England E92000001 North East E12000001</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 28  England E92000001 North East E12000001</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 29  England E92000001 North East E12000001</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 30  England E92000001 North East E12000001</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 31  England E92000001 North East E12000001</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 32  England E92000001 North East E12000001</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>                           attendance_reason attendance_status</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 1                               All present        Attendance</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 2         All approved educational activity        Attendance</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 3                        Overall attendance        Attendance</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 4                           Overall absence           Absence</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 5                            All authorised           Absence</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 6                          All unauthorised           Absence</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 7                         All late sessions     Late sessions</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 8                     All possible sessions Possible sessions</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 9                                Present am        Attendance</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 10                               Present pm        Attendance</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 11                                  Present        Attendance</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 12 Present late before registers closed (l)        Attendance</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 13                              Illness (i)           Absence</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 14                       Medical dental (m)           Absence</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 15                 Religious observance (r)           Absence</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 16                          Study leave (s)           Absence</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 17                   Authorised holiday (h)           Absence</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 18                             Excluded (e)           Absence</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 19                     Other authorised (c)           Absence</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 20               Regulated performance (c1)           Absence</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 21                           Interview (j1)           Absence</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 22         Temporary reduced timetable (c2)           Absence</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 23                   Education off site (b)        Attendance</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 24                            Interview (j)        Attendance</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 25           Approved sporting activity (p)        Attendance</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 26               Educational visit trip (v)        Attendance</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 27                      Work experience (w)        Attendance</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 28             Education arranged by LA (k)        Attendance</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 29                 Unauthorised holiday (g)           Absence</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 30          Late after registers closed (u)           Absence</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 31                   Other unauthorised (o)           Absence</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 32                        No reason yet (n)           Absence</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>                  attendance_type education_phase   time_frame session_count</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 1                        Present         Primary Year to date       1273300</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 2  Approved educational activity         Primary Year to date          6642</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 3             Overall attendance         Primary Year to date       1279942</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 4                Overall absence         Primary Year to date         70857</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 5                     Authorised         Primary Year to date         49494</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 6                   Unauthorised         Primary Year to date         21363</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 7              All late sessions         Primary Year to date         17533</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 8          All possible sessions         Primary Year to date       1350799</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 9                        Present         Primary Year to date        621998</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 10                       Present         Primary Year to date        635842</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 11                       Present         Primary Year to date       1257840</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 12                       Present         Primary Year to date         15460</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 13                    Authorised         Primary Year to date         42823</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 14                    Authorised         Primary Year to date          2884</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 15                    Authorised         Primary Year to date             7</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 16                    Authorised         Primary Year to date             0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 17                    Authorised         Primary Year to date             0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 18                    Authorised         Primary Year to date            84</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 19                    Authorised         Primary Year to date          3302</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 20                    Authorised         Primary Year to date           115</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 21                    Authorised         Primary Year to date            33</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 22                    Authorised         Primary Year to date           245</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 23 Approved educational activity         Primary Year to date           843</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 24 Approved educational activity         Primary Year to date             0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 25 Approved educational activity         Primary Year to date           734</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 26 Approved educational activity         Primary Year to date          5006</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 27 Approved educational activity         Primary Year to date             0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 28 Approved educational activity         Primary Year to date            59</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 29                  Unauthorised         Primary Year to date          8110</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 30                  Unauthorised         Primary Year to date          2073</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 31                  Unauthorised         Primary Year to date         10283</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 32                  Unauthorised         Primary Year to date           897</span>
 </code></pre></div>
     </div>
   </main><aside class="col-md-3"><nav id="toc" aria-label="Table of contents"><h2>On this page</h2>

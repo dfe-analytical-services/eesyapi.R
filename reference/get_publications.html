@@ -7,7 +7,7 @@
 
     <a class="navbar-brand me-2" href="../index.html">eesyapi</a>
 
-    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.4.0.9000</small>
+    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.5.0</small>
 
 
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -85,39 +85,23 @@ containing the search string provided (strings separated by spaces are combined 
     <div class="section level2">
     <h2 id="ref-examples">Examples<a class="anchor" aria-label="anchor" href="#ref-examples"></a></h2>
     <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="fu">get_publications</span><span class="op">(</span><span class="op">)</span></span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>                                     id                            title</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 1 2c75dd3d-03e8-4f23-eeb2-08dce39219d4           API data sets' Testing</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 2 9f68da54-6b0c-4979-372d-08dd138decea Attendance dashboard-API testing</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 3 25d0e40b-643a-4f73-3ae5-08dcf1c4d57f        Data sets for API testing</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 4 73f32592-39a8-4296-62fe-08dcd7dcf7ed                     Public API 2</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 5 f715cb51-1f0a-4fa0-0df9-08dce77dad59  Task 2 - second time publishing</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>                               slug</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 1            api-data-sets-testing</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 2 attendance-dashboard-api-testing</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 3        data-sets-for-api-testing</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 4                     public-api-2</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 5    task-2-second-time-publishing</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>                                                                     summary</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 1                                        Testing for the first time on Test</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 2                    Data sets for testing the EES API with a DfE dashboard</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 3 A collection of example data sets for testing the public facing API with.</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 4                                                                       sdf</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 5                                           Task 2 - second time publishing</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>                                     id                       title</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 1 9676af6b-d563-41f4-d071-08da8f468680 Pupil attendance in schools</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>                          slug</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 1 pupil-attendance-in-schools</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>                                                                                                                                                       summary</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 1 Pupil attendance and absence data including termly national statistics and fortnightly statistics in development derived from DfE’s regular attendance data</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>                       lastPublished</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 1 2025-02-06T09:06:18.9457653+00:00</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 2 2025-02-06T14:51:04.6159571+00:00</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 3 2024-11-07T09:26:48.7531176+00:00</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 4 2025-01-08T17:32:30.9784334+00:00</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 5 2024-10-08T10:21:06.9135415+00:00</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 1 2025-03-06T09:30:08.8226066+00:00</span>
 <span class="r-in"><span><span class="fu">get_publications</span><span class="op">(</span>search <span class="op">=</span> <span class="st">"attendance"</span><span class="op">)</span></span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>                                     id                            title</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 1 9f68da54-6b0c-4979-372d-08dd138decea Attendance dashboard-API testing</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>                               slug</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 1 attendance-dashboard-api-testing</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>                                                  summary</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 1 Data sets for testing the EES API with a DfE dashboard</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>                                     id                       title</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 1 9676af6b-d563-41f4-d071-08da8f468680 Pupil attendance in schools</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>                          slug</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 1 pupil-attendance-in-schools</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>                                                                                                                                                       summary</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 1 Pupil attendance and absence data including termly national statistics and fortnightly statistics in development derived from DfE’s regular attendance data</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>                       lastPublished</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 1 2025-02-06T14:51:04.6159571+00:00</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 1 2025-03-06T09:30:08.8226066+00:00</span>
 </code></pre></div>
     </div>
   </main><aside class="col-md-3"><nav id="toc" aria-label="Table of contents"><h2>On this page</h2>

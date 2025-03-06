@@ -11,7 +11,7 @@ meta endpoint."><meta property="og:image" content="https://dfe-analytical-servic
 
     <a class="navbar-brand me-2" href="../index.html">eesyapi</a>
 
-    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.4.0.9000</small>
+    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.5.0</small>
 
 
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -87,32 +87,353 @@ of "get-dataset-versions", "get-summary", "get-meta", "get-csv", "get-data" or "
     <h2 id="ref-examples">Examples<a class="anchor" aria-label="anchor" href="#ref-examples"></a></h2>
     <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="fu">get_meta</span><span class="op">(</span><span class="fu"><a href="example_id.html">example_id</a></span><span class="op">(</span><span class="op">)</span><span class="op">)</span></span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> $time_periods</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   code    period   label</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 1   AY 2021/2022 2021/22</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 2   AY 2022/2023 2022/23</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 3   AY 2023/2024 2023/24</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 4   AY 2024/2025 2024/25</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   code period       label</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 1   W8   2025 2025 Week 8</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> $locations</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   item_id   label      code geographic_level_code geographic_level</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 1   mRj9K England E92000001                   NAT         National</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>     item_id                               label      code oldCode</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 1     rQkNj                Barking and Dagenham E09000002     301</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 2     GCsgr                              Barnet E09000003     302</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 3     u9Mo4                            Barnsley E08000016     370</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 4     tdEm5        Bath and North East Somerset E06000022     800</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 5     WU2bo                             Bedford E06000055     822</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 6     3se8u                              Bexley E09000004     303</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 7     emDuS                          Birmingham E08000025     330</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 8     0kT5D               Blackburn with Darwen E06000008     889</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 9     HTzLj                           Blackpool E06000009     890</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 10    7YFXo                              Bolton E08000001     350</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 11    9e4vZ Bournemouth, Christchurch and Poole E06000058     839</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 12    dt0Zw                    Bracknell Forest E06000036     867</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 13    Poqeb                            Bradford E08000032     380</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 14    SdgVx                               Brent E09000005     304</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 15    3P8uH                   Brighton and Hove E06000043     846</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 16    fyYFZ                    Bristol, City of E06000023     801</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 17    yW5aB                             Bromley E09000006     305</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 18    P0ebW                     Buckinghamshire E06000060     825</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 19    p5PSo                                Bury E08000002     351</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 20    1rPi3                          Calderdale E08000033     381</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 21    HvezL                      Cambridgeshire E10000003     873</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 22    RySka                              Camden E09000007     202</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 23    ENqFR                Central Bedfordshire E06000056     823</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 24    DcQeg                       Cheshire East E06000049     895</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 25    eFuSW           Cheshire West and Chester E06000050     896</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 26    o47mX                      City of London E09000001     201</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 27    45UZU                            Cornwall E06000052     908</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 28    b8tTc                       County Durham E06000047     840</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 29    TuNPJ                            Coventry E08000026     331</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 30    bqZtT                             Croydon E09000008     306</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 31    o49mX                          Cumberland E06000063     942</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 32    it6Xr                          Darlington E06000005     841</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 33    z4FQE                               Derby E06000015     831</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 34    CXVId                          Derbyshire E10000007     830</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 35    YJuHK                               Devon E10000008     878</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 36    XH4fK                           Doncaster E08000017     371</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 37    2alzG                              Dorset E06000059     838</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 38    hLOyW                              Dudley E08000027     332</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 39    Db3Qe                              Ealing E09000009     307</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 40    YPHKM            East Riding of Yorkshire E06000011     811</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 41    qgvjG                         East Sussex E10000011     845</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 42    emJuS                             Enfield E09000010     308</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 43    alDLP                               Essex E10000012     881</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 44    UhYRF                           Gateshead E08000037     390</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 45    BYe7J                     Gloucestershire E10000013     916</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 46    5TYdi                           Greenwich E09000011     203</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 47    4kdUZ                             Hackney E09000012     204</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 48    LxWjE                              Halton E06000006     876</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 49    mU59K              Hammersmith and Fulham E09000013     205</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 50    znRFQ                           Hampshire E10000014     850</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 51    0evT5                            Haringey E09000014     309</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 52    WcR2b                              Harrow E09000015     310</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 53    O7CLF                          Hartlepool E06000001     805</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 54    EADqF                            Havering E09000016     311</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 55    TsPJP            Herefordshire, County of E06000019     884</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 56    kLDhs                       Hertfordshire E10000015     919</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 57    Qt6wb                          Hillingdon E09000017     312</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 58    9Ru4v                            Hounslow E09000018     313</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 59    Rpka2                       Isle of Wight E06000046     921</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 60    mV9KC                     Isles of Scilly E06000053     420</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 61    23Llz                           Islington E09000019     206</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 62    PoTeb              Kensington and Chelsea E09000020     207</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 63    u4Ko4                                Kent E10000016     886</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 64    CpId1         Kingston upon Hull, City of E06000010     810</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 65    NwNDC                Kingston upon Thames E09000021     314</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 66    dPE0Z                            Kirklees E08000034     382</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 67    qGJjG                            Knowsley E08000011     340</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 68    wqtbx                             Lambeth E09000022     208</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 69    XzUfK                          Lancashire E10000017     888</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 70    u9Oo4                               Leeds E08000035     383</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 71    krhsL                           Leicester E06000016     856</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 72    ToMPJ                      Leicestershire E10000018     855</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 73    oU4mX                            Lewisham E09000023     209</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 74    csC31                        Lincolnshire E10000019     925</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 75    a2NLP                           Liverpool E08000012     341</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 76    AkGK0                               Luton E06000032     821</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 77    IXFBz                          Manchester E08000003     352</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 78    1Ti3Z                              Medway E06000035     887</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 79    9kk4v                              Merton E09000024     315</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 80    7zXob                       Middlesbrough E06000002     806</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 81    GZgru                       Milton Keynes E06000042     826</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 82    5Tsdi                 Newcastle upon Tyne E08000021     391</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 83    deu0Z                              Newham E09000025     316</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 84    5Pxdi                             Norfolk E10000020     926</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 85    qFjG7             North East Lincolnshire E06000012     812</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 86    arLPb                  North Lincolnshire E06000013     813</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 87    NrDCj              North Northamptonshire E06000061     940</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 88    juAMt                      North Somerset E06000024     802</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 89    tj0Em                      North Tyneside E08000022     392</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 90    dPe0Z                     North Yorkshire E06000065     815</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 91    Qiwb4                      Northumberland E06000057     929</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 92    X9fKb                          Nottingham E06000018     892</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 93    tATEm                     Nottinghamshire E10000024     891</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 94    iNE6X                              Oldham E08000004     353</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 95    fFLYF                         Oxfordshire E10000025     931</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 96    ghO9G                        Peterborough E06000031     874</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 97    TrPJP                            Plymouth E06000026     879</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 98    SGVxt                          Portsmouth E06000044     851</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 99    lpcBn                             Reading E06000038     870</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 100   O7fCL                           Redbridge E09000026     317</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 101   pTSoj                Redcar and Cleveland E06000003     807</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 102   7HJXo                Richmond upon Thames E09000027     318</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 103   LlMWj                            Rochdale E08000005     354</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 104   TuxPJ                           Rotherham E08000018     372</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 105   uxo41                             Rutland E06000017     857</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 106   6DArf                             Salford E08000006     355</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 107   mUq9K                            Sandwell E08000028     333</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 108   zvUFQ                              Sefton E08000014     343</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 109   cZO31                           Sheffield E08000019     373</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 110   5fdi9                          Shropshire E06000051     893</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 111   UfRFO                              Slough E06000039     871</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 112   gIyO9                            Solihull E08000029     334</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 113   OBXCL                            Somerset E06000066     933</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 114   eNuSW               South Gloucestershire E06000025     803</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 115   fzaYF                      South Tyneside E08000023     393</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 116   yVaBm                         Southampton E06000045     852</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 117   VN5XE                     Southend-on-Sea E06000033     882</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 118   pdeSo                           Southwark E09000028     210</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 119   BfP7J                          St. Helens E08000013     342</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 120   jOmAM                       Staffordshire E10000028     860</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 121   0ehT5                           Stockport E08000007     356</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 122   IzBzg                    Stockton-on-Tees E06000004     808</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 123   5Zdi9                      Stoke-on-Trent E06000021     861</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 124   e9QuS                             Suffolk E10000029     935</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 125   jgoAM                          Sunderland E08000024     394</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 126   ToDPJ                              Surrey E10000030     936</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 127   IfJBz                              Sutton E09000029     319</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 128   mE9KC                             Swindon E06000030     866</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 129   HJPzL                            Tameside E08000008     357</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 130   cg31S                  Telford and Wrekin E06000020     894</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 131   PEebW                            Thurrock E06000034     883</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 132   hgyW6                              Torbay E06000027     880</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 133   iDq6X                       Tower Hamlets E09000030     211</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 134   C7SId                            Trafford E08000009     358</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 135   l8ScB                           Wakefield E08000036     384</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 136   AOhGK                             Walsall E08000030     335</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 137   LcKWj                      Waltham Forest E09000031     320</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 138   6QGrf                          Wandsworth E09000032     212</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 139   6jrfe                          Warrington E06000007     877</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 140   hWCyW                        Warwickshire E10000031     937</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 141   ugo41                      West Berkshire E06000037     869</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 142   wwbxT               West Northamptonshire E06000062     941</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 143   mRj9K                         West Sussex E10000032     938</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 144   0uyT5                         Westminster E09000033     213</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 145   9RR4v             Westmorland and Furness E06000064     943</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 146   YFeHK                               Wigan E08000010     359</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 147   0JT5D                           Wiltshire E06000054     865</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 148   oBmXk              Windsor and Maidenhead E06000040     868</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 149   kaNhs                              Wirral E08000015     344</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 150   rRNj1                           Wokingham E06000041     872</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 151   V0D5X                       Wolverhampton E08000031     336</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 152   gBaO9                      Worcestershire E10000034     885</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 153   BT7J3                                York E06000014     816</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 154   dP0Zw                             England E92000001    &lt;NA&gt;</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 155   1Nei3                       East Midlands E12000004    &lt;NA&gt;</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 156   u4Co4                     East of England E12000006    &lt;NA&gt;</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 157   lZVcB                              London E12000007    &lt;NA&gt;</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 158   ACyGK                          North East E12000001    &lt;NA&gt;</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 159   VTQ5X                          North West E12000002    &lt;NA&gt;</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 160   UyHRF                          South East E12000008    &lt;NA&gt;</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 161   oUXmX                          South West E12000009    &lt;NA&gt;</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 162   deq0Z                       West Midlands E12000005    &lt;NA&gt;</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 163   Pmjeb            Yorkshire and The Humber E12000003    &lt;NA&gt;</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>     geographic_level_code geographic_level</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 1                      LA  Local authority</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 2                      LA  Local authority</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 3                      LA  Local authority</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 4                      LA  Local authority</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 5                      LA  Local authority</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 6                      LA  Local authority</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 7                      LA  Local authority</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 8                      LA  Local authority</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 9                      LA  Local authority</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 10                     LA  Local authority</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 11                     LA  Local authority</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 12                     LA  Local authority</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 13                     LA  Local authority</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 14                     LA  Local authority</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 15                     LA  Local authority</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 16                     LA  Local authority</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 17                     LA  Local authority</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 18                     LA  Local authority</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 19                     LA  Local authority</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 20                     LA  Local authority</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 21                     LA  Local authority</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 22                     LA  Local authority</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 23                     LA  Local authority</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 24                     LA  Local authority</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 25                     LA  Local authority</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 26                     LA  Local authority</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 27                     LA  Local authority</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 28                     LA  Local authority</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 29                     LA  Local authority</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 30                     LA  Local authority</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 31                     LA  Local authority</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 32                     LA  Local authority</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 33                     LA  Local authority</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 34                     LA  Local authority</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 35                     LA  Local authority</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 36                     LA  Local authority</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 37                     LA  Local authority</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 38                     LA  Local authority</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 39                     LA  Local authority</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 40                     LA  Local authority</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 41                     LA  Local authority</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 42                     LA  Local authority</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 43                     LA  Local authority</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 44                     LA  Local authority</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 45                     LA  Local authority</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 46                     LA  Local authority</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 47                     LA  Local authority</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 48                     LA  Local authority</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 49                     LA  Local authority</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 50                     LA  Local authority</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 51                     LA  Local authority</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 52                     LA  Local authority</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 53                     LA  Local authority</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 54                     LA  Local authority</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 55                     LA  Local authority</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 56                     LA  Local authority</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 57                     LA  Local authority</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 58                     LA  Local authority</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 59                     LA  Local authority</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 60                     LA  Local authority</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 61                     LA  Local authority</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 62                     LA  Local authority</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 63                     LA  Local authority</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 64                     LA  Local authority</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 65                     LA  Local authority</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 66                     LA  Local authority</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 67                     LA  Local authority</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 68                     LA  Local authority</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 69                     LA  Local authority</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 70                     LA  Local authority</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 71                     LA  Local authority</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 72                     LA  Local authority</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 73                     LA  Local authority</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 74                     LA  Local authority</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 75                     LA  Local authority</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 76                     LA  Local authority</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 77                     LA  Local authority</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 78                     LA  Local authority</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 79                     LA  Local authority</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 80                     LA  Local authority</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 81                     LA  Local authority</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 82                     LA  Local authority</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 83                     LA  Local authority</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 84                     LA  Local authority</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 85                     LA  Local authority</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 86                     LA  Local authority</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 87                     LA  Local authority</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 88                     LA  Local authority</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 89                     LA  Local authority</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 90                     LA  Local authority</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 91                     LA  Local authority</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 92                     LA  Local authority</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 93                     LA  Local authority</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 94                     LA  Local authority</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 95                     LA  Local authority</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 96                     LA  Local authority</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 97                     LA  Local authority</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 98                     LA  Local authority</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 99                     LA  Local authority</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 100                    LA  Local authority</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 101                    LA  Local authority</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 102                    LA  Local authority</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 103                    LA  Local authority</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 104                    LA  Local authority</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 105                    LA  Local authority</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 106                    LA  Local authority</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 107                    LA  Local authority</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 108                    LA  Local authority</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 109                    LA  Local authority</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 110                    LA  Local authority</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 111                    LA  Local authority</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 112                    LA  Local authority</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 113                    LA  Local authority</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 114                    LA  Local authority</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 115                    LA  Local authority</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 116                    LA  Local authority</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 117                    LA  Local authority</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 118                    LA  Local authority</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 119                    LA  Local authority</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 120                    LA  Local authority</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 121                    LA  Local authority</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 122                    LA  Local authority</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 123                    LA  Local authority</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 124                    LA  Local authority</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 125                    LA  Local authority</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 126                    LA  Local authority</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 127                    LA  Local authority</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 128                    LA  Local authority</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 129                    LA  Local authority</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 130                    LA  Local authority</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 131                    LA  Local authority</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 132                    LA  Local authority</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 133                    LA  Local authority</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 134                    LA  Local authority</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 135                    LA  Local authority</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 136                    LA  Local authority</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 137                    LA  Local authority</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 138                    LA  Local authority</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 139                    LA  Local authority</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 140                    LA  Local authority</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 141                    LA  Local authority</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 142                    LA  Local authority</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 143                    LA  Local authority</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 144                    LA  Local authority</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 145                    LA  Local authority</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 146                    LA  Local authority</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 147                    LA  Local authority</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 148                    LA  Local authority</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 149                    LA  Local authority</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 150                    LA  Local authority</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 151                    LA  Local authority</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 152                    LA  Local authority</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 153                    LA  Local authority</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 154                   NAT         National</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 155                   REG         Regional</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 156                   REG         Regional</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 157                   REG         Regional</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 158                   REG         Regional</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 159                   REG         Regional</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 160                   REG         Regional</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 161                   REG         Regional</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 162                   REG         Regional</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 163                   REG         Regional</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> $filter_columns</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   col_id           col_name          label</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 1  arLPb establishment_type Type of school</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   col_id        col_name           label</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 1  BT7J3 education_phase Education phase</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> $filter_items</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   col_id             item_label item_id default_item</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 1  arLPb            All schools   dt0Zw           NA</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 2  arLPb                Special   1Ti3Z           NA</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 3  arLPb   State-funded primary   VN5XE           NA</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 4  arLPb State-funded secondary   PEebW           NA</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   col_id  item_label item_id default_item</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 1  BT7J3 All schools   UyHRF           NA</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 2  BT7J3     Primary   oUXmX           NA</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 3  BT7J3   Secondary   rwhNj           NA</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 4  BT7J3     Special   GIxgr           NA</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> $indicators</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   col_id                col_name                              label</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 1  dPe0Z   count_absent_sessions Number of overall absence sessions</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 2  OBXCL        count_enrolments         Number of pupil enrolments</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 3  7YFXo count_possible_sessions        Number of sessions possible</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   col_id                   col_name                      label</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 1  uxo41 persistent_absence_percent Persistent absence percent</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> </span>
 </code></pre></div>
     </div>
