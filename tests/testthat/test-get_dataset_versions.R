@@ -1,7 +1,7 @@
 test_that("get-data-versions returns results", {
   expect_gt(
     get_dataset_versions(
-      example_id(group = "attendance"),
+      example_id(group = "attendance", ees_environment = test_env),
       ees_environment = test_env
     ) |>
       nrow(),
@@ -19,7 +19,7 @@ test_that("Check sensible error returns if no dataset_id given", {
 test_that("get-data-versions light returns expected columns", {
   expect_equal(
     get_dataset_versions(
-      example_id(group = "attendance"),
+      example_id(group = "attendance", ees_environment = test_env),
       ees_environment = test_env
     ) |>
       names(),

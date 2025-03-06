@@ -18,7 +18,7 @@ test_that("api_url", {
   expect_error(
     api_url(
       endpoint = "query",
-      dataset_id = example_id()
+      dataset_id = example_id(ees_environment = test_env)
     )
   )
   expect_error(
@@ -28,7 +28,7 @@ test_that("api_url", {
     api_url(
       endpoint = "post-data",
       ees_environment = test_env,
-      dataset_id = example_id()
+      dataset_id = example_id(ees_environment = test_env)
     ),
     paste0(
       expected_base,
@@ -42,7 +42,7 @@ test_that("api_url", {
   expect_error(
     api_url(
       endpoint = "post-data",
-      dataset_id = example_id(),
+      dataset_id = example_id(ees_environment = test_env),
       dataset_version = "x"
     )
   )
@@ -50,7 +50,7 @@ test_that("api_url", {
     api_url(
       endpoint = "post-data",
       ees_environment = test_env,
-      dataset_id = example_id(),
+      dataset_id = example_id(ees_environment = test_env),
       dataset_version = 2.1
     ),
     paste0(
@@ -81,7 +81,8 @@ test_that("api_url", {
     api_url(
       "get-csv",
       dataset_id = example_id(
-        "dataset"
+        "dataset",
+        ees_environment = test_env
       ),
       indicators = "qwerty"
     )
@@ -90,7 +91,7 @@ test_that("api_url", {
   expect_equal(
     api_url("get-csv",
       ees_environment = test_env,
-      dataset_id = example_id("dataset")
+      dataset_id = example_id("dataset", ees_environment = test_env)
     ),
     paste0(
       expected_base,

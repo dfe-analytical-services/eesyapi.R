@@ -12,9 +12,10 @@ test_that("Retrieve publication list on each environment", {
     get_publications(ees_environment = "preprod") |> nrow(),
     0
   )
-  expect_warning(
-    get_publications(ees_environment = "prod")
-  ) # Expect warning on this one until 6th March, because there aren't any rows.
+  expect_gt(
+    get_publications(ees_environment = "prod") |> nrow(),
+    0
+  )
 })
 
 # Check the get_publication_datasets() function returns the expected data
@@ -23,7 +24,7 @@ test_that("Retrieve publication list on each environment", {
 test_that("Retrieve data set list for publication", {
   expect_equal(
     get_data_catalogue(
-      example_id("publication"),
+      example_id("publication", ees_environment = test_env),
       ees_environment = test_env,
     ),
     readRDS("testdata/example_publication_datasets.rds")

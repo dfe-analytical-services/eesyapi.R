@@ -26,7 +26,7 @@ test_that("Non-logical parse flag given", {
 test_that("Meta query runs successfully", {
   expect_equal(
     get_meta_response(
-      example_id(),
+      example_id(ees_environment = test_env),
       ees_environment = test_env,
       parse = FALSE
     )$status,
