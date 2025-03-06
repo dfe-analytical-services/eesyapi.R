@@ -75,6 +75,8 @@ preview_dataset <- function(
   query_url <- api_url(
     endpoint = "get-csv",
     ees_environment = ees_environment,
+    dataset_version = dataset_version,
+    api_version = api_version,
     dataset_id = dataset_id,
     verbose = verbose
   )
