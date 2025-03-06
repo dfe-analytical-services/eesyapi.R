@@ -284,7 +284,9 @@ eesyapi::query_dataset(
     time_frame = "5ezdi"
   ),
   geographies = c("NAT|id|dP0Zw", "LA|ID|BT7J3"),
-  time_periods = c("2025|W4")
+  time_periods = c("2025|W4"),
+  page_size = 15,
+  page = 1
 )
 ```
 
