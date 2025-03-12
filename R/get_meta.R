@@ -190,33 +190,26 @@ parse_meta_filter_columns <- function(api_meta_filters,
 #'   eesyapi:::parse_meta_filter_item_ids()
 parse_meta_filter_item_ids <- function(api_meta_filters,
                                        verbose = FALSE) {
-  nfilters <- length(api_meta_filters$id)
   filter_items <- data.frame(
-    col_id = NA,
-    item_id = NA,
-    item_label = NA,
-    isAggregate = NA
-  )
-  filter_items <- filter_items |>
-    dplyr::filter(!is.na(filter_items$col_id))
-  for (i in 1:nfilters) {
-    filter_items_i <- as.data.frame(
-      api_meta_filters$options[i]
+    col_id = api_meta_filters$id,
+    col_name = api_meta_filters$column,
+    label = api_meta_filters$label
+  ) |> dplyr::left_join(
+    purrr::map2(
+      api_meta_filters$options,
+      api_meta_filters$id,
+      ~ cbind(.x, col_id = .y)
     ) |>
+      dplyr::bind_rows() |>
       dplyr::rename(
         item_id = "id",
         item_label = "label"
-      ) |>
-      dplyr::mutate(col_id = api_meta_filters$id[i])
-    if (!("isAggregate" %in% names(filter_items_i))) {
-      filter_items_i <- filter_items_i |>
-        dplyr::mutate(isAggregate = NA)
-    }
+      ),
+    by = dplyr::join_by("col_id")
+  )
+  if (!("isAggregate" %in% names(filter_items))) {
     filter_items <- filter_items |>
-      rbind(
-        filter_items_i |>
-          dplyr::select("col_id", "item_label", "item_id", default_item = "isAggregate")
-      )
+      dplyr::mutate(isAggregate = NA)
   }
   return(filter_items)
 }
