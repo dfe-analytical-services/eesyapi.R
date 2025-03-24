@@ -86,36 +86,36 @@ endpoint is "get-data-catalogue"</p></dd>
     <h2 id="ref-examples">Examples<a class="anchor" aria-label="anchor" href="#ref-examples"></a></h2>
     <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="fu">get_data_catalogue</span><span class="op">(</span><span class="fu"><a href="example_id.html">example_id</a></span><span class="op">(</span><span class="st">"publication"</span><span class="op">)</span><span class="op">)</span></span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>                                     id                              title</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 1 63629501-d3ca-c471-9780-ec4cb6fdf172 Reasons for absence and attendance</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 2 55629501-e98b-0c75-adba-f95a0cfbb5e9      Persistent absence in schools</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 1 55629501-e98b-0c75-adba-f95a0cfbb5e9      Persistent absence in schools</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 2 63629501-d3ca-c471-9780-ec4cb6fdf172 Reasons for absence and attendance</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 3 55629501-1945-0174-956c-594f21c90404 Numbers of schools submitting data</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>                                                           summary    status</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 1                        Reasons for pupil attendance and absence Published</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 2                                     Persistent absence measures Published</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 1                                     Persistent absence measures Published</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 2                        Reasons for pupil attendance and absence Published</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 3 The number of schools returning data as used in the publication Published</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>   latestVersion.version          latestVersion.published</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 1                   1.0 2025-03-06T09:30:21.920643+00:00</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 2                   1.0 2025-03-06T09:30:21.824832+00:00</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 3                   1.0 2025-03-06T09:30:20.749879+00:00</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 1                   1.1  2025-03-20T09:30:16.09499+00:00</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 2                   1.1 2025-03-20T09:30:16.029694+00:00</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 3                   1.1 2025-03-20T09:30:15.467745+00:00</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>   latestVersion.totalResults                     latestVersion.id</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 1                    2750478 bbaf0ca9-9e63-44ce-aafd-33836afb4c26</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 2                        494 94477a58-6301-47b3-bf02-3c572df7d31a</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 3                      59793 f3dafa07-a653-44e6-a7f2-42a86df10364</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 1                        988 6f69c2ae-e17a-4853-8440-7278306045f7</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 2                    3013000 77e0afa7-7b92-47cb-988a-04d9694d9381</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 3                      65500 ba8cbe51-ec5a-4684-8163-fe3642665061</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>   latestVersion.timePeriods.start latestVersion.timePeriods.end</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 1                    2024 Week 37                   2025 Week 8</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 2                     2025 Week 8                   2025 Week 8</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 3                    2024 Week 37                   2025 Week 8</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 1                     2025 Week 8                  2025 Week 10</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 2                    2024 Week 37                  2025 Week 10</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 3                    2024 Week 37                  2025 Week 10</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>        latestVersion.geographicLevels</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 1 Local authority, National, Regional</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 2 Local authority, National, Regional</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 3 Local authority, National, Regional</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>                                                                latestVersion.filters</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 1 Attendance reason, Attendance status, Attendance type, Education phase, Time frame</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 2                                                                    Education phase</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 1                                                                    Education phase</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 2 Attendance reason, Attendance status, Attendance type, Education phase, Time frame</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 3                                                        Education phase, Time frame</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>                                                               latestVersion.indicators</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 1 Number of sessions, Number of sessions (scaled), Percent of sessions, Reference date</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 2                                                           Persistent absence percent</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 1                                                           Persistent absence percent</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 2 Number of sessions, Number of sessions (scaled), Percent of sessions, Reference date</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 3                Number of schools submitting, Reference date, Total number of schools</span>
 </code></pre></div>
     </div>
