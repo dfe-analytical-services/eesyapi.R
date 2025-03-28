@@ -217,7 +217,7 @@ from Attendance type</li>
 <li>“BT7J3” and “dP0Zw”</li>
 <li>“e4wuS”</li>
 <li>“P9Aeb”, “1Dui3”, “oRfmX”</li>
-<li>“RaVka” and “4yTUZ”</li>
+<li>“4yTUZ” and “RaVka”</li>
 <li>“X9fKb”</li>
 </ul>
 <p>Note that whilst the above IDs are unique within a given item type
@@ -276,11 +276,16 @@ the filter items, which shows which column each item is availble in.</p>
 <span>      <span class="st">"Absence"</span>, <span class="st">"Approved educational activity"</span>, <span class="st">"Authorised"</span>, <span class="st">"Unauthorised"</span></span>
 <span>    <span class="op">)</span></span>
 <span>  <span class="op">)</span></span>
-<span><span class="co">#&gt;   col_id                    item_label item_id default_item</span></span>
-<span><span class="co">#&gt; 1  krhsL                       Absence   e4wuS           NA</span></span>
-<span><span class="co">#&gt; 2  uxo41 Approved educational activity   P9Aeb           NA</span></span>
-<span><span class="co">#&gt; 3  uxo41                    Authorised   1Dui3           NA</span></span>
-<span><span class="co">#&gt; 4  uxo41                  Unauthorised   oRfmX           NA</span></span></code></pre></div>
+<span><span class="co">#&gt;   col_id          col_name             label item_id</span></span>
+<span><span class="co">#&gt; 1  krhsL attendance_status Attendance status   e4wuS</span></span>
+<span><span class="co">#&gt; 2  uxo41   attendance_type   Attendance type   P9Aeb</span></span>
+<span><span class="co">#&gt; 3  uxo41   attendance_type   Attendance type   1Dui3</span></span>
+<span><span class="co">#&gt; 4  uxo41   attendance_type   Attendance type   oRfmX</span></span>
+<span><span class="co">#&gt;                      item_label isAggregate</span></span>
+<span><span class="co">#&gt; 1                       Absence          NA</span></span>
+<span><span class="co">#&gt; 2 Approved educational activity          NA</span></span>
+<span><span class="co">#&gt; 3                    Authorised          NA</span></span>
+<span><span class="co">#&gt; 4                  Unauthorised          NA</span></span></code></pre></div>
 </div>
 <div class="section level3">
 <h3 id="indicators">Indicators<a class="anchor" aria-label="anchor" href="#indicators"></a>
