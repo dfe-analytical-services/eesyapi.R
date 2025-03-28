@@ -62,7 +62,7 @@ seed_query_dataset <- function() {
   result <- eesyapi::query_dataset(
     eesyapi::example_id(group = "attendance", ees_environment = "test"),
     ees_environment = test_ees_environment(),
-    json_query = eesyapi::example_json_query()
+    json_query = eesyapi::example_json_query(ees_environment = "test")
   )
   message("  * Number records = ", nrow(result))
   result |> saveRDS(
