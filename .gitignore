@@ -50,3 +50,4 @@ rsconnect/
 .Rproj.user
 docs
 inst/doc
+dev_notes.md

@@ -33,20 +33,22 @@
 #' )
 #'
 post_dataset <- function(
-    dataset_id,
-    indicators = NULL,
-    time_periods = NULL,
-    geographies = NULL,
-    filter_items = NULL,
-    json_query = NULL,
-    dataset_version = NULL,
-    ees_environment = NULL,
-    api_version = NULL,
-    page = NULL,
-    page_size = 10000,
-    parse = TRUE,
-    debug = FALSE,
-    verbose = FALSE) {
+  dataset_id,
+  indicators = NULL,
+  time_periods = NULL,
+  geographies = NULL,
+  filter_items = NULL,
+  json_query = NULL,
+  dataset_version = NULL,
+  preview_token = NULL,
+  ees_environment = NULL,
+  api_version = NULL,
+  page = NULL,
+  page_size = 10000,
+  parse = TRUE,
+  debug = FALSE,
+  verbose = FALSE
+) {
   if (is.null(indicators) && is.null(json_query)) {
     stop("At least one of either indicators or json_query must not be NULL.")
   }
@@ -90,12 +92,15 @@ post_dataset <- function(
     dataset_id = dataset_id,
     dataset_version = dataset_version,
     ees_environment = ees_environment,
-    api_version = api_version
-  ) |> httr::POST(
-    body = json_body,
-    encode = "json",
-    httr::content_type("application/json")
-  )
+    api_version = api_version,
+    verbose = verbose
+  ) |>
+    httr::POST(
+      body = json_body,
+      encode = "json",
+      httr::content_type("application/json"),
+      httr::add_headers(`Preview-Token` = preview_token)
+    )
   if (verbose) {
     print(response)
     print(
@@ -122,7 +127,9 @@ post_dataset <- function(
       if (response_json$paging$totalPages * page_size > 100000) {
         message(
           paste(
-            "Downloading up to", response_json$paging$totalPages * page_size, "rows.",
+            "Downloading up to",
+            response_json$paging$totalPages * page_size,
+            "rows.",
             "This may take a while.",
             "We recommend downloading the full data set using preview_dataset()",
             "for large volumes of data."
@@ -149,7 +156,8 @@ post_dataset <- function(
           httr::POST(
             body = json_body,
             encode = "json",
-            httr::content_type("application/json")
+            httr::content_type("application/json"),
+            httr::add_headers(`Preview-Token` = preview_token)
           ) |>
           httr::content("text") |>
           jsonlite::fromJSON()
@@ -166,7 +174,9 @@ post_dataset <- function(
     dfresults <- dfresults |>
       parse_api_dataset(
         dataset_id,
+        dataset_version,
         verbose = verbose,
+        preview_token = preview_token,
         ees_environment = ees_environment
       )
   }

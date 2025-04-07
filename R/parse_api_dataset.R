@@ -21,12 +21,14 @@
 #' example_data_raw(group = "attendance") |>
 #'   eesyapi:::parse_api_dataset(example_id(group = "attendance"))
 parse_api_dataset <- function(
-    api_data_result,
-    dataset_id,
-    dataset_version = NULL,
-    ees_environment = NULL,
-    api_version = NULL,
-    verbose = FALSE) {
+  api_data_result,
+  dataset_id,
+  dataset_version = NULL,
+  preview_token = NULL,
+  ees_environment = NULL,
+  api_version = NULL,
+  verbose = FALSE
+) {
   if (!is.null(dataset_id)) {
     validate_ees_id(dataset_id, level = "dataset")
   }
@@ -57,7 +59,8 @@ parse_api_dataset <- function(
     dataset_id,
     dataset_version = dataset_version,
     ees_environment = ees_environment,
-    api_version = api_version
+    api_version = api_version,
+    preview_token = preview_token
   )
   dplyr::bind_cols(
     api_data_result$timePeriod |>
