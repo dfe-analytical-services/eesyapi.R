@@ -12,6 +12,7 @@ get_dataset(
   locations = NULL,
   filter_items = NULL,
   dataset_version = NULL,
+  preview_token = NULL,
   ees_environment = NULL,
   api_version = NULL,
   page = NULL,

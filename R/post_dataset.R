@@ -7,6 +7,7 @@
 #'
 #' @inheritParams api_url
 #' @inheritParams parse_tojson_params
+#' @param preview_token Preview token required for access to private data sets
 #' @param json_query Optional path to a json file containing the query parameters
 #' @param parse Logical flag to activate parsing of the results. Default: TRUE
 #'
@@ -175,9 +176,9 @@ post_dataset <- function(
       parse_api_dataset(
         dataset_id,
         dataset_version,
-        verbose = verbose,
         preview_token = preview_token,
-        ees_environment = ees_environment
+        ees_environment = ees_environment,
+        verbose = verbose
       )
   }
   return(dfresults)

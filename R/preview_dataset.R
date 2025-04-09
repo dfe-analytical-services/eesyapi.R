@@ -45,7 +45,6 @@
 preview_dataset <- function(
   dataset_id,
   dataset_version = NULL,
-  preview_token = NULL,
   api_version = NULL,
   ees_environment = default_ees_environment(),
   n_max = 10,
@@ -88,7 +87,6 @@ preview_dataset <- function(
 
   response <- query_url |>
     httr2::request() |>
-    httr2::req_headers(preview_token = preview_token) |>
     httr2::req_perform()
 
   http_request_error(response, verbose = verbose)

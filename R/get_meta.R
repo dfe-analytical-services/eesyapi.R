@@ -6,6 +6,7 @@
 #' meta endpoint.
 #'
 #' @inheritParams api_url
+#' @inheritParams post_dataset
 #'
 #' @return List of data frames containing a data set's meta data
 #' @export
@@ -60,6 +61,7 @@ get_meta <- function(
 #' Get the metadata information for a data set available from the EES API.
 #'
 #' @inheritParams api_url
+#' @inheritParams post_dataset
 #' @param parse Parse result into structured list
 #'
 #' @return Results of query to API meta data endpoint

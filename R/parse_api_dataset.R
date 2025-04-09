@@ -12,6 +12,7 @@
 #'
 #' @param api_data_result A json data result list as returned from the API
 #' @inheritParams api_url
+#' @inheritParams post_dataset
 #'
 #' @return Data frame containing API data results
 #'
@@ -58,9 +59,9 @@ parse_api_dataset <- function(
   meta <- get_meta(
     dataset_id,
     dataset_version = dataset_version,
+    preview_token = preview_token,
     ees_environment = ees_environment,
-    api_version = api_version,
-    preview_token = preview_token
+    api_version = api_version
   )
   dplyr::bind_cols(
     api_data_result$timePeriod |>

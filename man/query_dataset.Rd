@@ -13,6 +13,7 @@ query_dataset(
   json_query = NULL,
   method = "POST",
   dataset_version = NULL,
+  preview_token = NULL,
   ees_environment = NULL,
   api_version = NULL,
   page_size = 10000,
@@ -39,6 +40,8 @@ locations to be queried.}
 \item{method}{The API query method to be used. Can be  "POST" or "GET". Default: "POST".}
 
 \item{dataset_version}{Version of data set to be connected to}
+
+\item{preview_token}{Preview token required for access to private data sets}
 
 \item{ees_environment}{EES ees_environment to connect to: "dev", "test", "preprod" or "prod"}
 

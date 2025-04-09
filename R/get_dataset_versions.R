@@ -1,7 +1,6 @@
 #' Get data set versions
 #'
 #' @inheritParams api_url
-#' @param preview_token
 #' @param detail Level of detail to return. Given as a character string, it should be one of:
 #' "light" (default) or "full".
 #' Using "light" gives the following:
@@ -34,7 +33,6 @@
 #' get_dataset_versions(dataset_id = example_id(group = "attendance"))
 get_dataset_versions <- function(
   dataset_id,
-  preview_token = NULL,
   detail = "light",
   ees_environment = NULL,
   api_version = NULL,
@@ -63,8 +61,7 @@ get_dataset_versions <- function(
       page_size = page_size,
       page = page,
       verbose = verbose
-    ),
-    httr::add_headers(preview_token = preview_token)
+    )
   ) |>
     httr::content("text") |>
     jsonlite::fromJSON()
@@ -81,8 +78,7 @@ get_dataset_versions <- function(
             page_size = page_size,
             page = page,
             verbose = verbose
-          ),
-          httr::add_headers(preview_token = preview_token)
+          )
         ) |>
           httr::content("text") |>
           jsonlite::fromJSON()
