@@ -30,9 +30,6 @@ of "get-dataset-versions", "get-summary", "get-meta", "get-csv", "get-data" or "
 
 \item{time_periods}{Time periods required as a string ("period|code") or vector of strings}
 
-\item{geographies}{String, vector or data frame containing the geographic levels and
-locations to be queried.}
-
 \item{filter_items}{Filter items required as a string or vector of strings}
 
 \item{json_query}{Optional path to a json file containing the query parameters}
@@ -51,9 +48,9 @@ locations to be queried.}
 
 \item{page}{Page number of query results to return}
 
-\item{debug}{Run POST query in debug mode. Logical, default = FALSE}
-
 \item{verbose}{Run with additional contextual messaging. Logical, default = FALSE}
+
+\item{parse}{Logical flag to activate parsing of the results. Default: TRUE}
 }
 \value{
 Data frame containing query results

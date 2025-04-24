@@ -105,7 +105,9 @@
 #'  and so on).
 #'
 #' @inheritParams api_url
-#' @inheritParams post_dataset
+#' @param preview_token Preview token required for access to private data sets
+#' @param json_query Optional path to a json file containing the query parameters
+#' @param parse Logical flag to activate parsing of the results. Default: TRUE
 #' @param method The API query method to be used. Can be  "POST" or "GET". Default: "POST".
 #'
 #' @return Data frame containing query results

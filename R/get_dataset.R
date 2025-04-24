@@ -10,7 +10,7 @@
 #' any of those items.
 #'
 #' @inheritParams api_url
-#' @param parse Logical flag to activate parsing of the results. Default: TRUE
+#' @inheritParams query_dataset
 #'
 #' @return Data frame containing query results of an API data set
 #'
