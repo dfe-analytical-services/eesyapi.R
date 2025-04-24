@@ -6,7 +6,7 @@
 #' meta endpoint.
 #'
 #' @inheritParams api_url
-#' @inheritParams post_dataset
+#' @inheritParams query_dataset
 #'
 #' @return List of data frames containing a data set's meta data
 #' @export

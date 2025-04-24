@@ -12,7 +12,7 @@
 #'
 #' @param api_data_result A json data result list as returned from the API
 #' @inheritParams api_url
-#' @inheritParams post_dataset
+#' @inheritParams query_dataset
 #'
 #' @return Data frame containing API data results
 #'
