@@ -105,6 +105,7 @@
 #'  and so on).
 #'
 #' @inheritParams api_url
+#' @inheritParams parse_tojson_params
 #' @param preview_token Preview token required for access to private data sets
 #' @param json_query Optional path to a json file containing the query parameters
 #' @param parse Logical flag to activate parsing of the results. Default: TRUE
@@ -186,6 +187,7 @@ query_dataset <- function(
   ees_environment = NULL,
   api_version = NULL,
   page_size = 10000,
+  parse = TRUE,
   page = NULL,
   debug = FALSE,
   verbose = FALSE
@@ -227,6 +229,7 @@ query_dataset <- function(
       api_version = api_version,
       page_size = page_size,
       page = page,
+      parse = parse,
       debug = debug,
       verbose = verbose
     )
@@ -293,6 +296,7 @@ query_dataset <- function(
       api_version = api_version,
       page_size = page_size,
       page = page,
+      parse = parse,
       verbose = verbose
     )
   }

@@ -17,6 +17,7 @@ query_dataset(
   ees_environment = NULL,
   api_version = NULL,
   page_size = 10000,
+  parse = TRUE,
   page = NULL,
   debug = FALSE,
   verbose = FALSE
@@ -29,6 +30,9 @@ of "get-dataset-versions", "get-summary", "get-meta", "get-csv", "get-data" or "
 \item{indicators}{Indicators required as a string or vector of strings (required)}
 
 \item{time_periods}{Time periods required as a string ("period|code") or vector of strings}
+
+\item{geographies}{String, vector or data frame containing the geographic levels and
+locations to be queried.}
 
 \item{filter_items}{Filter items required as a string or vector of strings}
 
@@ -46,11 +50,13 @@ of "get-dataset-versions", "get-summary", "get-meta", "get-csv", "get-data" or "
 
 \item{page_size}{Number of results to return in a single query}
 
+\item{parse}{Logical flag to activate parsing of the results. Default: TRUE}
+
 \item{page}{Page number of query results to return}
 
-\item{verbose}{Run with additional contextual messaging. Logical, default = FALSE}
+\item{debug}{Run POST query in debug mode. Logical, default = FALSE}
 
-\item{parse}{Logical flag to activate parsing of the results. Default: TRUE}
+\item{verbose}{Run with additional contextual messaging. Logical, default = FALSE}
 }
 \value{
 Data frame containing query results
