@@ -12,6 +12,7 @@
 #'
 #' @param api_data_result A json data result list as returned from the API
 #' @inheritParams api_url
+#' @inheritParams query_dataset
 #'
 #' @return Data frame containing API data results
 #'
@@ -21,12 +22,14 @@
 #' example_data_raw(group = "attendance") |>
 #'   eesyapi:::parse_api_dataset(example_id(group = "attendance"))
 parse_api_dataset <- function(
-    api_data_result,
-    dataset_id,
-    dataset_version = NULL,
-    ees_environment = NULL,
-    api_version = NULL,
-    verbose = FALSE) {
+  api_data_result,
+  dataset_id,
+  dataset_version = NULL,
+  preview_token = NULL,
+  ees_environment = NULL,
+  api_version = NULL,
+  verbose = FALSE
+) {
   if (!is.null(dataset_id)) {
     validate_ees_id(dataset_id, level = "dataset")
   }
@@ -56,6 +59,7 @@ parse_api_dataset <- function(
   meta <- get_meta(
     dataset_id,
     dataset_version = dataset_version,
+    preview_token = preview_token,
     ees_environment = ees_environment,
     api_version = api_version
   )

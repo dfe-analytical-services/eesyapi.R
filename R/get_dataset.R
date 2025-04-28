@@ -10,7 +10,7 @@
 #' any of those items.
 #'
 #' @inheritParams api_url
-#' @param parse Logical flag to activate parsing of the results. Default: TRUE
+#' @inheritParams query_dataset
 #'
 #' @return Data frame containing query results of an API data set
 #'
@@ -24,19 +24,21 @@
 #'   indicators = example_id("indicator")
 #' )
 get_dataset <- function(
-    dataset_id,
-    indicators,
-    time_periods = NULL,
-    geographic_levels = NULL,
-    locations = NULL,
-    filter_items = NULL,
-    dataset_version = NULL,
-    ees_environment = NULL,
-    api_version = NULL,
-    page = NULL,
-    page_size = 10000,
-    parse = TRUE,
-    verbose = FALSE) {
+  dataset_id,
+  indicators,
+  time_periods = NULL,
+  geographic_levels = NULL,
+  locations = NULL,
+  filter_items = NULL,
+  dataset_version = NULL,
+  preview_token = NULL,
+  ees_environment = NULL,
+  api_version = NULL,
+  page = NULL,
+  page_size = 10000,
+  parse = TRUE,
+  verbose = FALSE
+) {
   api_call <- api_url(
     "get-data",
     dataset_id = dataset_id,
@@ -53,14 +55,17 @@ get_dataset <- function(
     verbose = verbose
   )
   response <- api_call |>
-    httr::GET()
+    httr::GET(httr::add_headers(`Preview-Token` = preview_token))
   http_request_error(response)
   # Unless the user specifies a specific page of results to get, loop through all available pages.
   response_json <- response |>
     httr::content("text") |>
     jsonlite::fromJSON()
   if (verbose) {
-    message(paste("Total number of pages retrieved: ", response_json$paging$totalPages))
+    message(paste(
+      "Total number of pages retrieved: ",
+      response_json$paging$totalPages
+    ))
   }
   dfresults <- response_json |>
     magrittr::extract2("results")
@@ -70,7 +75,9 @@ get_dataset <- function(
     if (response_json$paging$totalPages > 1) {
       toggle_message(
         paste(
-          "Downloading up to", response_json$paging$totalPages * page_size, "rows.",
+          "Downloading up to",
+          response_json$paging$totalPages * page_size,
+          "rows.",
           "This may take a while.",
           "We recommend downloading the full data set using preview_dataset()",
           "for large volumes of data"
@@ -93,12 +100,17 @@ get_dataset <- function(
           page = page,
           verbose = verbose
         ) |>
-          httr::GET() |>
+          httr::GET(httr::add_headers(`Preview-Token` = preview_token)) |>
           httr::content("text") |>
           jsonlite::fromJSON()
         response_page |> warning_max_pages()
         toggle_message(
-          paste0("Retrieved page ", page, " of ", response_json$paging$totalPages),
+          paste0(
+            "Retrieved page ",
+            page,
+            " of ",
+            response_json$paging$totalPages
+          ),
           verbose = verbose
         )
         dfresults <- dfresults |>
@@ -113,8 +125,10 @@ get_dataset <- function(
     dfresults <- dfresults |>
       parse_api_dataset(
         dataset_id,
-        verbose = verbose,
-        ees_environment = ees_environment
+        dataset_version,
+        preview_token = preview_token,
+        ees_environment = ees_environment,
+        verbose = verbose
       )
   }
   return(dfresults)

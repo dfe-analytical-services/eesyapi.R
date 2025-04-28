@@ -13,9 +13,11 @@ query_dataset(
   json_query = NULL,
   method = "POST",
   dataset_version = NULL,
+  preview_token = NULL,
   ees_environment = NULL,
   api_version = NULL,
   page_size = 10000,
+  parse = TRUE,
   page = NULL,
   debug = FALSE,
   verbose = FALSE
@@ -40,11 +42,15 @@ locations to be queried.}
 
 \item{dataset_version}{Version of data set to be connected to}
 
+\item{preview_token}{Preview token required for access to private data sets}
+
 \item{ees_environment}{EES ees_environment to connect to: "dev", "test", "preprod" or "prod"}
 
 \item{api_version}{EES API version}
 
 \item{page_size}{Number of results to return in a single query}
+
+\item{parse}{Logical flag to activate parsing of the results. Default: TRUE}
 
 \item{page}{Page number of query results to return}
 

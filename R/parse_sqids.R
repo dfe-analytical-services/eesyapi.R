@@ -36,7 +36,9 @@ parse_time_codes <- function(time_periods, verbose = FALSE) {
     time_periods_out <- time_periods_out |>
       dplyr::mutate(
         time_identifier = stringr::str_replace(
-          !!rlang::sym("time_identifier"), "W([0-9]+)", "Week \\1"
+          !!rlang::sym("time_identifier"),
+          "W([0-9]+)",
+          "Week \\1"
         )
       )
   }
@@ -50,7 +52,9 @@ parse_time_codes <- function(time_periods, verbose = FALSE) {
           .default = !!rlang::sym("time_identifier")
         ),
         time_period = stringr::str_replace(
-          !!rlang::sym("time_period"), "([0-9]+)/20([0-9]+)", "\\1/\\2"
+          !!rlang::sym("time_period"),
+          "([0-9]+)/20([0-9]+)",
+          "\\1/\\2"
         )
       )
   }
@@ -125,7 +129,9 @@ parse_geographic_level_codes <- function(geographic_levels, verbose = FALSE) {
 parse_sqids_locations <- function(locations, meta, verbose = FALSE) {
   lookup <- meta |>
     magrittr::use_series("locations") |>
-    dplyr::filter(!!rlang::sym("geographic_level_code") %in% names(locations)) |>
+    dplyr::filter(
+      !!rlang::sym("geographic_level_code") %in% names(locations)
+    ) |>
     dplyr::rename(name = "label")
   for (level in names(locations)) {
     locations <- locations |>
@@ -133,8 +139,13 @@ parse_sqids_locations <- function(locations, meta, verbose = FALSE) {
       dplyr::left_join(
         lookup |>
           dplyr::filter(!!rlang::sym("geographic_level_code") == level) |>
-          dplyr::select(-dplyr::all_of(c("geographic_level_code", "geographic_level"))) |>
-          dplyr::rename_with(~ paste0(tolower(level), "_", .x), !dplyr::matches("item_id")),
+          dplyr::select(
+            -dplyr::all_of(c("geographic_level_code", "geographic_level"))
+          ) |>
+          dplyr::rename_with(
+            ~ paste0(tolower(level), "_", .x),
+            !dplyr::matches("item_id")
+          ),
         by = dplyr::join_by("item_id")
       ) |>
       dplyr::select(-"item_id")
@@ -173,6 +184,13 @@ parse_sqids_filters <- function(filters, meta, verbose = FALSE) {
     magrittr::use_series("filter_columns") |>
     dplyr::filter(!!rlang::sym("col_id") %in% colnames(filters)) |>
     dplyr::pull("col_id")
+  data_filter_ids <- filters |> names()
+  if (any(!(data_filter_ids %in% filter_ids))) {
+    warning(
+      "The following filter IDs were not found in the associated meta data: ",
+      paste(setdiff(data_filter_ids, filter_ids), collapse = ", ")
+    )
+  }
   if (verbose) {
     print(filter_ids)
   }

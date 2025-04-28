@@ -52,21 +52,22 @@
 #'   indicators = example_id("indicator")
 #' )
 api_url <- function(
-    endpoint = "get-publications",
-    search = NULL,
-    publication_id = NULL,
-    dataset_id = NULL,
-    indicators = NULL,
-    time_periods = NULL,
-    geographic_levels = NULL,
-    locations = NULL,
-    filter_items = NULL,
-    dataset_version = NULL,
-    ees_environment = NULL,
-    api_version = NULL,
-    page_size = NULL,
-    page = NULL,
-    verbose = FALSE) {
+  endpoint = "get-publications",
+  search = NULL,
+  publication_id = NULL,
+  dataset_id = NULL,
+  indicators = NULL,
+  time_periods = NULL,
+  geographic_levels = NULL,
+  locations = NULL,
+  filter_items = NULL,
+  dataset_version = NULL,
+  ees_environment = NULL,
+  api_version = NULL,
+  page_size = NULL,
+  page = NULL,
+  verbose = FALSE
+) {
   # Creating a master switch here for ees_environment, so that when we switch from dev to test and
   # then subsequently from test to prod, we can just change it here and everything should follow
   # from here. ees_environment should default to NULL for most other functions. Probably not a
@@ -90,14 +91,21 @@ api_url <- function(
   validate_endpoint(endpoint)
 
   is_valid_dataset_info <- function(dataset_id, dataset_version) {
-    !is.null(dataset_id) & (is.numeric(dataset_version) | is.null(dataset_version))
+    !is.null(dataset_id) &
+      (is.numeric(dataset_version) | is.null(dataset_version))
   }
 
   # Check that if endpoint requires a data set then dataset_id is not null
-  if (endpoint %in% c(
-    "get-summary", "get-dataset-versions", "get-meta",
-    "get-csv", "get-data", "post-data"
-  )
+  if (
+    endpoint %in%
+      c(
+        "get-summary",
+        "get-dataset-versions",
+        "get-meta",
+        "get-csv",
+        "get-data",
+        "post-data"
+      )
   ) {
     validate_ees_id(dataset_id, level = "dataset")
     if (is_valid_dataset_info(dataset_id, dataset_version) == FALSE) {
@@ -125,7 +133,9 @@ api_url <- function(
 
   endpoint_base_version <- paste0(
     endpoint_base[[ees_environment]],
-    "v", api_version, "/"
+    "v",
+    api_version,
+    "/"
   )
 
   if (endpoint == "get-publications") {
@@ -152,7 +162,14 @@ api_url <- function(
       endpoint_base_version,
       "data-sets/",
       ifelse(
-        endpoint %in% c("get-summary", "get-dataset-versions", "get-meta", "get-data", "post-data"),
+        endpoint %in%
+          c(
+            "get-summary",
+            "get-dataset-versions",
+            "get-meta",
+            "get-data",
+            "post-data"
+          ),
         dataset_id,
         ""
       )
@@ -214,11 +231,26 @@ api_url <- function(
       )
     }
   }
-  if (endpoint %in% c(
-    "get-publications", "get-data-catalogue", "get-summary", "get-meta", "get-csv"
-  )) {
+  if (
+    endpoint %in%
+      c(
+        "get-publications",
+        "get-data-catalogue",
+        "get-summary",
+        "get-meta",
+        "get-csv"
+      )
+  ) {
     if (
-      any(!is.null(c(time_periods, geographic_levels, locations, filter_items, indicators)))
+      any(
+        !is.null(c(
+          time_periods,
+          geographic_levels,
+          locations,
+          filter_items,
+          indicators
+        ))
+      )
     ) {
       warning(
         paste0(

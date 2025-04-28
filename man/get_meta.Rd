@@ -7,6 +7,7 @@
 get_meta(
   dataset_id,
   dataset_version = NULL,
+  preview_token = NULL,
   ees_environment = NULL,
   api_version = NULL,
   verbose = FALSE
@@ -17,6 +18,8 @@ get_meta(
 of "get-dataset-versions", "get-summary", "get-meta", "get-csv", "get-data" or "post-data"}
 
 \item{dataset_version}{Version of data set to be connected to}
+
+\item{preview_token}{Preview token required for access to private data sets}
 
 \item{ees_environment}{EES ees_environment to connect to: "dev", "test", "preprod" or "prod"}
 

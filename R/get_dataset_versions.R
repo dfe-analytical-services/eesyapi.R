@@ -32,19 +32,23 @@
 #' @examples
 #' get_dataset_versions(dataset_id = example_id(group = "attendance"))
 get_dataset_versions <- function(
-    dataset_id,
-    detail = "light",
-    ees_environment = NULL,
-    api_version = NULL,
-    page_size = 40,
-    page = NULL,
-    verbose = FALSE) {
+  dataset_id,
+  detail = "light",
+  ees_environment = NULL,
+  api_version = NULL,
+  page_size = 40,
+  page = NULL,
+  verbose = FALSE
+) {
   # Do some basic validation
   validate_page_size(page_size)
 
   detail <- tolower(detail)
   if (!(detail %in% c("light", "full"))) {
-    stop("The detail parameter should be either \"light\" or \"full\". Value passed: ", detail)
+    stop(
+      "The detail parameter should be either \"light\" or \"full\". Value passed: ",
+      detail
+    )
   }
 
   # Make the initial API request

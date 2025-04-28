@@ -12,6 +12,7 @@ get_dataset(
   locations = NULL,
   filter_items = NULL,
   dataset_version = NULL,
+  preview_token = NULL,
   ees_environment = NULL,
   api_version = NULL,
   page = NULL,
@@ -35,6 +36,8 @@ of "get-dataset-versions", "get-summary", "get-meta", "get-csv", "get-data" or "
 \item{filter_items}{Filter items required as a string or vector of strings}
 
 \item{dataset_version}{Version of data set to be connected to}
+
+\item{preview_token}{Preview token required for access to private data sets}
 
 \item{ees_environment}{EES ees_environment to connect to: "dev", "test", "preprod" or "prod"}
 

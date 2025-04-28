@@ -43,12 +43,13 @@
 #' # Get all rows
 #' preview_dataset(example_id("dataset"), n_max = Inf)
 preview_dataset <- function(
-    dataset_id,
-    dataset_version = NULL,
-    api_version = NULL,
-    ees_environment = default_ees_environment(),
-    n_max = 10,
-    verbose = FALSE) {
+  dataset_id,
+  dataset_version = NULL,
+  api_version = NULL,
+  ees_environment = default_ees_environment(),
+  n_max = 10,
+  verbose = FALSE
+) {
   # Validation ----------------------------------------------------------------
   if (!is.null(dataset_version)) {
     warning(

@@ -105,7 +105,10 @@
 #'  and so on).
 #'
 #' @inheritParams api_url
-#' @inheritParams post_dataset
+#' @inheritParams parse_tojson_params
+#' @param preview_token Preview token required for access to private data sets
+#' @param json_query Optional path to a json file containing the query parameters
+#' @param parse Logical flag to activate parsing of the results. Default: TRUE
 #' @param method The API query method to be used. Can be  "POST" or "GET". Default: "POST".
 #'
 #' @return Data frame containing query results
@@ -172,20 +175,23 @@
 #' )
 #'
 query_dataset <- function(
-    dataset_id,
-    indicators = NULL,
-    time_periods = NULL,
-    geographies = NULL,
-    filter_items = NULL,
-    json_query = NULL,
-    method = "POST",
-    dataset_version = NULL,
-    ees_environment = NULL,
-    api_version = NULL,
-    page_size = 10000,
-    page = NULL,
-    debug = FALSE,
-    verbose = FALSE) {
+  dataset_id,
+  indicators = NULL,
+  time_periods = NULL,
+  geographies = NULL,
+  filter_items = NULL,
+  json_query = NULL,
+  method = "POST",
+  dataset_version = NULL,
+  preview_token = NULL,
+  ees_environment = NULL,
+  api_version = NULL,
+  page_size = 10000,
+  parse = TRUE,
+  page = NULL,
+  debug = FALSE,
+  verbose = FALSE
+) {
   if (!(method %in% c("POST", "GET"))) {
     stop(
       paste(
@@ -195,10 +201,13 @@ query_dataset <- function(
     )
   }
   if (is.null(indicators) && (is.null(json_query) || method == "GET")) {
-    warning("No indicators provided, defaulted to using all indicators from meta data")
+    warning(
+      "No indicators provided, defaulted to using all indicators from meta data"
+    )
     indicators <- get_meta(
       dataset_id,
       dataset_version = dataset_version,
+      preview_token = preview_token,
       ees_environment = ees_environment,
       api_version = api_version,
       verbose = verbose
@@ -215,10 +224,12 @@ query_dataset <- function(
       filter_items = filter_items,
       json_query = json_query,
       dataset_version = dataset_version,
+      preview_token = preview_token,
       ees_environment = ees_environment,
       api_version = api_version,
       page_size = page_size,
       page = page,
+      parse = parse,
       debug = debug,
       verbose = verbose
     )
@@ -280,10 +291,12 @@ query_dataset <- function(
       locations = locations,
       filter_items = filter_items,
       dataset_version = dataset_version,
+      preview_token = preview_token,
       ees_environment = ees_environment,
       api_version = api_version,
       page_size = page_size,
       page = page,
+      parse = parse,
       verbose = verbose
     )
   }
