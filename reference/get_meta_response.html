@@ -41,6 +41,7 @@
     <div class="sourceCode"><pre class="sourceCode r"><code><span><span class="fu">get_meta_response</span><span class="op">(</span></span>
 <span>  <span class="va">dataset_id</span>,</span>
 <span>  dataset_version <span class="op">=</span> <span class="cn">NULL</span>,</span>
+<span>  preview_token <span class="op">=</span> <span class="cn">NULL</span>,</span>
 <span>  ees_environment <span class="op">=</span> <span class="cn">NULL</span>,</span>
 <span>  api_version <span class="op">=</span> <span class="cn">NULL</span>,</span>
 <span>  parse <span class="op">=</span> <span class="cn">TRUE</span>,</span>
@@ -59,6 +60,10 @@ of "get-dataset-versions", "get-summary", "get-meta", "get-csv", "get-data" or "
 
 <dt id="arg-dataset-version">dataset_version<a class="anchor" aria-label="anchor" href="#arg-dataset-version"></a></dt>
 <dd><p>Version of data set to be connected to</p></dd>
+
+
+<dt id="arg-preview-token">preview_token<a class="anchor" aria-label="anchor" href="#arg-preview-token"></a></dt>
+<dd><p>Preview token required for access to private data sets</p></dd>
 
 
 <dt id="arg-ees-environment">ees_environment<a class="anchor" aria-label="anchor" href="#arg-ees-environment"></a></dt>
@@ -116,7 +121,9 @@ of "get-dataset-versions", "get-summary", "get-meta", "get-csv", "get-data" or "
 <span class="r-out co"><span class="r-pr">#&gt;</span> $timePeriods</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>   code period        label</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 1  W10   2025 2025 Week 10</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 2   W8   2025  2025 Week 8</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 2  W12   2025 2025 Week 12</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 3  W14   2025 2025 Week 14</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 4   W8   2025  2025 Week 8</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> </span>
 </code></pre></div>
     </div>

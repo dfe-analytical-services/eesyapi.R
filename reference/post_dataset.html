@@ -52,6 +52,7 @@ a json file containing a query to be provided.</p>
 <span>  filter_items <span class="op">=</span> <span class="cn">NULL</span>,</span>
 <span>  json_query <span class="op">=</span> <span class="cn">NULL</span>,</span>
 <span>  dataset_version <span class="op">=</span> <span class="cn">NULL</span>,</span>
+<span>  preview_token <span class="op">=</span> <span class="cn">NULL</span>,</span>
 <span>  ees_environment <span class="op">=</span> <span class="cn">NULL</span>,</span>
 <span>  api_version <span class="op">=</span> <span class="cn">NULL</span>,</span>
 <span>  page <span class="op">=</span> <span class="cn">NULL</span>,</span>
@@ -94,6 +95,10 @@ locations to be queried.</p></dd>
 
 <dt id="arg-dataset-version">dataset_version<a class="anchor" aria-label="anchor" href="#arg-dataset-version"></a></dt>
 <dd><p>Version of data set to be connected to</p></dd>
+
+
+<dt id="arg-preview-token">preview_token<a class="anchor" aria-label="anchor" href="#arg-preview-token"></a></dt>
+<dd><p>Preview token required for access to private data sets</p></dd>
 
 
 <dt id="arg-ees-environment">ees_environment<a class="anchor" aria-label="anchor" href="#arg-ees-environment"></a></dt>
@@ -144,14 +149,14 @@ locations to be queried.</p></dd>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 6         2025          Week 3         Regional  England E92000001 North East</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 7         2025          Week 3         Regional  England E92000001 North East</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 8         2025          Week 3         Regional  England E92000001 North East</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 9         2025          Week 3         Regional  England E92000001 North East</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 10        2025          Week 3         Regional  England E92000001 North East</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 11        2025          Week 3         Regional  England E92000001 North East</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 12        2025          Week 3         Regional  England E92000001 North East</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 13        2025          Week 3         Regional  England E92000001 North East</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 14        2025          Week 3         Regional  England E92000001 North East</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 15        2025          Week 3         Regional  England E92000001 North East</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 16        2025          Week 3         Regional  England E92000001 North East</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 9         2025          Week 3         Regional  England E92000001 North West</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 10        2025          Week 3         Regional  England E92000001 North West</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 11        2025          Week 3         Regional  England E92000001 North West</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 12        2025          Week 3         Regional  England E92000001 North West</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 13        2025          Week 3         Regional  England E92000001 North West</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 14        2025          Week 3         Regional  England E92000001 North West</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 15        2025          Week 3         Regional  England E92000001 North West</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 16        2025          Week 3         Regional  England E92000001 North West</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 17        2025          Week 3         Regional  England E92000001 North West</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 18        2025          Week 3         Regional  England E92000001 North West</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 19        2025          Week 3         Regional  England E92000001 North West</span>
@@ -160,14 +165,14 @@ locations to be queried.</p></dd>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 22        2025          Week 3         Regional  England E92000001 North West</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 23        2025          Week 3         Regional  England E92000001 North West</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 24        2025          Week 3         Regional  England E92000001 North West</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 25        2025          Week 3         Regional  England E92000001 North West</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 26        2025          Week 3         Regional  England E92000001 North West</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 27        2025          Week 3         Regional  England E92000001 North West</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 28        2025          Week 3         Regional  England E92000001 North West</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 29        2025          Week 3         Regional  England E92000001 North West</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 30        2025          Week 3         Regional  England E92000001 North West</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 31        2025          Week 3         Regional  England E92000001 North West</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 32        2025          Week 3         Regional  England E92000001 North West</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 25        2025          Week 3         Regional  England E92000001 North East</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 26        2025          Week 3         Regional  England E92000001 North East</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 27        2025          Week 3         Regional  England E92000001 North East</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 28        2025          Week 3         Regional  England E92000001 North East</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 29        2025          Week 3         Regional  England E92000001 North East</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 30        2025          Week 3         Regional  England E92000001 North East</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 31        2025          Week 3         Regional  England E92000001 North East</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 32        2025          Week 3         Regional  England E92000001 North East</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>     reg_code                 attendance_reason attendance_status</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 1  E12000001 All approved educational activity        Attendance</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 2  E12000001             All possible sessions Possible sessions</span>
@@ -177,14 +182,14 @@ locations to be queried.</p></dd>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 6  E12000001        Educational visit trip (v)        Attendance</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 7  E12000001               Work experience (w)        Attendance</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 8  E12000001      Education arranged by LA (k)        Attendance</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 9  E12000001 All approved educational activity        Attendance</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 10 E12000001             All possible sessions Possible sessions</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 11 E12000001            Education off site (b)        Attendance</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 12 E12000001                     Interview (j)        Attendance</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 13 E12000001    Approved sporting activity (p)        Attendance</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 14 E12000001        Educational visit trip (v)        Attendance</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 15 E12000001               Work experience (w)        Attendance</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 16 E12000001      Education arranged by LA (k)        Attendance</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 9  E12000002 All approved educational activity        Attendance</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 10 E12000002             All possible sessions Possible sessions</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 11 E12000002            Education off site (b)        Attendance</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 12 E12000002                     Interview (j)        Attendance</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 13 E12000002    Approved sporting activity (p)        Attendance</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 14 E12000002        Educational visit trip (v)        Attendance</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 15 E12000002               Work experience (w)        Attendance</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 16 E12000002      Education arranged by LA (k)        Attendance</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 17 E12000002 All approved educational activity        Attendance</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 18 E12000002             All possible sessions Possible sessions</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 19 E12000002            Education off site (b)        Attendance</span>
@@ -193,47 +198,47 @@ locations to be queried.</p></dd>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 22 E12000002        Educational visit trip (v)        Attendance</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 23 E12000002               Work experience (w)        Attendance</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 24 E12000002      Education arranged by LA (k)        Attendance</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 25 E12000002 All approved educational activity        Attendance</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 26 E12000002             All possible sessions Possible sessions</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 27 E12000002            Education off site (b)        Attendance</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 28 E12000002                     Interview (j)        Attendance</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 29 E12000002    Approved sporting activity (p)        Attendance</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 30 E12000002        Educational visit trip (v)        Attendance</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 31 E12000002               Work experience (w)        Attendance</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 32 E12000002      Education arranged by LA (k)        Attendance</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 25 E12000001 All approved educational activity        Attendance</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 26 E12000001             All possible sessions Possible sessions</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 27 E12000001            Education off site (b)        Attendance</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 28 E12000001                     Interview (j)        Attendance</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 29 E12000001    Approved sporting activity (p)        Attendance</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 30 E12000001        Educational visit trip (v)        Attendance</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 31 E12000001               Work experience (w)        Attendance</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 32 E12000001      Education arranged by LA (k)        Attendance</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>                  attendance_type education_phase time_frame session_count</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 1  Approved educational activity     All schools       Week         21443</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 2          All possible sessions     All schools       Week       3228789</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 3  Approved educational activity     All schools       Week          7125</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 4  Approved educational activity     All schools       Week             0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 5  Approved educational activity     All schools       Week          2910</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 6  Approved educational activity     All schools       Week          9017</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 7  Approved educational activity     All schools       Week           499</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 8  Approved educational activity     All schools       Week          1892</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 9  Approved educational activity         Primary       Week          7196</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 10         All possible sessions         Primary       Week       1650827</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 11 Approved educational activity         Primary       Week          1167</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 12 Approved educational activity         Primary       Week             0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 13 Approved educational activity         Primary       Week          1153</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 14 Approved educational activity         Primary       Week          4728</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 15 Approved educational activity         Primary       Week             0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 16 Approved educational activity         Primary       Week           148</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 17 Approved educational activity     All schools       Week         55466</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 18         All possible sessions     All schools       Week       9615351</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 19 Approved educational activity     All schools       Week         20272</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 20 Approved educational activity     All schools       Week             0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 21 Approved educational activity     All schools       Week          6597</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 22 Approved educational activity     All schools       Week         23873</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 23 Approved educational activity     All schools       Week          2038</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 24 Approved educational activity     All schools       Week          2686</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 25 Approved educational activity         Primary       Week         18670</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 26         All possible sessions         Primary       Week       5152746</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 27 Approved educational activity         Primary       Week          4199</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 28 Approved educational activity         Primary       Week             0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 29 Approved educational activity         Primary       Week          2887</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 30 Approved educational activity         Primary       Week         11203</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 31 Approved educational activity         Primary       Week             0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 32 Approved educational activity         Primary       Week           381</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 1  Approved educational activity         Primary       Week          7203</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 2          All possible sessions         Primary       Week       1656431</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 3  Approved educational activity         Primary       Week          1145</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 4  Approved educational activity         Primary       Week             0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 5  Approved educational activity         Primary       Week          1159</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 6  Approved educational activity         Primary       Week          4759</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 7  Approved educational activity         Primary       Week             0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 8  Approved educational activity         Primary       Week           140</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 9  Approved educational activity     All schools       Week         55911</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 10         All possible sessions     All schools       Week       9590629</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 11 Approved educational activity     All schools       Week         20560</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 12 Approved educational activity     All schools       Week             0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 13 Approved educational activity     All schools       Week          6657</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 14 Approved educational activity     All schools       Week         23879</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 15 Approved educational activity     All schools       Week          2046</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 16 Approved educational activity     All schools       Week          2769</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 17 Approved educational activity         Primary       Week         19232</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 18         All possible sessions         Primary       Week       5146395</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 19 Approved educational activity         Primary       Week          4646</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 20 Approved educational activity         Primary       Week             0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 21 Approved educational activity         Primary       Week          2944</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 22 Approved educational activity         Primary       Week         11247</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 23 Approved educational activity         Primary       Week             0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 24 Approved educational activity         Primary       Week           395</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 25 Approved educational activity     All schools       Week         21576</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 26         All possible sessions     All schools       Week       3234744</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 27 Approved educational activity     All schools       Week          7217</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 28 Approved educational activity     All schools       Week             0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 29 Approved educational activity     All schools       Week          2918</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 30 Approved educational activity     All schools       Week          9048</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 31 Approved educational activity     All schools       Week           503</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 32 Approved educational activity     All schools       Week          1890</span>
 <span class="r-in"><span></span></span>
 <span class="r-in"><span><span class="co"># Run post_dataset() to select rows containing either of two geographic locations and a single</span></span></span>
 <span class="r-in"><span><span class="co"># filter item.</span></span></span>
@@ -297,30 +302,30 @@ locations to be queried.</p></dd>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 23 All late sessions     Late sessions All late sessions         Special</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 24 All late sessions     Late sessions All late sessions         Special</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>    time_frame session_count</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 1      Monday        348877</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 2     Tuesday        337364</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 3   Wednesday        330318</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 4    Thursday        323259</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 5      Friday        288734</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 6        Week       1628552</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 7      Monday        118988</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 8     Tuesday        107946</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 9   Wednesday        103869</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 10   Thursday        103207</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 11     Friday         88619</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 12       Week        522629</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 13     Monday        226245</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 14    Tuesday        225779</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 15  Wednesday        223069</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 16   Thursday        216781</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 17     Friday        197446</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 18       Week       1089320</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 19     Monday          3644</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 20    Tuesday          3639</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 21  Wednesday          3380</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 22   Thursday          3271</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 23     Friday          2669</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 24       Week         16603</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 1      Monday        348607</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 2     Tuesday        337111</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 3   Wednesday        330104</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 4    Thursday        323149</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 5      Friday        288610</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 6        Week       1627581</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 7      Monday        118770</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 8     Tuesday        107791</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 9   Wednesday        103723</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 10   Thursday        103010</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 11     Friday         88500</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 12       Week        521794</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 13     Monday        226180</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 14    Tuesday        225661</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 15  Wednesday        222987</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 16   Thursday        216840</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 17     Friday        197425</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 18       Week       1089093</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 19     Monday          3657</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 20    Tuesday          3659</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 21  Wednesday          3394</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 22   Thursday          3299</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 23     Friday          2685</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 24       Week         16694</span>
 <span class="r-in"><span></span></span>
 </code></pre></div>
     </div>

@@ -73,39 +73,39 @@ for the data set.</p>
     <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="fu"><a href="example_data_raw.html">example_data_raw</a></span><span class="op">(</span><span class="op">)</span> <span class="op">|&gt;</span></span></span>
 <span class="r-in"><span>  <span class="fu">magrittr</span><span class="fu">::</span><span class="fu"><a href="https://magrittr.tidyverse.org/reference/aliases.html" class="external-link">use_series</a></span><span class="op">(</span><span class="st">"locations"</span><span class="op">)</span> <span class="op">|&gt;</span></span></span>
 <span class="r-in"><span>  <span class="fu">eesyapi</span><span class="fu">:::</span><span class="fu">parse_sqids_locations</span><span class="op">(</span><span class="fu"><a href="get_meta.html">get_meta</a></span><span class="op">(</span><span class="fu"><a href="example_id.html">example_id</a></span><span class="op">(</span>group <span class="op">=</span> <span class="st">"attendance"</span><span class="op">)</span><span class="op">)</span><span class="op">)</span></span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>    nat_name  nat_code   reg_name  reg_code</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 1   England E92000001 North East E12000001</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 2   England E92000001 North East E12000001</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 3   England E92000001 North East E12000001</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 4   England E92000001 North East E12000001</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 5   England E92000001 North East E12000001</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 6   England E92000001 North East E12000001</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 7   England E92000001 North East E12000001</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 8   England E92000001 North East E12000001</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 9   England E92000001 North East E12000001</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 10  England E92000001 North East E12000001</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 11  England E92000001 North East E12000001</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 12  England E92000001 North East E12000001</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 13  England E92000001 North East E12000001</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 14  England E92000001 North East E12000001</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 15  England E92000001 North East E12000001</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 16  England E92000001 North East E12000001</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 17  England E92000001 North East E12000001</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 18  England E92000001 North East E12000001</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 19  England E92000001 North East E12000001</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 20  England E92000001 North East E12000001</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 21  England E92000001 North East E12000001</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 22  England E92000001 North East E12000001</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 23  England E92000001 North East E12000001</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 24  England E92000001 North East E12000001</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 25  England E92000001 North East E12000001</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 26  England E92000001 North East E12000001</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 27  England E92000001 North East E12000001</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 28  England E92000001 North East E12000001</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 29  England E92000001 North East E12000001</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 30  England E92000001 North East E12000001</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 31  England E92000001 North East E12000001</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 32  England E92000001 North East E12000001</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>    nat_name  nat_code</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 1   England E92000001</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 2   England E92000001</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 3   England E92000001</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 4   England E92000001</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 5   England E92000001</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 6   England E92000001</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 7   England E92000001</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 8   England E92000001</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 9   England E92000001</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 10  England E92000001</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 11  England E92000001</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 12  England E92000001</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 13  England E92000001</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 14  England E92000001</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 15  England E92000001</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 16  England E92000001</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 17  England E92000001</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 18  England E92000001</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 19  England E92000001</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 20  England E92000001</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 21  England E92000001</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 22  England E92000001</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 23  England E92000001</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 24  England E92000001</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 25  England E92000001</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 26  England E92000001</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 27  England E92000001</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 28  England E92000001</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 29  England E92000001</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 30  England E92000001</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 31  England E92000001</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 32  England E92000001</span>
 </code></pre></div>
     </div>
   </main><aside class="col-md-3"><nav id="toc" aria-label="Table of contents"><h2>On this page</h2>

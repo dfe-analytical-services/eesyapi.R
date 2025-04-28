@@ -63,6 +63,7 @@ parse_api_dataset()</p>
 <span>  <span class="va">api_data_result</span>,</span>
 <span>  <span class="va">dataset_id</span>,</span>
 <span>  dataset_version <span class="op">=</span> <span class="cn">NULL</span>,</span>
+<span>  preview_token <span class="op">=</span> <span class="cn">NULL</span>,</span>
 <span>  ees_environment <span class="op">=</span> <span class="cn">NULL</span>,</span>
 <span>  api_version <span class="op">=</span> <span class="cn">NULL</span>,</span>
 <span>  verbose <span class="op">=</span> <span class="cn">FALSE</span></span>
@@ -86,6 +87,10 @@ of "get-dataset-versions", "get-summary", "get-meta", "get-csv", "get-data" or "
 <dd><p>Version of data set to be connected to</p></dd>
 
 
+<dt id="arg-preview-token">preview_token<a class="anchor" aria-label="anchor" href="#arg-preview-token"></a></dt>
+<dd><p>Preview token required for access to private data sets</p></dd>
+
+
 <dt id="arg-ees-environment">ees_environment<a class="anchor" aria-label="anchor" href="#arg-ees-environment"></a></dt>
 <dd><p>EES ees_environment to connect to: "dev", "test", "preprod" or "prod"</p></dd>
 
@@ -107,105 +112,105 @@ of "get-dataset-versions", "get-summary", "get-meta", "get-csv", "get-data" or "
     <h2 id="ref-examples">Examples<a class="anchor" aria-label="anchor" href="#ref-examples"></a></h2>
     <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="fu"><a href="example_data_raw.html">example_data_raw</a></span><span class="op">(</span>group <span class="op">=</span> <span class="st">"attendance"</span><span class="op">)</span> <span class="op">|&gt;</span></span></span>
 <span class="r-in"><span>  <span class="fu">eesyapi</span><span class="fu">:::</span><span class="fu">parse_api_dataset</span><span class="op">(</span><span class="fu"><a href="example_id.html">example_id</a></span><span class="op">(</span>group <span class="op">=</span> <span class="st">"attendance"</span><span class="op">)</span><span class="op">)</span></span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>    time_period time_identifier geographic_level nat_name  nat_code   reg_name</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 1         2025         Week 10         Regional  England E92000001 North East</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 2         2025         Week 10         Regional  England E92000001 North East</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 3         2025         Week 10         Regional  England E92000001 North East</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 4         2025         Week 10         Regional  England E92000001 North East</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 5         2025         Week 10         Regional  England E92000001 North East</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 6         2025         Week 10         Regional  England E92000001 North East</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 7         2025         Week 10         Regional  England E92000001 North East</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 8         2025         Week 10         Regional  England E92000001 North East</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 9         2025         Week 10         Regional  England E92000001 North East</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 10        2025         Week 10         Regional  England E92000001 North East</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 11        2025         Week 10         Regional  England E92000001 North East</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 12        2025         Week 10         Regional  England E92000001 North East</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 13        2025         Week 10         Regional  England E92000001 North East</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 14        2025         Week 10         Regional  England E92000001 North East</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 15        2025         Week 10         Regional  England E92000001 North East</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 16        2025         Week 10         Regional  England E92000001 North East</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 17        2025         Week 10         Regional  England E92000001 North East</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 18        2025         Week 10         Regional  England E92000001 North East</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 19        2025         Week 10         Regional  England E92000001 North East</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 20        2025         Week 10         Regional  England E92000001 North East</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 21        2025         Week 10         Regional  England E92000001 North East</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 22        2025         Week 10         Regional  England E92000001 North East</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 23        2025         Week 10         Regional  England E92000001 North East</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 24        2025         Week 10         Regional  England E92000001 North East</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 25        2025         Week 10         Regional  England E92000001 North East</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 26        2025         Week 10         Regional  England E92000001 North East</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 27        2025         Week 10         Regional  England E92000001 North East</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 28        2025         Week 10         Regional  England E92000001 North East</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 29        2025         Week 10         Regional  England E92000001 North East</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 30        2025         Week 10         Regional  England E92000001 North East</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 31        2025         Week 10         Regional  England E92000001 North East</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 32        2025         Week 10         Regional  England E92000001 North East</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>     reg_code                        attendance_reason attendance_status</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 1  E12000001                              All present        Attendance</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 2  E12000001        All approved educational activity        Attendance</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 3  E12000001                       Overall attendance        Attendance</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 4  E12000001                          Overall absence           Absence</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 5  E12000001                           All authorised           Absence</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 6  E12000001                         All unauthorised           Absence</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 7  E12000001                        All late sessions     Late sessions</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 8  E12000001                    All possible sessions Possible sessions</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 9  E12000001                               Present am        Attendance</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 10 E12000001                               Present pm        Attendance</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 11 E12000001                                  Present        Attendance</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 12 E12000001 Present late before registers closed (l)        Attendance</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 13 E12000001                              Illness (i)           Absence</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 14 E12000001                       Medical dental (m)           Absence</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 15 E12000001                 Religious observance (r)           Absence</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 16 E12000001                          Study leave (s)           Absence</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 17 E12000001                   Authorised holiday (h)           Absence</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 18 E12000001                             Excluded (e)           Absence</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 19 E12000001                     Other authorised (c)           Absence</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 20 E12000001               Regulated performance (c1)           Absence</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 21 E12000001                           Interview (j1)           Absence</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 22 E12000001         Temporary reduced timetable (c2)           Absence</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 23 E12000001                   Education off site (b)        Attendance</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 24 E12000001                            Interview (j)        Attendance</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 25 E12000001           Approved sporting activity (p)        Attendance</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 26 E12000001               Educational visit trip (v)        Attendance</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 27 E12000001                      Work experience (w)        Attendance</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 28 E12000001             Education arranged by LA (k)        Attendance</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 29 E12000001                 Unauthorised holiday (g)           Absence</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 30 E12000001          Late after registers closed (u)           Absence</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 31 E12000001                   Other unauthorised (o)           Absence</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 32 E12000001                        No reason yet (n)           Absence</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>    time_period time_identifier geographic_level nat_name  nat_code</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 1         2025         Week 14         National  England E92000001</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 2         2025         Week 14         National  England E92000001</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 3         2025         Week 14         National  England E92000001</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 4         2025         Week 14         National  England E92000001</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 5         2025         Week 14         National  England E92000001</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 6         2025         Week 14         National  England E92000001</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 7         2025         Week 14         National  England E92000001</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 8         2025         Week 14         National  England E92000001</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 9         2025         Week 14         National  England E92000001</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 10        2025         Week 14         National  England E92000001</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 11        2025         Week 14         National  England E92000001</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 12        2025         Week 14         National  England E92000001</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 13        2025         Week 14         National  England E92000001</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 14        2025         Week 14         National  England E92000001</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 15        2025         Week 14         National  England E92000001</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 16        2025         Week 14         National  England E92000001</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 17        2025         Week 14         National  England E92000001</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 18        2025         Week 14         National  England E92000001</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 19        2025         Week 14         National  England E92000001</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 20        2025         Week 14         National  England E92000001</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 21        2025         Week 14         National  England E92000001</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 22        2025         Week 14         National  England E92000001</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 23        2025         Week 14         National  England E92000001</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 24        2025         Week 14         National  England E92000001</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 25        2025         Week 14         National  England E92000001</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 26        2025         Week 14         National  England E92000001</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 27        2025         Week 14         National  England E92000001</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 28        2025         Week 14         National  England E92000001</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 29        2025         Week 14         National  England E92000001</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 30        2025         Week 14         National  England E92000001</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 31        2025         Week 14         National  England E92000001</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 32        2025         Week 14         National  England E92000001</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>                           attendance_reason attendance_status</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 1                               All present        Attendance</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 2         All approved educational activity        Attendance</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 3                        Overall attendance        Attendance</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 4                           Overall absence           Absence</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 5                            All authorised           Absence</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 6                          All unauthorised           Absence</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 7                         All late sessions     Late sessions</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 8                     All possible sessions Possible sessions</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 9                                Present am        Attendance</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 10                               Present pm        Attendance</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 11                                  Present        Attendance</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 12 Present late before registers closed (l)        Attendance</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 13                              Illness (i)           Absence</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 14                       Medical dental (m)           Absence</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 15                 Religious observance (r)           Absence</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 16                          Study leave (s)           Absence</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 17                   Authorised holiday (h)           Absence</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 18                             Excluded (e)           Absence</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 19                     Other authorised (c)           Absence</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 20               Regulated performance (c1)           Absence</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 21                           Interview (j1)           Absence</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 22         Temporary reduced timetable (c2)           Absence</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 23                   Education off site (b)        Attendance</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 24                            Interview (j)        Attendance</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 25           Approved sporting activity (p)        Attendance</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 26               Educational visit trip (v)        Attendance</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 27                      Work experience (w)        Attendance</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 28             Education arranged by LA (k)        Attendance</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 29                 Unauthorised holiday (g)           Absence</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 30          Late after registers closed (u)           Absence</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 31                   Other unauthorised (o)           Absence</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 32                        No reason yet (n)           Absence</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>                  attendance_type education_phase   time_frame session_count</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 1                        Present     All schools Year to date      61554120</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 2  Approved educational activity     All schools Year to date        516772</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 3             Overall attendance     All schools Year to date      62070892</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 4                Overall absence     All schools Year to date       4648820</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 5                     Authorised     All schools Year to date       2886610</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 6                   Unauthorised     All schools Year to date       1762210</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 7              All late sessions     All schools Year to date       1354113</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 8          All possible sessions     All schools Year to date      66719712</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 9                        Present     All schools Year to date      29757304</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 10                       Present     All schools Year to date      30567654</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 11                       Present     All schools Year to date      60324958</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 12                       Present     All schools Year to date       1229162</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 13                    Authorised     All schools Year to date       2155394</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 14                    Authorised     All schools Year to date        205372</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 15                    Authorised     All schools Year to date          1596</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 16                    Authorised     All schools Year to date            58</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 17                    Authorised     All schools Year to date            63</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 18                    Authorised     All schools Year to date        161417</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 19                    Authorised     All schools Year to date        226475</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 20                    Authorised     All schools Year to date          3023</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 21                    Authorised     All schools Year to date          2312</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 22                    Authorised     All schools Year to date        123676</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 23 Approved educational activity     All schools Year to date        145513</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 24 Approved educational activity     All schools Year to date             5</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 25 Approved educational activity     All schools Year to date         57588</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 26 Approved educational activity     All schools Year to date        268767</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 27 Approved educational activity     All schools Year to date          8021</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 28 Approved educational activity     All schools Year to date         36878</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 29                  Unauthorised     All schools Year to date        326838</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 30                  Unauthorised     All schools Year to date        124951</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 31                  Unauthorised     All schools Year to date       1275659</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 32                  Unauthorised     All schools Year to date         34762</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 1                        Present     All schools Year to date    1619003783</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 2  Approved educational activity     All schools Year to date      14815860</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 3             Overall attendance     All schools Year to date    1633819643</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 4                Overall absence     All schools Year to date     118548447</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 5                     Authorised     All schools Year to date      80814242</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 6                   Unauthorised     All schools Year to date      37734205</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 7              All late sessions     All schools Year to date      37028063</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 8          All possible sessions     All schools Year to date    1752368090</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 9                        Present     All schools Year to date     782878151</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 10                       Present     All schools Year to date     802942904</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 11                       Present     All schools Year to date    1585821055</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 12                       Present     All schools Year to date      33182728</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 13                    Authorised     All schools Year to date      60111966</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 14                    Authorised     All schools Year to date       5569344</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 15                    Authorised     All schools Year to date       1211933</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 16                    Authorised     All schools Year to date         36993</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 17                    Authorised     All schools Year to date          1715</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 18                    Authorised     All schools Year to date       2731162</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 19                    Authorised     All schools Year to date       6872530</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 20                    Authorised     All schools Year to date         67637</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 21                    Authorised     All schools Year to date        211774</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 22                    Authorised     All schools Year to date       3871881</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 23 Approved educational activity     All schools Year to date       3417207</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 24 Approved educational activity     All schools Year to date           553</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 25 Approved educational activity     All schools Year to date       1479929</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 26 Approved educational activity     All schools Year to date       8624874</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 27 Approved educational activity     All schools Year to date        668876</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 28 Approved educational activity     All schools Year to date        624421</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 29                  Unauthorised     All schools Year to date       6361189</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 30                  Unauthorised     All schools Year to date       3845335</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 31                  Unauthorised     All schools Year to date      26318365</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 32                  Unauthorised     All schools Year to date       1209316</span>
 </code></pre></div>
     </div>
   </main><aside class="col-md-3"><nav id="toc" aria-label="Table of contents"><h2>On this page</h2>
