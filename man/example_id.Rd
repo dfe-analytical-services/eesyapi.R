@@ -27,7 +27,7 @@ example short / long filter query list.
 \item{group}{Choose the publication group of examples to use. Options are:
 \itemize{
 \item "attendance": Large example data set, careful what you ask for
-\item "public-api-testing": Smaller example data set
+\item "absence": Smaller example data set
 }}
 }
 \value{
