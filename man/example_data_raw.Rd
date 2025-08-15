@@ -10,7 +10,7 @@ example_data_raw(group = "attendance", size = 32)
 \item{group}{Choose the publication group of examples to use. Options are:
 \itemize{
 \item "attendance": Large example data set, careful what you ask for
-\item "public-api-testing": Smaller example data set
+\item "absence": Smaller example data set
 }}
 
 \item{size}{Number of rows to return (max = 1000)}
