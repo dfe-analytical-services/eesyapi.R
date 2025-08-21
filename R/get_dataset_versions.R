@@ -82,8 +82,9 @@ get_dataset_versions <- function(
         ) |>
           httr::content("text") |>
           jsonlite::fromJSON()
-        response$results <- response$results |>
-          rbind(response_page$results)
+        response$results <- dplyr::bind_rows(
+          response$results, response_page$results
+        )
       }
     }
   }
