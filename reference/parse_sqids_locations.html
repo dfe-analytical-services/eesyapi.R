@@ -73,39 +73,39 @@ for the data set.</p>
     <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="fu"><a href="example_data_raw.html">example_data_raw</a></span><span class="op">(</span><span class="op">)</span> <span class="op">|&gt;</span></span></span>
 <span class="r-in"><span>  <span class="fu">magrittr</span><span class="fu">::</span><span class="fu"><a href="https://magrittr.tidyverse.org/reference/aliases.html" class="external-link">use_series</a></span><span class="op">(</span><span class="st">"locations"</span><span class="op">)</span> <span class="op">|&gt;</span></span></span>
 <span class="r-in"><span>  <span class="fu">eesyapi</span><span class="fu">:::</span><span class="fu">parse_sqids_locations</span><span class="op">(</span><span class="fu"><a href="get_meta.html">get_meta</a></span><span class="op">(</span><span class="fu"><a href="example_id.html">example_id</a></span><span class="op">(</span>group <span class="op">=</span> <span class="st">"attendance"</span><span class="op">)</span><span class="op">)</span><span class="op">)</span></span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>    la_name   la_code la_oldCode nat_name  nat_code   reg_name  reg_code</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 1  Salford E08000006        355  England E92000001 North West E12000002</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 2  Salford E08000006        355  England E92000001 North West E12000002</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 3  Salford E08000006        355  England E92000001 North West E12000002</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 4  Salford E08000006        355  England E92000001 North West E12000002</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 5  Salford E08000006        355  England E92000001 North West E12000002</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 6  Salford E08000006        355  England E92000001 North West E12000002</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 7  Salford E08000006        355  England E92000001 North West E12000002</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 8  Salford E08000006        355  England E92000001 North West E12000002</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 9  Salford E08000006        355  England E92000001 North West E12000002</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 10 Salford E08000006        355  England E92000001 North West E12000002</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 11 Salford E08000006        355  England E92000001 North West E12000002</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 12 Salford E08000006        355  England E92000001 North West E12000002</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 13 Salford E08000006        355  England E92000001 North West E12000002</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 14 Salford E08000006        355  England E92000001 North West E12000002</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 15 Salford E08000006        355  England E92000001 North West E12000002</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 16 Salford E08000006        355  England E92000001 North West E12000002</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 17 Salford E08000006        355  England E92000001 North West E12000002</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 18 Salford E08000006        355  England E92000001 North West E12000002</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 19 Salford E08000006        355  England E92000001 North West E12000002</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 20 Salford E08000006        355  England E92000001 North West E12000002</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 21 Salford E08000006        355  England E92000001 North West E12000002</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 22 Salford E08000006        355  England E92000001 North West E12000002</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 23 Salford E08000006        355  England E92000001 North West E12000002</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 24 Salford E08000006        355  England E92000001 North West E12000002</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 25 Salford E08000006        355  England E92000001 North West E12000002</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 26 Salford E08000006        355  England E92000001 North West E12000002</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 27 Salford E08000006        355  England E92000001 North West E12000002</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 28 Salford E08000006        355  England E92000001 North West E12000002</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 29 Salford E08000006        355  England E92000001 North West E12000002</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 30 Salford E08000006        355  England E92000001 North West E12000002</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 31 Salford E08000006        355  England E92000001 North West E12000002</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 32 Salford E08000006        355  England E92000001 North West E12000002</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>           la_name   la_code la_oldCode nat_name  nat_code   reg_name  reg_code</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 1  Northumberland E06000057        929  England E92000001 North East E12000001</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 2  Northumberland E06000057        929  England E92000001 North East E12000001</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 3  Northumberland E06000057        929  England E92000001 North East E12000001</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 4  Northumberland E06000057        929  England E92000001 North East E12000001</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 5  Northumberland E06000057        929  England E92000001 North East E12000001</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 6  Northumberland E06000057        929  England E92000001 North East E12000001</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 7  Northumberland E06000057        929  England E92000001 North East E12000001</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 8  Northumberland E06000057        929  England E92000001 North East E12000001</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 9  Northumberland E06000057        929  England E92000001 North East E12000001</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 10 Northumberland E06000057        929  England E92000001 North East E12000001</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 11 Northumberland E06000057        929  England E92000001 North East E12000001</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 12 Northumberland E06000057        929  England E92000001 North East E12000001</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 13 Northumberland E06000057        929  England E92000001 North East E12000001</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 14 Northumberland E06000057        929  England E92000001 North East E12000001</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 15 Northumberland E06000057        929  England E92000001 North East E12000001</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 16 Northumberland E06000057        929  England E92000001 North East E12000001</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 17 Northumberland E06000057        929  England E92000001 North East E12000001</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 18 Northumberland E06000057        929  England E92000001 North East E12000001</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 19 Northumberland E06000057        929  England E92000001 North East E12000001</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 20 Northumberland E06000057        929  England E92000001 North East E12000001</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 21 Northumberland E06000057        929  England E92000001 North East E12000001</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 22 Northumberland E06000057        929  England E92000001 North East E12000001</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 23 Northumberland E06000057        929  England E92000001 North East E12000001</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 24 Northumberland E06000057        929  England E92000001 North East E12000001</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 25 Northumberland E06000057        929  England E92000001 North East E12000001</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 26 Northumberland E06000057        929  England E92000001 North East E12000001</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 27 Northumberland E06000057        929  England E92000001 North East E12000001</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 28 Northumberland E06000057        929  England E92000001 North East E12000001</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 29 Northumberland E06000057        929  England E92000001 North East E12000001</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 30 Northumberland E06000057        929  England E92000001 North East E12000001</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 31 Northumberland E06000057        929  England E92000001 North East E12000001</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 32 Northumberland E06000057        929  England E92000001 North East E12000001</span>
 </code></pre></div>
     </div>
   </main><aside class="col-md-3"><nav id="toc" aria-label="Table of contents"><h2>On this page</h2>
