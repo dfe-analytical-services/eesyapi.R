@@ -51,4 +51,4 @@ issue](https://github.com/dfe-analytical-services/eesyapi.R/issues) after which
 anyone is free to write the code and create a pull request for review.
 
 For more details on contributing to eesyapi, see our [contributing
-guidelines](https://github.com/dfe-analytical-services/eesyapi.R/blob/main/.github/CONTRIBUTING.md).
+guidelines](https://dfe-analytical-services.github.io/eesyapi.R/CONTRIBUTING.html).
