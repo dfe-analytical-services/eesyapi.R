@@ -18,7 +18,7 @@
 #' @param ees_environment Environment to return a working example for: "dev", "test" or "prod"
 #' @param group Choose the publication group of examples to use. Options are:
 #'   - "attendance": Large example data set, careful what you ask for
-#'   - "public-api-testing": Smaller example data set
+#'   - "absence": Smaller example data set
 #'
 #' @return String, vector or list containing example ID(s) present in the API
 #' @export
