@@ -22,7 +22,9 @@
 #' @param dataset_id ID of data set to be connected to. This is required if the endpoint is one
 #' of "get-dataset-versions", "get-summary", "get-meta", "get-csv", "get-data" or "post-data"
 #' @inheritParams api_url_query
-#' @param dataset_version Version of data set to be connected to
+#' @param dataset_version Version of data set to be connected to, in "major.minor.patch" format,
+#' with optional wildcards, e.g. "*", "2.*", "2.1.*", "2.1.0". Can also be provided as a numeric
+#' value
 #' @param page_size Number of results to return in a single query
 #' @param page Page number of query results to return
 #' @param api_version EES API version
@@ -87,12 +89,15 @@ api_url <- function(
   }
   # Check that the API version is valid
   validate_api_version(api_version)
+
   # Check that the endpoint is either NULL or valid
   validate_endpoint(endpoint)
 
-  is_valid_dataset_info <- function(dataset_id, dataset_version) {
-    !is.null(dataset_id) &
-      (is.numeric(dataset_version) | is.null(dataset_version))
+  # Check that data set version follows the expected format
+  validate_dataset_version(dataset_version)
+
+  is_valid_dataset_id <- function(dataset_id, dataset_version) {
+    !is.null(dataset_id)
   }
 
   # Check that if endpoint requires a data set then dataset_id is not null
@@ -108,15 +113,10 @@ api_url <- function(
       )
   ) {
     validate_ees_id(dataset_id, level = "dataset")
-    if (is_valid_dataset_info(dataset_id, dataset_version) == FALSE) {
+    if (is_valid_dataset_id(dataset_id) == FALSE) {
       stop(
         paste(
-          "You have entered invalid data set info. The following rules must be",
-          "met:\n",
-          "   - dataset_id must not be NULL\n",
-          "   - dataset_version should either be:\n",
-          "     - NULL (gives latest version) or\n",
-          "     - a numeric"
+          "You have entered an invalid data set id - dataset_id must not be NULL."
         )
       )
     }

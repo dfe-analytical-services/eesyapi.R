@@ -37,7 +37,9 @@ locations to be queried.}
 
 \item{json_query}{Optional path to a json file containing the query parameters}
 
-\item{dataset_version}{Version of data set to be connected to}
+\item{dataset_version}{Version of data set to be connected to, in "major.minor.patch" format,
+with optional wildcards, e.g. "\emph{", "2.}", "2.1.*", "2.1.0". Can also be provided as a numeric
+value}
 
 \item{preview_token}{Preview token required for access to private data sets}
 
