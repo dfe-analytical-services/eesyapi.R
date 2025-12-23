@@ -1,0 +1,145 @@
+# Generate an EES API URL
+
+This function returns a single URL to connect to a chosen EES API
+endpoint. The resulting URL can be used with GET or POST (as
+appropriate) in order to connect. Whether the publication_id or
+dataset_id (or neither) parameter are required depends on the endpoint
+chose.
+
+|                                                     |                 |
+|-----------------------------------------------------|-----------------|
+| **Endpoints**                                       | **id required** |
+| get-publications                                    | Neither         |
+| get-data-catalogue                                  | publication_id  |
+| get-summary, get-meta, get-csv, get-data, post-data | dataset_id      |
+
+## Usage
+
+``` r
+api_url(
+  endpoint = "get-publications",
+  search = NULL,
+  publication_id = NULL,
+  dataset_id = NULL,
+  indicators = NULL,
+  time_periods = NULL,
+  geographic_levels = NULL,
+  locations = NULL,
+  filter_items = NULL,
+  dataset_version = NULL,
+  ees_environment = NULL,
+  api_version = NULL,
+  page_size = NULL,
+  page = NULL,
+  verbose = FALSE
+)
+```
+
+## Arguments
+
+- endpoint:
+
+  Name of endpoint, can be "get-publications", "get-data-catalogue",
+  "get-dataset-versions", "get-summary", "get-meta", "get-csv",
+  "get-data" or "post-data" "get-summary", "get-meta", "get-csv",
+  "get-data" or "post-data"
+
+- search:
+
+  String for filtering the publication list for publication titles and
+  summaries containing the search string provided (strings separated by
+  spaces are combined with OR logic).
+
+- publication_id:
+
+  ID of the publication to be connected to. This is required if the
+  endpoint is "get-data-catalogue"
+
+- dataset_id:
+
+  ID of data set to be connected to. This is required if the endpoint is
+  one of "get-dataset-versions", "get-summary", "get-meta", "get-csv",
+  "get-data" or "post-data"
+
+- indicators:
+
+  Indicators required as a string or vector of strings (required)
+
+- time_periods:
+
+  Time periods required as a string ("period\|code") or vector of
+  strings
+
+- geographic_levels:
+
+  Geographic levels required as a string or vector of strings
+
+- locations:
+
+  Location code required as a string or vector of strings
+
+- filter_items:
+
+  Filter items required as a string or vector of strings
+
+- dataset_version:
+
+  Version of data set to be connected to, in "major.minor.patch" format,
+  with optional wildcards, e.g. "*", "2.*", "2.1.\*", "2.1.0". Can also
+  be provided as a numeric value
+
+- ees_environment:
+
+  EES ees_environment to connect to: "dev", "test", "preprod" or "prod"
+
+- api_version:
+
+  EES API version
+
+- page_size:
+
+  Number of results to return in a single query
+
+- page:
+
+  Page number of query results to return
+
+- verbose:
+
+  Run with additional contextual messaging. Logical, default = FALSE
+
+## Value
+
+A string containing the URL for connecting to the EES API
+
+## Examples
+
+``` r
+api_url()
+#> [1] "https://api.education.gov.uk/statistics/v1/publications?"
+api_url("get-publications")
+#> [1] "https://api.education.gov.uk/statistics/v1/publications?"
+api_url("get-data-catalogue", publication_id = eesyapi::example_id("publication"))
+#> [1] "https://api.education.gov.uk/statistics/v1/publications/9676af6b-d563-41f4-d071-08da8f468680/data-sets?"
+api_url("get-summary", dataset_id = eesyapi::example_id("dataset"))
+#> [1] "https://api.education.gov.uk/statistics/v1/data-sets/55629501-e98b-0c75-adba-f95a0cfbb5e9"
+api_url("get-meta", dataset_id = eesyapi::example_id("dataset"))
+#> [1] "https://api.education.gov.uk/statistics/v1/data-sets/55629501-e98b-0c75-adba-f95a0cfbb5e9/meta"
+api_url("get-csv", dataset_id = eesyapi::example_id("dataset"))
+#> [1] "https://api.education.gov.uk/statistics/v1/data-sets/55629501-e98b-0c75-adba-f95a0cfbb5e9/csv"
+api_url(
+  "get-data",
+  dataset_id = eesyapi::example_id("dataset"),
+  indicators = example_id("indicator"),
+  time_periods = c("2024|W12", "2024|W13"),
+  geographic_levels = c("NAT"),
+  filter_items = example_id("filter_item")
+)
+#> [1] "https://api.education.gov.uk/statistics/v1/data-sets/55629501-e98b-0c75-adba-f95a0cfbb5e9/query?timePeriods.in=2024|W12%2C2024|W13&geographicLevels.in=NAT&filters.in=oUXmX&indicators=uxo41"
+api_url(
+  "post-data",
+  dataset_id = eesyapi::example_id("dataset"),
+  indicators = example_id("indicator")
+)
+#> [1] "https://api.education.gov.uk/statistics/v1/data-sets/55629501-e98b-0c75-adba-f95a0cfbb5e9/query"
+```

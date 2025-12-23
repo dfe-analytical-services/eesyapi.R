@@ -1,0 +1,44 @@
+# EES API URL paging
+
+EES API results are paged, such that only one page is returned by a
+single request submitted to the API. This function creates the URL query
+syntax to specify the number of results to be returned per page and the
+page number to retrieve. This is largely used by api_url() to
+automatically generate API request URLs, but is exported as part of the
+package for any users who wish to generate their own URLs.
+
+## Usage
+
+``` r
+api_url_pages(page_size = 40, page = NULL)
+```
+
+## Arguments
+
+- page_size:
+
+  Number of rows to return in a single query. The maximum allowable
+  value varies between query type:
+
+  - get_publications: 40
+
+  - get_data_catalogue: 20
+
+  - query_dataset: 10000
+
+- page:
+
+  Page number to return
+
+## Value
+
+String containing pages query
+
+## Examples
+
+``` r
+eesyapi:::api_url_pages()
+#> [1] "pageSize=40"
+eesyapi:::api_url_pages(page_size = 20, page = 2)
+#> [1] "page=2&pageSize=20"
+```

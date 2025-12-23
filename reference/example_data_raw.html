@@ -11,7 +11,7 @@ themselves."><meta property="og:image" content="https://dfe-analytical-services.
 
     <a class="navbar-brand me-2" href="../index.html">eesyapi</a>
 
-    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.5.0</small>
+    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.6.0</small>
 
 
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -69,105 +69,72 @@ themselves.</p>
     <div class="section level2">
     <h2 id="ref-examples">Examples<a class="anchor" aria-label="anchor" href="#ref-examples"></a></h2>
     <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="fu">example_data_raw</span><span class="op">(</span><span class="op">)</span></span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>    timePeriod.code timePeriod.period geographicLevel locations.LA locations.NAT</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 1              W30              2025              LA        Qiwb4         dP0Zw</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 2              W30              2025              LA        Qiwb4         dP0Zw</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 3              W30              2025              LA        Qiwb4         dP0Zw</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 4              W30              2025              LA        Qiwb4         dP0Zw</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 5              W30              2025              LA        Qiwb4         dP0Zw</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 6              W30              2025              LA        Qiwb4         dP0Zw</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 7              W30              2025              LA        Qiwb4         dP0Zw</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 8              W30              2025              LA        Qiwb4         dP0Zw</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 9              W30              2025              LA        Qiwb4         dP0Zw</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 10             W30              2025              LA        Qiwb4         dP0Zw</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 11             W30              2025              LA        Qiwb4         dP0Zw</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 12             W30              2025              LA        Qiwb4         dP0Zw</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 13             W30              2025              LA        Qiwb4         dP0Zw</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 14             W30              2025              LA        Qiwb4         dP0Zw</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 15             W30              2025              LA        Qiwb4         dP0Zw</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 16             W30              2025              LA        Qiwb4         dP0Zw</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 17             W30              2025              LA        Qiwb4         dP0Zw</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 18             W30              2025              LA        Qiwb4         dP0Zw</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 19             W30              2025              LA        Qiwb4         dP0Zw</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 20             W30              2025              LA        Qiwb4         dP0Zw</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 21             W30              2025              LA        Qiwb4         dP0Zw</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 22             W30              2025              LA        Qiwb4         dP0Zw</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 23             W30              2025              LA        Qiwb4         dP0Zw</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 24             W30              2025              LA        Qiwb4         dP0Zw</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 25             W30              2025              LA        Qiwb4         dP0Zw</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 26             W30              2025              LA        Qiwb4         dP0Zw</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 27             W30              2025              LA        Qiwb4         dP0Zw</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 28             W30              2025              LA        Qiwb4         dP0Zw</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 29             W30              2025              LA        Qiwb4         dP0Zw</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 30             W30              2025              LA        Qiwb4         dP0Zw</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 31             W30              2025              LA        Qiwb4         dP0Zw</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 32             W30              2025              LA        Qiwb4         dP0Zw</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>    locations.REG filters.X9fKb filters.TsPJP filters.krhsL filters.uxo41</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 1          ACyGK         GBMgr         4yTUZ         TmQPJ         UazRF</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 2          ACyGK         GBMgr         4yTUZ         TmQPJ         P9Aeb</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 3          ACyGK         GBMgr         4yTUZ         TmQPJ         ls5cB</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 4          ACyGK         GBMgr         4yTUZ         e4wuS         uUIo4</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 5          ACyGK         GBMgr         4yTUZ         e4wuS         1Dui3</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 6          ACyGK         GBMgr         4yTUZ         e4wuS         oRfmX</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 7          ACyGK         GBMgr         4yTUZ         h2IyW         AIaGK</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 8          ACyGK         GBMgr         4yTUZ         g7LO9         VPw5X</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 9          ACyGK         GBMgr         4yTUZ         TmQPJ         UazRF</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 10         ACyGK         GBMgr         4yTUZ         TmQPJ         UazRF</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 11         ACyGK         GBMgr         4yTUZ         TmQPJ         UazRF</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 12         ACyGK         GBMgr         4yTUZ         TmQPJ         UazRF</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 13         ACyGK         GBMgr         4yTUZ         e4wuS         1Dui3</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 14         ACyGK         GBMgr         4yTUZ         e4wuS         1Dui3</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 15         ACyGK         GBMgr         4yTUZ         e4wuS         1Dui3</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 16         ACyGK         GBMgr         4yTUZ         e4wuS         1Dui3</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 17         ACyGK         GBMgr         4yTUZ         e4wuS         1Dui3</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 18         ACyGK         GBMgr         4yTUZ         e4wuS         1Dui3</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 19         ACyGK         GBMgr         4yTUZ         e4wuS         1Dui3</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 20         ACyGK         GBMgr         4yTUZ         e4wuS         1Dui3</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 21         ACyGK         GBMgr         4yTUZ         e4wuS         1Dui3</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 22         ACyGK         GBMgr         4yTUZ         e4wuS         1Dui3</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 23         ACyGK         GBMgr         4yTUZ         TmQPJ         P9Aeb</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 24         ACyGK         GBMgr         4yTUZ         TmQPJ         P9Aeb</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 25         ACyGK         GBMgr         4yTUZ         TmQPJ         P9Aeb</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 26         ACyGK         GBMgr         4yTUZ         TmQPJ         P9Aeb</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 27         ACyGK         GBMgr         4yTUZ         TmQPJ         P9Aeb</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 28         ACyGK         GBMgr         4yTUZ         TmQPJ         P9Aeb</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 29         ACyGK         GBMgr         4yTUZ         e4wuS         oRfmX</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 30         ACyGK         GBMgr         4yTUZ         e4wuS         oRfmX</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 31         ACyGK         GBMgr         4yTUZ         e4wuS         oRfmX</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 32         ACyGK         GBMgr         4yTUZ         e4wuS         oRfmX</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>    filters.z4FQE   X9fKb</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 1          bjstT 5639966</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 2          3xu8u   58092</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 3          HnuzL 5698058</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 4          0oaT5  295703</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 5          S0OVx  186682</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 6          Dt8Qe  109021</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 7          y2daB   58805</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 8          RaVka 5993761</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 9          qOnjG 2777002</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 10         BHu7J 2811203</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 11         YvoHK 5588205</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 12         acQLP   51761</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 13         28Wlz  147978</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 14         duo0Z   15484</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 15         uU1o4     771</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 16         XFRfK       2</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 17         5PHdi       0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 18         9ko4v    1972</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 19         L31Wj   15195</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 20         kWQhs     189</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 21         NtQDC     226</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 22         TmKPJ    4378</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 23         QErwb    7600</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 24         PmPeb       0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 25         e9vuS    1932</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 26         W3k2b   48095</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 27         jC9AM       1</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 28         EGQqF     464</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 29         tGPEm   53217</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 30         oRUmX    7044</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 31         6wgrf   46966</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 32         7zvXo    1794</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>    timePeriod.code timePeriod.period geographicLevel   NAT filters.uxo41</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 1              W49              2025             NAT dP0Zw         UazRF</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 2              W49              2025             NAT dP0Zw         P9Aeb</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 3              W49              2025             NAT dP0Zw         ls5cB</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 4              W49              2025             NAT dP0Zw         uUIo4</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 5              W49              2025             NAT dP0Zw         1Dui3</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 6              W49              2025             NAT dP0Zw         oRfmX</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 7              W49              2025             NAT dP0Zw         AIaGK</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 8              W49              2025             NAT dP0Zw         VPw5X</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 9              W49              2025             NAT dP0Zw         UazRF</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 10             W49              2025             NAT dP0Zw         UazRF</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 11             W49              2025             NAT dP0Zw         UazRF</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 12             W49              2025             NAT dP0Zw         UazRF</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 13             W49              2025             NAT dP0Zw         1Dui3</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 14             W49              2025             NAT dP0Zw         1Dui3</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 15             W49              2025             NAT dP0Zw         1Dui3</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 16             W49              2025             NAT dP0Zw         1Dui3</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 17             W49              2025             NAT dP0Zw         1Dui3</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 18             W49              2025             NAT dP0Zw         1Dui3</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 19             W49              2025             NAT dP0Zw         1Dui3</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 20             W49              2025             NAT dP0Zw         1Dui3</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 21             W49              2025             NAT dP0Zw         1Dui3</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 22             W49              2025             NAT dP0Zw         1Dui3</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 23             W49              2025             NAT dP0Zw         1Dui3</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 24             W49              2025             NAT dP0Zw         P9Aeb</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 25             W49              2025             NAT dP0Zw         P9Aeb</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 26             W49              2025             NAT dP0Zw         P9Aeb</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 27             W49              2025             NAT dP0Zw         P9Aeb</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 28             W49              2025             NAT dP0Zw         P9Aeb</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 29             W49              2025             NAT dP0Zw         P9Aeb</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 30             W49              2025             NAT dP0Zw         oRfmX</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 31             W49              2025             NAT dP0Zw         oRfmX</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 32             W49              2025             NAT dP0Zw         oRfmX</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>    filters.z4FQE filters.X9fKb filters.krhsL filters.TsPJP    X9fKb</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 1          bjstT         rbyNj         TmQPJ         RL5ka 12085186</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 2          3xu8u         rbyNj         TmQPJ         RL5ka    70069</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 3          HnuzL         rbyNj         TmQPJ         RL5ka 12155255</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 4          0oaT5         rbyNj         e4wuS         RL5ka  1115334</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 5          S0OVx         rbyNj         e4wuS         RL5ka   813326</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 6          Dt8Qe         rbyNj         e4wuS         RL5ka   302008</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 7          y2daB         rbyNj         h2IyW         RL5ka   335672</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 8          RaVka         rbyNj         g7LO9         RL5ka 13270589</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 9          qOnjG         rbyNj         TmQPJ         RL5ka  5781997</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 10         BHu7J         rbyNj         TmQPJ         RL5ka  6004234</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 11         YvoHK         rbyNj         TmQPJ         RL5ka 11786231</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 12         acQLP         rbyNj         TmQPJ         RL5ka   298955</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 13         28Wlz         rbyNj         e4wuS         RL5ka   669932</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 14         duo0Z         rbyNj         e4wuS         RL5ka    43893</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 15         uU1o4         rbyNj         e4wuS         RL5ka      268</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 16         XFRfK         rbyNj         e4wuS         RL5ka      240</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 17         OXYCL         rbyNj         e4wuS         RL5ka      768</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 18         5PHdi         rbyNj         e4wuS         RL5ka        0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 19         9ko4v         rbyNj         e4wuS         RL5ka    18735</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 20         L31Wj         rbyNj         e4wuS         RL5ka    45754</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 21         kWQhs         rbyNj         e4wuS         RL5ka      773</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 22         NtQDC         rbyNj         e4wuS         RL5ka     1370</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 23         TmKPJ         rbyNj         e4wuS         RL5ka    31592</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 24         QErwb         rbyNj         TmQPJ         RL5ka    21701</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 25         PmPeb         rbyNj         TmQPJ         RL5ka        1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 26         e9vuS         rbyNj         TmQPJ         RL5ka     8376</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 27         W3k2b         rbyNj         TmQPJ         RL5ka    32150</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 28         jC9AM         rbyNj         TmQPJ         RL5ka     2736</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 29         EGQqF         rbyNj         TmQPJ         RL5ka     5105</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 30         tGPEm         rbyNj         e4wuS         RL5ka    36466</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 31         oRUmX         rbyNj         e4wuS         RL5ka    36717</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 32         6wgrf         rbyNj         e4wuS         RL5ka   213504</span>
 </code></pre></div>
     </div>
   </main><aside class="col-md-3"><nav id="toc" aria-label="Table of contents"><h2>On this page</h2>
@@ -179,7 +146,7 @@ themselves.</p>
 </div>
 
 <div class="pkgdown-footer-right">
-  <p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.1.3.</p>
+  <p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.2.0.</p>
 </div>
 
     </footer></div>
