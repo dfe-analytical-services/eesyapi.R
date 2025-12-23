@@ -1,4 +1,6 @@
-# eesyapi (development version)
+# eesyapi 0.6.0
+
+* Allow wildcard versioning of data sets, e.g. "\*" to get the latest possible, or "1.\*" to get the latest within a major version.
 
 # eesyapi 0.5.0
 
