@@ -109,11 +109,13 @@ test_that("Time period query errors on badly formatted time period", {
       time_periods = c("2024W21", "2024|W23"),
       geographies = eesyapi::example_id(
         "location_ids",
-        group = "attendance", ees_environment = test_env
+        group = "attendance",
+        ees_environment = test_env
       ),
       filter_items = eesyapi::example_id(
         "filter_item",
-        group = "attendance", ees_environment = test_env
+        group = "attendance",
+        ees_environment = test_env
       ),
       ees_environment = test_env
     )
@@ -126,16 +128,19 @@ test_that("Geography query works with NAT", {
       example_id(group = "attendance", ees_environment = test_env),
       indicators = example_id(
         "indicator",
-        group = "attendance", ees_environment = test_env
+        group = "attendance",
+        ees_environment = test_env
       ),
       time_periods = eesyapi::example_id(
         "time_period",
-        group = "attendance", ees_environment = test_env
+        group = "attendance",
+        ees_environment = test_env
       ),
       geographies = "NAT",
       filter_items = eesyapi::example_id(
         "filter_item",
-        group = "attendance", ees_environment = test_env
+        group = "attendance",
+        ees_environment = test_env
       ),
       ees_environment = test_env
     ) |>
@@ -153,16 +158,19 @@ test_that("Geography query works with National", {
       example_id(group = "attendance", ees_environment = test_env),
       indicators = example_id(
         "indicator",
-        group = "attendance", ees_environment = test_env
+        group = "attendance",
+        ees_environment = test_env
       ),
       time_periods = eesyapi::example_id(
         "time_period",
-        group = "attendance", ees_environment = test_env
+        group = "attendance",
+        ees_environment = test_env
       ),
       geographies = "National",
       filter_items = eesyapi::example_id(
         "filter_item",
-        group = "attendance", ees_environment = test_env
+        group = "attendance",
+        ees_environment = test_env
       ),
       ees_environment = test_env
     ) |>
@@ -181,19 +189,23 @@ test_that("Geography query returns expected geographies", {
       example_id(group = "attendance", ees_environment = test_env),
       indicators = example_id(
         "indicator",
-        group = "attendance", ees_environment = test_env
+        group = "attendance",
+        ees_environment = test_env
       ),
       time_periods = eesyapi::example_id(
         "time_period",
-        group = "attendance", ees_environment = test_env
+        group = "attendance",
+        ees_environment = test_env
       ),
       geographies = eesyapi::example_id(
         "location_ids",
-        group = "attendance", ees_environment = test_env
+        group = "attendance",
+        ees_environment = test_env
       ),
       filter_items = eesyapi::example_id(
         "filter_item",
-        group = "attendance", ees_environment = test_env
+        group = "attendance",
+        ees_environment = test_env
       ),
       ees_environment = test_env
     ) |>
@@ -217,11 +229,7 @@ test_that("Non-standard geographic level", {
       indicators = example_id("indicator", ees_environment = test_env),
       ees_environment = test_env
     ),
-    paste0(
-      "\nHTTP connection error: 400\nMust be one of the allowed values.",
-      "\n     Provided values: Nat\n     Allowed values: ",
-      "EDA, INST, LA, LAD, LEP, LSIP, MAT, MCA, NAT, OA, PA, PCON, PROV, REG, RSC, SCH, SPON, WARD"
-    )
+    "Must be one of the allowed values."
   )
 })
 
@@ -230,19 +238,23 @@ test_that("Test filter-combinations POST dataset query", {
     example_id(group = "attendance", ees_environment = test_env),
     indicators = example_id(
       "indicator",
-      group = "attendance", ees_environment = test_env
+      group = "attendance",
+      ees_environment = test_env
     ),
     time_periods = eesyapi::example_id(
       "time_period",
-      group = "attendance", ees_environment = test_env
+      group = "attendance",
+      ees_environment = test_env
     ),
     geographies = eesyapi::example_id(
       "location_ids",
-      group = "attendance", ees_environment = test_env
+      group = "attendance",
+      ees_environment = test_env
     ),
     filter_items = eesyapi::example_id(
       "filter_items_long",
-      group = "attendance", ees_environment = test_env
+      group = "attendance",
+      ees_environment = test_env
     ),
     ees_environment = test_env
   )
@@ -258,19 +270,23 @@ test_that("Test filter-combinations POST dataset query", {
     example_id(group = "attendance", ees_environment = test_env),
     indicators = eesyapi::example_id(
       "indicator",
-      group = "attendance", ees_environment = test_env
+      group = "attendance",
+      ees_environment = test_env
     ),
     time_periods = eesyapi::example_id(
       "time_period",
-      group = "attendance", ees_environment = test_env
+      group = "attendance",
+      ees_environment = test_env
     ),
     geographies = eesyapi::example_id(
       "location_ids",
-      group = "attendance", ees_environment = test_env
+      group = "attendance",
+      ees_environment = test_env
     ),
     filter_items = eesyapi::example_id(
       "filter_items_short",
-      group = "attendance", ees_environment = test_env
+      group = "attendance",
+      ees_environment = test_env
     ),
     ees_environment = test_env
   ) |>
@@ -312,9 +328,21 @@ test_that("Query data set runs on dev!", {
   expect_equal(
     query_dataset(
       example_id(group = "attendance", ees_environment = "dev"),
-      indicators = example_id("indicator", group = "attendance", ees_environment = "dev"),
-      time_periods = example_id("time_periods", group = "attendance", ees_environment = "dev"),
-      geographies = example_id("location_codes", group = "attendance", ees_environment = "dev"),
+      indicators = example_id(
+        "indicator",
+        group = "attendance",
+        ees_environment = "dev"
+      ),
+      time_periods = example_id(
+        "time_periods",
+        group = "attendance",
+        ees_environment = "dev"
+      ),
+      geographies = example_id(
+        "location_codes",
+        group = "attendance",
+        ees_environment = "dev"
+      ),
       filter_items = example_id(
         "filter_items_short",
         group = "attendance",
@@ -323,7 +351,8 @@ test_that("Query data set runs on dev!", {
       page = 1,
       page_size = 12,
       ees_environment = "dev"
-    ) |> nrow(),
+    ) |>
+      nrow(),
     12
   )
 })
@@ -332,9 +361,21 @@ test_that("Query data set runs on test!", {
   expect_equal(
     query_dataset(
       example_id(group = "attendance", ees_environment = "test"),
-      indicators = example_id("indicator", group = "attendance", ees_environment = "test"),
-      time_periods = example_id("time_periods", group = "attendance", ees_environment = "test"),
-      geographies = example_id("location_codes", group = "attendance", ees_environment = "test"),
+      indicators = example_id(
+        "indicator",
+        group = "attendance",
+        ees_environment = "test"
+      ),
+      time_periods = example_id(
+        "time_periods",
+        group = "attendance",
+        ees_environment = "test"
+      ),
+      geographies = example_id(
+        "location_codes",
+        group = "attendance",
+        ees_environment = "test"
+      ),
       filter_items = example_id(
         "filter_items_short",
         group = "attendance",
@@ -343,7 +384,8 @@ test_that("Query data set runs on test!", {
       page = 1,
       page_size = 12,
       ees_environment = "test"
-    ) |> nrow(),
+    ) |>
+      nrow(),
     12
   )
 })

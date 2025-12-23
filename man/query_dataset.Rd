@@ -40,7 +40,9 @@ locations to be queried.}
 
 \item{method}{The API query method to be used. Can be  "POST" or "GET". Default: "POST".}
 
-\item{dataset_version}{Version of data set to be connected to}
+\item{dataset_version}{Version of data set to be connected to, in "major.minor.patch" format,
+with optional wildcards, e.g. "\emph{", "2.}", "2.1.*", "2.1.0". Can also be provided as a numeric
+value}
 
 \item{preview_token}{Preview token required for access to private data sets}
 
