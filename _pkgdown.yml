@@ -26,3 +26,8 @@ reference:
   contents:
   - starts_with("example")
   - geog_level_lookup
+
+- title: Miscellaneous helpful items
+  desc: Functions that don't fit neatly into the above categories but could be helpful for users
+  contents:
+  - generate_ees_meta
