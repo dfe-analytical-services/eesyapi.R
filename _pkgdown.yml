@@ -27,7 +27,7 @@ reference:
   - starts_with("example")
   - geog_level_lookup
 
-- title: Miscellaneous helpful items
-  desc: Functions that don't fit neatly into the above categories but could be helpful for users
+- title: Explore education statistics format convertors
+  desc: Helpers to convert the output data into a standard format used in the main data ingestion from explore education statistics
   contents:
   - generate_ees_meta
