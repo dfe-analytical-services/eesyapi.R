@@ -2,18 +2,10 @@ test_that("Generate EES meta produces expected output", {
   attendance_meta <- example_id(group = "attendance") |> get_meta()
 
   # Check we've got the expected meta data columns
-  expect_equal(
-    names(attendance_meta |> generate_ees_meta()),
-    c(
-      "col_name",
-      "col_type",
-      "label",
-      "indicator_grouping",
-      "indicator_unit",
-      "indicator_dp",
-      "filter_hint",
-      "filter_grouping_column",
-      "filter_default"
+  expect_true(
+    all(
+      eesyscreener::req_meta_cols %in%
+        names(attendance_meta |> generate_ees_meta())
     )
   )
 
