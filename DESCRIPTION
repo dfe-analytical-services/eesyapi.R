@@ -25,10 +25,13 @@ Imports:
     stringr,
     tidyr
 Suggests: 
+    eesyscreener,
     knitr,
     rmarkdown,
     testthat (>= 3.0.0),
     usethis
+Remotes: 
+    dfe-analytical-services/eesyscreener
 VignetteBuilder: 
     knitr
 Config/testthat/edition: 3
