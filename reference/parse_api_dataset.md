@@ -64,38 +64,38 @@ Data frame containing API data results
 example_data_raw(group = "attendance") |>
   eesyapi:::parse_api_dataset(example_id(group = "attendance"))
 #>    time_period time_identifier geographic_level nat_name  nat_code
-#> 1         2025         Week 49         National  England E92000001
-#> 2         2025         Week 49         National  England E92000001
-#> 3         2025         Week 49         National  England E92000001
-#> 4         2025         Week 49         National  England E92000001
-#> 5         2025         Week 49         National  England E92000001
-#> 6         2025         Week 49         National  England E92000001
-#> 7         2025         Week 49         National  England E92000001
-#> 8         2025         Week 49         National  England E92000001
-#> 9         2025         Week 49         National  England E92000001
-#> 10        2025         Week 49         National  England E92000001
-#> 11        2025         Week 49         National  England E92000001
-#> 12        2025         Week 49         National  England E92000001
-#> 13        2025         Week 49         National  England E92000001
-#> 14        2025         Week 49         National  England E92000001
-#> 15        2025         Week 49         National  England E92000001
-#> 16        2025         Week 49         National  England E92000001
-#> 17        2025         Week 49         National  England E92000001
-#> 18        2025         Week 49         National  England E92000001
-#> 19        2025         Week 49         National  England E92000001
-#> 20        2025         Week 49         National  England E92000001
-#> 21        2025         Week 49         National  England E92000001
-#> 22        2025         Week 49         National  England E92000001
-#> 23        2025         Week 49         National  England E92000001
-#> 24        2025         Week 49         National  England E92000001
-#> 25        2025         Week 49         National  England E92000001
-#> 26        2025         Week 49         National  England E92000001
-#> 27        2025         Week 49         National  England E92000001
-#> 28        2025         Week 49         National  England E92000001
-#> 29        2025         Week 49         National  England E92000001
-#> 30        2025         Week 49         National  England E92000001
-#> 31        2025         Week 49         National  England E92000001
-#> 32        2025         Week 49         National  England E92000001
+#> 1         2026          Week 4         National  England E92000001
+#> 2         2026          Week 4         National  England E92000001
+#> 3         2026          Week 4         National  England E92000001
+#> 4         2026          Week 4         National  England E92000001
+#> 5         2026          Week 4         National  England E92000001
+#> 6         2026          Week 4         National  England E92000001
+#> 7         2026          Week 4         National  England E92000001
+#> 8         2026          Week 4         National  England E92000001
+#> 9         2026          Week 4         National  England E92000001
+#> 10        2026          Week 4         National  England E92000001
+#> 11        2026          Week 4         National  England E92000001
+#> 12        2026          Week 4         National  England E92000001
+#> 13        2026          Week 4         National  England E92000001
+#> 14        2026          Week 4         National  England E92000001
+#> 15        2026          Week 4         National  England E92000001
+#> 16        2026          Week 4         National  England E92000001
+#> 17        2026          Week 4         National  England E92000001
+#> 18        2026          Week 4         National  England E92000001
+#> 19        2026          Week 4         National  England E92000001
+#> 20        2026          Week 4         National  England E92000001
+#> 21        2026          Week 4         National  England E92000001
+#> 22        2026          Week 4         National  England E92000001
+#> 23        2026          Week 4         National  England E92000001
+#> 24        2026          Week 4         National  England E92000001
+#> 25        2026          Week 4         National  England E92000001
+#> 26        2026          Week 4         National  England E92000001
+#> 27        2026          Week 4         National  England E92000001
+#> 28        2026          Week 4         National  England E92000001
+#> 29        2026          Week 4         National  England E92000001
+#> 30        2026          Week 4         National  England E92000001
+#> 31        2026          Week 4         National  England E92000001
+#> 32        2026          Week 4         National  England E92000001
 #>                           attendance_reason attendance_status
 #> 1                               All present        Attendance
 #> 2         All approved educational activity        Attendance
@@ -130,36 +130,36 @@ example_data_raw(group = "attendance") |>
 #> 31          Late after registers closed (u)           Absence
 #> 32                   Other unauthorised (o)           Absence
 #>                  attendance_type education_phase time_frame session_count
-#> 1                        Present     All schools     Monday      12085186
-#> 2  Approved educational activity     All schools     Monday         70069
-#> 3             Overall attendance     All schools     Monday      12155255
-#> 4                Overall absence     All schools     Monday       1115334
-#> 5                     Authorised     All schools     Monday        813326
-#> 6                   Unauthorised     All schools     Monday        302008
-#> 7              All late sessions     All schools     Monday        335672
-#> 8          All possible sessions     All schools     Monday      13270589
-#> 9                        Present     All schools     Monday       5781997
-#> 10                       Present     All schools     Monday       6004234
-#> 11                       Present     All schools     Monday      11786231
-#> 12                       Present     All schools     Monday        298955
-#> 13                    Authorised     All schools     Monday        669932
-#> 14                    Authorised     All schools     Monday         43893
-#> 15                    Authorised     All schools     Monday           268
-#> 16                    Authorised     All schools     Monday           240
-#> 17                    Authorised     All schools     Monday           768
+#> 1                        Present     All schools     Monday      12787248
+#> 2  Approved educational activity     All schools     Monday         78936
+#> 3             Overall attendance     All schools     Monday      12866184
+#> 4                Overall absence     All schools     Monday        897838
+#> 5                     Authorised     All schools     Monday        609096
+#> 6                   Unauthorised     All schools     Monday        288742
+#> 7              All late sessions     All schools     Monday        350469
+#> 8          All possible sessions     All schools     Monday      13764022
+#> 9                        Present     All schools     Monday       6127328
+#> 10                       Present     All schools     Monday       6348550
+#> 11                       Present     All schools     Monday      12475878
+#> 12                       Present     All schools     Monday        311370
+#> 13                    Authorised     All schools     Monday        455999
+#> 14                    Authorised     All schools     Monday         48326
+#> 15                    Authorised     All schools     Monday           297
+#> 16                    Authorised     All schools     Monday           140
+#> 17                    Authorised     All schools     Monday           656
 #> 18                    Authorised     All schools     Monday             0
-#> 19                    Authorised     All schools     Monday         18735
-#> 20                    Authorised     All schools     Monday         45754
-#> 21                    Authorised     All schools     Monday           773
-#> 22                    Authorised     All schools     Monday          1370
-#> 23                    Authorised     All schools     Monday         31592
-#> 24 Approved educational activity     All schools     Monday         21701
-#> 25 Approved educational activity     All schools     Monday             1
-#> 26 Approved educational activity     All schools     Monday          8376
-#> 27 Approved educational activity     All schools     Monday         32150
-#> 28 Approved educational activity     All schools     Monday          2736
-#> 29 Approved educational activity     All schools     Monday          5105
-#> 30                  Unauthorised     All schools     Monday         36466
-#> 31                  Unauthorised     All schools     Monday         36717
-#> 32                  Unauthorised     All schools     Monday        213504
+#> 19                    Authorised     All schools     Monday         19058
+#> 20                    Authorised     All schools     Monday         46578
+#> 21                    Authorised     All schools     Monday           394
+#> 22                    Authorised     All schools     Monday          2106
+#> 23                    Authorised     All schools     Monday         35533
+#> 24 Approved educational activity     All schools     Monday         24085
+#> 25 Approved educational activity     All schools     Monday             0
+#> 26 Approved educational activity     All schools     Monday          8561
+#> 27 Approved educational activity     All schools     Monday         36259
+#> 28 Approved educational activity     All schools     Monday          4135
+#> 29 Approved educational activity     All schools     Monday          5896
+#> 30                  Unauthorised     All schools     Monday         27170
+#> 31                  Unauthorised     All schools     Monday         39099
+#> 32                  Unauthorised     All schools     Monday        209572
 ```

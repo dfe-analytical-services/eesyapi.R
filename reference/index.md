@@ -40,3 +40,11 @@ These functions are used widely to create working example code and tests
   : Create an example json query string
 - [`geog_level_lookup`](https://dfe-analytical-services.github.io/eesyapi/reference/geog_level_lookup.md)
   : Look-up for API geographic_level shorthands
+
+## Explore education statistics format convertors
+
+Helpers to convert the output data into a standard format used in the
+main data ingestion from explore education statistics
+
+- [`generate_ees_meta()`](https://dfe-analytical-services.github.io/eesyapi/reference/generate_ees_meta.md)
+  : Generate EES meta

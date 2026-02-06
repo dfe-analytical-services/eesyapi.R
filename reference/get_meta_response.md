@@ -65,10 +65,8 @@ eesyapi:::get_meta_response(example_id())
 #> 1 UyHRF, oUXmX, rwhNj, GIxgr, All schools, Primary, Secondary, Special
 #> 
 #> $indicators
-#>      id                     column                      label unit
-#> 1 uxo41 persistent_absence_percent Persistent absence percent    %
-#>   decimalPlaces
-#> 1             1
+#>      id                     column                   label unit decimalPlaces
+#> 1 uxo41 persistent_absence_percent Persistent absence rate    %             2
 #> 
 #> $geographicLevels
 #>   code           label
@@ -93,12 +91,14 @@ eesyapi:::get_meta_response(example_id())
 #> 3   W14   2025 2025 Week 14
 #> 4   W15   2025 2025 Week 15
 #> 5   W18   2025 2025 Week 18
-#> 6   W20   2025 2025 Week 20
-#> 7   W21   2025 2025 Week 21
-#> 8   W24   2025 2025 Week 24
-#> 9   W26   2025 2025 Week 26
-#> 10  W28   2025 2025 Week 28
-#> 11  W30   2025 2025 Week 30
-#> 12   W8   2025  2025 Week 8
+#> 6    W2   2026  2026 Week 2
+#> 7   W20   2025 2025 Week 20
+#> 8   W21   2025 2025 Week 21
+#> 9   W24   2025 2025 Week 24
+#> 10  W26   2025 2025 Week 26
+#> 11  W28   2025 2025 Week 28
+#> 12  W30   2025 2025 Week 30
+#> 13   W4   2026  2026 Week 4
+#> 14   W8   2025  2025 Week 8
 #> 
 ```
