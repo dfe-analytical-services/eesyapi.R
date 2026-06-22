@@ -3,7 +3,7 @@ pkgdown: 2.2.0
 pkgdown_sha: ~
 articles:
   eesyapi: eesyapi.html
-last_built: 2026-06-22T14:48Z
+last_built: 2026-06-22T14:50Z
 urls:
   reference: https://dfe-analytical-services.github.io/eesyapi/reference
   article: https://dfe-analytical-services.github.io/eesyapi/articles

@@ -65,70 +65,70 @@ example_data_raw()
 #> 30             W21              2026              LA        0ehT5         dP0Zw
 #> 31             W21              2026              LA        0ehT5         dP0Zw
 #> 32             W21              2026              LA        0ehT5         dP0Zw
-#>    locations.REG filters.uxo41 filters.krhsL filters.TsPJP filters.z4FQE
-#> 1          VTQ5X         UazRF         TmQPJ         bAxtT         qOnjG
-#> 2          VTQ5X         UazRF         TmQPJ         bAxtT         BHu7J
-#> 3          VTQ5X         UazRF         TmQPJ         bAxtT         YvoHK
-#> 4          VTQ5X         UazRF         TmQPJ         bAxtT         acQLP
-#> 5          VTQ5X         1Dui3         e4wuS         bAxtT         28Wlz
-#> 6          VTQ5X         1Dui3         e4wuS         bAxtT         duo0Z
-#> 7          VTQ5X         1Dui3         e4wuS         bAxtT         uU1o4
-#> 8          VTQ5X         1Dui3         e4wuS         bAxtT         XFRfK
-#> 9          VTQ5X         1Dui3         e4wuS         bAxtT         OXYCL
-#> 10         VTQ5X         1Dui3         e4wuS         bAxtT         5PHdi
-#> 11         VTQ5X         1Dui3         e4wuS         bAxtT         9ko4v
-#> 12         VTQ5X         1Dui3         e4wuS         bAxtT         L31Wj
-#> 13         VTQ5X         1Dui3         e4wuS         bAxtT         kWQhs
-#> 14         VTQ5X         1Dui3         e4wuS         bAxtT         NtQDC
-#> 15         VTQ5X         1Dui3         e4wuS         bAxtT         TmKPJ
-#> 16         VTQ5X         P9Aeb         TmQPJ         bAxtT         QErwb
-#> 17         VTQ5X         P9Aeb         TmQPJ         bAxtT         PmPeb
-#> 18         VTQ5X         P9Aeb         TmQPJ         bAxtT         e9vuS
-#> 19         VTQ5X         P9Aeb         TmQPJ         bAxtT         W3k2b
-#> 20         VTQ5X         P9Aeb         TmQPJ         bAxtT         jC9AM
-#> 21         VTQ5X         P9Aeb         TmQPJ         bAxtT         EGQqF
-#> 22         VTQ5X         oRfmX         e4wuS         bAxtT         tGPEm
-#> 23         VTQ5X         oRfmX         e4wuS         bAxtT         oRUmX
-#> 24         VTQ5X         oRfmX         e4wuS         bAxtT         6wgrf
-#> 25         VTQ5X         oRfmX         e4wuS         bAxtT         7zvXo
-#> 26         VTQ5X         duj0Z         mkA9K         bAxtT         0unT5
-#> 27         VTQ5X         duj0Z         mkA9K         bAxtT         wjEbx
-#> 28         VTQ5X         duj0Z         mkA9K         bAxtT         p0uSo
-#> 29         VTQ5X         duj0Z         mkA9K         bAxtT         cxI31
-#> 30         VTQ5X         duj0Z         mkA9K         bAxtT         5eMdi
-#> 31         VTQ5X         duj0Z         mkA9K         bAxtT         Cf5Id
-#> 32         VTQ5X         duj0Z         mkA9K         bAxtT         4h0UZ
-#>    filters.X9fKb X9fKb
-#> 1          STCVx   799
-#> 2          STCVx   783
-#> 3          STCVx  1582
-#> 4          STCVx    15
-#> 5          STCVx    74
-#> 6          STCVx    15
-#> 7          STCVx     0
-#> 8          STCVx    11
-#> 9          STCVx     0
-#> 10         STCVx     0
-#> 11         STCVx     6
-#> 12         STCVx    58
-#> 13         STCVx     0
-#> 14         STCVx     0
-#> 15         STCVx    50
-#> 16         STCVx    10
-#> 17         STCVx     0
-#> 18         STCVx     0
-#> 19         STCVx     9
-#> 20         STCVx     0
-#> 21         STCVx     0
-#> 22         STCVx    14
-#> 23         STCVx     6
-#> 24         STCVx    47
-#> 25         STCVx     3
-#> 26         STCVx     0
-#> 27         STCVx     0
-#> 28         STCVx     0
-#> 29         STCVx     0
-#> 30         STCVx     0
-#> 31         STCVx     0
-#> 32         STCVx     0
+#>    locations.REG filters.uxo41 filters.z4FQE filters.X9fKb filters.krhsL
+#> 1          VTQ5X         UazRF         qOnjG         STCVx         TmQPJ
+#> 2          VTQ5X         UazRF         BHu7J         STCVx         TmQPJ
+#> 3          VTQ5X         UazRF         YvoHK         STCVx         TmQPJ
+#> 4          VTQ5X         UazRF         acQLP         STCVx         TmQPJ
+#> 5          VTQ5X         1Dui3         28Wlz         STCVx         e4wuS
+#> 6          VTQ5X         1Dui3         duo0Z         STCVx         e4wuS
+#> 7          VTQ5X         1Dui3         uU1o4         STCVx         e4wuS
+#> 8          VTQ5X         1Dui3         XFRfK         STCVx         e4wuS
+#> 9          VTQ5X         1Dui3         OXYCL         STCVx         e4wuS
+#> 10         VTQ5X         1Dui3         5PHdi         STCVx         e4wuS
+#> 11         VTQ5X         1Dui3         9ko4v         STCVx         e4wuS
+#> 12         VTQ5X         1Dui3         L31Wj         STCVx         e4wuS
+#> 13         VTQ5X         1Dui3         kWQhs         STCVx         e4wuS
+#> 14         VTQ5X         1Dui3         NtQDC         STCVx         e4wuS
+#> 15         VTQ5X         1Dui3         TmKPJ         STCVx         e4wuS
+#> 16         VTQ5X         P9Aeb         QErwb         STCVx         TmQPJ
+#> 17         VTQ5X         P9Aeb         PmPeb         STCVx         TmQPJ
+#> 18         VTQ5X         P9Aeb         e9vuS         STCVx         TmQPJ
+#> 19         VTQ5X         P9Aeb         W3k2b         STCVx         TmQPJ
+#> 20         VTQ5X         P9Aeb         jC9AM         STCVx         TmQPJ
+#> 21         VTQ5X         P9Aeb         EGQqF         STCVx         TmQPJ
+#> 22         VTQ5X         oRfmX         tGPEm         STCVx         e4wuS
+#> 23         VTQ5X         oRfmX         oRUmX         STCVx         e4wuS
+#> 24         VTQ5X         oRfmX         6wgrf         STCVx         e4wuS
+#> 25         VTQ5X         oRfmX         7zvXo         STCVx         e4wuS
+#> 26         VTQ5X         duj0Z         0unT5         STCVx         mkA9K
+#> 27         VTQ5X         duj0Z         wjEbx         STCVx         mkA9K
+#> 28         VTQ5X         duj0Z         p0uSo         STCVx         mkA9K
+#> 29         VTQ5X         duj0Z         cxI31         STCVx         mkA9K
+#> 30         VTQ5X         duj0Z         5eMdi         STCVx         mkA9K
+#> 31         VTQ5X         duj0Z         Cf5Id         STCVx         mkA9K
+#> 32         VTQ5X         duj0Z         4h0UZ         STCVx         mkA9K
+#>    filters.TsPJP X9fKb
+#> 1          bAxtT   799
+#> 2          bAxtT   783
+#> 3          bAxtT  1582
+#> 4          bAxtT    15
+#> 5          bAxtT    74
+#> 6          bAxtT    15
+#> 7          bAxtT     0
+#> 8          bAxtT    11
+#> 9          bAxtT     0
+#> 10         bAxtT     0
+#> 11         bAxtT     6
+#> 12         bAxtT    58
+#> 13         bAxtT     0
+#> 14         bAxtT     0
+#> 15         bAxtT    50
+#> 16         bAxtT    10
+#> 17         bAxtT     0
+#> 18         bAxtT     0
+#> 19         bAxtT     9
+#> 20         bAxtT     0
+#> 21         bAxtT     0
+#> 22         bAxtT    14
+#> 23         bAxtT     6
+#> 24         bAxtT    47
+#> 25         bAxtT     3
+#> 26         bAxtT     0
+#> 27         bAxtT     0
+#> 28         bAxtT     0
+#> 29         bAxtT     0
+#> 30         bAxtT     0
+#> 31         bAxtT     0
+#> 32         bAxtT     0
 ```
