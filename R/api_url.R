@@ -177,7 +177,12 @@ api_url <- function(
     if (endpoint == "get-dataset-versions") {
       url <- paste0(
         url,
-        "/versions"
+        "/versions",
+                ifelse(
+            !is.null(page) & !is.null(page_size),
+            paste0("?", api_url_pages(page_size = page_size, page = page)),
+            ""
+          )
       )
     } else if (endpoint != "get-summary") {
       url <- paste0(
