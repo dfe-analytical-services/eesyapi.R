@@ -175,14 +175,18 @@ api_url <- function(
       )
     )
     if (endpoint == "get-dataset-versions") {
+      # Force first page if page size is given by user and page isn't
+      if (!is.null(page_size) && is.null(page)) {
+        page <- 1
+      }
       url <- paste0(
         url,
         "/versions",
-                ifelse(
-            !is.null(page) & !is.null(page_size),
-            paste0("?", api_url_pages(page_size = page_size, page = page)),
-            ""
-          )
+        ifelse(
+          !is.null(page_size),
+          paste0("?", api_url_pages(page_size = page_size, page = page)),
+          ""
+        )
       )
     } else if (endpoint != "get-summary") {
       url <- paste0(
