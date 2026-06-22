@@ -11,13 +11,13 @@
 
 ## Citation
 
-Bielby R, Race C (2026). *eesyapi: EES-y API*. R package version 0.6.0,
+Bielby R, Race C (2026). *eesyapi: EES-y API*. R package version 0.6.1,
 <https://dfe-analytical-services.github.io/eesyapi>.
 
     @Manual{,
       title = {eesyapi: EES-y API},
       author = {Rich Bielby and Cam Race},
       year = {2026},
-      note = {R package version 0.6.0},
+      note = {R package version 0.6.1},
       url = {https://dfe-analytical-services.github.io/eesyapi},
     }

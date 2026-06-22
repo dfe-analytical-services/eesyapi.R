@@ -37,70 +37,70 @@ Data frame
 example_data_raw() |>
   magrittr::use_series("filters") |>
   eesyapi:::parse_sqids_filters(get_meta(example_id(group = "attendance")))
-#>                           attendance_reason attendance_status
-#> 1                               All present        Attendance
-#> 2         All approved educational activity        Attendance
-#> 3                        Overall attendance        Attendance
-#> 4                           Overall absence           Absence
-#> 5                            All authorised           Absence
-#> 6                          All unauthorised           Absence
-#> 7                         All late sessions     Late sessions
-#> 8                     All possible sessions Possible sessions
-#> 9                                Present am        Attendance
-#> 10                               Present pm        Attendance
-#> 11                                  Present        Attendance
-#> 12 Present late before registers closed (l)        Attendance
-#> 13                              Illness (i)           Absence
-#> 14                       Medical dental (m)           Absence
-#> 15                 Religious observance (r)           Absence
-#> 16                          Study leave (s)           Absence
-#> 17                         Mobile child (t)           Absence
-#> 18                   Authorised holiday (h)           Absence
-#> 19                             Excluded (e)           Absence
-#> 20                     Other authorised (c)           Absence
-#> 21               Regulated performance (c1)           Absence
-#> 22                           Interview (j1)           Absence
-#> 23         Temporary reduced timetable (c2)           Absence
-#> 24                   Education off site (b)        Attendance
-#> 25                            Interview (j)        Attendance
-#> 26           Approved sporting activity (p)        Attendance
-#> 27               Educational visit trip (v)        Attendance
-#> 28                      Work experience (w)        Attendance
-#> 29             Education arranged by LA (k)        Attendance
-#> 30                 Unauthorised holiday (g)           Absence
-#> 31          Late after registers closed (u)           Absence
-#> 32                   Other unauthorised (o)           Absence
+#>                           attendance_reason           attendance_status
+#> 1                                Present am                  Attendance
+#> 2                                Present pm                  Attendance
+#> 3                                   Present                  Attendance
+#> 4  Present late before registers closed (l)                  Attendance
+#> 5                               Illness (i)                     Absence
+#> 6                        Medical dental (m)                     Absence
+#> 7                  Religious observance (r)                     Absence
+#> 8                           Study leave (s)                     Absence
+#> 9                          Mobile child (t)                     Absence
+#> 10                   Authorised holiday (h)                     Absence
+#> 11                             Excluded (e)                     Absence
+#> 12                     Other authorised (c)                     Absence
+#> 13               Regulated performance (c1)                     Absence
+#> 14                           Interview (j1)                     Absence
+#> 15         Temporary reduced timetable (c2)                     Absence
+#> 16                   Education off site (b)                  Attendance
+#> 17                            Interview (j)                  Attendance
+#> 18           Approved sporting activity (p)                  Attendance
+#> 19               Educational visit trip (v)                  Attendance
+#> 20                      Work experience (w)                  Attendance
+#> 21             Education arranged by LA (k)                  Attendance
+#> 22                 Unauthorised holiday (g)                     Absence
+#> 23          Late after registers closed (u)                     Absence
+#> 24                   Other unauthorised (o)                     Absence
+#> 25                        No reason yet (n)                     Absence
+#> 26                    Dual registration (d) Management and legacy codes
+#> 27                      LA arrangements (q) Management and legacy codes
+#> 28       Not attending enforced closure (y) Management and legacy codes
+#> 29              Transport not provided (y1) Management and legacy codes
+#> 30                   Travel disruption (y2) Management and legacy codes
+#> 31                 Premises out of use (y3) Management and legacy codes
+#> 32            Closed session cancelled (y4) Management and legacy codes
 #>                  attendance_type education_phase time_frame
-#> 1                        Present     All schools     Monday
-#> 2  Approved educational activity     All schools     Monday
-#> 3             Overall attendance     All schools     Monday
-#> 4                Overall absence     All schools     Monday
-#> 5                     Authorised     All schools     Monday
-#> 6                   Unauthorised     All schools     Monday
-#> 7              All late sessions     All schools     Monday
-#> 8          All possible sessions     All schools     Monday
-#> 9                        Present     All schools     Monday
-#> 10                       Present     All schools     Monday
-#> 11                       Present     All schools     Monday
-#> 12                       Present     All schools     Monday
-#> 13                    Authorised     All schools     Monday
-#> 14                    Authorised     All schools     Monday
-#> 15                    Authorised     All schools     Monday
-#> 16                    Authorised     All schools     Monday
-#> 17                    Authorised     All schools     Monday
-#> 18                    Authorised     All schools     Monday
-#> 19                    Authorised     All schools     Monday
-#> 20                    Authorised     All schools     Monday
-#> 21                    Authorised     All schools     Monday
-#> 22                    Authorised     All schools     Monday
-#> 23                    Authorised     All schools     Monday
-#> 24 Approved educational activity     All schools     Monday
-#> 25 Approved educational activity     All schools     Monday
-#> 26 Approved educational activity     All schools     Monday
-#> 27 Approved educational activity     All schools     Monday
-#> 28 Approved educational activity     All schools     Monday
-#> 29 Approved educational activity     All schools     Monday
-#> 30                  Unauthorised     All schools     Monday
-#> 31                  Unauthorised     All schools     Monday
-#> 32                  Unauthorised     All schools     Monday
+#> 1                        Present         Special   Thursday
+#> 2                        Present         Special   Thursday
+#> 3                        Present         Special   Thursday
+#> 4                        Present         Special   Thursday
+#> 5                     Authorised         Special   Thursday
+#> 6                     Authorised         Special   Thursday
+#> 7                     Authorised         Special   Thursday
+#> 8                     Authorised         Special   Thursday
+#> 9                     Authorised         Special   Thursday
+#> 10                    Authorised         Special   Thursday
+#> 11                    Authorised         Special   Thursday
+#> 12                    Authorised         Special   Thursday
+#> 13                    Authorised         Special   Thursday
+#> 14                    Authorised         Special   Thursday
+#> 15                    Authorised         Special   Thursday
+#> 16 Approved educational activity         Special   Thursday
+#> 17 Approved educational activity         Special   Thursday
+#> 18 Approved educational activity         Special   Thursday
+#> 19 Approved educational activity         Special   Thursday
+#> 20 Approved educational activity         Special   Thursday
+#> 21 Approved educational activity         Special   Thursday
+#> 22                  Unauthorised         Special   Thursday
+#> 23                  Unauthorised         Special   Thursday
+#> 24                  Unauthorised         Special   Thursday
+#> 25                  Unauthorised         Special   Thursday
+#> 26   Management and legacy codes         Special   Thursday
+#> 27   Management and legacy codes         Special   Thursday
+#> 28   Management and legacy codes         Special   Thursday
+#> 29   Management and legacy codes         Special   Thursday
+#> 30   Management and legacy codes         Special   Thursday
+#> 31   Management and legacy codes         Special   Thursday
+#> 32   Management and legacy codes         Special   Thursday
 ```

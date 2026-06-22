@@ -36,37 +36,37 @@ Data frame of parsed geography information
 example_data_raw() |>
   magrittr::use_series("locations") |>
   eesyapi:::parse_sqids_locations(get_meta(example_id(group = "attendance")))
-#>    nat_name  nat_code
-#> 1   England E92000001
-#> 2   England E92000001
-#> 3   England E92000001
-#> 4   England E92000001
-#> 5   England E92000001
-#> 6   England E92000001
-#> 7   England E92000001
-#> 8   England E92000001
-#> 9   England E92000001
-#> 10  England E92000001
-#> 11  England E92000001
-#> 12  England E92000001
-#> 13  England E92000001
-#> 14  England E92000001
-#> 15  England E92000001
-#> 16  England E92000001
-#> 17  England E92000001
-#> 18  England E92000001
-#> 19  England E92000001
-#> 20  England E92000001
-#> 21  England E92000001
-#> 22  England E92000001
-#> 23  England E92000001
-#> 24  England E92000001
-#> 25  England E92000001
-#> 26  England E92000001
-#> 27  England E92000001
-#> 28  England E92000001
-#> 29  England E92000001
-#> 30  England E92000001
-#> 31  England E92000001
-#> 32  England E92000001
+#>      la_name   la_code la_oldCode nat_name  nat_code   reg_name  reg_code
+#> 1  Stockport E08000007        356  England E92000001 North West E12000002
+#> 2  Stockport E08000007        356  England E92000001 North West E12000002
+#> 3  Stockport E08000007        356  England E92000001 North West E12000002
+#> 4  Stockport E08000007        356  England E92000001 North West E12000002
+#> 5  Stockport E08000007        356  England E92000001 North West E12000002
+#> 6  Stockport E08000007        356  England E92000001 North West E12000002
+#> 7  Stockport E08000007        356  England E92000001 North West E12000002
+#> 8  Stockport E08000007        356  England E92000001 North West E12000002
+#> 9  Stockport E08000007        356  England E92000001 North West E12000002
+#> 10 Stockport E08000007        356  England E92000001 North West E12000002
+#> 11 Stockport E08000007        356  England E92000001 North West E12000002
+#> 12 Stockport E08000007        356  England E92000001 North West E12000002
+#> 13 Stockport E08000007        356  England E92000001 North West E12000002
+#> 14 Stockport E08000007        356  England E92000001 North West E12000002
+#> 15 Stockport E08000007        356  England E92000001 North West E12000002
+#> 16 Stockport E08000007        356  England E92000001 North West E12000002
+#> 17 Stockport E08000007        356  England E92000001 North West E12000002
+#> 18 Stockport E08000007        356  England E92000001 North West E12000002
+#> 19 Stockport E08000007        356  England E92000001 North West E12000002
+#> 20 Stockport E08000007        356  England E92000001 North West E12000002
+#> 21 Stockport E08000007        356  England E92000001 North West E12000002
+#> 22 Stockport E08000007        356  England E92000001 North West E12000002
+#> 23 Stockport E08000007        356  England E92000001 North West E12000002
+#> 24 Stockport E08000007        356  England E92000001 North West E12000002
+#> 25 Stockport E08000007        356  England E92000001 North West E12000002
+#> 26 Stockport E08000007        356  England E92000001 North West E12000002
+#> 27 Stockport E08000007        356  England E92000001 North West E12000002
+#> 28 Stockport E08000007        356  England E92000001 North West E12000002
+#> 29 Stockport E08000007        356  England E92000001 North West E12000002
+#> 30 Stockport E08000007        356  England E92000001 North West E12000002
+#> 31 Stockport E08000007        356  England E92000001 North West E12000002
+#> 32 Stockport E08000007        356  England E92000001 North West E12000002
 ```

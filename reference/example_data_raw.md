@@ -32,70 +32,103 @@ Nested list form of example data from the API
 
 ``` r
 example_data_raw()
-#>    timePeriod.code timePeriod.period geographicLevel   NAT filters.uxo41
-#> 1               W4              2026             NAT dP0Zw         UazRF
-#> 2               W4              2026             NAT dP0Zw         P9Aeb
-#> 3               W4              2026             NAT dP0Zw         ls5cB
-#> 4               W4              2026             NAT dP0Zw         uUIo4
-#> 5               W4              2026             NAT dP0Zw         1Dui3
-#> 6               W4              2026             NAT dP0Zw         oRfmX
-#> 7               W4              2026             NAT dP0Zw         AIaGK
-#> 8               W4              2026             NAT dP0Zw         VPw5X
-#> 9               W4              2026             NAT dP0Zw         UazRF
-#> 10              W4              2026             NAT dP0Zw         UazRF
-#> 11              W4              2026             NAT dP0Zw         UazRF
-#> 12              W4              2026             NAT dP0Zw         UazRF
-#> 13              W4              2026             NAT dP0Zw         1Dui3
-#> 14              W4              2026             NAT dP0Zw         1Dui3
-#> 15              W4              2026             NAT dP0Zw         1Dui3
-#> 16              W4              2026             NAT dP0Zw         1Dui3
-#> 17              W4              2026             NAT dP0Zw         1Dui3
-#> 18              W4              2026             NAT dP0Zw         1Dui3
-#> 19              W4              2026             NAT dP0Zw         1Dui3
-#> 20              W4              2026             NAT dP0Zw         1Dui3
-#> 21              W4              2026             NAT dP0Zw         1Dui3
-#> 22              W4              2026             NAT dP0Zw         1Dui3
-#> 23              W4              2026             NAT dP0Zw         1Dui3
-#> 24              W4              2026             NAT dP0Zw         P9Aeb
-#> 25              W4              2026             NAT dP0Zw         P9Aeb
-#> 26              W4              2026             NAT dP0Zw         P9Aeb
-#> 27              W4              2026             NAT dP0Zw         P9Aeb
-#> 28              W4              2026             NAT dP0Zw         P9Aeb
-#> 29              W4              2026             NAT dP0Zw         P9Aeb
-#> 30              W4              2026             NAT dP0Zw         oRfmX
-#> 31              W4              2026             NAT dP0Zw         oRfmX
-#> 32              W4              2026             NAT dP0Zw         oRfmX
-#>    filters.krhsL filters.TsPJP filters.z4FQE filters.X9fKb    X9fKb
-#> 1          TmQPJ         RL5ka         bjstT         rbyNj 12787248
-#> 2          TmQPJ         RL5ka         3xu8u         rbyNj    78936
-#> 3          TmQPJ         RL5ka         HnuzL         rbyNj 12866184
-#> 4          e4wuS         RL5ka         0oaT5         rbyNj   897838
-#> 5          e4wuS         RL5ka         S0OVx         rbyNj   609096
-#> 6          e4wuS         RL5ka         Dt8Qe         rbyNj   288742
-#> 7          h2IyW         RL5ka         y2daB         rbyNj   350469
-#> 8          g7LO9         RL5ka         RaVka         rbyNj 13764022
-#> 9          TmQPJ         RL5ka         qOnjG         rbyNj  6127328
-#> 10         TmQPJ         RL5ka         BHu7J         rbyNj  6348550
-#> 11         TmQPJ         RL5ka         YvoHK         rbyNj 12475878
-#> 12         TmQPJ         RL5ka         acQLP         rbyNj   311370
-#> 13         e4wuS         RL5ka         28Wlz         rbyNj   455999
-#> 14         e4wuS         RL5ka         duo0Z         rbyNj    48326
-#> 15         e4wuS         RL5ka         uU1o4         rbyNj      297
-#> 16         e4wuS         RL5ka         XFRfK         rbyNj      140
-#> 17         e4wuS         RL5ka         OXYCL         rbyNj      656
-#> 18         e4wuS         RL5ka         5PHdi         rbyNj        0
-#> 19         e4wuS         RL5ka         9ko4v         rbyNj    19058
-#> 20         e4wuS         RL5ka         L31Wj         rbyNj    46578
-#> 21         e4wuS         RL5ka         kWQhs         rbyNj      394
-#> 22         e4wuS         RL5ka         NtQDC         rbyNj     2106
-#> 23         e4wuS         RL5ka         TmKPJ         rbyNj    35533
-#> 24         TmQPJ         RL5ka         QErwb         rbyNj    24085
-#> 25         TmQPJ         RL5ka         PmPeb         rbyNj        0
-#> 26         TmQPJ         RL5ka         e9vuS         rbyNj     8561
-#> 27         TmQPJ         RL5ka         W3k2b         rbyNj    36259
-#> 28         TmQPJ         RL5ka         jC9AM         rbyNj     4135
-#> 29         TmQPJ         RL5ka         EGQqF         rbyNj     5896
-#> 30         e4wuS         RL5ka         tGPEm         rbyNj    27170
-#> 31         e4wuS         RL5ka         oRUmX         rbyNj    39099
-#> 32         e4wuS         RL5ka         6wgrf         rbyNj   209572
+#>    timePeriod.code timePeriod.period geographicLevel locations.LA locations.NAT
+#> 1              W21              2026              LA        0ehT5         dP0Zw
+#> 2              W21              2026              LA        0ehT5         dP0Zw
+#> 3              W21              2026              LA        0ehT5         dP0Zw
+#> 4              W21              2026              LA        0ehT5         dP0Zw
+#> 5              W21              2026              LA        0ehT5         dP0Zw
+#> 6              W21              2026              LA        0ehT5         dP0Zw
+#> 7              W21              2026              LA        0ehT5         dP0Zw
+#> 8              W21              2026              LA        0ehT5         dP0Zw
+#> 9              W21              2026              LA        0ehT5         dP0Zw
+#> 10             W21              2026              LA        0ehT5         dP0Zw
+#> 11             W21              2026              LA        0ehT5         dP0Zw
+#> 12             W21              2026              LA        0ehT5         dP0Zw
+#> 13             W21              2026              LA        0ehT5         dP0Zw
+#> 14             W21              2026              LA        0ehT5         dP0Zw
+#> 15             W21              2026              LA        0ehT5         dP0Zw
+#> 16             W21              2026              LA        0ehT5         dP0Zw
+#> 17             W21              2026              LA        0ehT5         dP0Zw
+#> 18             W21              2026              LA        0ehT5         dP0Zw
+#> 19             W21              2026              LA        0ehT5         dP0Zw
+#> 20             W21              2026              LA        0ehT5         dP0Zw
+#> 21             W21              2026              LA        0ehT5         dP0Zw
+#> 22             W21              2026              LA        0ehT5         dP0Zw
+#> 23             W21              2026              LA        0ehT5         dP0Zw
+#> 24             W21              2026              LA        0ehT5         dP0Zw
+#> 25             W21              2026              LA        0ehT5         dP0Zw
+#> 26             W21              2026              LA        0ehT5         dP0Zw
+#> 27             W21              2026              LA        0ehT5         dP0Zw
+#> 28             W21              2026              LA        0ehT5         dP0Zw
+#> 29             W21              2026              LA        0ehT5         dP0Zw
+#> 30             W21              2026              LA        0ehT5         dP0Zw
+#> 31             W21              2026              LA        0ehT5         dP0Zw
+#> 32             W21              2026              LA        0ehT5         dP0Zw
+#>    locations.REG filters.uxo41 filters.krhsL filters.TsPJP filters.z4FQE
+#> 1          VTQ5X         UazRF         TmQPJ         bAxtT         qOnjG
+#> 2          VTQ5X         UazRF         TmQPJ         bAxtT         BHu7J
+#> 3          VTQ5X         UazRF         TmQPJ         bAxtT         YvoHK
+#> 4          VTQ5X         UazRF         TmQPJ         bAxtT         acQLP
+#> 5          VTQ5X         1Dui3         e4wuS         bAxtT         28Wlz
+#> 6          VTQ5X         1Dui3         e4wuS         bAxtT         duo0Z
+#> 7          VTQ5X         1Dui3         e4wuS         bAxtT         uU1o4
+#> 8          VTQ5X         1Dui3         e4wuS         bAxtT         XFRfK
+#> 9          VTQ5X         1Dui3         e4wuS         bAxtT         OXYCL
+#> 10         VTQ5X         1Dui3         e4wuS         bAxtT         5PHdi
+#> 11         VTQ5X         1Dui3         e4wuS         bAxtT         9ko4v
+#> 12         VTQ5X         1Dui3         e4wuS         bAxtT         L31Wj
+#> 13         VTQ5X         1Dui3         e4wuS         bAxtT         kWQhs
+#> 14         VTQ5X         1Dui3         e4wuS         bAxtT         NtQDC
+#> 15         VTQ5X         1Dui3         e4wuS         bAxtT         TmKPJ
+#> 16         VTQ5X         P9Aeb         TmQPJ         bAxtT         QErwb
+#> 17         VTQ5X         P9Aeb         TmQPJ         bAxtT         PmPeb
+#> 18         VTQ5X         P9Aeb         TmQPJ         bAxtT         e9vuS
+#> 19         VTQ5X         P9Aeb         TmQPJ         bAxtT         W3k2b
+#> 20         VTQ5X         P9Aeb         TmQPJ         bAxtT         jC9AM
+#> 21         VTQ5X         P9Aeb         TmQPJ         bAxtT         EGQqF
+#> 22         VTQ5X         oRfmX         e4wuS         bAxtT         tGPEm
+#> 23         VTQ5X         oRfmX         e4wuS         bAxtT         oRUmX
+#> 24         VTQ5X         oRfmX         e4wuS         bAxtT         6wgrf
+#> 25         VTQ5X         oRfmX         e4wuS         bAxtT         7zvXo
+#> 26         VTQ5X         duj0Z         mkA9K         bAxtT         0unT5
+#> 27         VTQ5X         duj0Z         mkA9K         bAxtT         wjEbx
+#> 28         VTQ5X         duj0Z         mkA9K         bAxtT         p0uSo
+#> 29         VTQ5X         duj0Z         mkA9K         bAxtT         cxI31
+#> 30         VTQ5X         duj0Z         mkA9K         bAxtT         5eMdi
+#> 31         VTQ5X         duj0Z         mkA9K         bAxtT         Cf5Id
+#> 32         VTQ5X         duj0Z         mkA9K         bAxtT         4h0UZ
+#>    filters.X9fKb X9fKb
+#> 1          STCVx   799
+#> 2          STCVx   783
+#> 3          STCVx  1582
+#> 4          STCVx    15
+#> 5          STCVx    74
+#> 6          STCVx    15
+#> 7          STCVx     0
+#> 8          STCVx    11
+#> 9          STCVx     0
+#> 10         STCVx     0
+#> 11         STCVx     6
+#> 12         STCVx    58
+#> 13         STCVx     0
+#> 14         STCVx     0
+#> 15         STCVx    50
+#> 16         STCVx    10
+#> 17         STCVx     0
+#> 18         STCVx     0
+#> 19         STCVx     9
+#> 20         STCVx     0
+#> 21         STCVx     0
+#> 22         STCVx    14
+#> 23         STCVx     6
+#> 24         STCVx    47
+#> 25         STCVx     3
+#> 26         STCVx     0
+#> 27         STCVx     0
+#> 28         STCVx     0
+#> 29         STCVx     0
+#> 30         STCVx     0
+#> 31         STCVx     0
+#> 32         STCVx     0
 ```

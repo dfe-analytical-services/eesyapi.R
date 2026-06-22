@@ -12,8 +12,8 @@
 <link rel="icon" sizes="any" href="../favicon.ico">
 <link rel="manifest" href="../site.webmanifest">
 <script src="../deps/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<link href="../deps/bootstrap-5.3.1/bootstrap.min.css" rel="stylesheet">
-<script src="../deps/bootstrap-5.3.1/bootstrap.bundle.min.js"></script><link href="../deps/font-awesome-6.5.2/css/all.min.css" rel="stylesheet">
+<link href="../deps/bootstrap-5.3.8/bootstrap.min.css" rel="stylesheet">
+<script src="../deps/bootstrap-5.3.8/bootstrap.bundle.min.js"></script><link href="../deps/font-awesome-6.5.2/css/all.min.css" rel="stylesheet">
 <link href="../deps/font-awesome-6.5.2/css/v4-shims.min.css" rel="stylesheet">
 <script src="../deps/headroom-0.11.0/headroom.min.js"></script><script src="../deps/headroom-0.11.0/jQuery.headroom.min.js"></script><script src="../deps/bootstrap-toc-1.0.1/bootstrap-toc.min.js"></script><script src="../deps/clipboard.js-2.0.11/clipboard.min.js"></script><script src="../deps/search-1.0.0/autocomplete.jquery.min.js"></script><script src="../deps/search-1.0.0/fuse.min.js"></script><script src="../deps/search-1.0.0/mark.min.js"></script><!-- pkgdown --><script src="../pkgdown.js"></script><meta property="og:title" content="EES API workflow">
 </head>
@@ -25,7 +25,7 @@
 
     <a class="navbar-brand me-2" href="../index.html">eesyapi</a>
 
-    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.6.0</small>
+    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.6.1</small>
 
 
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -410,16 +410,16 @@ the <code>json_query</code> parameter as follows:</p>
 <span>  json_query <span class="op">=</span> <span class="va">json_query</span></span>
 <span><span class="op">)</span></span>
 <span><span class="co">#&gt;    time_period time_identifier geographic_level la_name   la_code la_oldCode</span></span>
-<span><span class="co">#&gt; 1         2026          Week 4  Local authority    York E06000014        816</span></span>
-<span><span class="co">#&gt; 2         2026          Week 4  Local authority    York E06000014        816</span></span>
-<span><span class="co">#&gt; 3         2026          Week 4  Local authority    York E06000014        816</span></span>
-<span><span class="co">#&gt; 4         2026          Week 4  Local authority    York E06000014        816</span></span>
-<span><span class="co">#&gt; 5         2026          Week 4  Local authority    York E06000014        816</span></span>
-<span><span class="co">#&gt; 6         2026          Week 4  Local authority    York E06000014        816</span></span>
-<span><span class="co">#&gt; 7         2026          Week 4  Local authority    York E06000014        816</span></span>
-<span><span class="co">#&gt; 8         2026          Week 4  Local authority    York E06000014        816</span></span>
-<span><span class="co">#&gt; 9         2026          Week 4  Local authority    York E06000014        816</span></span>
-<span><span class="co">#&gt; 10        2026          Week 4  Local authority    York E06000014        816</span></span>
+<span><span class="co">#&gt; 1         2026         Week 21  Local authority    York E06000014        816</span></span>
+<span><span class="co">#&gt; 2         2026         Week 21  Local authority    York E06000014        816</span></span>
+<span><span class="co">#&gt; 3         2026         Week 21  Local authority    York E06000014        816</span></span>
+<span><span class="co">#&gt; 4         2026         Week 21  Local authority    York E06000014        816</span></span>
+<span><span class="co">#&gt; 5         2026         Week 21  Local authority    York E06000014        816</span></span>
+<span><span class="co">#&gt; 6         2026         Week 21  Local authority    York E06000014        816</span></span>
+<span><span class="co">#&gt; 7         2026         Week 21  Local authority    York E06000014        816</span></span>
+<span><span class="co">#&gt; 8         2026         Week 21  Local authority    York E06000014        816</span></span>
+<span><span class="co">#&gt; 9         2026         Week 21  Local authority    York E06000014        816</span></span>
+<span><span class="co">#&gt; 10        2026         Week 21  Local authority    York E06000014        816</span></span>
 <span><span class="co">#&gt;    nat_name  nat_code                 reg_name  reg_code</span></span>
 <span><span class="co">#&gt; 1   England E92000001 Yorkshire and The Humber E12000003</span></span>
 <span><span class="co">#&gt; 2   England E92000001 Yorkshire and The Humber E12000003</span></span>
@@ -443,16 +443,16 @@ the <code>json_query</code> parameter as follows:</p>
 <span><span class="co">#&gt; 9  All approved educational activity        Attendance</span></span>
 <span><span class="co">#&gt; 10 All approved educational activity        Attendance</span></span>
 <span><span class="co">#&gt;                  attendance_type education_phase   time_frame session_count</span></span>
-<span><span class="co">#&gt; 1  Approved educational activity     All schools       Monday           240</span></span>
-<span><span class="co">#&gt; 2  Approved educational activity     All schools      Tuesday           339</span></span>
-<span><span class="co">#&gt; 3  Approved educational activity     All schools    Wednesday           348</span></span>
-<span><span class="co">#&gt; 4  Approved educational activity     All schools     Thursday           439</span></span>
-<span><span class="co">#&gt; 5  Approved educational activity     All schools       Friday           212</span></span>
-<span><span class="co">#&gt; 6  Approved educational activity     All schools         Week          1578</span></span>
-<span><span class="co">#&gt; 7  Approved educational activity     All schools Year to date         32995</span></span>
-<span><span class="co">#&gt; 8  Approved educational activity         Primary       Monday            12</span></span>
-<span><span class="co">#&gt; 9  Approved educational activity         Primary      Tuesday           112</span></span>
-<span><span class="co">#&gt; 10 Approved educational activity         Primary    Wednesday           121</span></span></code></pre></div>
+<span><span class="co">#&gt; 1  Approved educational activity     All schools       Monday           330</span></span>
+<span><span class="co">#&gt; 2  Approved educational activity     All schools      Tuesday           563</span></span>
+<span><span class="co">#&gt; 3  Approved educational activity     All schools    Wednesday           925</span></span>
+<span><span class="co">#&gt; 4  Approved educational activity     All schools     Thursday           438</span></span>
+<span><span class="co">#&gt; 5  Approved educational activity     All schools       Friday           524</span></span>
+<span><span class="co">#&gt; 6  Approved educational activity     All schools         Week          2780</span></span>
+<span><span class="co">#&gt; 7  Approved educational activity     All schools Year to date         67780</span></span>
+<span><span class="co">#&gt; 8  Approved educational activity         Primary       Monday           224</span></span>
+<span><span class="co">#&gt; 9  Approved educational activity         Primary      Tuesday           473</span></span>
+<span><span class="co">#&gt; 10 Approved educational activity         Primary    Wednesday           803</span></span></code></pre></div>
 </div>
 </div>
 </div>

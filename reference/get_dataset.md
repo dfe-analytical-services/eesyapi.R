@@ -108,33 +108,51 @@ eesyapi:::get_dataset(
   indicators = example_id("indicator")
 )
 #>    time_period time_identifier geographic_level nat_name  nat_code
-#> 1         2026          Week 4         National  England E92000001
-#> 2         2026          Week 2         National  England E92000001
-#> 3         2025         Week 30         National  England E92000001
-#> 4         2025         Week 28         National  England E92000001
-#> 5         2025         Week 26         National  England E92000001
-#> 6         2025         Week 24         National  England E92000001
-#> 7         2025         Week 21         National  England E92000001
-#> 8         2025         Week 20         National  England E92000001
-#> 9         2025         Week 18         National  England E92000001
-#> 10        2025         Week 15         National  England E92000001
-#> 11        2025         Week 14         National  England E92000001
-#> 12        2025         Week 12         National  England E92000001
-#> 13        2025         Week 10         National  England E92000001
-#> 14        2025          Week 8         National  England E92000001
+#> 1         2026         Week 21         National  England E92000001
+#> 2         2026         Week 20         National  England E92000001
+#> 3         2026         Week 18         National  England E92000001
+#> 4         2026         Week 16         National  England E92000001
+#> 5         2026         Week 14         National  England E92000001
+#> 6         2026         Week 12         National  England E92000001
+#> 7         2026         Week 10         National  England E92000001
+#> 8         2026          Week 8         National  England E92000001
+#> 9         2026          Week 6         National  England E92000001
+#> 10        2026          Week 4         National  England E92000001
+#> 11        2026          Week 2         National  England E92000001
+#> 12        2025         Week 30         National  England E92000001
+#> 13        2025         Week 28         National  England E92000001
+#> 14        2025         Week 26         National  England E92000001
+#> 15        2025         Week 24         National  England E92000001
+#> 16        2025         Week 21         National  England E92000001
+#> 17        2025         Week 20         National  England E92000001
+#> 18        2025         Week 18         National  England E92000001
+#> 19        2025         Week 15         National  England E92000001
+#> 20        2025         Week 14         National  England E92000001
+#> 21        2025         Week 12         National  England E92000001
+#> 22        2025         Week 10         National  England E92000001
+#> 23        2025          Week 8         National  England E92000001
 #>    education_phase persistent_absence_percent
-#> 1          Primary                      14.73
-#> 2          Primary                      15.13
-#> 3          Primary                       13.5
-#> 4          Primary                      13.41
-#> 5          Primary                      13.46
-#> 6          Primary                      13.57
-#> 7          Primary                      13.42
-#> 8          Primary                      13.41
-#> 9          Primary                      13.76
-#> 10         Primary                       14.1
-#> 11         Primary                      14.15
-#> 12         Primary                      14.06
-#> 13         Primary                      14.41
-#> 14         Primary                      14.95
+#> 1          Primary                      13.18
+#> 2          Primary                      13.13
+#> 3          Primary                      13.45
+#> 4          Primary                      13.78
+#> 5          Primary                      13.86
+#> 6          Primary                      14.04
+#> 7          Primary                      14.08
+#> 8          Primary                      14.63
+#> 9          Primary                      14.54
+#> 10         Primary                      14.73
+#> 11         Primary                      15.13
+#> 12         Primary                       13.5
+#> 13         Primary                      13.41
+#> 14         Primary                      13.46
+#> 15         Primary                      13.57
+#> 16         Primary                      13.42
+#> 17         Primary                      13.41
+#> 18         Primary                      13.76
+#> 19         Primary                       14.1
+#> 20         Primary                      14.15
+#> 21         Primary                      14.06
+#> 22         Primary                      14.41
+#> 23         Primary                      14.95
 ```

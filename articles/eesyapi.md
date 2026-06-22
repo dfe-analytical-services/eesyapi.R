@@ -175,6 +175,7 @@ these codes, you could try the following example pieces of query code.
 ### Time periods
 
 ``` r
+
 eesyapi::get_meta(dataset_id = "63629501-d3ca-c471-9780-ec4cb6fdf172") |>
   magrittr::extract2("time_periods") |>
   dplyr::filter(
@@ -187,6 +188,7 @@ eesyapi::get_meta(dataset_id = "63629501-d3ca-c471-9780-ec4cb6fdf172") |>
 ### Geographies
 
 ``` r
+
 eesyapi::get_meta(dataset_id = "63629501-d3ca-c471-9780-ec4cb6fdf172") |>
   magrittr::extract2("locations") |>
   dplyr::filter(label %in% c("York", "England"))
@@ -201,6 +203,7 @@ Note that the col_id values here correspond to the col_id values in the
 filter items, which shows which column each item is availble in.
 
 ``` r
+
 eesyapi::get_meta(dataset_id = "63629501-d3ca-c471-9780-ec4cb6fdf172") |>
   magrittr::extract2("filter_columns")
 #>   col_id          col_name             label
@@ -214,6 +217,7 @@ eesyapi::get_meta(dataset_id = "63629501-d3ca-c471-9780-ec4cb6fdf172") |>
 ### Filter items
 
 ``` r
+
 eesyapi::get_meta(dataset_id = "63629501-d3ca-c471-9780-ec4cb6fdf172") |>
   magrittr::extract2("filter_items") |>
   dplyr::filter(
@@ -236,6 +240,7 @@ eesyapi::get_meta(dataset_id = "63629501-d3ca-c471-9780-ec4cb6fdf172") |>
 ### Indicators
 
 ``` r
+
 eesyapi::get_meta(dataset_id = "63629501-d3ca-c471-9780-ec4cb6fdf172") |>
   magrittr::extract2("indicators") |>
   dplyr::filter(
@@ -282,6 +287,7 @@ educational activity**, **Authorised** and **Unauthorised** in the
 **2025**, we would supply the following:
 
 ``` r
+
 eesyapi::query_dataset(
   dataset_id = "63629501-d3ca-c471-9780-ec4cb6fdf172",
   indicators = "X9fKb",
@@ -321,6 +327,7 @@ from scratch, then you can use
 with the `json_query` parameter as follows:
 
 ``` r
+
 json_query <- "{
   \"criteria\": {
     \"and\": [
@@ -351,16 +358,16 @@ eesyapi::query_dataset(
   json_query = json_query
 )
 #>    time_period time_identifier geographic_level la_name   la_code la_oldCode
-#> 1         2026          Week 4  Local authority    York E06000014        816
-#> 2         2026          Week 4  Local authority    York E06000014        816
-#> 3         2026          Week 4  Local authority    York E06000014        816
-#> 4         2026          Week 4  Local authority    York E06000014        816
-#> 5         2026          Week 4  Local authority    York E06000014        816
-#> 6         2026          Week 4  Local authority    York E06000014        816
-#> 7         2026          Week 4  Local authority    York E06000014        816
-#> 8         2026          Week 4  Local authority    York E06000014        816
-#> 9         2026          Week 4  Local authority    York E06000014        816
-#> 10        2026          Week 4  Local authority    York E06000014        816
+#> 1         2026         Week 21  Local authority    York E06000014        816
+#> 2         2026         Week 21  Local authority    York E06000014        816
+#> 3         2026         Week 21  Local authority    York E06000014        816
+#> 4         2026         Week 21  Local authority    York E06000014        816
+#> 5         2026         Week 21  Local authority    York E06000014        816
+#> 6         2026         Week 21  Local authority    York E06000014        816
+#> 7         2026         Week 21  Local authority    York E06000014        816
+#> 8         2026         Week 21  Local authority    York E06000014        816
+#> 9         2026         Week 21  Local authority    York E06000014        816
+#> 10        2026         Week 21  Local authority    York E06000014        816
 #>    nat_name  nat_code                 reg_name  reg_code
 #> 1   England E92000001 Yorkshire and The Humber E12000003
 #> 2   England E92000001 Yorkshire and The Humber E12000003
@@ -384,16 +391,16 @@ eesyapi::query_dataset(
 #> 9  All approved educational activity        Attendance
 #> 10 All approved educational activity        Attendance
 #>                  attendance_type education_phase   time_frame session_count
-#> 1  Approved educational activity     All schools       Monday           240
-#> 2  Approved educational activity     All schools      Tuesday           339
-#> 3  Approved educational activity     All schools    Wednesday           348
-#> 4  Approved educational activity     All schools     Thursday           439
-#> 5  Approved educational activity     All schools       Friday           212
-#> 6  Approved educational activity     All schools         Week          1578
-#> 7  Approved educational activity     All schools Year to date         32995
-#> 8  Approved educational activity         Primary       Monday            12
-#> 9  Approved educational activity         Primary      Tuesday           112
-#> 10 Approved educational activity         Primary    Wednesday           121
+#> 1  Approved educational activity     All schools       Monday           330
+#> 2  Approved educational activity     All schools      Tuesday           563
+#> 3  Approved educational activity     All schools    Wednesday           925
+#> 4  Approved educational activity     All schools     Thursday           438
+#> 5  Approved educational activity     All schools       Friday           524
+#> 6  Approved educational activity     All schools         Week          2780
+#> 7  Approved educational activity     All schools Year to date         67780
+#> 8  Approved educational activity         Primary       Monday           224
+#> 9  Approved educational activity         Primary      Tuesday           473
+#> 10 Approved educational activity         Primary    Wednesday           803
 ```
 
 ## FAQs
