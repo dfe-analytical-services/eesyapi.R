@@ -1,6 +1,7 @@
 #' Get data set versions
 #'
 #' @inheritParams api_url
+#' @inheritParams query_dataset
 #' @param detail Level of detail to return. Given as a character string, it should be one of:
 #' "light" (default) or "full".
 #' Using "light" gives the following:
@@ -34,14 +35,22 @@
 get_dataset_versions <- function(
   dataset_id,
   detail = "light",
+  preview_token = NULL,
   ees_environment = NULL,
   api_version = NULL,
-  page_size = 40,
+  page_size = 20,
   page = NULL,
   verbose = FALSE
 ) {
   # Do some basic validation
   validate_page_size(page_size)
+  if (page_size > 20) {
+    warning(
+      "The API only allows page_sizes of less than 20 for the dataset versions endpoint.",
+      "Forcing user set page_size to 20."
+    )
+    page_size <- 20
+  }
 
   detail <- tolower(detail)
   if (!(detail %in% c("light", "full"))) {
@@ -61,7 +70,8 @@ get_dataset_versions <- function(
       page_size = page_size,
       page = page,
       verbose = verbose
-    )
+    ),
+    httr::add_headers(`Preview-Token` = preview_token)
   ) |>
     httr::content("text") |>
     jsonlite::fromJSON()
@@ -78,12 +88,14 @@ get_dataset_versions <- function(
             page_size = page_size,
             page = page,
             verbose = verbose
-          )
+          ),
+          httr::add_headers(`Preview-Token` = preview_token)
         ) |>
           httr::content("text") |>
           jsonlite::fromJSON()
         response$results <- dplyr::bind_rows(
-          response$results, response_page$results
+          response$results,
+          response_page$results
         )
       }
     }

@@ -7,9 +7,10 @@
 get_dataset_versions(
   dataset_id,
   detail = "light",
+  preview_token = NULL,
   ees_environment = NULL,
   api_version = NULL,
-  page_size = 40,
+  page_size = 20,
   page = NULL,
   verbose = FALSE
 )
@@ -40,6 +41,8 @@ Using "full" adds the following in addition to the above:
 \item indicators - names of indicators in the data set version
 \item notes - any additional information
 }}
+
+\item{preview_token}{Preview token required for access to private data sets}
 
 \item{ees_environment}{EES ees_environment to connect to: "dev", "test", "preprod" or "prod"}
 
