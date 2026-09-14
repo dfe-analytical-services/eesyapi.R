@@ -67,7 +67,7 @@ In some instances if the overall data you need is small enough (< 10,000 rows), 
 
 In the initial example app, we read in a static CSV file containing all of the possible data. When querying the API, we can instead selectively only query the data that we need for the app. Taking that example app above, we know that the user will be selecting the location and time period that they are interested in from the drop-downs, so rather than reading in the whole data set, we can build a query that only ever asks the API for the rows that match the current selection.
 
-We can use `eesyapi::get_meta()` once to look up the available locations and time periods (and their IDs) to populate the drop-downs, and then use `eesyapi::query_dataset()` inside a reactive function to fetch just the data for whichever location and time period the user has selected:
+We can use `eesyapi::get_meta()` once to look up the available locations and time periods (and their IDs) for the drop-downs, then use `eesyapi::query_dataset()` inside a reactive function to fetch only the data for the user's current selection:
 
 ```{r example-api-query, eval = FALSE}
 library(shiny)
@@ -117,15 +117,15 @@ server <- function(input, output) {
 shinyApp(ui, server)
 ```
 
-Only the values behind the two drop-downs ever change between queries, so this only ever fetches the rows the app is about to display, rather than reading the whole data set in up front.
+Only the location and time period ever change between queries, so this only fetches the rows the app is about to display, rather than reading the whole data set up front.
 
 ## Where to place your API query
 
 Often, when reading static files like a CSV, you would place the read_csv() function in the global.R script. This means that the data is read in once when the app starts, and is always available to both the UI and server components of the app. This saves you reading the data in multiple times, which can be slow and inefficient. This is what we showed in the initial example app at the top of this page.
 
-However, when querying the API, it's often best to place the query in the server.R script, inside a reactive function. This allows us to make the query only when we need to, and also to make the query dependent on user input. For example, if the user selects a different year or location, we can make a new query to get the data for that selection, rather than needing to read in all the data at once. This is exactly what `attendance_query()` does in the example above: it's a reactive expression in the server function, so it only re-runs when one of the inputs it depends on (`input$location` or `input$time_period`) changes.
+However, when querying the API, it's often best to place the query in the server.R script, inside a reactive function. This allows us to make the query only when we need to, and also to make the query dependent on user input. For example, if the user selects a different year or location, we can make a new query to get the data for that selection, rather than needing to read in all the data at once. This is what `attendance_query()` does above: it's a reactive expression in the server function, so it only re-runs when `input$location` or `input$time_period` changes.
 
-Note that fetching the metadata with `get_meta()` is different: it doesn't depend on any user input, so it's safe to do once, outside of the server function (equivalent to placing it in global.R), rather than repeating it inside a reactive.
+Fetching the metadata with `get_meta()` is different: it doesn't depend on any user input, so it's safe to call once, outside of the server function (the equivalent of putting it in global.R), rather than repeating it inside a reactive.
 
 
 ## Caching
@@ -179,6 +179,6 @@ server <- function(input, output) {
 }
 ```
 
-Here, `cached_version` and `cached_data` are [reactive values](https://shiny.posit.co/r/articles/build/reactivity-overview/) that persist for the lifetime of a user's session. Every time `attendance_query()` runs, it first makes the cheap call to `get_dataset_versions()` to find the latest version number. Only if that's changed since the last time (or there's nothing cached yet) does it go on to make the full `query_dataset()` call and update the cache; otherwise it just returns the data it already has.
+Here, `cached_version` and `cached_data` are [reactive values](https://shiny.posit.co/r/articles/build/reactivity-overview/) that persist for the lifetime of a user's session. Every time `attendance_query()` runs, it first makes the cheap call to `get_dataset_versions()` to find the latest version number. If that version has changed (or nothing is cached yet), it calls `query_dataset()` and updates the cache. Otherwise, it just returns the data it already has.
 
-If you don't need to react to new versions being published while your app is running, and you're always happy to use whatever the latest version is, you can skip the version check entirely and pass `dataset_version = "*"` directly to `query_dataset()` (see `?eesyapi::query_dataset`), which always resolves to the latest available version. That's simpler, but it means every call to `query_dataset()` re-fetches the data even when nothing has changed, so it's not a substitute for caching in an app that queries frequently.
+If you don't need to react to new versions while the app is running, and you're always happy to use the latest version, you can skip the version check and pass `dataset_version = "*"` directly to `query_dataset()` (see `?eesyapi::query_dataset`). This always resolves to the latest available version. It's simpler, but every call re-fetches the data even when nothing has changed, so it isn't a substitute for caching in an app that queries often.
