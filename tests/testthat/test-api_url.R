@@ -1,13 +1,18 @@
 test_that("api_url", {
   if (test_env %in% c("test", "dev", "preprod")) {
-    expected_base <- paste0("https://pp-api.education.gov.uk/statistics-", test_env, "/")
+    expected_base <- paste0(
+      "https://pp-api.education.gov.uk/statistics-",
+      test_env,
+      "/"
+    )
   } else {
     expected_base <- "https://api.education.gov.uk/statistics/"
   }
   expect_equal(
     api_url(ees_environment = test_env),
     paste0(
-      expected_base, "v",
+      expected_base,
+      "v",
       default_api_version(),
       "/publications?"
     )
@@ -51,7 +56,7 @@ test_that("api_url", {
       endpoint = "post-data",
       ees_environment = test_env,
       dataset_id = example_id(ees_environment = test_env),
-      dataset_version = 2.1
+      dataset_version = "2.1"
     ),
     paste0(
       expected_base,
@@ -89,7 +94,8 @@ test_that("api_url", {
   )
 
   expect_equal(
-    api_url("get-csv",
+    api_url(
+      "get-csv",
       ees_environment = test_env,
       dataset_id = example_id("dataset", ees_environment = test_env)
     ),

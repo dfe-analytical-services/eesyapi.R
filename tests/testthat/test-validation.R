@@ -60,3 +60,18 @@ test_that("Data set id validation", {
     validate_ees_id("sdf", level = "dataset")
   )
 })
+
+test_that("Data set version validation", {
+  expect_no_error(validate_dataset_version("1.0"))
+  expect_no_error(validate_dataset_version("2.1.1"))
+  expect_no_error(validate_dataset_version("2.3.*"))
+  expect_no_error(validate_dataset_version("8.*"))
+  expect_no_error(validate_dataset_version("*"))
+  expect_no_error(validate_dataset_version(1))
+  expect_no_error(validate_dataset_version(1.1))
+  expect_no_error(validate_dataset_version(NULL))
+  expect_error(validate_dataset_version("v1"))
+  expect_error(validate_dataset_version("1.0.0.0"))
+  expect_error(validate_dataset_version("1.v"))
+  expect_error(validate_dataset_version("funky town"))
+})

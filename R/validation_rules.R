@@ -44,12 +44,17 @@ validate_endpoint <- function(endpoint) {
     stop("Endpoint must be set, can not be NULL")
   }
   if (
-    !(endpoint %in% c(
-      "get-publications", "get-data-catalogue",
-      "get-dataset-versions", "get-summary", "get-meta",
-      "get-csv", "get-data", "post-data"
-    )
-    )
+    !(endpoint %in%
+      c(
+        "get-publications",
+        "get-data-catalogue",
+        "get-dataset-versions",
+        "get-summary",
+        "get-meta",
+        "get-csv",
+        "get-data",
+        "post-data"
+      ))
   ) {
     stop(
       paste(
@@ -99,8 +104,15 @@ validate_time_periods <- function(time_periods) {
 #'
 #' @examples
 #' eesyapi:::validate_ees_id(example_id("publication"), level = "publication")
-validate_ees_id <- function(element_id, level = "publication", verbose = FALSE) {
-  if (!(level %in% c("publication", "dataset", "location", "filter_item", "indicator"))) {
+validate_ees_id <- function(
+  element_id,
+  level = "publication",
+  verbose = FALSE
+) {
+  if (
+    !(level %in%
+      c("publication", "dataset", "location", "filter_item", "indicator"))
+  ) {
     stop(
       paste0(
         "Non-valid element level received by validate_id.\n",
@@ -110,8 +122,10 @@ validate_ees_id <- function(element_id, level = "publication", verbose = FALSE) 
   }
   if (is.null(element_id)) {
     stop(
-      "The variable ", level,
-      "_id is NULL, please provide a valid ", level,
+      "The variable ",
+      level,
+      "_id is NULL, please provide a valid ",
+      level,
       "_id."
     )
   }
@@ -119,7 +133,9 @@ validate_ees_id <- function(element_id, level = "publication", verbose = FALSE) 
     locations <- element_id |>
       stringr::str_split("\\|", simplify = TRUE)
     if ("" %in% locations || ncol(locations) != 3) {
-      stop('Invalid locations found, these should be of the form "LEVEL|xxxx|1b3d5".')
+      stop(
+        'Invalid locations found, these should be of the form "LEVEL|xxxx|1b3d5".'
+      )
     } else {
       # Extract the individual 5 digit location IDs
       df_locations <- locations |>
@@ -129,7 +145,9 @@ validate_ees_id <- function(element_id, level = "publication", verbose = FALSE) 
         dplyr::pull("location_id_type") |>
         unique()
       if (any(!(location_type %in% c("id", "code")))) {
-        stop("The middle entry in \"LEVEL|xxxx|1b3d5\" should be one of \"id\" or \"code\"")
+        stop(
+          "The middle entry in \"LEVEL|xxxx|1b3d5\" should be one of \"id\" or \"code\""
+        )
       }
       level <- paste(level, location_type, sep = "_")
       element_id <- df_locations
@@ -169,14 +187,19 @@ validate_ees_id <- function(element_id, level = "publication", verbose = FALSE) 
     )
   if (nrow(error_rows) != 0) {
     err_string <- paste0(
-      "The ", paste(level, collapse = ","),
+      "The ",
+      paste(level, collapse = ","),
       "(s) provided (",
       paste0(error_rows |> dplyr::pull("location_id.x"), collapse = ", "),
       ") is expected to be a ",
-      paste0(error_rows |> dplyr::pull("location_id.y") |> stringr::str_length(), collapse = ", "),
+      paste0(
+        error_rows |> dplyr::pull("location_id.y") |> stringr::str_length(),
+        collapse = ", "
+      ),
       " character string in the format:\n",
       paste0(error_rows |> dplyr::pull("location_id.y"), collapse = ", "),
-      "\nPlease double check your ", paste(level, collapse = ","),
+      "\nPlease double check your ",
+      paste(level, collapse = ","),
       "."
     )
     stop(err_string)
@@ -208,7 +231,10 @@ validate_ees_id <- function(element_id, level = "publication", verbose = FALSE) 
 #' @examples
 #' eesyapi:::validate_ees_filter_type("time_periods")
 validate_ees_filter_type <- function(filter_type) {
-  if (!(filter_type %in% c("time_periods", "geographic_levels", "locations", "filter_items"))) {
+  if (
+    !(filter_type %in%
+      c("time_periods", "geographic_levels", "locations", "filter_items"))
+  ) {
     stop(
       paste(
         "filter_type keyword should be one of \"time_periods\", \"geographic_levels\",",
@@ -240,6 +266,45 @@ validate_page_size <- function(page_size, min = 1, max = 40) {
     if (!valid) {
       stop(
         "The page size can only be a numeric value within the range 1 <= page_size <= 40."
+      )
+    }
+  }
+}
+
+#' Validate data set version
+#'
+#' Ensures that the data set version is in the correct format, either as a
+#' string following the 'major.minor.patch' format (with optional '*'
+#' wildcards), or as a numeric value.
+#'
+#' Numeric values are kept for backwards compatibility, but expect strings will
+#' be more commonly used.
+#' @param dataset_version Chosen data set version
+#'
+#' @return Logical
+#'
+#' @keywords internal
+#'
+#' @examples
+#' eesyapi:::validate_dataset_version("2.0.0")
+validate_dataset_version <- function(dataset_version) {
+  if (!is.null(dataset_version)) {
+    if (is.character(dataset_version)) {
+      # Accept only "*", or digit(s) optionally followed by .digit(s) or .*
+      valid <- stringr::str_detect(
+        dataset_version,
+        "^\\*$|^(\\d+)(\\.(\\d+|\\*)){0,2}$"
+      )
+    } else {
+      valid <- is.numeric(dataset_version)
+    }
+    if (!valid) {
+      stop(
+        paste0(
+          "The dataset version must be a character string in the format ",
+          "'major.minor.patch', optionally using '*' wildcards",
+          " (e.g. '8.2.3', '2.3.*', '8.*', '*')."
+        )
       )
     }
   }

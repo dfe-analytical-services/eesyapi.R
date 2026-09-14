@@ -46,7 +46,9 @@ of "get-dataset-versions", "get-summary", "get-meta", "get-csv", "get-data" or "
 
 \item{filter_items}{Filter items required as a string or vector of strings}
 
-\item{dataset_version}{Version of data set to be connected to}
+\item{dataset_version}{Version of data set to be connected to, in "major.minor.patch" format,
+with optional wildcards, e.g. "\emph{", "2.}", "2.1.*", "2.1.0". Can also be provided as a numeric
+value}
 
 \item{ees_environment}{EES ees_environment to connect to: "dev", "test", "preprod" or "prod"}
 
