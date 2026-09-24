@@ -42,6 +42,19 @@ test_that("Time period parsing works as expected", {
   )
 })
 
+test_that("Time periods are sorted by year then code across a year boundary", {
+  unsorted <- data.frame(
+    code = c("W2", "W10", "W1", "W52", "W51"),
+    period = c("2026", "2025", "2026", "2025", "2025"),
+    label = c("2026 Week 2", "2025 Week 10", "2026 Week 1", "2025 Week 52", "2025 Week 51")
+  )
+  sorted <- parse_meta_time_periods(unsorted)
+  expect_equal(
+    paste(sorted$period, sorted$code, sep = "|"),
+    c("2025|W10", "2025|W51", "2025|W52", "2026|W1", "2026|W2")
+  )
+})
+
 test_that("Location parsing works as expected", {
   expect_equal(
     readRDS("testdata/example_meta_unparsed.rds")$locations |>

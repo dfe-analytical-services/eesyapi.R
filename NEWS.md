@@ -1,3 +1,7 @@
+# eesyapi (development version)
+
+* Fixed `get_meta()` time period ordering to sort by year then period code, so periods spanning a year boundary are in date order.
+
 # eesyapi 0.6.0
 
 * Allow wildcard versioning of data sets, e.g. "\*" to get the latest possible, or "1.\*" to get the latest within a major version.

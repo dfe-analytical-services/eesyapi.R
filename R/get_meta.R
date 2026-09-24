@@ -129,12 +129,16 @@ parse_meta_time_periods <- function(api_meta_time_periods, verbose = FALSE) {
   if (!("code" %in% names(api_meta_time_periods))) {
     stop("Code column not found in timePeriods data")
   }
+  if (!("period" %in% names(api_meta_time_periods))) {
+    stop("Period column not found in timePeriods data")
+  }
   time_periods <- api_meta_time_periods |>
     dplyr::mutate(
       code_num = as.numeric(gsub("[a-zA-Z]", "", api_meta_time_periods$code))
     )
+  # Sort by year (period) first, then by the numeric part of the code (e.g. W2 < W10)
   time_periods <- time_periods |>
-    dplyr::arrange(time_periods$code_num) |>
+    dplyr::arrange(time_periods$period, time_periods$code_num) |>
     dplyr::select(-c("code_num"))
   return(time_periods)
 }
