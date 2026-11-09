@@ -1,0 +1,208 @@
+---
+title: "Using eesyapi in R Shiny apps"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{Using eesyapi in R Shiny apps}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+This page shows you how to get data from the explore education statistics (EES) API in an R Shiny app without calling the API more often than you need to.
+
+Put your API calls in the `server()` function and cache the data calls with Shiny's `bindCache()`. A cache saves the result of a call, so if the same data is asked for again your app uses the saved copy instead of calling the API. The cache is shared by everyone using the same copy of your app. If your app runs on more than one server process, for example on shinyapps.io with several instances, each process has its own cache.
+
+Include the data set version in the cache key. When a new version is published, the key changes and your app gets the new data.
+
+Your app should only update to new major versions of a data set when you've tested it with them, as they can remove data your app relies on. The example app does this with `dataset_version = "3.*"`. See [Data set versions] for why this matters and what to do when a new major version is published.
+
+## Example app
+
+This app lets a user pick a location and a week, and shows the number of pupil attendance sessions for that selection.
+
+```{r example-app, eval = FALSE}
+library(shiny)
+library(eesyapi)
+
+dataset_id <- example_id(group = "attendance")
+
+# Use the latest minor or patch update to version 3, but not version 4 or later
+major_version <- 3
+dataset_version <- paste0(major_version, ".*")
+
+ui <- fluidPage(
+  titlePanel("Pupil attendance in schools"),
+  fluidRow(
+    # Choices are filled in by the server once the data has loaded
+    column(4, selectInput("location", "Location:", choices = NULL)),
+    column(4, selectInput("week", "Week:", choices = NULL))
+  ),
+  tableOutput("attendance_table")
+)
+
+server <- function(input, output, session) {
+  # 1. Get the version number to use in the cache key
+  version <- reactive({
+    versions <- get_dataset_versions(dataset_id)$version
+    versions <- versions[startsWith(versions, paste0(major_version, "."))]
+    as.character(max(numeric_version(versions)))
+  })
+
+  # 2. Get all the data the app can show in one call, cached by version
+  attendance_data <- reactive({
+    meta <- get_meta(dataset_id, dataset_version = dataset_version)
+    indicators <- meta$indicators
+    filters <- meta$filter_items
+    filter_id <- function(column, label) {
+      filters$item_id[filters$col_name == column & filters$item_label == label]
+    }
+
+    data <- query_dataset(
+      dataset_id,
+      dataset_version = dataset_version,
+      indicators = indicators$col_id[indicators$col_name == "session_count"],
+      filter_items = list(
+        attendance_reason = filter_id("attendance_reason", "Overall attendance"),
+        education_phase = filter_id("education_phase", "All schools"),
+        time_frame = filter_id("time_frame", "Week")
+      )
+    )
+
+    # Add one column for the location name and one for the week
+    data$location <- dplyr::coalesce(data$la_name, data$reg_name, data$nat_name)
+    data$week <- paste(data$time_period, data$time_identifier)
+    data
+  }) |>
+    bindCache(version())
+
+  # 3. Fill in the drop-downs from the data
+  observe({
+    data <- attendance_data()
+    locations <- unique(data[c("geographic_level", "location")])
+    levels <- factor(
+      locations$geographic_level,
+      levels = c("National", "Regional", "Local authority")
+    )
+
+    updateSelectInput(
+      session, "location",
+      choices = split(locations$location, levels)
+    )
+    updateSelectInput(session, "week", choices = unique(data$week))
+  })
+
+  # 4. Filter the data to the user's selection, or show a message if there isn't any
+  output$attendance_table <- renderTable({
+    req(input$location, input$week)
+    data <- attendance_data()
+    selected <- data[data$location == input$location & data$week == input$week, ]
+    validate(need(nrow(selected) > 0, "There is no data for this selection."))
+
+    data.frame(
+      Location = selected$location,
+      Week = selected$week,
+      `Number of sessions` = prettyNum(selected$session_count, big.mark = ","),
+      check.names = FALSE
+    )
+  })
+}
+
+shinyApp(ui, server)
+```
+
+## How it works
+
+### 1. Get the version number
+
+`get_dataset_versions()` lists every version of the data set. The app picks the latest version 3 from that list, for example `3.20`, to use as the cache key.
+
+This call is small and quick, so it isn't cached. It runs each time someone opens the app, so the next person to open it after a new version is published gets the new data.
+
+### 2. Get all the data the app needs in one call
+
+There are two ways to get data into your app: download it all at the start, or download it each time the user makes a selection.
+
+This example downloads everything at the start. That works because the data is small enough to download in one go, before the app filters it for the user's selection. If your data is very large, for example millions of rows, download only what you need instead. See [When to query for each selection instead] below.
+
+The app gets everything it could ever show in one call to `query_dataset()`, then filters that data in memory when the user changes a drop-down. Changing a drop-down doesn't call the API, so the table updates straight away.
+
+`get_meta()` gets the IDs the API uses for the indicator and filters. The app looks up the IDs by their labels, instead of typing the IDs into the code, so it doesn't rely on IDs that could change between versions.
+
+The filters narrow the data down to overall attendance in all schools across the whole week. When you give `filter_items` as a list, you only get rows that match all of the filters. See `?query_dataset` for more on this.
+
+Leaving out `geographies` and `time_periods` gets every location and week. For version 3.20 that's about 6,000 rows, or 1 MB, and it takes a couple of seconds to download.
+
+The cache key is just the version, so each copy of your app only calls the API once for each version of the data set.
+
+The app also adds a `location` column, which takes the name from `la_name`, `reg_name` or `nat_name` depending on the row's level, and a `week` column, for example `"2026 Week 29"`.
+
+#### When to query specific selections instead
+
+Only get all the data at once if it's small enough to hold in memory. This next example only works because the API query filters shrink a data set of nearly 7 million rows down to about 6,000. If it didn't, it's very likely the app would crash or at least be noticeably slow to use.
+
+If users can choose from a lot more data, for example any attendance reason, school phase and day of the week, query the API for each selection instead:
+
+- pass the user's choices to `query_dataset()` using `geographies`, `time_periods` and `filter_items`
+- put every input that changes the query in `bindCache()`, as well as the version, or users could see data for the wrong selection
+
+```{r per-selection, eval = FALSE}
+attendance_data <- reactive({
+  req(input$location, input$week, input$reason)
+
+  query_dataset(
+    dataset_id,
+    dataset_version = dataset_version,
+    indicators = session_count_id,
+    geographies = input$location, # for example "LA|id|rQkNj"
+    time_periods = input$week, # for example "2026|W29"
+    filter_items = list(attendance_reason = input$reason)
+  )
+}) |>
+  bindCache(version(), input$location, input$week, input$reason)
+```
+
+Here the drop-down values are the IDs the API uses, not labels. You can get them, and `session_count_id`, from `get_meta()`. See `?query_dataset` for the formats it needs.
+
+### 3. Fill in the drop-downs
+
+The drop-down choices come from the data, so they only list locations and weeks that have data. Locations are grouped by level, with England first, then regions, then local authorities.
+
+### 4. Filter the data and show it
+
+`req()` stops the table showing until both drop-downs have a value.
+
+The app filters the data to the chosen location and week. Some locations don't have data for every week, so `validate(need(...))` shows a message instead of an empty table.
+
+The table only shows the location, week and number of sessions, so it's easy to read. The data from `query_dataset()` has more columns, such as location codes and filter labels, if you need them.
+
+## Data set versions
+
+Each update to an API data set gets a new version number. There are three types of update:
+
+- major, for example 3.20 to 4.0: something has been removed, such as a filter, location, time period or indicator
+- minor, for example 3.19 to 3.20: something has been added or changed, such as new time periods or locations
+- patch, for example 3.20 to 3.20.1: a correction to the data
+
+Minor and patch updates won't break your app. A major update might, because your app could ask for something that no longer exists. For example, version 4.0 of the attendance data set starts a new school year and removes the previous year's weeks. An app that always used the latest version would have lost those weeks without any warning.
+
+That's why the example app sets `dataset_version` to `"3.*"`. The `*` means "the latest minor or patch update", so the app gets new data automatically but stays on version 3 until you change it.
+
+### When a new major version is published
+
+1. Read the "API data set changelog" on the data set's page in the [EES data catalogue](https://explore-education-statistics.service.gov.uk/data-catalogue) to see what has changed.
+2. Change `major_version` in your app to the new version and test the app.
+3. Fix anything that no longer works, then publish the updated app.
+
+To find out when a new version is published, select "Get email alerts" on the data set's page in the data catalogue.
+
+## Further reading
+
+- [Using caching in Shiny](https://shiny.posit.co/r/articles/improve/caching/) (Posit)
+- [Mastering Shiny: Performance](https://mastering-shiny.org/performance.html)
+- [Creating R Shiny dashboards](https://dfe-analytical-services.github.io/analysts-guide/writing-visualising/dashboards_rshiny.html) (DfE Analysts' Guide)
