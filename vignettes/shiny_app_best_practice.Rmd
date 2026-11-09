@@ -126,6 +126,10 @@ This call is small and quick, so it isn't cached. It runs each time someone open
 
 ### 2. Get all the data the app needs in one call
 
+There are two ways to get data into your app: download it all at the start, or download it each time the user makes a selection.
+
+This example downloads everything at the start. That works because the data is small enough to download in one go, before the app filters it for the user's selection. If your data is very large, for example millions of rows, download only what you need instead. See [When to query for each selection instead] below.
+
 The app gets everything it could ever show in one call to `query_dataset()`, then filters that data in memory when the user changes a drop-down. Changing a drop-down doesn't call the API, so the table updates straight away.
 
 `get_meta()` gets the IDs the API uses for the indicator and filters. The app looks up the IDs by their labels, instead of typing the IDs into the code, so it doesn't rely on IDs that could change between versions.
@@ -138,9 +142,9 @@ The cache key is just the version, so each copy of your app only calls the API o
 
 The app also adds a `location` column, which takes the name from `la_name`, `reg_name` or `nat_name` depending on the row's level, and a `week` column, for example `"2026 Week 29"`.
 
-#### When to query for each selection instead
+#### When to query specific selections instead
 
-Only get all the data at once if it's small enough to hold in memory. This example only works because the filters shrink a data set of nearly 7 million rows down to about 6,000.
+Only get all the data at once if it's small enough to hold in memory. This next example only works because the API query filters shrink a data set of nearly 7 million rows down to about 6,000. If it didn't, it's very likely the app would crash or at least be noticeably slow to use.
 
 If users can choose from a lot more data, for example any attendance reason, school phase and day of the week, query the API for each selection instead:
 
